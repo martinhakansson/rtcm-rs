@@ -1,0 +1,25 @@
+[package]
+name = "rtcm3"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tinyvec =  { version = "1.6.0", features=["rustc_1_55"]}
+crc-any = { version = "2.4.3", default-features = false }
+# serde = { version = "1.0", optional = true, default-features = false, features = ["derive"] }
+sd = { version = "1.0", optional = true, default-features = false, features = ["derive"], package="serde" }
+
+[features]
+# serde_derive = ["serde","tinyvec/serde"]
+serde = ["sd","tinyvec/serde"]
+default = ["all_msgs"]
+all_msgs = ["msg1001","msg1005","msg1007","msg1008","msg1030","msg1071","msg1074"]
+msg1001 = []
+msg1005 = []
+msg1007 = []
+msg1008 = []
+msg1030 = []
+msg1071 = []
+msg1074 = []
