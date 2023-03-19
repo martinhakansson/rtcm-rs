@@ -18,10 +18,10 @@ msg!(
     id: msg1030,
     type_name: Msg1030T,
     fields: [
-        (gps_residuals_epoch_time, df224),
+        (gps_resid_epoch_time_s, df224),
         (reference_station_id, df003),
-        (n_refs, df223),
-        (num_gps_sat_sig_proc, df006),
-        (satellites, msg1030_sat_vec, num_gps_sat_sig_proc)
+        (refs_n, df223),
+        (satellites_len, df006),
+        (satellites, msg1030_sat_vec, satellites_len)
     ],
 );

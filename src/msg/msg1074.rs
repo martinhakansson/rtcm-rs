@@ -6,11 +6,11 @@ msm_sig_frag!(
     type_name: Msg1074Sig,
     gnss: gps,
     fields: [
-        (signal_fine_pseudorange_ms,df400),
-        (signal_fine_phaserange_ms,df401),
-        (phaserange_lock_time_indicator,df402),
-        (half_cycle_ambiguity_indicator,df420),
-        (signal_cnr,df403)
+        (gnss_signal_fine_pseudorange_ms,df400),
+        (gnss_signal_fine_phaserange_ms,df401),
+        (gnss_phaserange_lock_time_ind,df402),
+        (half_cycle_ambiguity_ind,df420),
+        (gnss_signal_cnr_dbhz,df403)
     ],
 );
 
@@ -27,14 +27,14 @@ msg!(
     type_name: Msg1074T,
     fields: [
         (reference_station_id, df003),
-        (epoch_time, df004),
-        (multiple_message_bit, df393),
-        (issue_of_data_station, df409),
-        (reserved, df001_7bits),
-        (clock_steering_indicator, df411),
-        (external_clock_indicator, df412),
-        (divergence_free_smoothing_indicator, df417),
-        (smoothing_interval, df418),
+        (gps_epoch_time_ms, df004),
+        (msm_multiple_message_flag, df393),
+        (reserved_issue_of_data_station, df409), //check in latest version if this still is reserved
+        (reserved_58_7, df001_7bits),
+        (clock_steering_ind, df411),
+        (external_clock_ind, df412),
+        (gnss_smoothing_type_ind, df417),
+        (gnss_smoothing_interval_bitval, df418),
         (data_segment, msg1074_data)
     ],
 );

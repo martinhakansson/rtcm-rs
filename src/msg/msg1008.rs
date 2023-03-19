@@ -3,11 +3,11 @@ msg!(
     id: msg1008,
     type_name: Msg1008T,
     fields: [
-        (ref_station_id, df003),
-        (desc_counter, df029),
-        (antenna_descriptor, df030, desc_counter),
+        (reference_station_id, df003),
+        (antenna_desc_char_len, df029),
+        (antenna_descriptor_str, df030, antenna_desc_char_len),
         (antenna_setup_id, df031),
-        (serial_number_counter, df032),
-        (antenna_serial_number, df033, serial_number_counter)
+        (serial_number_len, df032),
+        (antenna_serial_number_str, df033, serial_number_len)
     ],
 );

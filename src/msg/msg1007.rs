@@ -4,9 +4,9 @@ msg!(
     id: msg1007,
     type_name: Msg1007T,
     fields: [
-        (ref_station_id, df003),
-        (desc_counter, df029),
-        (antenna_descriptor, df030, desc_counter),
+        (reference_station_id, df003),
+        (antenna_desc_char_len, df029),
+        (antenna_descriptor_str, df030, antenna_desc_char_len),
         (antenna_setup_id, df031)
     ],
 );

@@ -80,19 +80,19 @@ mod test {
     use crate::util::DataVec;
 
     use super::*;
-    fn test_create_1001() {
-        let mut msg = msg::Msg1071T {
-            reference_station_id: todo!(),
-            epoch_time: todo!(),
-            multiple_message_bit: todo!(),
-            issue_of_data_station: todo!(),
-            reserved: todo!(),
-            clock_steering_indicator: todo!(),
-            external_clock_indicator: todo!(),
-            divergence_free_smoothing_indicator: todo!(),
-            smoothing_interval: todo!(),
-            data_segment: msg::Msg1071Data { sat_data: DataVec::new(), sig_data: DataVec::new() },
-        };
-        msg.data_segment.sat_data.push(msg::Msm123Sat::default());
-    }
+    // fn test_create_1001() {
+    //     let mut msg = msg::Msg1071T {
+    //         reference_station_id: todo!(),
+    //         epoch_time: todo!(),
+    //         multiple_message_bit: todo!(),
+    //         issue_of_data_station: todo!(),
+    //         reserved: todo!(),
+    //         clock_steering_indicator: todo!(),
+    //         external_clock_indicator: todo!(),
+    //         divergence_free_smoothing_indicator: todo!(),
+    //         smoothing_interval: todo!(),
+    //         data_segment: msg::Msg1071Data { sat_data: DataVec::new(), sig_data: DataVec::new() },
+    //     };
+    //     msg.data_segment.sat_data.push(msg::Msm123Sat::default());
+    // }
 }

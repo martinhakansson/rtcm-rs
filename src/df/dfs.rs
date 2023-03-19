@@ -7,7 +7,7 @@
 //ind - indicator, values with specific meaning
 //m - unit meter
 //str - some string
-//no - number
+//n - number of
 //dbhz - unit dBHz
 
 //DF001 (1 bit1)
@@ -306,7 +306,7 @@ df!(
 );
 
 //DF219: Distance dependent term of non-dispersive standard deviation (s_od) in ppm
-//field_name: s_od_mm
+//field_name: s_od_ppm
 df!(
     id: df219,
     dt: f32,
@@ -318,7 +318,7 @@ df!(
 );
 
 //DF220: Height dependent term of non-dispersive standard deviation (s_oh) in ppm
-//field_name: s_oh_mm
+//field_name: s_oh_ppm
 df!(
     id: df220,
     dt: f32,
@@ -342,7 +342,7 @@ df!(
 );
 
 //DF222: Distance dependent term of dispersive standard deviation (s_id) in ppm
-//field_name: s_id_mm
+//field_name: s_id_ppm
 df!(
     id: df222,
     dt: f32,
@@ -354,7 +354,7 @@ df!(
 );
 
 //DF223: Number of reference stations used to derive residual statistics
-//field_name: n_refs_no
+//field_name: refs_n
 df!(
     id: df223,
     dt: u8,

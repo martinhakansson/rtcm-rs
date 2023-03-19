@@ -3,10 +3,10 @@ msg! (
     type_name: Msg1001Sat,
     fields: [
         (gps_satellite_id, df009),
-        (gps_l1_code_indicator, df010),
+        (gps_l1_code_ind, df010),
         (gps_l1_pseudorange_m, df011),
-        (gps_l1_phase_pseudorange_m, df012),
-        (gps_l1_lock_time_indicator, df013)
+        (gps_l1_phase_pseudorange_diff_m, df012),
+        (gps_l1_lock_time_bitval, df013)
     ],
 );
 
@@ -17,12 +17,12 @@ msg!(
     type_name: Msg1001T,
     fields: [
         //(message_number, df002),
-        (ref_station_id, df003),
-        (gps_epoch_time, df004),
-        (synchronous_gnss_message_flag, df005),
-        (num_gps_sat_sig_proc, df006),
-        (gps_div_free_smoothing_indicator, df007),
-        (gps_smoothing_interval, df008),
-        (satellites, msg1001_sat_vec, num_gps_sat_sig_proc)
+        (reference_station_id, df003),
+        (gps_epoch_time_ms, df004),
+        (synchronous_gnss_msg_flag, df005),
+        (satellites_len, df006),
+        (gps_divergence_free_smoothing_flag, df007),
+        (gps_smoothing_interval_bitval, df008),
+        (satellites, msg1001_sat_vec, satellites_len)
     ],
 );
