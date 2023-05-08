@@ -1,4 +1,5 @@
 use crate::tinyvec::ArrayVec;
+use core::fmt::Write;
 use core::ops::{Deref, DerefMut};
 use core::slice::{Iter,IterMut};
 #[cfg(feature = "serde")]
@@ -22,7 +23,6 @@ impl<T:Default+Clone, const N:usize> DerefMut for DataVec<T,N> {
         self.0.deref_mut()
     }
 }
-
 
 impl<T:Default+Clone, const N:usize> DataVec<T,N> {
     #[inline(always)]
@@ -72,5 +72,23 @@ impl<T:Default+Clone, const N:usize> DataVec<T,N> {
     #[inline(always)]
     pub fn set_len(&mut self, new_len:usize) {
         self.0.set_len(new_len);
+    }
+}
+
+#[cfg(feature="test_gen")]
+use crate::source_repr::SourceRepr;
+#[cfg(feature="test_gen")]
+impl<T:Default+Clone+SourceRepr, const N:usize> SourceRepr for DataVec<T, N> {
+    fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        f.write_char('{')?;
+        write!(f,"let mut vec = DataVec::<_,{}>::new();", N)?;
+        for v in self.0.iter() {
+            f.write_str("vec.push(")?;
+            v.to_source(f)?;
+            f.write_str(");")?;
+        }
+        f.write_str("vec")?;
+        f.write_char('}')?;
+        todo!()
     }
 }

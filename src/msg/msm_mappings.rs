@@ -13,6 +13,18 @@ macro_rules! sig_id_impl {
             }
             pub fn is_valid(self) -> bool {
                 to_id(self).is_some()
+            }            
+        }
+        impl $crate::source_repr::SourceRepr for $type_name {
+            fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                use core::fmt::Write;
+                write!(f, "{}::new(", stringify!($type_name))?;
+                self.0.to_source(f)?;
+                f.write_char(',')?;
+                self.1.to_source(f)?;
+                f.write_char(')')?;
+
+                Ok(())
             }
         }
     };
@@ -70,6 +82,14 @@ pub mod gps {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+            pub fn random_id<R:rand::Rng + ?Sized>(rng:&mut R) -> u8 {
+                let mut id:u8 = rng.gen();
+                while to_sig(id).is_none() {
+                    id = rng.gen();
+                }
+                id
+            }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);
@@ -123,6 +143,14 @@ pub mod glo {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+            pub fn random_id<R:rand::Rng + ?Sized>(rng:&mut R) -> u8 {
+                let mut id:u8 = rng.gen();
+                while to_sig(id).is_none() {
+                    id = rng.gen();
+                }
+                id
+            }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);
@@ -156,6 +184,14 @@ pub mod gal {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+            pub fn random_id<R:rand::Rng + ?Sized>(rng:&mut R) -> u8 {
+                let mut id:u8 = rng.gen();
+                while to_sig(id).is_none() {
+                    id = rng.gen();
+                }
+                id
+            }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);
@@ -189,6 +225,14 @@ pub mod bds {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+            pub fn random_id<R:rand::Rng + ?Sized>(rng:&mut R) -> u8 {
+                let mut id:u8 = rng.gen();
+                while to_sig(id).is_none() {
+                    id = rng.gen();
+                }
+                id
+            }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);

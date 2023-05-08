@@ -7,6 +7,9 @@ use crc_any;
 #[cfg(feature = "serde")]
 use sd::{Serialize,Deserialize,de::Visitor};
 
+#[cfg(feature = "test_gen")]
+mod source_repr;
+
 pub mod rtcm_error;
 mod df;
 pub mod msg;

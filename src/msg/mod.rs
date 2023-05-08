@@ -21,6 +21,8 @@ macro_rules! msg {
             use $crate::df::dfs::*;
             #[cfg(feature = "serde")]
             use $crate::{Serialize,Deserialize};
+            #[cfg(feature = "test_gen")]
+            use $crate::source_repr::SourceRepr;
             #[allow(unused)]
             use super::*; //Do not remove
 
@@ -58,6 +60,31 @@ macro_rules! msg {
                         $field_name
                     ),+
                 })
+            }
+            #[cfg(feature = "test_gen")]
+            pub fn random<R: rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R) -> Result<(),()> {
+        
+                $(
+                    let $field_name = if let Ok(value) = $frag_id::random(asm, rng, $($len_data)? ) {
+                        value
+                    } else {
+                        return Err(());
+                    };
+                )+
+                Ok(())
+            }
+            #[cfg(feature = "test_gen")]
+            impl SourceRepr for $type_name {
+                fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result { 
+                    use core::fmt::Write;                   
+                    write!(f, "{} {{", stringify!($type_name))?;
+                    $(
+                        write!(f,"{}:", stringify!($field_name))?;
+                        self.$field_name.to_source(f)?;
+                        f.write_char(',')?;
+                    )+
+                    f.write_char('}')
+                }
             }
         }
     };
@@ -105,6 +132,15 @@ macro_rules! frag_vec {
                 }
                 Ok(value)
             }
+            #[cfg(feature = "test_gen")]
+            pub fn random<R:rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R, len: usize) -> Result<(),()> {
+                for _ in 0..len {
+                    if $frag_id::random(asm, rng).is_err() {
+                        return Err(());
+                    }
+                }
+                Ok(())
+            }
         }
     };
 }
@@ -120,7 +156,7 @@ macro_rules! msm_data_seg_frag {
         pub mod $id {
             use $crate::df::bit_value::{U64, U32};
             use $crate::df::{assembler::Assembler, parser::Parser};
-            use $crate::msg::{mask_len_u32,mask_len_u64,cell_mask_id_vec,msm_mappings::$gnss::*};
+            use $crate::msg::{mask_len_u32,mask_len_u64,cell_mask_id_vec,msm_mappings::$gnss::*, mask_to_id_vec_u64};
             use $crate::tinyvec::ArrayVec;
             #[cfg(feature = "serde")]
             use $crate::{Serialize,Deserialize};
@@ -258,6 +294,94 @@ macro_rules! msm_data_seg_frag {
                     return Err(());
                 }                
             }
+            #[cfg(feature = "test_gen")]
+            pub fn random<R:rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R) -> Result<(),()> {
+                let sig_len:usize = (rng.gen::<usize>() % 64) + 1;
+                let mut cell_vec:ArrayVec<[(u8,u8);64]> = ArrayVec::new();
+                let mut sat_mask:u64 = 0;
+                let mut sig_mask:u32 = 0;
+                let mut sat_num:usize = 0;
+                let mut sig_num:usize = 0;
+                for _ in 0..sig_len {
+                    let mut sat_id:u8 = (rng.gen::<u8>() % 64) + 1;
+                    let mut sig_id = random_id(rng);
+                    let slice = &cell_vec[..];
+                    while slice.contains(&(sat_id, sig_id)) {
+                        sat_id = (rng.gen::<u8>() % 64) + 1;
+                        sig_id = random_id(rng);
+                    }
+                    cell_vec.push((sat_id, sig_id));
+                    let sat = 1 << (64 - sat_id);
+                    if (sat_mask & sat) == 0 {
+                        sat_num += 1;
+                    }
+                    sat_mask |= sat;
+                    let sig = 1 << (32 - sig_id);
+                    if (sig_mask & sig) == 0 {
+                        sig_num += 1;
+                    }
+                    sig_mask |= sig;
+                }
+                let cell_cont_len = sig_num * sat_num;
+                let mut sat_indx = [0usize;64];
+                let mut sig_indx = [0usize;32];
+                let mut indx_counter = 0;
+                for i in 0..64 {
+                    if (sat_mask>>(63-i)) % 2 == 1 {
+                        sat_indx[i]=indx_counter;
+                        indx_counter+=1;
+                    }
+                }
+                indx_counter = 0;
+                for i in 0..32 {
+                    if (sig_mask>>(31-i)) % 2 == 1 {
+                        sig_indx[i]=indx_counter;
+                        indx_counter+=1;
+                    }
+                }
+                let mut cell_mask:u64 = 0;
+                for (sat_id,sig_id) in cell_vec {
+                    let cell_indx = sat_indx[sat_id as usize -1]*sig_num + sig_indx[sig_id as usize - 1];
+                    let cell = 1 << (cell_cont_len-1-cell_indx);
+                    if cell & cell_mask > 0 {
+                        unreachable!();
+                    }
+                    cell_mask |= cell;
+                }
+                if asm.put::<U64>(sat_mask,64).is_err() {
+                    return Err(());
+                }
+                if asm.put::<U32>(sig_mask,32).is_err() {
+                    return Err(());
+                }
+                if asm.put::<U64>(cell_mask,cell_cont_len).is_err() {
+                    return Err(());
+                }
+                if $sat_id::random(asm, rng, sat_mask).is_err() {
+                    return Err(());
+                }
+                if $sig_id::random(asm, rng, sig_len).is_err() {
+                    return Err(())
+                }
+                
+                Ok(())
+            }
+
+            #[cfg(feature = "test_gen")]
+            impl $crate::source_repr::SourceRepr for $type_name {
+                fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result { 
+                    use core::fmt::Write;
+
+                    write!(f, "{} {{", stringify!($type_name))?;
+                    f.write_str("sat_data: ")?;
+                    self.sat_data.to_source(f)?;
+                    f.write_str(", sig_data: ")?;
+                    self.sig_data.to_source(f)?;
+                    f.write_char('}')?;
+
+                    Ok(())
+                }
+            }
         }
     };
 }
@@ -339,6 +463,45 @@ macro_rules! msm_sat_frag {
                 )+
                 Ok(value)
             }
+            #[cfg(feature = "test_gen")]
+            pub fn random<R:rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R, sat_mask:u64) -> Result<(),()> {
+                
+                let mut sat_len:usize = 0;
+                for i in 0..64 {
+                    if (sat_mask >> (63-i)) % 2 == 1 {
+                        sat_len += 1;                        
+                    }
+                }
+                $(                    
+                    for _ in 0..sat_len {
+                        if $frag_id::random(asm, rng).is_err() {
+                            return Err(());
+                        }
+                    }
+                )+
+
+                Ok(())
+            }
+            #[cfg(feature = "test_gen")]
+            impl $crate::source_repr::SourceRepr for $type_name {
+                fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result { 
+                    use core::fmt::Write;
+
+                    write!(f, "{} {{", stringify!($type_name))?;
+                    f.write_str("sat_id:")?;
+                    self.sat_id.to_source(f)?;
+                    f.write_char(',')?;
+
+                    $(
+                        write!(f, "{}:", stringify!($field_name))?;
+                        self.$field_name.to_source(f)?;
+                        f.write_char(',')?;
+                    )+
+                    f.write_char('}')?;
+                    
+                    Ok(())
+                }
+            }
         }
     };
 }
@@ -419,7 +582,39 @@ macro_rules! msm_sig_frag {
                 )+
                 Ok(value)
             }
-            
+            #[cfg(feature = "test_gen")]
+            pub fn random<R:rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R, sig_len:usize) -> Result<(),()> {
+                $(
+                    for _ in 0..sig_len {
+                        if $frag_id::random(asm, rng).is_err() {
+                            return Err(());
+                        }
+                    }
+                )+
+                Ok(())
+            }
+            #[cfg(feature = "test_gen")]
+            impl $crate::source_repr::SourceRepr for $type_name {
+                fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result { 
+                    use core::fmt::Write;
+
+                    write!(f, "{} {{", stringify!($type_name))?;
+                    f.write_str("sat_id: ")?;
+                    self.sat_id.to_source(f)?;
+                    write!(f, ", sig_id: {}::", stringify!($gnss))?;
+                    self.sig_id.to_source(f)?;
+                    f.write_char(',')?;
+
+                    $(
+                        write!(f, "{}: ", stringify!($field_name))?;
+                        self.$field_name.to_source(f)?;
+                        f.write_char(',')?;
+                    )+
+                    f.write_char('}')?;
+
+                    Ok(())
+                }
+            }
         }
     };
 }

@@ -114,6 +114,34 @@ macro_rules! message {
 
                 Ok(&self.data[..data_len+6])
             }
+            #[cfg(feature = "test_gen")]
+            pub fn build_message_random<R: rand::Rng + ?Sized>(&mut self, rng:&mut R, message_number:u16) -> Result<&[u8],()> {
+                let mut asm = Assembler::new(&mut self.data[3..1026], 0);
+                asm.put::<U16>(message_number,12)?;                
+                
+                match message_number {
+                    $(
+                        #[cfg(feature = $feature)]
+                        $enum_pv => {
+                            $msg_id::random(&mut asm, rng)?;
+                        }
+                    )*
+                    _ => return Err(())
+                }
+                //encode data length
+                let data_len = asm.offset();
+                self.data[1] = (data_len >> 8) as u8;
+                self.data[2] = (data_len & 0xff) as u8;
+                //encode crc
+                let mut crc = CRC::crc24lte_a();
+                crc.digest(&self.data[..data_len+3]);
+                let crc = crc.get_crc();
+                self.data[data_len+3] = ((crc >> 16) & 0xff) as u8;
+                self.data[data_len+4] = ((crc >> 8) & 0xff) as u8;
+                self.data[data_len+5] = (crc & 0xff) as u8;
+
+                Ok(&self.data[..data_len+6])
+            }
         }
     };
 }

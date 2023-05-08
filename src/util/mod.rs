@@ -32,7 +32,31 @@ impl<const N: usize> Df88591String<N> {
     }
     pub fn push_char(&mut self, ch:char) {
         self.0.push(Df88591StringChars::<'_>::from_char(ch));
+    }
+    #[inline]
+    pub fn try_push(&mut self, ch: char) -> Result<(), ()> {        
+        if self.0.len() + 1 > self.0.capacity() {
+            return Err(());
+        }
+        self.0.push(Df88591StringChars::<'_>::from_char(ch));
+        Ok(())
     } 
+}
+impl<const N: usize> From<&str> for Df88591String<N> {
+    fn from(value: &str) -> Self {
+        value.chars().collect()
+    }
+}
+impl<const N: usize> FromIterator<char> for Df88591String<N> {
+    fn from_iter<I: IntoIterator<Item = char>>(iter: I) -> Df88591String<N> {
+        let mut buf = Df88591String::new();
+        for c in iter.into_iter() {
+            if buf.try_push(c).is_err() {
+                break;
+            }
+        }
+        buf
+    }
 }
 impl<const N: usize> Default for Df88591String<N> {
     fn default() -> Self {
@@ -118,6 +142,17 @@ impl<'de, const N:usize> Deserialize<'de> for Df88591String<N> {
         }
 
         deserializer.deserialize_str(Str88591Visitor::<N>)
+    }
+}
+
+#[cfg(feature="test_gen")]
+use crate::source_repr::SourceRepr;
+
+#[cfg(feature="test_gen")]
+impl<const N: usize> SourceRepr for Df88591String<N> {
+    fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        let s = self.chars().collect::<ArrayString<N>>();
+        write!(f, "Df88591String::<{}>::from(\"{}\")", N, s.as_ref())
     }
 }
 
