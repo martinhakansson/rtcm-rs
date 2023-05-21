@@ -134,7 +134,7 @@ macro_rules! frag_vec {
             }
             #[cfg(feature = "test_gen")]
             pub fn random<R:rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R, len: usize) -> Result<(),()> {
-                for _ in 0..len {
+                for _ in 0..(len % $cap_name) {
                     if $frag_id::random(asm, rng).is_err() {
                         return Err(());
                     }
@@ -301,22 +301,51 @@ macro_rules! msm_data_seg_frag {
                 let mut sat_mask:u64 = 0;
                 let mut sig_mask:u32 = 0;
                 let mut sat_num:usize = 0;
+                //let mut new_sat_num:usize = 0;
                 let mut sig_num:usize = 0;
+                //let mut new_sig_num:usize = 0;
                 for _ in 0..sig_len {
-                    let mut sat_id:u8 = (rng.gen::<u8>() % 64) + 1;
-                    let mut sig_id = random_id(rng);
-                    let slice = &cell_vec[..];
-                    while slice.contains(&(sat_id, sig_id)) {
+                    //let mut sat_id:u8 = (rng.gen::<u8>() % 64) + 1;
+                    //let mut sig_id = random_id(rng);
+                    //let slice = &cell_vec[..];
+                    /*
+                    while cell_vec.iter().any(|e| e.0 == sat_id && e.1 == sig_id) || new_sat_num * new_sig_num > 64 {
+                        new_sat_num = sat_num;
+                        new_sig_num = sig_num;
                         sat_id = (rng.gen::<u8>() % 64) + 1;
                         sig_id = random_id(rng);
+                        if (sat_mask & (1 << (64 - sat_id))) == 0 {
+                            new_sat_num = sat_num + 1;
+                        }
+                        if (sig_mask & (1 << (32 - sig_id))) == 0 {
+                            new_sig_num = sig_num + 1;
+                        }
                     }
+                     */                    
+                    let (sat_id, sig_id) = loop {
+                        let sat_id:u8 = (rng.gen::<u8>() % 64) + 1;
+                        let sig_id = random_id(rng);
+                        let new_sat_num = if (sat_mask & (1 << (64 - sat_id))) == 0 {
+                            sat_num + 1
+                        } else {
+                            sat_num
+                        };
+                        let new_sig_num = if (sig_mask & (1 << (32 - sig_id))) == 0 {
+                            sig_num + 1
+                        } else {
+                            sig_num
+                        };
+                        if !cell_vec.iter().any(|e| e.0 == sat_id && e.1 == sig_id) && new_sat_num*new_sig_num <= 64 {
+                            break (sat_id, sig_id);
+                        }
+                    };
                     cell_vec.push((sat_id, sig_id));
-                    let sat = 1 << (64 - sat_id);
+                    let sat:u64 = 1 << (64 - sat_id);
                     if (sat_mask & sat) == 0 {
                         sat_num += 1;
                     }
                     sat_mask |= sat;
-                    let sig = 1 << (32 - sig_id);
+                    let sig:u32 = 1 << (32 - sig_id);
                     if (sig_mask & sig) == 0 {
                         sig_num += 1;
                     }
@@ -341,8 +370,8 @@ macro_rules! msm_data_seg_frag {
                 }
                 let mut cell_mask:u64 = 0;
                 for (sat_id,sig_id) in cell_vec {
-                    let cell_indx = sat_indx[sat_id as usize -1]*sig_num + sig_indx[sig_id as usize - 1];
-                    let cell = 1 << (cell_cont_len-1-cell_indx);
+                    let cell_indx = sat_indx[sat_id as usize - 1]*sig_num + sig_indx[sig_id as usize - 1];
+                    let cell:u64 = 1 << (cell_cont_len-1-cell_indx);
                     if cell & cell_mask > 0 {
                         unreachable!();
                     }

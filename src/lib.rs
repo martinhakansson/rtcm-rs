@@ -23,7 +23,8 @@ pub use message_frame::MessageFrame;
 pub mod preamble {
     pub use crate::rtcm_error::RtcmError;
     pub use crate::{Message, MessageBuilder, MessageFrame, MsgFrameIter};
-
+    #[cfg(feature = "test_gen")]
+    pub use crate::source_repr::{SourceOutput,SourceRepr};
 }
 
 /// next_msg_frame takes a slice of bytes and returns a tuple containing the number of bytes consumed, and a `MessageFrame` if one was found.

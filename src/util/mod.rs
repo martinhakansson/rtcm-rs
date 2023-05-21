@@ -8,11 +8,11 @@ pub use data_vec::DataVec;
 #[cfg(feature = "serde")]
 use crate::{Serialize,Deserialize,Visitor};
 use array_string::ArrayString;
-use core::slice::Iter;
+use core::{slice::Iter, fmt::Write};
 
 
 
-#[derive(Clone, Debug)]
+#[derive(Clone)]
 //#[cfg_attr(feature="serde_derive",derive(Deserialize))] //Needs custom implementation
 pub struct Df88591String<const N: usize>(ArrayVec<[u8; N]>);
 impl<const N: usize> Df88591String<N> {
@@ -28,7 +28,7 @@ impl<const N: usize> Df88591String<N> {
         self.0.iter()
     }
     pub fn push(&mut self, val:u8) {
-        self.0.push(val);
+        self.0.push(if val == 0 { 0xa4 } else { val });
     }
     pub fn push_char(&mut self, ch:char) {
         self.0.push(Df88591StringChars::<'_>::from_char(ch));
@@ -61,6 +61,22 @@ impl<const N: usize> FromIterator<char> for Df88591String<N> {
 impl<const N: usize> Default for Df88591String<N> {
     fn default() -> Self {
         Df88591String::new()
+    }
+}
+impl<const N: usize> core::fmt::Display for Df88591String<N> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        use core::fmt::Write;
+        write!(f, "Df88591String<{}>(\"", N)?;
+        for c in self.chars() {
+            f.write_char(c)?;
+        }
+        f.write_str("\")")
+    }
+}
+impl<const N: usize> core::fmt::Debug for Df88591String<N> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        let val:ArrayVec<[char;N]> = self.0.iter().map(|v| Df88591StringChars::to_char(*v)).collect();
+        f.debug_tuple("Df88591String").field(&val).finish()
     }
 }
 

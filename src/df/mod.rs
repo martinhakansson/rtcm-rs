@@ -78,6 +78,7 @@ macro_rules! df {
             }
             #[cfg(feature = "test_gen")]
             pub fn random<R: rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R) -> Result<DataType,()> {
+                /*
                 let it_val = {
                     if rng.gen::<f32>() < 0.2f32 {
                         0u64 as <$it as BitValue>::ValueType
@@ -88,7 +89,8 @@ macro_rules! df {
                             rng.gen()
                         }
                     }
-                };
+                }; */
+                let it_val = rng.gen::<<$it as BitValue>::ValueType>() $( % ($cap + 1) )?;
                 asm.put::<$it>(it_val, $len)?;
                 let dt_val = it_val as $dt $( * $res )?;
                     $(
@@ -148,11 +150,14 @@ macro_rules! df_88591_string {
             }
             #[cfg(feature = "test_gen")]
             pub fn random<R: rand::Rng + ?Sized>(asm: &mut Assembler, rng:&mut R, len:usize) -> Result<(), ()> {
-                if len > $cap_id::CAP {
-                    return Err(());
-                }
+                
+                let mut value:DataType = Df88591String::new();
                 for _ in 0..len {
-                    if asm.put::<U8>(rng.gen(), 8).is_err() {
+                    let v = 48 + (rng.gen::<u8>() % 42);
+                    value.push(v);
+                }
+                for v in value.iter() {
+                    if asm.put::<U8>(*v, 8).is_err() {
                         return Err(());
                     }
                 }

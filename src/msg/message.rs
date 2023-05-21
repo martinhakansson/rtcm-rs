@@ -67,6 +67,32 @@ macro_rules! message {
         pub struct MsgNotSupportedT {
             pub message_number:u16,
         }
+
+        #[cfg(feature = "test_gen")]
+        impl $crate::source_repr::SourceRepr for Message {
+            fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                use core::fmt::Write;
+                match self {
+                    Message::Empty => {
+                        f.write_str("Message::Empty")
+                    },
+                    Message::Corrupt => {
+                        f.write_str("Message::Corrupt")
+                    },
+                    $(
+                        #[cfg(feature = $feature)]
+                        Message::$enum_v(msgt) => {
+                            write!(f, "Message::{}(", stringify!($enum_v))?;
+                            msgt.to_source(f)?;
+                            f.write_char(')')
+                        },
+                    )*
+                    Message::MsgNotSupported(msgt) => {
+                        write!(f, "Message::MsgNotSupported(MsgNotSupportedT{{ message_number:{} }})", msgt.message_number)
+                    },
+                }
+            }
+        }
         
         pub struct MessageBuilder {
             data:[u8;1029],
@@ -101,7 +127,7 @@ macro_rules! message {
                     },
                 }
                 //encode data length
-                let data_len = asm.offset();
+                let data_len = (asm.offset() - 1)/8 + 1;;
                 self.data[1] = (data_len >> 8) as u8;
                 self.data[2] = (data_len & 0xff) as u8;
                 //encode crc
@@ -129,7 +155,7 @@ macro_rules! message {
                     _ => return Err(())
                 }
                 //encode data length
-                let data_len = asm.offset();
+                let data_len = (asm.offset() - 1)/8 + 1;
                 self.data[1] = (data_len >> 8) as u8;
                 self.data[2] = (data_len & 0xff) as u8;
                 //encode crc

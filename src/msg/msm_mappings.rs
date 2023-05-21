@@ -84,7 +84,7 @@ pub mod gps {
     }
     #[cfg(feature = "test_gen")]
             pub fn random_id<R:rand::Rng + ?Sized>(rng:&mut R) -> u8 {
-                let mut id:u8 = rng.gen();
+                let mut id:u8 = (rng.gen::<u8>() % 32) + 1;
                 while to_sig(id).is_none() {
                     id = rng.gen();
                 }

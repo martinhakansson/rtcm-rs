@@ -88,7 +88,6 @@ impl<T:Default+Clone+SourceRepr, const N:usize> SourceRepr for DataVec<T, N> {
             f.write_str(");")?;
         }
         f.write_str("vec")?;
-        f.write_char('}')?;
-        todo!()
+        f.write_char('}')
     }
 }
