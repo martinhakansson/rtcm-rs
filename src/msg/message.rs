@@ -1,9 +1,9 @@
-use crate::message_frame::MessageFrame;
-use crate::df::{parser::Parser, assembler::Assembler};
 use crate::crc_any::CRC;
 use crate::df::bit_value::U16;
+use crate::df::{assembler::Assembler, parser::Parser};
+use crate::message_frame::MessageFrame;
 #[cfg(feature = "serde")]
-use sd::{Serialize,Deserialize};
+use sd::{Deserialize, Serialize};
 
 macro_rules! message {
     (
@@ -16,7 +16,7 @@ macro_rules! message {
         #[non_exhaustive]
         #[repr(u16)]
         #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
-        #[derive(Debug)]
+        #[derive(Debug,PartialEq)]
         pub enum Message {
             Empty = 5000,
             Corrupt = 6000,
@@ -41,8 +41,8 @@ macro_rules! message {
                             Message::$enum_v(value)
                         } else {
                             Message::Corrupt
-                        },    
-                    )*        
+                        },
+                    )*
                     _ => Message::MsgNotSupported(MsgNotSupportedT {
                         message_number
                     }),
@@ -63,7 +63,7 @@ macro_rules! message {
             }
         }
         #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
-        #[derive(Debug)]
+        #[derive(Debug,PartialEq)]
         pub struct MsgNotSupportedT {
             pub message_number:u16,
         }
@@ -93,7 +93,7 @@ macro_rules! message {
                 }
             }
         }
-        
+
         pub struct MessageBuilder {
             data:[u8;1029],
         }
@@ -114,7 +114,7 @@ macro_rules! message {
                 } else {
                     return Err(());
                 }
-                
+
                 match message {
                     $(
                         #[cfg(feature = $feature)]
@@ -127,7 +127,7 @@ macro_rules! message {
                     },
                 }
                 //encode data length
-                let data_len = (asm.offset() - 1)/8 + 1;;
+                let data_len = (asm.offset() - 1)/8 + 1;
                 self.data[1] = (data_len >> 8) as u8;
                 self.data[2] = (data_len & 0xff) as u8;
                 //encode crc
@@ -143,8 +143,8 @@ macro_rules! message {
             #[cfg(feature = "test_gen")]
             pub fn build_message_random<R: rand::Rng + ?Sized>(&mut self, rng:&mut R, message_number:u16) -> Result<&[u8],()> {
                 let mut asm = Assembler::new(&mut self.data[3..1026], 0);
-                asm.put::<U16>(message_number,12)?;                
-                
+                asm.put::<U16>(message_number,12)?;
+
                 match message_number {
                     $(
                         #[cfg(feature = $feature)]
@@ -172,7 +172,7 @@ macro_rules! message {
     };
 }
 
-message! (
+message!(
     "msg1001": Msg1001(msg1001) = 1001,
     "msg1005": Msg1005(msg1005) = 1005,
     "msg1007": Msg1007(msg1007) = 1007,

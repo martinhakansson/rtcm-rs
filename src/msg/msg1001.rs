@@ -10,7 +10,11 @@ msg! (
     ],
 );
 
-frag_vec!(id: msg1001_sat_vec, frag_id: msg1001_sat, cap_name: DF006_CAP,);
+frag_vec!(
+    id: msg1001_sat_vec,
+    frag_id: msg1001_sat,
+    cap_name: DF006_CAP,
+);
 
 msg!(
     id: msg1001,

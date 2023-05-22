@@ -1,4 +1,3 @@
-
 msm_sat_frag!(
     id: msm46_sat,
     type_name: Msm46Sat,

@@ -1,4 +1,3 @@
-
 use super::msm46_sat::*;
 
 msm_sig_frag!(
@@ -38,4 +37,3 @@ msg!(
         (data_segment, msg1074_data)
     ],
 );
-

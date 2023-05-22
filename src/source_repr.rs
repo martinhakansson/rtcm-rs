@@ -1,20 +1,20 @@
 use core::fmt::Display;
 
-pub struct SourceOutput<'a, S:SourceRepr> {
-    object: &'a S
+pub struct SourceOutput<'a, S: SourceRepr> {
+    object: &'a S,
 }
 
 pub trait SourceRepr {
     fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result;
 }
 
-impl<S:SourceRepr> Display for SourceOutput<'_, S> {
+impl<S: SourceRepr> Display for SourceOutput<'_, S> {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         self.object.to_source(f)
     }
 }
 
-impl<'a, S:SourceRepr> SourceOutput<'a, S> {
+impl<'a, S: SourceRepr> SourceOutput<'a, S> {
     pub fn new(object: &'a S) -> Self {
         SourceOutput { object }
     }

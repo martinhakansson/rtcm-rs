@@ -1,19 +1,15 @@
-
 use tinyvec::ArrayVec;
 
 mod array_string;
 mod data_vec;
 
-pub use data_vec::DataVec;
 #[cfg(feature = "serde")]
-use crate::{Serialize,Deserialize,Visitor};
+use crate::{Deserialize, Serialize, Visitor};
 use array_string::ArrayString;
-use core::{slice::Iter, fmt::Write};
+use core::{fmt::Write, slice::Iter};
+pub use data_vec::DataVec;
 
-
-
-#[derive(Clone)]
-//#[cfg_attr(feature="serde_derive",derive(Deserialize))] //Needs custom implementation
+#[derive(Clone, PartialEq)]
 pub struct Df88591String<const N: usize>(ArrayVec<[u8; N]>);
 impl<const N: usize> Df88591String<N> {
     pub fn new() -> Self {
@@ -24,23 +20,23 @@ impl<const N: usize> Df88591String<N> {
             iter: self.0.iter(),
         }
     }
-    pub fn iter(&self) -> Iter<'_,u8> {
+    pub fn iter(&self) -> Iter<'_, u8> {
         self.0.iter()
     }
-    pub fn push(&mut self, val:u8) {
+    pub fn push(&mut self, val: u8) {
         self.0.push(if val == 0 { 0xa4 } else { val });
     }
-    pub fn push_char(&mut self, ch:char) {
+    pub fn push_char(&mut self, ch: char) {
         self.0.push(Df88591StringChars::<'_>::from_char(ch));
     }
     #[inline]
-    pub fn try_push(&mut self, ch: char) -> Result<(), ()> {        
+    pub fn try_push(&mut self, ch: char) -> Result<(), ()> {
         if self.0.len() + 1 > self.0.capacity() {
             return Err(());
         }
         self.0.push(Df88591StringChars::<'_>::from_char(ch));
         Ok(())
-    } 
+    }
 }
 impl<const N: usize> From<&str> for Df88591String<N> {
     fn from(value: &str) -> Self {
@@ -75,7 +71,11 @@ impl<const N: usize> core::fmt::Display for Df88591String<N> {
 }
 impl<const N: usize> core::fmt::Debug for Df88591String<N> {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        let val:ArrayVec<[char;N]> = self.0.iter().map(|v| Df88591StringChars::to_char(*v)).collect();
+        let val: ArrayVec<[char; N]> = self
+            .0
+            .iter()
+            .map(|v| Df88591StringChars::to_char(*v))
+            .collect();
         f.debug_tuple("Df88591String").field(&val).finish()
     }
 }
@@ -122,26 +122,26 @@ impl<'a> Iterator for Df88591StringChars<'a> {
         (len, Some(len))
     }
 }
-#[cfg(feature="serde")]
-impl<const N:usize> Serialize for Df88591String<N> {
+#[cfg(feature = "serde")]
+impl<const N: usize> Serialize for Df88591String<N> {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
-        S: sd::Serializer {
+        S: sd::Serializer,
+    {
+        let value: ArrayString<N> = self.chars().collect();
 
-        let value:ArrayString<N> = self.chars().collect();
-        
         serializer.serialize_str(&value)
     }
 }
-#[cfg(feature="serde")]
-impl<'de, const N:usize> Deserialize<'de> for Df88591String<N> {
+#[cfg(feature = "serde")]
+impl<'de, const N: usize> Deserialize<'de> for Df88591String<N> {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
-        D: sd::Deserializer<'de> {
+        D: sd::Deserializer<'de>,
+    {
+        struct Str88591Visitor<const N: usize>;
 
-        struct Str88591Visitor<const N:usize>;
-
-        impl<'de, const N:usize> Visitor<'de> for Str88591Visitor<N> {
+        impl<'de, const N: usize> Visitor<'de> for Str88591Visitor<N> {
             type Value = Df88591String<N>;
 
             fn expecting(&self, formatter: &mut core::fmt::Formatter) -> core::fmt::Result {
@@ -161,10 +161,10 @@ impl<'de, const N:usize> Deserialize<'de> for Df88591String<N> {
     }
 }
 
-#[cfg(feature="test_gen")]
+#[cfg(feature = "test_gen")]
 use crate::source_repr::SourceRepr;
 
-#[cfg(feature="test_gen")]
+#[cfg(feature = "test_gen")]
 impl<const N: usize> SourceRepr for Df88591String<N> {
     fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         let s = self.chars().collect::<ArrayString<N>>();

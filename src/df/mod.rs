@@ -1,6 +1,5 @@
-
-pub mod bit_value;
 pub mod assembler;
+pub mod bit_value;
 pub mod parser;
 
 macro_rules! df {
@@ -18,16 +17,16 @@ macro_rules! df {
         pub mod $id {
             use $crate::df::bit_value::*;
             use $crate::df::{assembler::Assembler, parser::Parser};
-            
+
             pub mod export_types {
                 $(pub use super::$cap_name;)?
             }
-            
+
             $(
                 pub type DataType = $dt;
                 const _:<$it as BitValue>::ValueType = $ord;
-            )? 
-            $(                
+            )?
+            $(
                 pub type DataType = Option<$dt>;
                 const _:<$it as BitValue>::ValueType = $inv;
             )?
@@ -71,7 +70,7 @@ macro_rules! df {
                     $(
                         let _ = $ord;
                         return Ok(dt_val);
-                    )?                    
+                    )?
                 } else {
                     Err(())
                 }
@@ -120,11 +119,11 @@ macro_rules! df_88591_string {
     ) => {
         pub mod $id {
             use super::*;
+            use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
             use $crate::util::Df88591String;
-            use $crate::df::{assembler::Assembler, parser::Parser, bit_value::U8};
 
             pub mod export_types {}
-            
+
             pub type DataType = Df88591String<{ $cap_id::CAP }>;
             pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), ()> {
                 for v in value.iter() {
@@ -149,9 +148,12 @@ macro_rules! df_88591_string {
                 Ok(value)
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R: rand::Rng + ?Sized>(asm: &mut Assembler, rng:&mut R, len:usize) -> Result<(), ()> {
-                
-                let mut value:DataType = Df88591String::new();
+            pub fn random<R: rand::Rng + ?Sized>(
+                asm: &mut Assembler,
+                rng: &mut R,
+                len: usize,
+            ) -> Result<(), ()> {
+                let mut value: DataType = Df88591String::new();
                 for _ in 0..len {
                     let v = 48 + (rng.gen::<u8>() % 42);
                     value.push(v);

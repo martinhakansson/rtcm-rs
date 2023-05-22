@@ -1,4 +1,3 @@
-
 msg!(
     id: msg1008,
     type_name: Msg1008T,
