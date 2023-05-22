@@ -63,9 +63,9 @@ impl<'a> Assembler<'a> {
 
 #[cfg(test)]
 mod test_assembler {
-    use super::*;
     use super::super::parser::*;
-    use crate::df::{bit_value::*};
+    use super::*;
+    use crate::df::bit_value::*;
 
     #[test]
     fn test_put() {
@@ -78,19 +78,19 @@ mod test_assembler {
             0b11001100,
         ];
         // 1
-        let mut assembler = Assembler::new(&mut data,15);
+        let mut assembler = Assembler::new(&mut data, 15);
         assembler.put::<U16>(0b0101011110, 10).unwrap();
         let mut parser = Parser::new(&data, 15);
         let ext = parser.parse::<U16>(10).unwrap();
         assert_eq!(0b0101011110, ext);
         // 2
-        let mut assembler = Assembler::new(&mut data,13);
+        let mut assembler = Assembler::new(&mut data, 13);
         assembler.put::<U8>(0b10, 2).unwrap();
         let mut parser = Parser::new(&data, 13);
         let ext = parser.parse::<U8>(2).unwrap();
         assert_eq!(0b10, ext);
         // 3
-        let mut assembler = Assembler::new(&mut data,0);
+        let mut assembler = Assembler::new(&mut data, 0);
         assembler.put::<U16>(0b010101111011, 12).unwrap();
         let mut parser = Parser::new(&data, 0);
         let ext = parser.parse::<U16>(12).unwrap();
@@ -103,13 +103,17 @@ mod test_assembler {
         assert_eq!(0b110011, ext);
         // 5
         let mut assembler = Assembler::new(&mut data, 0);
-        assembler.put::<U64>(0b110110101001101000100110101000100001000011000101, 48).unwrap();
+        assembler
+            .put::<U64>(0b110110101001101000100110101000100001000011000101, 48)
+            .unwrap();
         let mut parser = Parser::new(&data, 0);
         let ext = parser.parse::<U64>(48).unwrap();
         assert_eq!(0b110110101001101000100110101000100001000011000101, ext);
         // 6
         let mut assembler = Assembler::new(&mut data, 4);
-        assembler.put::<U32>(0b11001101000000001111101010100011, 32).unwrap();
+        assembler
+            .put::<U32>(0b11001101000000001111101010100011, 32)
+            .unwrap();
         let mut parser = Parser::new(&data, 4);
         let ext = parser.parse::<U32>(32).unwrap();
         assert_eq!(0b11001101000000001111101010100011, ext);

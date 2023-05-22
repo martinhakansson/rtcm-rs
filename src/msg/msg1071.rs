@@ -1,13 +1,10 @@
-
 use super::msm123_sat::*;
 
 msm_sig_frag!(
     id: msg1071_sig,
     type_name: Msm1071Sig,
     gnss: gps,
-    fields: [
-        (gnss_signal_fine_pseudorange_ms,df400)
-    ],
+    fields: [(gnss_signal_fine_pseudorange_ms, df400)],
 );
 
 msm_data_seg_frag!(
@@ -35,4 +32,3 @@ msg!(
         (data_segment, msg1071_data)
     ],
 );
-

@@ -1,8 +1,7 @@
-
 macro_rules! sig_id_impl {
     ($type_name:ident) => {
         impl $type_name {
-            pub fn new(band:u8, attribute:char) -> $type_name {
+            pub fn new(band: u8, attribute: char) -> $type_name {
                 $type_name(band, attribute)
             }
             pub fn band(self) -> u8 {
@@ -15,18 +14,31 @@ macro_rules! sig_id_impl {
                 to_id(self).is_some()
             }
         }
+        #[cfg(feature = "test_gen")]
+        impl $crate::source_repr::SourceRepr for $type_name {
+            fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                use core::fmt::Write;
+                write!(f, "{}::new(", stringify!($type_name))?;
+                self.0.to_source(f)?;
+                f.write_char(',')?;
+                self.1.to_source(f)?;
+                f.write_char(')')?;
+
+                Ok(())
+            }
+        }
     };
 }
 
 pub mod gps {
     #[cfg(feature = "serde")]
-    use crate::{Serialize,Deserialize};
+    use crate::{Deserialize, Serialize};
     #[cfg(feature = "serde")]
     extern crate sd;
 
     #[derive(Clone, Copy, PartialEq, Eq, Default, Debug)]
-    #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
-    pub struct SigId(u8,char);
+    #[cfg_attr(feature = "serde", derive(Serialize, Deserialize), serde(crate = "sd"))]
+    pub struct SigId(u8, char);
 
     sig_id_impl!(SigId);
 
@@ -70,28 +82,36 @@ pub mod gps {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+    pub fn random_id<R: rand::Rng + ?Sized>(rng: &mut R) -> u8 {
+        let mut id: u8 = (rng.gen::<u8>() % 32) + 1;
+        while to_sig(id).is_none() {
+            id = rng.gen();
+        }
+        id
+    }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);
             let r = to_id(*other);
-            if let (Some(l), Some(r)) = (l,r) {
+            if let (Some(l), Some(r)) = (l, r) {
                 return l.partial_cmp(&r);
             } else {
                 None
-            }            
+            }
         }
     }
     impl core::cmp::Ord for SigId {
         fn cmp(&self, other: &Self) -> core::cmp::Ordering {
             let l = to_id(*self);
             let r = to_id(*other);
-            if let (Some(l), Some(r)) = (l,r) {
+            if let (Some(l), Some(r)) = (l, r) {
                 return l.cmp(&r);
             }
-            if let (None, Some(_)) = (l,r) {
+            if let (None, Some(_)) = (l, r) {
                 return core::cmp::Ordering::Greater;
             }
-            if let (Some(_),None) = (l,r) {
+            if let (Some(_), None) = (l, r) {
                 return core::cmp::Ordering::Less;
             }
             match self.0.cmp(&other.0) {
@@ -105,10 +125,10 @@ pub mod gps {
 
 pub mod glo {
     #[cfg(feature = "serde_derive")]
-    use crate::{Serialize,Deserialize};
+    use crate::{Deserialize, Serialize};
 
     #[derive(Clone, Copy, PartialEq, Default, Debug)]
-    #[cfg_attr(feature="serde_derive",derive(Serialize,Deserialize))]
+    #[cfg_attr(feature = "serde_derive", derive(Serialize, Deserialize))]
     pub struct SigId(u8, char);
 
     sig_id_impl!(SigId);
@@ -123,25 +143,33 @@ pub mod glo {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+    pub fn random_id<R: rand::Rng + ?Sized>(rng: &mut R) -> u8 {
+        let mut id: u8 = rng.gen();
+        while to_sig(id).is_none() {
+            id = rng.gen();
+        }
+        id
+    }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);
             let r = to_id(*other);
-            if let (Some(l), Some(r)) = (l,r) {
+            if let (Some(l), Some(r)) = (l, r) {
                 return l.partial_cmp(&r);
             } else {
                 None
-            }            
+            }
         }
     }
 }
 
 pub mod gal {
     #[cfg(feature = "serde_derive")]
-    use crate::{Serialize,Deserialize};
+    use crate::{Deserialize, Serialize};
 
     #[derive(Clone, Copy, PartialEq, Default, Debug)]
-    #[cfg_attr(feature="serde_derive",derive(Serialize,Deserialize))]
+    #[cfg_attr(feature = "serde_derive", derive(Serialize, Deserialize))]
     pub struct SigId(u8, char);
 
     sig_id_impl!(SigId);
@@ -156,25 +184,33 @@ pub mod gal {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+    pub fn random_id<R: rand::Rng + ?Sized>(rng: &mut R) -> u8 {
+        let mut id: u8 = rng.gen();
+        while to_sig(id).is_none() {
+            id = rng.gen();
+        }
+        id
+    }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);
             let r = to_id(*other);
-            if let (Some(l), Some(r)) = (l,r) {
+            if let (Some(l), Some(r)) = (l, r) {
                 return l.partial_cmp(&r);
             } else {
                 None
-            }            
+            }
         }
     }
 }
 
 pub mod bds {
     #[cfg(feature = "serde_derive")]
-    use crate::{Serialize,Deserialize};
+    use crate::{Deserialize, Serialize};
 
     #[derive(Clone, Copy, PartialEq, Default, Debug)]
-    #[cfg_attr(feature="serde_derive",derive(Serialize,Deserialize))]
+    #[cfg_attr(feature = "serde_derive", derive(Serialize, Deserialize))]
     pub struct SigId(u8, char);
 
     sig_id_impl!(SigId);
@@ -189,15 +225,23 @@ pub mod bds {
             _ => None,
         }
     }
+    #[cfg(feature = "test_gen")]
+    pub fn random_id<R: rand::Rng + ?Sized>(rng: &mut R) -> u8 {
+        let mut id: u8 = rng.gen();
+        while to_sig(id).is_none() {
+            id = rng.gen();
+        }
+        id
+    }
     impl core::cmp::PartialOrd for SigId {
         fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
             let l = to_id(*self);
             let r = to_id(*other);
-            if let (Some(l), Some(r)) = (l,r) {
+            if let (Some(l), Some(r)) = (l, r) {
                 return l.partial_cmp(&r);
             } else {
                 None
-            }            
+            }
         }
     }
 }

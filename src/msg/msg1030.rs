@@ -1,4 +1,3 @@
-
 msg! (
     id: msg1030_sat,
     type_name: Msg1030Sat,
@@ -12,7 +11,11 @@ msg! (
     ],
 );
 
-frag_vec!(id: msg1030_sat_vec, frag_id: msg1030_sat, cap_name: DF006_CAP,);
+frag_vec!(
+    id: msg1030_sat_vec,
+    frag_id: msg1030_sat,
+    cap_name: DF006_CAP,
+);
 
 msg!(
     id: msg1030,
