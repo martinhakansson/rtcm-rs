@@ -6,6 +6,10 @@
 //len - length, i.e. number of elements
 //ind - indicator, values with specific meaning
 //m - unit meter
+//mm - millimeter
+//ppm - part per million
+//s - second
+//ms - millisecond
 //str - some string
 //n - number of
 //dbhz - unit dBHz
