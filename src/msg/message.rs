@@ -96,20 +96,25 @@ macro_rules! message {
 
         pub struct MessageBuilder {
             data:[u8;1029],
+            has_run:bool,
         }
         #[cfg(feature = "test_gen")]
         use $crate::val_gen::ValGen;
 
         impl MessageBuilder {
             pub fn new() -> Self {
-                let mut data:[u8;1029] = [0;1029];
-                data[0] = 0xd3;
-                MessageBuilder {
-                    data,
-                }
+                let mut ret = MessageBuilder {
+                    data: [0;1029],
+                    has_run:false,
+                };
+                ret.data[0] = 0xd3;
+                ret
             }
-
             pub fn build_message(&mut self, message:&Message) -> Result<&[u8],()> {
+                if self.has_run {
+                    self.clear_data();
+                }
+                self.has_run = true;
                 let mut asm = Assembler::new(&mut self.data[3..1026], 0);
                 //encode message number into message
                 if let Some(number) = message.number() {
@@ -147,6 +152,10 @@ macro_rules! message {
             #[cfg(feature = "test_gen")]
             pub fn build_generated_message<FR,LR,RR>(&mut self, val_gen:&mut ValGen<FR,LR,RR>, message_number:u16) -> Result<&[u8],()>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
+                if self.has_run {
+                    self.clear_data();
+                }
+                self.has_run = true;
                 let mut asm = Assembler::new(&mut self.data[3..1026], 0);
                 asm.put::<U16>(message_number,12)?;
 
@@ -172,6 +181,11 @@ macro_rules! message {
                 self.data[data_len+5] = (crc & 0xff) as u8;
 
                 Ok(&self.data[..data_len+6])
+            }
+            fn clear_data(&mut self) {                
+                for d in self.data[1..].iter_mut() {
+                    *d = 0;
+                }                
             }
         }
     };
