@@ -94,12 +94,10 @@ macro_rules! msm_mappings {
             }
 
             #[cfg(feature = "test_gen")]
-            pub fn random_id<R: rand::Rng + ?Sized>(rng: &mut R) -> u8 {
-                let mut id: u8 = (rng.gen::<u8>() % 32) + 1;
-                while to_sig(id).is_none() {
-                    id = rng.gen();
-                }
-                id
+            pub fn random_id<R: rand::Rng + ?Sized>(rng: &mut R, subset:usize) -> u8 {
+                const IDS:&[u8] = &[ $($num),+ ];
+                let id_idx:usize = ((subset % 32) + (rng.gen::<usize>() % 8)) % IDS.len();
+                IDS[id_idx]
             }
             impl core::cmp::PartialOrd for SigId {
                 fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
@@ -201,7 +199,7 @@ msm_mappings!(
         14 => 7|'I',
         15 => 7|'Q',
         16 => 7|'X'
-        
+
     ]
 );
 
@@ -299,7 +297,7 @@ pub mod gps {
     }
 }
  */
-/* 
+/*
 pub mod glo {
     #[cfg(feature = "serde_derive")]
     use crate::{Deserialize, Serialize};

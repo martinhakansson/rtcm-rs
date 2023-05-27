@@ -9,6 +9,8 @@ use tinyvec;
 
 #[cfg(feature = "test_gen")]
 mod source_repr;
+#[cfg(feature = "test_gen")]
+pub mod val_gen;
 
 mod df;
 pub mod msg;

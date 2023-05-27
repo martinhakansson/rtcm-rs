@@ -63,11 +63,14 @@ macro_rules! msg {
                 })
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R: rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R) -> Result<(),()> {
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(),()>
+                where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
 
                 $(
                     #[allow(unused)]
-                    let $field_name = if let Ok(value) = $frag_id::random(asm, rng, $($len_data)? ) {
+                    let $field_name = if let Ok(value) = $frag_id::generate(asm, val_gen, $($len_data)? ) {
                         value
                     } else {
                         return Err(());
@@ -135,13 +138,16 @@ macro_rules! frag_vec {
                 Ok(value)
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R: rand::Rng + ?Sized>(
-                asm: &mut Assembler,
-                rng: &mut R,
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR,LR,RR>(
+                asm:&mut Assembler, 
+                val_gen:&mut ValGen<FR,LR,RR>,
                 len: usize,
-            ) -> Result<(), ()> {
-                for _ in 0..(len % $cap_name) {
-                    if $frag_id::random(asm, rng).is_err() {
+            ) -> Result<(), ()>
+            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
+                for _ in 0..len {
+                    if $frag_id::generate(asm, val_gen).is_err() {
                         return Err(());
                     }
                 }
@@ -300,11 +306,12 @@ macro_rules! msm_data_seg_frag {
                 }
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R: rand::Rng + ?Sized>(
-                asm: &mut Assembler,
-                rng: &mut R,
-            ) -> Result<(), ()> {
-                let sig_len: usize = (rng.gen::<usize>() % 64) + 1;
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(), ()>
+            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
+                let sig_len: usize = (val_gen.len_rng.gen::<usize>() % 64) + 1;
+                let subset: usize = val_gen.rng_rng.gen::<usize>();
                 let mut cell_vec: ArrayVec<[(u8, u8); 64]> = ArrayVec::new();
                 let mut sat_mask: u64 = 0;
                 let mut sig_mask: u32 = 0;
@@ -312,7 +319,7 @@ macro_rules! msm_data_seg_frag {
                 //let mut new_sat_num:usize = 0;
                 let mut sig_num: usize = 0;
                 //let mut new_sig_num:usize = 0;
-                for _ in 0..sig_len {
+                for i in 0..sig_len {
                     //let mut sat_id:u8 = (rng.gen::<u8>() % 64) + 1;
                     //let mut sig_id = random_id(rng);
                     //let slice = &cell_vec[..];
@@ -330,10 +337,12 @@ macro_rules! msm_data_seg_frag {
                         }
                     }
                      */
+                    //let (sat_id, sig_id) = (i as u8 +1, 2u8);
+                    
                     let (sat_id, sig_id) = loop {
-                        let sat_id: u8 = (rng.gen::<u8>() % 64) + 1;
-                        let sig_id = random_id(rng);
-                        let new_sat_num = if (sat_mask & (1 << (64 - sat_id))) == 0 {
+                        let sat_id: u8 = (((subset % 65) as u8 + (val_gen.rng_rng.gen::<u8>() % 8)) % 64) + 1;
+                        let sig_id = random_id(&mut val_gen.rng_rng, subset);
+                        /*let new_sat_num = if (sat_mask & (1 << (64 - sat_id))) == 0 {
                             sat_num + 1
                         } else {
                             sat_num
@@ -342,9 +351,9 @@ macro_rules! msm_data_seg_frag {
                             sig_num + 1
                         } else {
                             sig_num
-                        };
+                        };*/
                         if !cell_vec.iter().any(|e| e.0 == sat_id && e.1 == sig_id)
-                            && new_sat_num * new_sig_num <= 64
+                            //&& new_sat_num * new_sig_num <= 64
                         {
                             break (sat_id, sig_id);
                         }
@@ -397,10 +406,10 @@ macro_rules! msm_data_seg_frag {
                 if asm.put::<U64>(cell_mask, cell_cont_len).is_err() {
                     return Err(());
                 }
-                if $sat_id::random(asm, rng, sat_mask).is_err() {
+                if $sat_id::generate(asm, val_gen, sat_mask).is_err() {
                     return Err(());
                 }
-                if $sig_id::random(asm, rng, sig_len).is_err() {
+                if $sig_id::generate(asm, val_gen, sig_len).is_err() {
                     return Err(());
                 }
 
@@ -504,7 +513,10 @@ macro_rules! msm_sat_frag {
                 Ok(value)
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R:rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R, sat_mask:u64) -> Result<(),()> {
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sat_mask:u64) -> Result<(),()>
+            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
 
                 let mut sat_len:usize = 0;
                 for i in 0..64 {
@@ -514,7 +526,7 @@ macro_rules! msm_sat_frag {
                 }
                 $(
                     for _ in 0..sat_len {
-                        if $frag_id::random(asm, rng).is_err() {
+                        if $frag_id::generate(asm, val_gen).is_err() {
                             return Err(());
                         }
                     }
@@ -623,10 +635,13 @@ macro_rules! msm_sig_frag {
                 Ok(value)
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R:rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R, sig_len:usize) -> Result<(),()> {
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sig_len:usize) -> Result<(),()> 
+            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 $(
                     for _ in 0..sig_len {
-                        if $frag_id::random(asm, rng).is_err() {
+                        if $frag_id::generate(asm, val_gen).is_err() {
                             return Err(());
                         }
                     }

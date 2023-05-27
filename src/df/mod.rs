@@ -76,7 +76,11 @@ macro_rules! df {
                 }
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R: rand::Rng + ?Sized>(asm:&mut Assembler, rng:&mut R) -> Result<DataType,()> {
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            #[allow(unused)]
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<DataType,()> 
+                where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 /*
                 let it_val = {
                     if rng.gen::<f32>() < 0.2f32 {
@@ -89,7 +93,21 @@ macro_rules! df {
                         }
                     }
                 }; */
-                let it_val = rng.gen::<<$it as BitValue>::ValueType>() $( % ($cap + 1) )?;
+                #[allow(unused)]
+                let it_val:<$it as BitValue>::ValueType = if val_gen.field_rng.gen::<u64>() == u64::MAX {
+                    $(
+                        let _ = $ord;
+                        val_gen.field_rng.gen::<<$it as BitValue>::ValueType>()
+                    )?
+                    $(
+                        $inv
+                    )?
+                } else {
+                    val_gen.field_rng.gen::<<$it as BitValue>::ValueType>()
+                };
+                $(
+                    let it_val = val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap + 1);
+                )?
                 asm.put::<$it>(it_val, $len)?;
                 let dt_val = it_val as $dt $( * $res )?;
                     $(
@@ -148,14 +166,17 @@ macro_rules! df_88591_string {
                 Ok(value)
             }
             #[cfg(feature = "test_gen")]
-            pub fn random<R: rand::Rng + ?Sized>(
-                asm: &mut Assembler,
-                rng: &mut R,
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR,LR,RR>(
+                asm:&mut Assembler, 
+                val_gen:&mut ValGen<FR,LR,RR>,
                 len: usize,
-            ) -> Result<(), ()> {
+            ) -> Result<(), ()>
+            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 let mut value: DataType = Df88591String::new();
                 for _ in 0..len {
-                    let v = 48 + (rng.gen::<u8>() % 42);
+                    let v = 48 + (val_gen.field_rng.gen::<u8>() % 42);
                     value.push(v);
                 }
                 for v in value.iter() {

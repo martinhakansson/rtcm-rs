@@ -97,6 +97,9 @@ macro_rules! message {
         pub struct MessageBuilder {
             data:[u8;1029],
         }
+        #[cfg(feature = "test_gen")]
+        use $crate::val_gen::ValGen;
+
         impl MessageBuilder {
             pub fn new() -> Self {
                 let mut data:[u8;1029] = [0;1029];
@@ -140,8 +143,10 @@ macro_rules! message {
 
                 Ok(&self.data[..data_len+6])
             }
+            
             #[cfg(feature = "test_gen")]
-            pub fn build_message_random<R: rand::Rng + ?Sized>(&mut self, rng:&mut R, message_number:u16) -> Result<&[u8],()> {
+            pub fn build_generated_message<FR,LR,RR>(&mut self, val_gen:&mut ValGen<FR,LR,RR>, message_number:u16) -> Result<&[u8],()>
+            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 let mut asm = Assembler::new(&mut self.data[3..1026], 0);
                 asm.put::<U16>(message_number,12)?;
 
@@ -149,7 +154,7 @@ macro_rules! message {
                     $(
                         #[cfg(feature = $feature)]
                         $enum_pv => {
-                            $msg_id::random(&mut asm, rng)?;
+                            $msg_id::generate(&mut asm, val_gen)?;
                         }
                     )*
                     _ => return Err(())

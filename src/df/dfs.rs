@@ -147,11 +147,11 @@ df!(
 df!(
     id: df012,
     dt: f64,
-    it: U32,
+    it: I32,
     len: 20,
     res: 0.0005,
     round: true,
-    inv: 0x80000,
+    inv: -0x80000,
 );
 
 //DF013: GPS L1 Lock Time Indicator
