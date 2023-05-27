@@ -1,309 +1,353 @@
 Msg1001(
     Msg1001T {
-        reference_station_id: 1526,
-        gps_epoch_time_ms: 295073336,
+        reference_station_id: 0,
+        gps_epoch_time_ms: 0,
         synchronous_gnss_msg_flag: 0,
-        satellites_len: 27,
-        gps_divergence_free_smoothing_flag: 1,
-        gps_smoothing_interval_bitval: 6,
+        satellites_len: 31,
+        gps_divergence_free_smoothing_flag: 0,
+        gps_smoothing_interval_bitval: 0,
         satellites: DataVec(
             [
                 Msg1001Sat {
-                gps_satellite_id: 52,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    303577.18,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    437.947,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 104,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 25,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    264831.4,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    91.124,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 11,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 42,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    185310.64,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    415.5445,
-                ),
-                gps_l1_lock_time_bitval: 119,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 8,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    250425.4,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    2.8165,
-                ),
-                gps_l1_lock_time_bitval: 65,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 32,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    291464.04,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    54.951,
-                ),
-                gps_l1_lock_time_bitval: 83,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 20,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    199236.92,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    366.2665,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 75,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 19,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    93489.94,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    85.715,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 38,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 52,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    317435.26,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    476.17650000000003,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 10,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 15,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    104570.64,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    197.1935,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 119,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 6,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    52397.14,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    88.13550000000001,
-                ),
-                gps_l1_lock_time_bitval: 30,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 23,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    296623.18,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    509.677,
-                ),
-                gps_l1_lock_time_bitval: 22,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 57,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    173805.4,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    210.46800000000002,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 107,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 30,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    325767.42,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    176.0115,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 56,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 44,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    102515.68000000001,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    441.717,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 95,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 8,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    180431.18,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    328.7825,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 9,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 52,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    173147.9,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    150.5935,
-                ),
-                gps_l1_lock_time_bitval: 85,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 37,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    37848.98,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    260.829,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 46,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 29,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    31489.46,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    339.982,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 25,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 55,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    155090.34,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    110.203,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 96,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 60,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    164420.80000000002,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    57.5735,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 65,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 1,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    204825.7,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    364.9525,
-                ),
-                gps_l1_lock_time_bitval: 101,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 37,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    59752.4,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    298.5465,
-                ),
-                gps_l1_lock_time_bitval: 89,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 15,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    95478.22,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    255.106,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 86,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 20,
-                gps_l1_code_ind: 1,
-                gps_l1_pseudorange_m: Some(
-                    226545.94,
-                ),
-                gps_l1_phase_pseudorange_diff_m: Some(
-                    181.405,
-                ),
-                gps_l1_lock_time_bitval: 41,
-            },
-                Msg1001Sat {
-                gps_satellite_id: 25,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    324312.12,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    181.073,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 29,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 16,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    266119.06,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    284.3345,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 78,
+                gps_l1_lock_time_bitval: 0,
             },
                 Msg1001Sat {
-                gps_satellite_id: 32,
+                gps_satellite_id: 0,
                 gps_l1_code_ind: 0,
                 gps_l1_pseudorange_m: Some(
-                    311688.18,
+                    0.0,
                 ),
                 gps_l1_phase_pseudorange_diff_m: Some(
-                    6.6445,
+                    0.0,
                 ),
-                gps_l1_lock_time_bitval: 113,
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
+            },
+                Msg1001Sat {
+                gps_satellite_id: 0,
+                gps_l1_code_ind: 0,
+                gps_l1_pseudorange_m: Some(
+                    0.0,
+                ),
+                gps_l1_phase_pseudorange_diff_m: Some(
+                    0.0,
+                ),
+                gps_l1_lock_time_bitval: 0,
             },
             ],
         ),
