@@ -168,9 +168,6 @@ df!(
     ord: 0,
 );
 
-//DF021: Reserved for ITRF Realization year
-//field_name: reserved_itrf_real_year
-
 //DF022: GPS Indicator
 //field_name: gps_flag
 df!(

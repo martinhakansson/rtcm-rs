@@ -4,10 +4,10 @@ msg!(
     fields: [
         //(message_number, df002),
         (reference_station_id, df003),
-        (reserved_itrf_real_year, df001_6bits),
+        (reserved_24_6, df001_6bits),
         (gps_flag, df022),
         (glonass_flag, df023),
-        (galileo_flag, df024), //is it still reserved?, then change name to reserved galileo flag
+        (galileo_flag, df024),
         (reference_station_ind, df141),
         (antenna_ref_point_ecef_x_m, df025),
         (single_receiver_osc_ind, df142),
