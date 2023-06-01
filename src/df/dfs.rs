@@ -463,7 +463,7 @@ df!(
 );
 
 //DF409: IODS issue of data station
-//field_name: reserved_issue_of_data_station
+//field_name: issue_of_data_station
 df!(
     id: df409,
     dt: u8,

@@ -23,7 +23,7 @@ msg!(
         (reference_station_id, df003),
         (gps_epoch_time_ms, df004),
         (msm_multiple_message_flag, df393),
-        (reserved_issue_of_data_station, df409), //check in latest version if this still is reserved
+        (issue_of_data_station, df409),
         (reserved_58_7, df001_7bits),
         (clock_steering_ind, df411),
         (external_clock_ind, df412),
