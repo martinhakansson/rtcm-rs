@@ -193,8 +193,8 @@ macro_rules! msm_data_seg_frag {
             pub fn encode(asm: &mut Assembler, value: &$type_name) -> Result<(), ()> {
                 let mut sat_mask: u64 = 0;
                 for s in value.sat_data.iter() {
-                    if s.sat_id > 0 && s.sat_id <= 64 {
-                        let sat: u64 = 1 << (64 - s.sat_id);
+                    if s.rtcm_sat_id > 0 && s.rtcm_sat_id <= 64 {
+                        let sat: u64 = 1 << (64 - s.rtcm_sat_id);
                         if sat & sat_mask > 0 {
                             return Err(());
                         }
@@ -207,8 +207,8 @@ macro_rules! msm_data_seg_frag {
                 let mut sat_sig_mask: u64 = 0;
                 let mut cell_vec: ArrayVec<[(u8, u8); 64]> = ArrayVec::new();
                 for s in value.sig_data.iter() {
-                    let sat_id = if s.sat_id > 0 && s.sat_id <= 64 {
-                        s.sat_id
+                    let sat_id = if s.rtcm_sat_id > 0 && s.rtcm_sat_id <= 64 {
+                        s.rtcm_sat_id
                     } else {
                         return Err(());
                     };
@@ -319,7 +319,7 @@ macro_rules! msm_data_seg_frag {
                 //let mut new_sat_num:usize = 0;
                 let mut sig_num: usize = 0;
                 //let mut new_sig_num:usize = 0;
-                for i in 0..sig_len {
+                for _ in 0..sig_len {
                     //let mut sat_id:u8 = (rng.gen::<u8>() % 64) + 1;
                     //let mut sig_id = random_id(rng);
                     //let slice = &cell_vec[..];
@@ -474,14 +474,14 @@ macro_rules! msm_sat_frag {
             #[derive(Default,Clone, Debug, PartialEq)]
             #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
             pub struct $type_name {
-                pub sat_id: u8,
+                pub rtcm_sat_id: u8,
                 $(pub $field_name:$frag_id::DataType),+
             }
             pub type DataType = DataVec<$type_name,64>;
             pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),()> {
                 let mut value = value.clone();
                 let slice = value.as_mut_slice();
-                slice.sort_unstable_by(|a,b| a.sat_id.cmp(&b.sat_id));
+                slice.sort_unstable_by(|a,b| a.rtcm_sat_id.cmp(&b.rtcm_sat_id));
                 $(
                     for v in value.iter() {
                         if $frag_id::encode(asm, &v.$field_name).is_err() {
@@ -498,7 +498,7 @@ macro_rules! msm_sat_frag {
                     let mut iter = value.iter_mut();
                     for s in sat_vec {
                         let v = iter.next().unwrap();
-                        v.sat_id = *s;
+                        v.rtcm_sat_id = *s;
                     }
                 }
                 $(
@@ -541,7 +541,7 @@ macro_rules! msm_sat_frag {
 
                     write!(f, "{} {{", stringify!($type_name))?;
                     f.write_str("sat_id:")?;
-                    self.sat_id.to_source(f)?;
+                    self.rtcm_sat_id.to_source(f)?;
                     f.write_char(',')?;
 
                     $(
@@ -584,7 +584,7 @@ macro_rules! msm_sig_frag {
             #[derive(Default, Clone, Debug, PartialEq)]
             #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
             pub struct $type_name {
-                pub sat_id:u8,
+                pub rtcm_sat_id:u8,
                 pub sig_id:SigId,
                 $(pub $field_name:$frag_id::DataType),+
             }
@@ -593,7 +593,7 @@ macro_rules! msm_sig_frag {
                 let mut value = value.clone();
                 let slice = value.as_mut_slice();
                 slice.sort_unstable_by(|a,b| {
-                    match a.sat_id.cmp(&b.sat_id) {
+                    match a.rtcm_sat_id.cmp(&b.rtcm_sat_id) {
                         core::cmp::Ordering::Less => core::cmp::Ordering::Less,
                         core::cmp::Ordering::Equal => a.sig_id.cmp(&b.sig_id),
                         core::cmp::Ordering::Greater => core::cmp::Ordering::Greater,
@@ -615,7 +615,7 @@ macro_rules! msm_sig_frag {
                     let mut iter = value.iter_mut();
                     for cv in cell_vec {
                         let v = iter.next().unwrap();
-                        v.sat_id = cv.0;
+                        v.rtcm_sat_id = cv.0;
                         v.sig_id = if let Some(v) = to_sig(cv.1) {
                             v
                         } else {
@@ -655,7 +655,7 @@ macro_rules! msm_sig_frag {
 
                     write!(f, "{} {{", stringify!($type_name))?;
                     f.write_str("sat_id: ")?;
-                    self.sat_id.to_source(f)?;
+                    self.rtcm_sat_id.to_source(f)?;
                     write!(f, ", sig_id: {}::", stringify!($gnss))?;
                     self.sig_id.to_source(f)?;
                     f.write_char(',')?;
