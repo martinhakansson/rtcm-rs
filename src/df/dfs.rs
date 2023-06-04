@@ -427,7 +427,7 @@ df!(
     len: 15,
     res: 1.0 / (16.0 * 1024.0 * 1024.0),
     round: true,
-    inv: 0x4000,
+    inv: -0x4000,
 );
 
 //DF401: GNSS Signal fine phaserange
@@ -439,7 +439,7 @@ df!(
     len: 22,
     res: 1.0 / (512.0 * 1024.0 * 1024.0),
     round: true,
-    inv: 0x200000,
+    inv: -0x200000,
 );
 
 //DF402: GNSS Phaserange Lock Time Indicator
