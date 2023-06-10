@@ -1,0 +1,14 @@
+Msg1007(
+    Msg1007T {
+        reference_station_id: 1795,
+        antenna_desc_char_len: 3,
+        antenna_descriptor_str: Df88591String(
+            [
+                '9',
+                'H',
+                '<',
+            ],
+        ),
+        antenna_setup_id: 112,
+    },
+)
