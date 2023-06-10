@@ -7,6 +7,7 @@ macro_rules! test_msg {
                 use rtcm3::preamble::*;
                 use rtcm3::msg::*;
                 use rtcm3::util::*;
+                use rtcm3::msg::msm_mappings::*;
                 #[test]
                 fn test_encode() {
                     let msg = include!(concat!("../testdata/",stringify!($test_id),".in"));

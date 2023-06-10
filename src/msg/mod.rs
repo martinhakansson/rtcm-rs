@@ -3,7 +3,10 @@ use tinyvec::ArrayVec;
 //use crate::df::{assembler::Assembler, parser::Parser};
 
 pub mod message;
+#[cfg(not(feature= "test_gen"))]
 mod msm_mappings;
+#[cfg(feature= "test_gen")]
+pub mod msm_mappings;
 
 pub use msm_mappings::bds::SigId as BdsSigId;
 pub use msm_mappings::gal::SigId as GalSigId;
