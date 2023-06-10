@@ -95,7 +95,7 @@ impl Df88591StringChars<'_> {
     }
     fn from_char(ch: char) -> u8 {
         let code = ch as u32;
-        if (code & !0x7f) == 0x80 {
+        if code > 0 && code < 256 {
             code as u8
         } else {
             0xa4
