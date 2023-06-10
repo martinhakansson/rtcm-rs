@@ -1,0 +1,81 @@
+Msg1071(
+    Msg1071T {
+        reference_station_id: 3109,
+        gps_epoch_time_ms: 899430441,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            1,
+        ),
+        reserved_58_7: 40,
+        clock_steering_ind: 3,
+        external_clock_ind: 0,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 1,
+        data_segment: Msg1071Data {
+            sat_data: DataVec(
+                [
+                    Msm123Sat {
+                    sat_id: 22,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1943359375,
+                },
+                    Msm123Sat {
+                    sat_id: 23,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.5888671875,
+                },
+                    Msm123Sat {
+                    sat_id: 24,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.25,
+                },
+                    Msm123Sat {
+                    sat_id: 29,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.4716796875,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msm1071Sig {
+                    sat_id: 22,
+                    sig_id: SigId(
+                        2,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0007889270782470703,
+                    ),
+                },
+                    Msm1071Sig {
+                    sat_id: 23,
+                    sig_id: SigId(
+                        5,
+                        'Q',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0006999969482421875,
+                    ),
+                },
+                    Msm1071Sig {
+                    sat_id: 24,
+                    sig_id: SigId(
+                        2,
+                        'S',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -7.62939453125e-6,
+                    ),
+                },
+                    Msm1071Sig {
+                    sat_id: 29,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0004169344902038574,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

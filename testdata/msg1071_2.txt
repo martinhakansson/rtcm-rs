@@ -1,0 +1,39 @@
+Msg1071(
+    Msg1071T {
+        reference_station_id: 683,
+        gps_epoch_time_ms: 15411205,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            1,
+        ),
+        reserved_58_7: 85,
+        clock_steering_ind: 1,
+        external_clock_ind: 0,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 0,
+        data_segment: Msg1071Data {
+            sat_data: DataVec(
+                [
+                    Msm123Sat {
+                    sat_id: 57,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.486328125,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msm1071Sig {
+                    sat_id: 57,
+                    sig_id: SigId(
+                        1,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0004627108573913574,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)
