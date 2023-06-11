@@ -22,7 +22,7 @@ pub use msg::message::{Message, MessageBuilder};
 mod message_frame;
 pub use message_frame::MessageFrame;
 
-pub mod preamble {
+pub mod prelude {
     pub use crate::rtcm_error::RtcmError;
     #[cfg(feature = "test_gen")]
     pub use crate::source_repr::{SourceOutput, SourceRepr};

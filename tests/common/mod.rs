@@ -4,7 +4,7 @@ macro_rules! test_msg {
     ] => {
         $(
             mod $test_id {
-                use rtcm_rs::preamble::*;
+                use rtcm_rs::prelude::*;
                 use rtcm_rs::msg::*;
                 use rtcm_rs::util::*;
                 use rtcm_rs::msg::msm_mappings::*;
