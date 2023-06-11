@@ -1,5 +1,5 @@
 [package]
-name = "rtcm3"
+name = "rtcm-rs"
 version = "0.1.0"
 authors = ["Martin Håkansson <martinhakansson@yahoo.com>"]
 categories = ["encoding", "no-std"]

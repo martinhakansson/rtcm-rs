@@ -4,10 +4,10 @@ macro_rules! test_msg {
     ] => {
         $(
             mod $test_id {
-                use rtcm3::preamble::*;
-                use rtcm3::msg::*;
-                use rtcm3::util::*;
-                use rtcm3::msg::msm_mappings::*;
+                use rtcm_rs::preamble::*;
+                use rtcm_rs::msg::*;
+                use rtcm_rs::util::*;
+                use rtcm_rs::msg::msm_mappings::*;
                 #[test]
                 fn test_encode() {
                     let msg = include!(concat!("../testdata/",stringify!($test_id),".in"));
