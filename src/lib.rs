@@ -42,7 +42,7 @@ pub fn next_msg_frame(data: &[u8]) -> (usize, Option<MessageFrame>) {
     for (i, b) in data.iter().enumerate() {
         if *b == 0xd3 {
             match MessageFrame::new(&data[i..]) {
-                Ok(m) => return (i + 1 + m.frame_len(), Some(m)),
+                Ok(m) => return (i + m.frame_len(), Some(m)),
                 Err(rtcm_error::RtcmError::Incomplete) => return (i, None),
                 Err(rtcm_error::RtcmError::NotValid) => {
                     continue;
