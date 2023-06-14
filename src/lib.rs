@@ -1,3 +1,78 @@
+//! # rtcm-rs
+//!
+//! `rtcm-rs` is a Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x.
+//! This library aims to provide an efficient, safe, and easy-to-use way to handle RTCM messages. Currently, the library
+//! supports a subset of the RTCM standard's messages, but we're working to extend the support to all messages.
+//!
+//! This library uses `#[forbid(unsafe_code)]` attribute, ensuring that all operations are safe from undefined behavior,
+//! data races, and many common bugs. Therefore, you can rely on `rtcm-rs` for not only its functionality but also its commitment to safety.
+//!
+//! The library also provides support for `serde`, a powerful serialization and deserialization framework, allowing users to convert RTCM
+//! messages into various formats such as JSON, XML and more. Furthermore, `rtcm-rs` is `no_std` compatible and doesn't rely
+//! on dynamic memory allocations, which makes it suitable for use in embedded systems.
+//!
+//! Here are some examples of how you can use `rtcm-rs`:
+//!
+//! ## Decoding a RTCM message
+//! ```no_run
+//! use rtcm_rs::prelude::*;
+//! use std::io::Read;
+//!
+//! # fn main() {
+//! let mut rtcm_file = std::fs::File::open("testdata/msg1001_3.rtcm").unwrap();
+//! let mut buffer = Vec::<u8>::new();
+//! rtcm_file.read_to_end(&mut buffer).unwrap();
+//!
+//! if let (_, Some(message_frame)) = next_msg_frame(buffer.as_slice()) {
+//!     let msg = message_frame.get_message();
+//!     println!("{:?}", msg);
+//! }
+//! # }
+//! ```
+//!
+//! ## Encoding a RTCM message
+//! ```no_run
+//! use rtcm_rs::prelude::*;
+//! use rtcm_rs::msg::{Msg1001T, Msg1001Sat};
+//! use rtcm_rs::util::DataVec;
+//!
+//! # fn main() {
+//! let mut message_builder = MessageBuilder::new();
+//!
+//! let result = message_builder.build_message(
+//!     &Message::Msg1001(
+//!         Msg1001T {
+//!             reference_station_id: 100,
+//!             gps_epoch_time_ms: 0,
+//!             synchronous_gnss_msg_flag: 0,
+//!             satellites_len: 2,
+//!             gps_divergence_free_smoothing_flag: 0,
+//!             gps_smoothing_interval_bitval: 0,
+//!             satellites:  {
+//!                 let mut satellites = DataVec::new();
+//!                 satellites.push(Msg1001Sat {
+//!                     gps_satellite_id: 20,
+//!                     gps_l1_code_ind: 0,
+//!                     gps_l1_pseudorange_m: Some(20000000.0),
+//!                     gps_l1_phase_pseudorange_diff_m: Some(0.2),
+//!                     gps_l1_lock_time_bitval: 0 });
+//!                 satellites.push(Msg1001Sat {
+//!                     gps_satellite_id: 21,
+//!                     gps_l1_code_ind: 0,
+//!                     gps_l1_pseudorange_m: Some(26000000.0),
+//!                     gps_l1_phase_pseudorange_diff_m: Some(0.4),
+//!                     gps_l1_lock_time_bitval: 0 });
+//!                 satellites
+//!             }}));
+//!
+//! if let Ok(bytes) = result {
+//!     println!("Encoded message: {:?}", bytes);
+//! }
+//! # }
+//! ```
+//!
+//! For a full list of features and capabilities, see the [README](https://github.com/martinhakansson/rtcm-rs/blob/master/README.md).
+
 #![no_std]
 #![forbid(unsafe_code)]
 //use message::{Message, MessageBuilder};
