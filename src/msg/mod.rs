@@ -741,33 +741,50 @@ fn cell_mask_id_vec(
 mod msm123_sat;
 mod msm46_sat;
 
-#[cfg(feature = "msg1001")]
-mod msg1001;
-pub use msg1001::msg1001::export_types::*;
+macro_rules! include_msg {
+    ($msg:ident, $feature:literal) => {
+        #[cfg(feature = $feature)]
+        mod $msg;
+        #[cfg(feature = $feature)]
+        pub use $msg::$msg::export_types::*;
+    };
+}
 
-#[cfg(feature = "msg1005")]
-mod msg1005;
-pub use msg1005::msg1005::export_types::*;
+include_msg!(msg1001, "msg1001");
+include_msg!(msg1005, "msg1005");
+include_msg!(msg1007, "msg1007");
+include_msg!(msg1008, "msg1008");
+include_msg!(msg1030, "msg1030");
+include_msg!(msg1071, "msg1071");
+include_msg!(msg1074, "msg1074");
 
-#[cfg(feature = "msg1007")]
-mod msg1007;
-pub use msg1007::msg1007::export_types::*;
+//#[cfg(feature = "msg1001")]
+//mod msg1001;
+//pub use msg1001::msg1001::export_types::*;
 
-#[cfg(feature = "msg1008")]
-mod msg1008;
-pub use msg1008::msg1008::export_types::*;
+//#[cfg(feature = "msg1005")]
+//mod msg1005;
+//pub use msg1005::msg1005::export_types::*;
 
-#[cfg(feature = "msg1030")]
-mod msg1030;
-pub use msg1030::msg1030::export_types::*;
+// #[cfg(feature = "msg1007")]
+// mod msg1007;
+// pub use msg1007::msg1007::export_types::*;
 
-#[cfg(feature = "msg1071")]
-mod msg1071;
-pub use msg1071::msg1071::export_types::*;
+// #[cfg(feature = "msg1008")]
+// mod msg1008;
+// pub use msg1008::msg1008::export_types::*;
 
-#[cfg(feature = "msg1074")]
-mod msg1074;
-pub use msg1074::msg1074::export_types::*;
+// #[cfg(feature = "msg1030")]
+// mod msg1030;
+// pub use msg1030::msg1030::export_types::*;
+
+// #[cfg(feature = "msg1071")]
+// mod msg1071;
+// pub use msg1071::msg1071::export_types::*;
+
+// #[cfg(feature = "msg1074")]
+// mod msg1074;
+// pub use msg1074::msg1074::export_types::*;
 
 // pub_msg!(
 //     id:msg1001,
