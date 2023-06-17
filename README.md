@@ -46,7 +46,7 @@ Here are some examples of how to decode and encode RTCM messages using this libr
 ### Basic RTCM message decoding
 
 ```rust
-use rtcm_rs::preamble::*;
+use rtcm_rs::prelude::*;
 use std::io::Read;
 
 fn main() {
