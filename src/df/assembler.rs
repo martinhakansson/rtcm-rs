@@ -1,4 +1,5 @@
 use crate::df::bit_value::BitValue;
+use crate::rtcm_error::RtcmError;
 
 pub struct Assembler<'a> {
     data: &'a mut [u8],
@@ -17,9 +18,9 @@ impl<'a> Assembler<'a> {
         &mut self,
         value: <IT as BitValue>::ValueType,
         len: usize,
-    ) -> Result<(), ()> {
+    ) -> Result<(), RtcmError> {
         if self.data.len() * 8 < self.offset + len {
-            Err(())
+            Err(RtcmError::BufferOverflow)
         } else {
             let value = <IT as BitValue>::sign_fix_rev(value, len);
             let lh_st = self.offset % 8;

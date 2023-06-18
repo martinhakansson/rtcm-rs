@@ -2,6 +2,7 @@ use crate::crc_any::CRC;
 use crate::df::bit_value::U16;
 use crate::df::{assembler::Assembler, parser::Parser};
 use crate::message_frame::MessageFrame;
+use crate::rtcm_error::RtcmError;
 #[cfg(feature = "serde")]
 use sd::{Deserialize, Serialize};
 
@@ -110,7 +111,7 @@ macro_rules! message {
                 ret.data[0] = 0xd3;
                 ret
             }
-            pub fn build_message(&mut self, message:&Message) -> Result<&[u8],()> {
+            pub fn build_message(&mut self, message:&Message) -> Result<&[u8],RtcmError> {
                 if self.has_run {
                     self.clear_data();
                 }
@@ -120,7 +121,7 @@ macro_rules! message {
                 if let Some(number) = message.number() {
                     asm.put::<U16>(number,12)?;
                 } else {
-                    return Err(());
+                    return Err(RtcmError::EncodingNotSupported);
                 }
 
                 match message {
@@ -150,7 +151,7 @@ macro_rules! message {
             }
             
             #[cfg(feature = "test_gen")]
-            pub fn build_generated_message<FR,LR,RR>(&mut self, val_gen:&mut ValGen<FR,LR,RR>, message_number:u16) -> Result<&[u8],()>
+            pub fn build_generated_message<FR,LR,RR>(&mut self, val_gen:&mut ValGen<FR,LR,RR>, message_number:u16) -> Result<&[u8],RtcmError>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 if self.has_run {
                     self.clear_data();
@@ -166,7 +167,7 @@ macro_rules! message {
                             $msg_id::generate(&mut asm, val_gen)?;
                         }
                     )*
-                    _ => return Err(())
+                    _ => return Err(RtcmError::EncodingNotSupported)
                 }
                 //encode data length
                 let data_len = (asm.offset() - 1)/8 + 1;

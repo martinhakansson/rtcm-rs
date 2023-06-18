@@ -22,6 +22,7 @@ macro_rules! msg {
         pub mod $id {
             use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::df::dfs::*;
+            use $crate::rtcm_error::RtcmError;
             #[cfg(feature = "serde")]
             use $crate::{Serialize,Deserialize};
             #[cfg(feature = "test_gen")]
@@ -41,22 +42,25 @@ macro_rules! msg {
                 $(pub $field_name:$frag_id::DataType),+
             }
             pub type DataType = $type_name;
-            pub fn encode(asm:&mut Assembler, value:&$type_name) -> Result<(),()> {
+            pub fn encode(asm:&mut Assembler, value:&$type_name) -> Result<(),RtcmError> {
                 $(
-                    if $frag_id::encode(asm, &value.$field_name).is_err() {
-                        return Err(());
-                    }
+                    $frag_id::encode(asm, &value.$field_name)?;
+                    // if $frag_id::encode(asm, &value.$field_name).is_err() {
+                    //     return Err(());
+                    // }
                 )+
                 Ok(())
             }
-            pub fn decode(par:&mut Parser) -> Result<$type_name,()> {
+            pub fn decode(par:&mut Parser) -> Result<$type_name,RtcmError> {
                 $(
                     #[allow(unused)]
-                    let $field_name = if let Ok(value) = $frag_id::decode(par, $($len_data)? ) {
-                        value
-                    } else {
-                        return Err(());
-                    };
+                    let $field_name = $frag_id::decode(par, $($len_data)? )?;
+                    // #[allow(unused)]
+                    // let $field_name = if let Ok(value) = $frag_id::decode(par, $($len_data)? ) {
+                    //     value
+                    // } else {
+                    //     return Err(());
+                    // };
                 )+
 
                 Ok($type_name {
@@ -68,16 +72,18 @@ macro_rules! msg {
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(),()>
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(),RtcmError>
                 where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
 
                 $(
                     #[allow(unused)]
-                    let $field_name = if let Ok(value) = $frag_id::generate(asm, val_gen, $($len_data)? ) {
-                        value
-                    } else {
-                        return Err(());
-                    };
+                    let $field_name = $frag_id::generate(asm, val_gen, $($len_data)? )?;
+                    #[allow(unused)]
+                    // let $field_name = if let Ok(value) = $frag_id::generate(asm, val_gen, $($len_data)? ) {
+                    //     value
+                    // } else {
+                    //     return Err(());
+                    // };
                 )+
                 Ok(())
             }
@@ -110,6 +116,7 @@ macro_rules! frag_vec {
             use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::msg::*;
             use $crate::util::DataVec;
+            use $crate::rtcm_error::RtcmError;
             //pub type DataType = ArrayVec<[$frag_id::DataType; $cap_id::CAP]>;
 
             pub mod export_types {
@@ -117,25 +124,27 @@ macro_rules! frag_vec {
             }
 
             pub type DataType = DataVec<$frag_id::DataType, $cap_name>;
-            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), ()> {
+            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
                 for v in value.iter() {
-                    if $frag_id::encode(asm, v).is_err() {
-                        return Err(());
-                    }
+                    $frag_id::encode(asm, v)?;
+                    // if $frag_id::encode(asm, v).is_err() {
+                    //     return Err(());
+                    // }
                 }
                 Ok(())
             }
-            pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, ()> {
+            pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, RtcmError> {
                 if len > $cap_name {
-                    return Err(());
+                    return Err(RtcmError::CapacityExceeded);
                 }
                 let mut value = DataVec::new();
                 for _ in 0..len {
-                    let v = if let Ok(v) = $frag_id::decode(par) {
-                        v
-                    } else {
-                        return Err(());
-                    };
+                    let v = $frag_id::decode(par)?;
+                    // let v = if let Ok(v) = $frag_id::decode(par) {
+                    //     v
+                    // } else {
+                    //     return Err(());
+                    // };
                     value.push(v);
                 }
                 Ok(value)
@@ -147,12 +156,13 @@ macro_rules! frag_vec {
                 asm:&mut Assembler, 
                 val_gen:&mut ValGen<FR,LR,RR>,
                 len: usize,
-            ) -> Result<(), ()>
+            ) -> Result<(), RtcmError>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 for _ in 0..len {
-                    if $frag_id::generate(asm, val_gen).is_err() {
-                        return Err(());
-                    }
+                    $frag_id::generate(asm, val_gen)?;
+                    // if $frag_id::generate(asm, val_gen).is_err() {
+                    //     return Err(());
+                    // }
                 }
                 Ok(())
             }
@@ -172,6 +182,7 @@ macro_rules! msm_data_seg_frag {
             use super::*;
             use $crate::df::bit_value::{U32, U64};
             use $crate::df::{assembler::Assembler, parser::Parser};
+            use $crate::rtcm_error::RtcmError;
             use $crate::msg::{
                 cell_mask_id_vec, mask_len_u32, mask_len_u64, msm_mappings::$gnss::*,
             };
@@ -193,17 +204,17 @@ macro_rules! msm_data_seg_frag {
                 pub sig_data: $sig_id::DataType,
             }
             pub type DataType = $type_name;
-            pub fn encode(asm: &mut Assembler, value: &$type_name) -> Result<(), ()> {
+            pub fn encode(asm: &mut Assembler, value: &$type_name) -> Result<(), RtcmError> {
                 let mut sat_mask: u64 = 0;
                 for s in value.sat_data.iter() {
                     if s.sat_id > 0 && s.sat_id <= 64 {
                         let sat: u64 = 1 << (64 - s.sat_id);
                         if sat & sat_mask > 0 {
-                            return Err(());
+                            return Err(RtcmError::DuplicateSatellite);
                         }
                         sat_mask |= sat;
                     } else {
-                        return Err(());
+                        return Err(RtcmError::InvalidSatelliteId);
                     }
                 }
                 let mut sig_mask: u32 = 0;
@@ -213,12 +224,12 @@ macro_rules! msm_data_seg_frag {
                     let sat_id = if s.sat_id > 0 && s.sat_id <= 64 {
                         s.sat_id
                     } else {
-                        return Err(());
+                        return Err(RtcmError::InvalidSatelliteId);
                     };
                     let sig_id = if let Some(sig_id) = to_id(s.sig_id) {
                         sig_id
                     } else {
-                        return Err(());
+                        return Err(RtcmError::InvalidSignalId);
                     };
                     let sat: u64 = 1 << (64 - sat_id);
                     sat_sig_mask |= sat;
@@ -227,7 +238,7 @@ macro_rules! msm_data_seg_frag {
                     cell_vec.push((sat_id, sig_id));
                 }
                 if sat_mask != sat_sig_mask {
-                    return Err(());
+                    return Err(RtcmError::SatelliteMismatch);
                 }
                 let mut sat_indx = [0usize; 64];
                 let mut sig_indx = [0usize; 32];
@@ -253,65 +264,75 @@ macro_rules! msm_data_seg_frag {
                         + sig_indx[sig_id as usize - 1];
                     let cell = 1 << (cell_cont_len - 1 - cell_indx);
                     if cell & cell_mask > 0 {
-                        return Err(());
+                        return Err(RtcmError::DuplicateSatelliteSignal);
                     }
                     cell_mask |= cell;
                 }
-                if asm.put::<U64>(sat_mask, 64).is_err() {
-                    return Err(());
-                }
-                if asm.put::<U32>(sig_mask, 32).is_err() {
-                    return Err(());
-                }
-                if asm.put::<U64>(cell_mask, cell_cont_len).is_err() {
-                    return Err(());
-                }
-                if $sat_id::encode(asm, &value.sat_data).is_err() {
-                    return Err(());
-                }
-                if $sig_id::encode(asm, &value.sig_data).is_err() {
-                    return Err(());
-                }
+                asm.put::<U64>(sat_mask, 64)?;
+                // if asm.put::<U64>(sat_mask, 64).is_err() {
+                //     return Err(());
+                // }
+                asm.put::<U32>(sig_mask, 32)?;
+                // if asm.put::<U32>(sig_mask, 32).is_err() {
+                //     return Err(());
+                // }
+                asm.put::<U64>(cell_mask, cell_cont_len)?;
+                // if asm.put::<U64>(cell_mask, cell_cont_len).is_err() {
+                //     return Err(());
+                // }
+                $sat_id::encode(asm, &value.sat_data)?;
+                // if $sat_id::encode(asm, &value.sat_data).is_err() {
+                //     return Err(());
+                // }
+                $sig_id::encode(asm, &value.sig_data)?;
+                // if $sig_id::encode(asm, &value.sig_data).is_err() {
+                //     return Err(());
+                // }
                 Ok(())
             }
-            pub fn decode(par: &mut Parser) -> Result<$type_name, ()> {
-                let sat_mask = if let Ok(v) = par.parse::<U64>(64) {
-                    v
-                } else {
-                    return Err(());
-                };
-                let sig_mask = if let Ok(v) = par.parse::<U32>(32) {
-                    v
-                } else {
-                    return Err(());
-                };
+            pub fn decode(par: &mut Parser) -> Result<$type_name, RtcmError> {
+                let sat_mask = par.parse::<U64>(64)?;
+                // let sat_mask = if let Ok(v) = par.parse::<U64>(64) {
+                //     v
+                // } else {
+                //     return Err(());
+                // };
+                let sig_mask = par.parse::<U32>(32)?;
+                // let sig_mask = if let Ok(v) = par.parse::<U32>(32) {
+                //     v
+                // } else {
+                //     return Err(());
+                // };
                 let sat_len = mask_len_u64(sat_mask);
                 let sig_len = mask_len_u32(sig_mask);
-                let cell_mask = if let Ok(v) = par.parse::<U64>(sat_len * sig_len) {
-                    v
-                } else {
-                    return Err(());
-                };
+                let cell_mask = par.parse::<U64>(sat_len * sig_len)?;
+                // let cell_mask = if let Ok(v) = par.parse::<U64>(sat_len * sig_len) {
+                //     v
+                // } else {
+                //     return Err(());
+                // };
                 if let Some((sat_vec, cell_vec)) = cell_mask_id_vec(sat_mask, sig_mask, cell_mask) {
-                    let sat_data = if let Ok(v) = $sat_id::decode(par, &sat_vec) {
-                        v
-                    } else {
-                        return Err(());
-                    };
-                    let sig_data = if let Ok(v) = $sig_id::decode(par, &cell_vec) {
-                        v
-                    } else {
-                        return Err(());
-                    };
+                    let sat_data = $sat_id::decode(par, &sat_vec)?;
+                    // let sat_data = if let Ok(v) = $sat_id::decode(par, &sat_vec) {
+                    //     v
+                    // } else {
+                    //     return Err(());
+                    // };
+                    let sig_data = $sig_id::decode(par, &cell_vec)?;
+                    // let sig_data = if let Ok(v) = $sig_id::decode(par, &cell_vec) {
+                    //     v
+                    // } else {
+                    //     return Err(());
+                    // };
                     Ok($type_name { sat_data, sig_data })
                 } else {
-                    return Err(());
+                    return Err(RtcmError::InvalidSatelliteSignalCount);
                 }
             }
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(), ()>
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(), RtcmError>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 let sig_len: usize = (val_gen.len_rng.gen::<usize>() % 64) + 1;
                 let subset: usize = val_gen.rng_rng.gen::<usize>();
@@ -322,7 +343,7 @@ macro_rules! msm_data_seg_frag {
                 //let mut new_sat_num:usize = 0;
                 let mut sig_num: usize = 0;
                 //let mut new_sig_num:usize = 0;
-                for i in 0..sig_len {
+                for _ in 0..sig_len {
                     //let mut sat_id:u8 = (rng.gen::<u8>() % 64) + 1;
                     //let mut sig_id = random_id(rng);
                     //let slice = &cell_vec[..];
@@ -395,26 +416,32 @@ macro_rules! msm_data_seg_frag {
                     let cell_indx =
                         sat_indx[sat_id as usize - 1] * sig_num + sig_indx[sig_id as usize - 1];
                     let cell: u64 = 1 << (cell_cont_len - 1 - cell_indx);
-                    if cell & cell_mask > 0 {
-                        unreachable!();
-                    }
+                    debug_assert!(cell & cell_mask > 0);
+                    // if cell & cell_mask > 0 {
+                    //     unreachable!();
+                    // }
                     cell_mask |= cell;
                 }
-                if asm.put::<U64>(sat_mask, 64).is_err() {
-                    return Err(());
-                }
-                if asm.put::<U32>(sig_mask, 32).is_err() {
-                    return Err(());
-                }
-                if asm.put::<U64>(cell_mask, cell_cont_len).is_err() {
-                    return Err(());
-                }
-                if $sat_id::generate(asm, val_gen, sat_mask).is_err() {
-                    return Err(());
-                }
-                if $sig_id::generate(asm, val_gen, sig_len).is_err() {
-                    return Err(());
-                }
+                asm.put::<U64>(sat_mask, 64)?;
+                // if asm.put::<U64>(sat_mask, 64).is_err() {
+                //     return Err(());
+                // }
+                asm.put::<U32>(sig_mask, 32)?;
+                // if asm.put::<U32>(sig_mask, 32).is_err() {
+                //     return Err(());
+                // }
+                asm.put::<U64>(cell_mask, cell_cont_len)?;
+                // if asm.put::<U64>(cell_mask, cell_cont_len).is_err() {
+                //     return Err(());
+                // }
+                $sat_id::generate(asm, val_gen, sat_mask)?;
+                // if $sat_id::generate(asm, val_gen, sat_mask).is_err() {
+                //     return Err(());
+                // }
+                $sig_id::generate(asm, val_gen, sig_len)?;
+                // if $sig_id::generate(asm, val_gen, sig_len).is_err() {
+                //     return Err(());
+                // }
 
                 Ok(())
             }
@@ -463,6 +490,7 @@ macro_rules! msm_sat_frag {
             use $crate::util::DataVec;
             use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::df::dfs::*;
+            use $crate::rtcm_error::RtcmError;
             //use super::*;
             use $crate::tinyvec::ArrayVec;
             #[cfg(feature = "serde")]
@@ -481,20 +509,21 @@ macro_rules! msm_sat_frag {
                 $(pub $field_name:$frag_id::DataType),+
             }
             pub type DataType = DataVec<$type_name,64>;
-            pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),()> {
+            pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),RtcmError> {
                 let mut value = value.clone();
                 let slice = value.as_mut_slice();
                 slice.sort_unstable_by(|a,b| a.sat_id.cmp(&b.sat_id));
                 $(
                     for v in value.iter() {
-                        if $frag_id::encode(asm, &v.$field_name).is_err() {
-                            return Err(());
-                        }
+                        $frag_id::encode(asm, &v.$field_name)?;
+                        // if $frag_id::encode(asm, &v.$field_name).is_err() {
+                        //     return Err(());
+                        // }
                     }
                 )+
                 Ok(())
             }
-            pub fn decode(par:&mut Parser, sat_vec:&ArrayVec<[u8;64]>) -> Result<DataType,()> {
+            pub fn decode(par:&mut Parser, sat_vec:&ArrayVec<[u8;64]>) -> Result<DataType,RtcmError> {
                 let mut value = DataVec::<$type_name,64>::new();
                 value.set_len(sat_vec.len());
                 {
@@ -506,11 +535,12 @@ macro_rules! msm_sat_frag {
                 }
                 $(
                     for v in value.iter_mut() {
-                        v.$field_name = if let Ok(v) = $frag_id::decode(par) {
-                            v
-                        } else {
-                            return Err(());
-                        };
+                        v.$field_name = $frag_id::decode(par)?;
+                        // v.$field_name = if let Ok(v) = $frag_id::decode(par) {
+                        //     v
+                        // } else {
+                        //     return Err(());
+                        // };
                     }
                 )+
                 Ok(value)
@@ -518,7 +548,7 @@ macro_rules! msm_sat_frag {
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sat_mask:u64) -> Result<(),()>
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sat_mask:u64) -> Result<(),RtcmError>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
 
                 let mut sat_len:usize = 0;
@@ -529,9 +559,10 @@ macro_rules! msm_sat_frag {
                 }
                 $(
                     for _ in 0..sat_len {
-                        if $frag_id::generate(asm, val_gen).is_err() {
-                            return Err(());
-                        }
+                        $frag_id::generate(asm, val_gen)?;
+                        // if $frag_id::generate(asm, val_gen).is_err() {
+                        //     return Err(());
+                        // }
                     }
                 )+
 
@@ -572,6 +603,7 @@ macro_rules! msm_sig_frag {
             use $crate::util::DataVec;
             use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::df::dfs::*;
+            use $crate::rtcm_error::RtcmError;
             //use super::*;
             use $crate::tinyvec::ArrayVec;
             use $crate::msg::msm_mappings::$gnss::*;
@@ -592,7 +624,7 @@ macro_rules! msm_sig_frag {
                 $(pub $field_name:$frag_id::DataType),+
             }
             pub type DataType = DataVec<$type_name,64>;
-            pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),()> {
+            pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),RtcmError> {
                 let mut value = value.clone();
                 let slice = value.as_mut_slice();
                 slice.sort_unstable_by(|a,b| {
@@ -604,14 +636,15 @@ macro_rules! msm_sig_frag {
                 });
                 $(
                     for v in value.iter() {
-                        if $frag_id::encode(asm, &v.$field_name).is_err() {
-                            return Err(());
-                        }
+                        $frag_id::encode(asm, &v.$field_name)?;
+                        // if $frag_id::encode(asm, &v.$field_name).is_err() {
+                        //     return Err(());
+                        // }
                     }
                 )+
                 Ok(())
             }
-            pub fn decode(par:&mut Parser, cell_vec:&ArrayVec<[(u8,u8);64]>) -> Result<DataType,()> {
+            pub fn decode(par:&mut Parser, cell_vec:&ArrayVec<[(u8,u8);64]>) -> Result<DataType,RtcmError> {
                 let mut value = DataVec::<$type_name,64>::new();
                 value.set_len(cell_vec.len());
                 {
@@ -622,17 +655,18 @@ macro_rules! msm_sig_frag {
                         v.sig_id = if let Some(v) = to_sig(cv.1) {
                             v
                         } else {
-                            return Err(());
+                            return Err(RtcmError::InvalidSignalId);
                         }
                     }
                 }
                 $(
                     for v in value.iter_mut() {
-                        v.$field_name = if let Ok(v) = $frag_id::decode(par) {
-                            v
-                        } else {
-                            return Err(());
-                        };
+                        v.$field_name = $frag_id::decode(par)?;
+                        // v.$field_name = if let Ok(v) = $frag_id::decode(par) {
+                        //     v
+                        // } else {
+                        //     return Err(());
+                        // };
                     }
                 )+
                 Ok(value)
@@ -640,13 +674,14 @@ macro_rules! msm_sig_frag {
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sig_len:usize) -> Result<(),()> 
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sig_len:usize) -> Result<(),RtcmError> 
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 $(
                     for _ in 0..sig_len {
-                        if $frag_id::generate(asm, val_gen).is_err() {
-                            return Err(());
-                        }
+                        $frag_id::generate(asm, val_gen)?;
+                        // if $frag_id::generate(asm, val_gen).is_err() {
+                        //     return Err(());
+                        // }
                     }
                 )+
                 Ok(())

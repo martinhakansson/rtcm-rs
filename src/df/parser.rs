@@ -1,4 +1,5 @@
 use crate::df::bit_value::*;
+use crate::rtcm_error::RtcmError;
 
 pub struct Parser<'a> {
     data: &'a [u8],
@@ -12,9 +13,9 @@ impl<'a> Parser<'a> {
     pub fn offset(&self) -> usize {
         self.offset
     }
-    pub fn parse<IT: BitValue>(&mut self, len: usize) -> Result<<IT as BitValue>::ValueType, ()> {
+    pub fn parse<IT: BitValue>(&mut self, len: usize) -> Result<<IT as BitValue>::ValueType, RtcmError> {
         if self.data.len() * 8 < self.offset + len {
-            Err(())
+            Err(RtcmError::BufferOverflow)
         } else {
             let mut val: <IT as BitValue>::ValueType =
                 <<IT as BitValue>::ValueType as Default>::default();

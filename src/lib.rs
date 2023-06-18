@@ -121,7 +121,8 @@ pub fn next_msg_frame(data: &[u8]) -> (usize, Option<MessageFrame>) {
                 Err(rtcm_error::RtcmError::Incomplete) => return (i, None),
                 Err(rtcm_error::RtcmError::NotValid) => {
                     continue;
-                }
+                },
+                _ => unreachable!(),
             }
         }
     }

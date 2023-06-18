@@ -17,6 +17,7 @@ macro_rules! df {
         pub mod $id {
             use $crate::df::bit_value::*;
             use $crate::df::{assembler::Assembler, parser::Parser};
+            use $crate::rtcm_error::RtcmError;
 
             pub mod export_types {
                 $(pub use super::$cap_name;)?
@@ -31,7 +32,7 @@ macro_rules! df {
                 const _:<$it as BitValue>::ValueType = $inv;
             )?
             #[allow(unused)]
-            pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),()> {
+            pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),RtcmError> {
                 $(
                     if value.is_none() {
                         return asm.put::<$it>($inv, $len)
@@ -57,29 +58,44 @@ macro_rules! df {
                 asm.put::<$it>(value, $len)
             }
             #[allow(unused)]
-            pub fn decode(par:&mut Parser) -> Result<DataType,()> {
-                if let Ok(value) = par.parse::<$it>($len) {
-                    let dt_val = value as $dt $( * $res )?;
-                    $(
-                        if value == $inv {
-                            return Ok(None);
-                        } else {
-                            return Ok(Some(dt_val));
-                        }
-                    )?
-                    $(
-                        let _ = $ord;
-                        return Ok(dt_val);
-                    )?
-                } else {
-                    Err(())
-                }
+            pub fn decode(par:&mut Parser) -> Result<DataType,RtcmError> {
+                
+                let value = par.parse::<$it>($len)?;
+                let dt_val = value as $dt $( * $res )?;
+                $(
+                    if value == $inv {
+                        return Ok(None);
+                    } else {
+                        return Ok(Some(dt_val));
+                    }
+                )?
+                $(
+                    let _ = $ord;
+                    return Ok(dt_val);
+                )?
+
+                // if let Ok(value) = par.parse::<$it>($len) {
+                //     let dt_val = value as $dt $( * $res )?;
+                //     $(
+                //         if value == $inv {
+                //             return Ok(None);
+                //         } else {
+                //             return Ok(Some(dt_val));
+                //         }
+                //     )?
+                //     $(
+                //         let _ = $ord;
+                //         return Ok(dt_val);
+                //     )?
+                // } else {
+                //     Err(())
+                // }
             }
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
             #[allow(unused)]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<DataType,()> 
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<DataType,RtcmError> 
                 where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 /*
                 let it_val = {
@@ -139,29 +155,33 @@ macro_rules! df_88591_string {
             use super::*;
             use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
             use $crate::util::Df88591String;
+            use $crate::rtcm_error::RtcmError;
 
             pub mod export_types {}
 
             pub type DataType = Df88591String<{ $cap_id::CAP }>;
-            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), ()> {
+            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
                 for v in value.iter() {
-                    if asm.put::<U8>(*v, 8).is_err() {
-                        return Err(());
-                    }
+                    asm.put::<U8>(*v, 8)?;
+                    // if asm.put::<U8>(*v, 8).is_err() {
+                    //     return Err(());
+                    // }
                 }
                 Ok(())
             }
-            pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, ()> {
+            pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, RtcmError> {
                 if len > $cap_id::CAP {
-                    return Err(());
+                    return Err(RtcmError::CapacityExceeded);
                 }
                 let mut value = Df88591String::new();
                 for _ in 0..len {
-                    if let Ok(v) = par.parse::<U8>(8) {
-                        value.push(v);
-                    } else {
-                        return Err(());
-                    }
+                    let v = par.parse::<U8>(8)?;
+                    value.push(v);
+                    // if let Ok(v) = par.parse::<U8>(8) {
+                    //     value.push(v);
+                    // } else {
+                    //     return Err(());
+                    // }
                 }
                 Ok(value)
             }
@@ -172,7 +192,7 @@ macro_rules! df_88591_string {
                 asm:&mut Assembler, 
                 val_gen:&mut ValGen<FR,LR,RR>,
                 len: usize,
-            ) -> Result<(), ()>
+            ) -> Result<(), RtcmError>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 let mut value: DataType = Df88591String::new();
                 for _ in 0..len {
@@ -180,9 +200,10 @@ macro_rules! df_88591_string {
                     value.push(v);
                 }
                 for v in value.iter() {
-                    if asm.put::<U8>(*v, 8).is_err() {
-                        return Err(());
-                    }
+                    asm.put::<U8>(*v, 8)?;
+                    // if asm.put::<U8>(*v, 8).is_err() {
+                    //     return Err(());
+                    // }
                 }
                 Ok(())
             }
