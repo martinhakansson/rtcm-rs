@@ -103,7 +103,7 @@ macro_rules! msg {
         }
     };
 }
-
+#[allow(unused)]
 macro_rules! frag_vec {
     (
         id: $id:ident,
@@ -169,7 +169,7 @@ macro_rules! frag_vec {
         }
     };
 }
-
+#[allow(unused)]
 macro_rules! msm_data_seg_frag {
     (
         id: $id:ident,
@@ -464,7 +464,7 @@ macro_rules! msm_data_seg_frag {
         }
     };
 }
-
+#[allow(unused)]
 fn mask_len_u32(sat_mask: u32) -> usize {
     let mut counter: usize = 0;
     for sh in 0..32 {
@@ -472,6 +472,7 @@ fn mask_len_u32(sat_mask: u32) -> usize {
     }
     counter
 }
+#[allow(unused)]
 fn mask_len_u64(sat_mask: u64) -> usize {
     let mut counter: usize = 0;
     for sh in 0..64 {
@@ -479,7 +480,7 @@ fn mask_len_u64(sat_mask: u64) -> usize {
     }
     counter
 }
-
+#[allow(unused)]
 macro_rules! msm_sat_frag {
     (
         id: $id:ident,
@@ -591,7 +592,7 @@ macro_rules! msm_sat_frag {
         }
     };
 }
-
+#[allow(unused)]
 macro_rules! msm_sig_frag {
     (
         id: $id:ident,
@@ -711,7 +712,7 @@ macro_rules! msm_sig_frag {
         }
     };
 }
-
+#[allow(unused)]
 fn mask_to_id_vec_u32(mask: u32) -> ArrayVec<[u8; 32]> {
     let mut indx_vec = ArrayVec::new();
     for i in 0..32 {
@@ -721,6 +722,7 @@ fn mask_to_id_vec_u32(mask: u32) -> ArrayVec<[u8; 32]> {
     }
     indx_vec
 }
+#[allow(unused)]
 fn mask_to_id_vec_u64(mask: u64) -> ArrayVec<[u8; 64]> {
     let mut indx_vec = ArrayVec::new();
     for i in 0..64 {
@@ -730,6 +732,7 @@ fn mask_to_id_vec_u64(mask: u64) -> ArrayVec<[u8; 64]> {
     }
     indx_vec
 }
+#[allow(unused)]
 fn cell_mask_id_vec(
     sat_mask: u64,
     sig_mask: u32,
@@ -772,8 +775,9 @@ fn cell_mask_id_vec(
 //         }
 //     };
 // }
-
+#[cfg(any(feature = "msg1071"))]
 mod msm123_sat;
+#[cfg(any(feature = "msg1074"))]
 mod msm46_sat;
 
 macro_rules! include_msg {

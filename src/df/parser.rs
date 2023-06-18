@@ -10,6 +10,7 @@ impl<'a> Parser<'a> {
     pub fn new(data: &'a [u8], offset: usize) -> Self {
         Parser { data, offset }
     }
+    #[allow(unused)]
     pub fn offset(&self) -> usize {
         self.offset
     }

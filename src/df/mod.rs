@@ -139,6 +139,7 @@ macro_rules! df {
                     )?
             }
             $(
+                #[allow(unused)]
                 pub const $cap_name:usize = $cap;
                 pub use $cap_name as CAP;
             )?
@@ -158,8 +159,9 @@ macro_rules! df_88591_string {
             use $crate::rtcm_error::RtcmError;
 
             pub mod export_types {}
-
+            #[allow(unused)]
             pub type DataType = Df88591String<{ $cap_id::CAP }>;
+            #[allow(unused)]
             pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
                 for v in value.iter() {
                     asm.put::<U8>(*v, 8)?;
@@ -169,6 +171,7 @@ macro_rules! df_88591_string {
                 }
                 Ok(())
             }
+            #[allow(unused)]
             pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, RtcmError> {
                 if len > $cap_id::CAP {
                     return Err(RtcmError::CapacityExceeded);
@@ -188,6 +191,7 @@ macro_rules! df_88591_string {
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
+            #[allow(unused)]
             pub fn generate<FR,LR,RR>(
                 asm:&mut Assembler, 
                 val_gen:&mut ValGen<FR,LR,RR>,

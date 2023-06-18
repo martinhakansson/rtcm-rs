@@ -61,7 +61,7 @@ impl<const N: usize> Default for Df88591String<N> {
 }
 impl<const N: usize> core::fmt::Display for Df88591String<N> {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        use core::fmt::Write;
+        //use core::fmt::Write;
         write!(f, "Df88591String<{}>(\"", N)?;
         for c in self.chars() {
             f.write_char(c)?;

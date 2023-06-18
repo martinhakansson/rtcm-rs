@@ -6,7 +6,9 @@ macro_rules! test_msg {
             mod $test_id {
                 use rtcm_rs::prelude::*;
                 use rtcm_rs::msg::*;
+                #[allow(unused)]
                 use rtcm_rs::util::*;
+                #[allow(unused)]
                 use rtcm_rs::msg::msm_mappings::*;
                 #[test]
                 fn test_encode() {
