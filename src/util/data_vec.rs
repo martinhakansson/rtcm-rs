@@ -1,6 +1,7 @@
 use crate::tinyvec::ArrayVec;
 #[cfg(feature = "serde")]
 use crate::{Deserialize, Serialize};
+#[allow(unused)]
 use core::fmt::Write;
 use core::ops::{Deref, DerefMut};
 use core::slice::{Iter, IterMut};

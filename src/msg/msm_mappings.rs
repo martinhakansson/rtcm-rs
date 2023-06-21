@@ -60,7 +60,7 @@ macro_rules! msm_mappings {
                     to_id(self).is_some()
                 }
             }
-
+            #[allow(unused)]
             pub fn to_sig(id: u8) -> Option<SigId> {
                 match id {
                     $(

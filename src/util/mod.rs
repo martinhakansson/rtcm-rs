@@ -5,6 +5,7 @@ mod data_vec;
 
 #[cfg(feature = "serde")]
 use crate::{Deserialize, Serialize, Visitor};
+#[allow(unused)]
 use array_string::ArrayString;
 use core::{fmt::Write, slice::Iter};
 pub use data_vec::DataVec;
