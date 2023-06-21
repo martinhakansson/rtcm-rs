@@ -8,8 +8,20 @@ macro_rules! test_msg {
                 use rtcm_rs::msg::*;
                 #[allow(unused)]
                 use rtcm_rs::util::*;
-                #[allow(unused)]
-                use rtcm_rs::msg::msm_mappings::*;
+                
+                pub mod bds {
+                    pub use rtcm_rs::msg::BdsSigId as SigId;
+                }
+                pub mod gal {
+                    pub use rtcm_rs::msg::GalSigId as SigId;
+                }
+                pub mod glo {
+                    pub use rtcm_rs::msg::GloSigId as SigId;
+                }
+                pub mod gps {
+                    pub use rtcm_rs::msg::GpsSigId as SigId;
+                }
+
                 #[test]
                 fn test_encode() {
                     let msg = include!(concat!("../testdata/",stringify!($test_id),".in"));
