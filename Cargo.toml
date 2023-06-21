@@ -7,6 +7,10 @@ description = "Encoding/decoding of RTCM v. 3"
 keywords = ["rtcm","no_std","serde","serialization"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
+exclude = [
+    "tests/*",
+    "testdata/*",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
