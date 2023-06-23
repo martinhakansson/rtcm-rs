@@ -96,7 +96,7 @@ macro_rules! msm_mappings {
             #[cfg(feature = "test_gen")]
             pub fn random_id<R: rand::Rng + ?Sized>(rng: &mut R, subset:usize) -> u8 {
                 const IDS:&[u8] = &[ $($num),+ ];
-                let id_idx:usize = ((subset % 32) + (rng.gen::<usize>() % 8)) % IDS.len();
+                let id_idx:usize = ((subset % 32) + (rng.gen::<usize>() % 4)) % IDS.len();
                 IDS[id_idx]
             }
             impl core::cmp::PartialOrd for SigId {
@@ -188,6 +188,34 @@ msm_mappings!(
     ]
 );
 msm_mappings!(
+    gnss: sbas,
+    mappings: [
+        2 => 1|'C',
+        22 => 5|'I',
+        23 => 5|'Q',
+        24 => 5|'X'
+
+    ]
+);
+msm_mappings!(
+    gnss: qzss,
+    mappings: [
+        2 => 1|'C',
+        9 => 6|'S',
+        10 => 6|'L',
+        11 => 6|'X',
+        15 => 2|'S',
+        16 => 2|'L',
+        17 => 2|'X',
+        22 => 5|'I',
+        23 => 5|'Q',
+        24 => 5|'X',
+        30 => 1|'S',
+        31 => 1|'L',
+        32 => 1|'X'
+    ]
+);
+msm_mappings!(
     gnss: bds,
     mappings: [
         2 => 2|'I',
@@ -198,8 +226,14 @@ msm_mappings!(
         10 => 6|'X',
         14 => 7|'I',
         15 => 7|'Q',
-        16 => 7|'X'
-
+        16 => 7|'X',
+        22 => 5|'D',
+        23 => 5|'P',
+        24 => 5|'X',
+        25 => 7|'D',
+        30 => 1|'P',
+        31 => 1|'X',
+        32 => 1|'D'
     ]
 );
 

@@ -1,0 +1,118 @@
+Msg1104(
+    Msg1104T {
+        reference_station_id: 2411,
+        gps_epoch_time_ms: 126729987,
+        msm_multiple_message_flag: 0,
+        issue_of_data_station: Some(
+            2,
+        ),
+        reserved_58_7: 83,
+        clock_steering_ind: 0,
+        external_clock_ind: 2,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 1,
+        data_segment: Msg1104Data {
+            sat_data: DataVec(
+                [
+                    Msm46Sat {
+                    sat_id: 3,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        189,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9921875,
+                },
+                    Msm46Sat {
+                    sat_id: 8,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        103,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1083984375,
+                },
+                    Msm46Sat {
+                    sat_id: 9,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        198,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.6328125,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msg1104Sig {
+                    sat_id: 3,
+                    sig_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0008640289306640625,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.002358274534344673,
+                    ),
+                    gnss_phaserange_lock_time_ind: 8,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        44,
+                    ),
+                },
+                    Msg1104Sig {
+                    sat_id: 3,
+                    sig_id: SigId(
+                        5,
+                        'I',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0003567934036254883,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0016643945127725601,
+                    ),
+                    gnss_phaserange_lock_time_ind: 12,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        13,
+                    ),
+                },
+                    Msg1104Sig {
+                    sat_id: 8,
+                    sig_id: SigId(
+                        5,
+                        'Q',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        8.89897346496582e-5,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0017383880913257599,
+                    ),
+                    gnss_phaserange_lock_time_ind: 10,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        12,
+                    ),
+                },
+                    Msg1104Sig {
+                    sat_id: 9,
+                    sig_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.00020813941955566406,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0017089154571294785,
+                    ),
+                    gnss_phaserange_lock_time_ind: 5,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        54,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

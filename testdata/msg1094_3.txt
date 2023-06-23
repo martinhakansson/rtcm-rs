@@ -1,0 +1,118 @@
+Msg1094(
+    Msg1094T {
+        reference_station_id: 228,
+        gal_epoch_time_ms: 193037287,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            7,
+        ),
+        reserved_58_7: 31,
+        clock_steering_ind: 2,
+        external_clock_ind: 0,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 5,
+        data_segment: Msg1094Data {
+            sat_data: DataVec(
+                [
+                    Msm46Sat {
+                    sat_id: 9,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        67,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.6298828125,
+                },
+                    Msm46Sat {
+                    sat_id: 17,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        169,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.7568359375,
+                },
+                    Msm46Sat {
+                    sat_id: 20,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        13,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1640625,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msg1094Sig {
+                    sat_id: 9,
+                    sig_id: SigId(
+                        1,
+                        'B',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0007411837577819824,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0018655788153409958,
+                    ),
+                    gnss_phaserange_lock_time_ind: 1,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        13,
+                    ),
+                },
+                    Msg1094Sig {
+                    sat_id: 9,
+                    sig_id: SigId(
+                        6,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.00010788440704345703,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0003492962568998337,
+                    ),
+                    gnss_phaserange_lock_time_ind: 9,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        39,
+                    ),
+                },
+                    Msg1094Sig {
+                    sat_id: 17,
+                    sig_id: SigId(
+                        6,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0008916854858398438,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.002794090658426285,
+                    ),
+                    gnss_phaserange_lock_time_ind: 10,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        30,
+                    ),
+                },
+                    Msg1094Sig {
+                    sat_id: 20,
+                    sig_id: SigId(
+                        1,
+                        'B',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.00026738643646240234,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.003562372177839279,
+                    ),
+                    gnss_phaserange_lock_time_ind: 9,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        41,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

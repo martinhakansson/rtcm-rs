@@ -10,6 +10,8 @@ pub use msm_mappings::bds::SigId as BdsSigId;
 pub use msm_mappings::gal::SigId as GalSigId;
 pub use msm_mappings::glo::SigId as GloSigId;
 pub use msm_mappings::gps::SigId as GpsSigId;
+pub use msm_mappings::sbas::SigId as SbasSigId;
+pub use msm_mappings::qzss::SigId as QzssSigId;
 
 macro_rules! msg {
     (
@@ -362,7 +364,7 @@ macro_rules! msm_data_seg_frag {
                     //let (sat_id, sig_id) = (i as u8 +1, 2u8);
                     
                     let (sat_id, sig_id) = loop {
-                        let sat_id: u8 = (((subset % 65) as u8 + (val_gen.rng_rng.gen::<u8>() % 8)) % 64) + 1;
+                        let sat_id: u8 = (((subset % 65) as u8 + (val_gen.rng_rng.gen::<u8>() % 16)) % 64) + 1;
                         let sig_id = random_id(&mut val_gen.rng_rng, subset);
                         /*let new_sat_num = if (sat_mask & (1 << (64 - sat_id))) == 0 {
                             sat_num + 1
@@ -414,7 +416,7 @@ macro_rules! msm_data_seg_frag {
                     let cell_indx =
                         sat_indx[sat_id as usize - 1] * sig_num + sig_indx[sig_id as usize - 1];
                     let cell: u64 = 1 << (cell_cont_len - 1 - cell_indx);
-                    debug_assert!(cell & cell_mask > 0);
+                    debug_assert_eq!(cell & cell_mask, 0);
                     // if cell & cell_mask > 0 {
                     //     unreachable!();
                     // }
@@ -775,7 +777,14 @@ fn cell_mask_id_vec(
 // }
 #[cfg(any(feature = "msg1071"))]
 mod msm123_sat;
-#[cfg(any(feature = "msg1074"))]
+#[cfg(any(
+    feature = "msg1074", 
+    feature = "msg1084", 
+    feature = "msg1094",
+    feature = "msg1104",
+    feature = "msg1114",
+    feature = "msg1124"
+))]
 mod msm46_sat;
 
 macro_rules! include_msg {
@@ -794,6 +803,11 @@ include_msg!(msg1008, "msg1008");
 include_msg!(msg1030, "msg1030");
 include_msg!(msg1071, "msg1071");
 include_msg!(msg1074, "msg1074");
+include_msg!(msg1084, "msg1084");
+include_msg!(msg1094, "msg1094");
+include_msg!(msg1104, "msg1104");
+include_msg!(msg1114, "msg1114");
+include_msg!(msg1124, "msg1124");
 
 //#[cfg(feature = "msg1001")]
 //mod msg1001;

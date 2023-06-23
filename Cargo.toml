@@ -29,7 +29,20 @@ rand = { version = "0.8.5", optional = true}
 serde = ["sd","tinyvec/serde"]
 test_gen = ["rand"]
 default = ["all_msgs"]
-all_msgs = ["msg1001","msg1005","msg1007","msg1008","msg1030","msg1071","msg1074"]
+all_msgs = [
+    "msg1001",
+    "msg1005",
+    "msg1007",
+    "msg1008",
+    "msg1030",
+    "msg1071",
+    "msg1074",
+    "msg1084",
+    "msg1094",
+    "msg1104",
+    "msg1114",
+    "msg1124",
+]
 msg1001 = []
 msg1005 = []
 msg1007 = []
@@ -37,3 +50,8 @@ msg1008 = []
 msg1030 = []
 msg1071 = []
 msg1074 = []
+msg1084 = []
+msg1094 = []
+msg1104 = []
+msg1114 = []
+msg1124 = []

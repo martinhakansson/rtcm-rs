@@ -8,7 +8,7 @@ macro_rules! test_msg {
                 use rtcm_rs::msg::*;
                 #[allow(unused)]
                 use rtcm_rs::util::*;
-                
+
                 pub mod bds {
                     pub use rtcm_rs::msg::BdsSigId as SigId;
                 }
@@ -20,6 +20,12 @@ macro_rules! test_msg {
                 }
                 pub mod gps {
                     pub use rtcm_rs::msg::GpsSigId as SigId;
+                }
+                pub mod sbas {
+                    pub use rtcm_rs::msg::SbasSigId as SigId;
+                }
+                pub mod qzss {
+                    pub use rtcm_rs::msg::QzssSigId as SigId;
                 }
 
                 #[test]

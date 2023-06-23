@@ -1,0 +1,50 @@
+Msg1104(
+    Msg1104T {
+        reference_station_id: 3610,
+        gps_epoch_time_ms: 96757662,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            7,
+        ),
+        reserved_58_7: 9,
+        clock_steering_ind: 3,
+        external_clock_ind: 1,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 0,
+        data_segment: Msg1104Data {
+            sat_data: DataVec(
+                [
+                    Msm46Sat {
+                    sat_id: 48,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        142,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9296875,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msg1104Sig {
+                    sat_id: 48,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0009332895278930664,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0034340303391218185,
+                    ),
+                    gnss_phaserange_lock_time_ind: 13,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        30,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

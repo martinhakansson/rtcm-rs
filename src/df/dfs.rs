@@ -274,6 +274,16 @@ df!(
 //field_name: antenna_serial_number_str
 df_88591_string!(id: df033, cap_id: df032,);
 
+//DF034: GLONASS Epoch Time
+//field_name: glo_epoch_time_ms
+df!(
+    id: df034,
+    dt: u32,
+    it: U32,
+    len: 27,
+    ord: 0,
+);
+
 //DF141: Reference-Station Indicator
 //field_name: reference_station_ind
 df!(
@@ -371,6 +381,16 @@ df!(
     dt: u32,
     it: U32,
     len: 20,
+    ord: 0,
+);
+
+//DF248: Galileo Epoch Time
+//field_name: gal_epoch_time_ms
+df!(
+    id: df248,
+    dt: u32,
+    it: U32,
+    len: 30,
     ord: 0,
 );
 
@@ -492,6 +512,16 @@ df!(
     ord: 0,
 );
 
+//DF416: GLONASS Day Of Week
+//field_name: glo_day_of_week
+df!(
+    id: df416,
+    dt: u8,
+    it: U8,
+    len: 3,
+    inv: 7,
+);
+
 //DF417: GNSS smoothing type indicator
 //field_name: gnss_smoothing_type_ind
 df!(
@@ -519,5 +549,25 @@ df!(
     dt: u8,
     it: U8,
     len: 1,
+    ord: 0,
+);
+
+//DF427: BeiDou Epoch Time
+//field_name: bds_epoch_time_ms
+df!(
+    id: df427,
+    dt: u32,
+    it: U32,
+    len: 30,
+    ord: 0,
+);
+
+//DF428: QZSS Epoch Time
+//field_name: qzss_epoch_time_ms
+df!(
+    id: df428,
+    dt: u32,
+    it: U32,
+    len: 30,
     ord: 0,
 );
