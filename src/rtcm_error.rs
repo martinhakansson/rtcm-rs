@@ -12,6 +12,7 @@ pub enum RtcmError {
     SatelliteMismatch,
     DuplicateSatelliteSignal,
     InvalidSatelliteSignalCount,
+    OutOfRange,
 }
 
 impl core::fmt::Display for RtcmError {
@@ -28,6 +29,7 @@ impl core::fmt::Display for RtcmError {
             RtcmError::SatelliteMismatch => write!(f, "Mismatch between the satellites in the satellite data vector and the satellites in the signal data vector"),
             RtcmError::DuplicateSatelliteSignal => write!(f, "The same satellite-signal combination appears twice in the vector"),
             RtcmError::InvalidSatelliteSignalCount => write!(f, "The product of total number of satellites and total number of signals exceeds 64 or equals 0"),
+            RtcmError::OutOfRange => write!(f, "Value falls outside of range of valid values"),
             //_ => unreachable!(),
         }
     }

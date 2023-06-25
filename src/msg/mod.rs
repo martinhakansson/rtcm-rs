@@ -752,40 +752,65 @@ fn cell_mask_id_vec(
     }
     Some((sat_vec, cell_vec))
 }
-// macro_rules! pub_msg {
-//     (
-//         id: $id:ident,
-//         pub_type: $pub_type:ident,
-//         feature: $feature:literal,
-//     ) => {
-//         #[cfg(feature=$feature)]
-//         pub mod $id;
-//         #[cfg(feature=$feature)]
-//         pub type $pub_type = $id::$id::DataType;
-//         #[cfg(feature=$feature)]
-//         impl $pub_type {
-//             #[inline(always)]
-//             pub fn encode(asm:&mut Assembler, value:&$pub_type) -> Result<(),()> { //remove
-//                 $id::$id::encode(asm,value)
-//             }
-//             #[inline(always)]
-//             pub fn decode(par:&mut Parser) -> Result<$pub_type,()> { //remove as it is visible
-//                 $id::$id::decode(par)
-//             }
-//         }
-//     };
-// }
-#[cfg(any(feature = "msg1071"))]
-mod msm123_sat;
+
+
 #[cfg(any(
-    feature = "msg1074", 
-    feature = "msg1084", 
+    feature = "msg1071",
+    feature = "msg1072",
+    feature = "msg1073",
+    feature = "msg1081",
+    feature = "msg1082",
+    feature = "msg1083",
+    feature = "msg1091",
+    feature = "msg1092",
+    feature = "msg1093",
+    feature = "msg1101",
+    feature = "msg1102",
+    feature = "msg1103",
+    feature = "msg1111",
+    feature = "msg1112",
+    feature = "msg1113",
+    feature = "msg1121",
+    feature = "msg1122",
+    feature = "msg1123"
+))]
+mod msm123_sat;
+
+#[cfg(any(
+    feature = "msg1074",
+    feature = "msg1076",
+    feature = "msg1084",
+    feature = "msg1086", 
     feature = "msg1094",
+    feature = "msg1096",
     feature = "msg1104",
+    feature = "msg1106",
     feature = "msg1114",
-    feature = "msg1124"
+    feature = "msg1116",
+    feature = "msg1124",
+    feature = "msg1126"
 ))]
 mod msm46_sat;
+
+#[cfg(any(
+    feature = "msg1075",
+    feature = "msg1077",
+    feature = "msg1095",
+    feature = "msg1097",
+    feature = "msg1105",
+    feature = "msg1107",
+    feature = "msg1115",
+    feature = "msg1117",
+    feature = "msg1125",
+    feature = "msg1127"
+))]
+mod msm57_sat;
+
+#[cfg(any(
+    feature = "msg1085",
+    feature = "msg1087"
+))]
+mod msm57_glo_sat;
 
 macro_rules! include_msg {
     ($msg:ident, $feature:literal) => {
@@ -802,73 +827,44 @@ include_msg!(msg1007, "msg1007");
 include_msg!(msg1008, "msg1008");
 include_msg!(msg1030, "msg1030");
 include_msg!(msg1071, "msg1071");
+include_msg!(msg1072, "msg1072");
+include_msg!(msg1073, "msg1073");
 include_msg!(msg1074, "msg1074");
+include_msg!(msg1075, "msg1075");
+include_msg!(msg1076, "msg1076");
+include_msg!(msg1077, "msg1077");
+include_msg!(msg1081, "msg1081");
+include_msg!(msg1082, "msg1082");
+include_msg!(msg1083, "msg1083");
 include_msg!(msg1084, "msg1084");
+include_msg!(msg1085, "msg1085");
+include_msg!(msg1086, "msg1086");
+include_msg!(msg1087, "msg1087");
+include_msg!(msg1091, "msg1091");
+include_msg!(msg1092, "msg1092");
+include_msg!(msg1093, "msg1093");
 include_msg!(msg1094, "msg1094");
+include_msg!(msg1095, "msg1095");
+include_msg!(msg1096, "msg1096");
+include_msg!(msg1097, "msg1097");
+include_msg!(msg1101, "msg1101");
+include_msg!(msg1102, "msg1102");
+include_msg!(msg1103, "msg1103");
 include_msg!(msg1104, "msg1104");
+include_msg!(msg1105, "msg1105");
+include_msg!(msg1106, "msg1106");
+include_msg!(msg1107, "msg1107");
+include_msg!(msg1111, "msg1111");
+include_msg!(msg1112, "msg1112");
+include_msg!(msg1113, "msg1113");
 include_msg!(msg1114, "msg1114");
+include_msg!(msg1115, "msg1115");
+include_msg!(msg1116, "msg1116");
+include_msg!(msg1117, "msg1117");
+include_msg!(msg1121, "msg1121");
+include_msg!(msg1122, "msg1122");
+include_msg!(msg1123, "msg1123");
 include_msg!(msg1124, "msg1124");
-
-//#[cfg(feature = "msg1001")]
-//mod msg1001;
-//pub use msg1001::msg1001::export_types::*;
-
-//#[cfg(feature = "msg1005")]
-//mod msg1005;
-//pub use msg1005::msg1005::export_types::*;
-
-// #[cfg(feature = "msg1007")]
-// mod msg1007;
-// pub use msg1007::msg1007::export_types::*;
-
-// #[cfg(feature = "msg1008")]
-// mod msg1008;
-// pub use msg1008::msg1008::export_types::*;
-
-// #[cfg(feature = "msg1030")]
-// mod msg1030;
-// pub use msg1030::msg1030::export_types::*;
-
-// #[cfg(feature = "msg1071")]
-// mod msg1071;
-// pub use msg1071::msg1071::export_types::*;
-
-// #[cfg(feature = "msg1074")]
-// mod msg1074;
-// pub use msg1074::msg1074::export_types::*;
-
-// pub_msg!(
-//     id:msg1001,
-//     pub_type: Msg1001T,
-//     feature: "msg1001",
-// );
-// pub_msg!(
-//     id:msg1005,
-//     pub_type: Msg1005T,
-//     feature: "msg1005",
-// );
-// pub_msg!(
-//     id:msg1007,
-//     pub_type: Msg1007T,
-//     feature: "msg1007",
-// );
-// pub_msg!(
-//     id:msg1008,
-//     pub_type: Msg1008T,
-//     feature: "msg1008",
-// );
-// pub_msg!(
-//     id:msg1030,
-//     pub_type: Msg1030T,
-//     feature: "msg1030",
-// );
-// pub_msg!(
-//     id:msg1071,
-//     pub_type: Msg1071T,
-//     feature: "msg1071",
-// );
-// pub_msg!(
-//     id:msg1074,
-//     pub_type: Msg1074T,
-//     feature: "msg1074",
-// );
+include_msg!(msg1125, "msg1125");
+include_msg!(msg1126, "msg1126");
+include_msg!(msg1127, "msg1127");

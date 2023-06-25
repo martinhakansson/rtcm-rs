@@ -1,18 +1,19 @@
 //Suffixes used in df field names:
-//id - identification number
+//id - ID
 //ms - unit millisecond
 //flag - flag, on or off for something
-//bitval - bit value, i.e. bits cast as unsigned integer
-//len - length, i.e. number of elements
+//bitval - df bits cast as unsigned integer
+//len - length, i.e. number of elements in message
 //ind - indicator, values with specific meaning
 //m - unit meter
-//mm - millimeter
-//ppm - part per million
-//s - second
-//ms - millisecond
-//str - some string
+//mm - unit millimeter
+//ppm - parts per million
+//s - unit second
+//ms - unit millisecond
+//str - string
 //n - number of
 //dbhz - unit dBHz
+//m_s - unit m/s
 
 //DF001 (1 bit1)
 //field_name: reserved_[start bit]_[bit length]
@@ -21,6 +22,16 @@ df!(
     dt: u8,
     it: U8,
     len: 1,
+    ord: 0,
+);
+
+//DF001 (1 bit1)
+//field_name: reserved_[start bit]_[bit length]
+df!(
+    id: df001_4bits,
+    dt: u8,
+    it: U8,
+    len: 4,
     ord: 0,
 );
 
@@ -438,6 +449,16 @@ df!(
     ord: 0,
 );
 
+//DF399: GNSS Satellite rough Phaserange rates
+//field_name: gnss_satellite_rough_phaserange_rates_m_s
+df!(
+    id: df399,
+    dt: i16,
+    it: I16,
+    len: 14,
+    inv: -0x2000,
+);
+
 //DF400: GNSS Signal fine Pseudorange
 //field_name: gnss_signal_fine_pseudorange_ms
 df!(
@@ -479,6 +500,63 @@ df!(
     dt: u8,
     it: U8,
     len: 6,
+    inv: 0,
+);
+
+//DF404: GNSS signal fine Phaserange Rate
+//field_name: gnss_signal_fine_phaserange_rate_m_s
+df!(
+    id: df404,
+    dt: f64,
+    it: I16,
+    len: 15,
+    res: 0.0001,
+    round: true,
+    inv: -0x4000,
+);
+
+//DF405: GNSS signal fine Pseudorange with extended resolution
+//field_name: gnss_signal_fine_pseudorange_ext_ms
+df!(
+    id: df405,
+    dt: f64,
+    it: I32,
+    len: 20,
+    res: 1.0 / (512.0 * 1024.0 * 1024.0),
+    round: true,
+    inv: -0x80000,
+);
+
+//DF406: GNSS signal fine phaserange with extended resolution
+//field_name: gnss_signal_fine_phaserange_ext_ms
+df!(
+    id: df406,
+    dt: f64,
+    it: I32,
+    len: 24,
+    res: 1.0 / (2.0 * 1024.0 * 1024.0 * 1024.0),
+    round: true,
+    inv: -0x800000,
+);
+
+//DF407: GNSS Phaserange Lock Time Indicator with extended range and resolution
+//field_name: gnss_phaserange_lock_time_ext_ind
+df!(
+    id: df407,
+    dt: u16,
+    it: U16,
+    len: 10,
+    ord: 0,
+);
+
+//DF408: GNSS signal CNR with extended resolution
+//field_name: gnss_signal_cnr_ext_dbhz
+df!(
+    id: df408,
+    dt: f64,
+    it: U16,
+    len: 10,
+    res: 1.0 / 16.0,
     inv: 0,
 );
 
@@ -540,6 +618,17 @@ df!(
     it: U8,
     len: 3,
     ord: 0,
+);
+
+//DF419: GLONASS Satellite Frequency Channel Number
+//field_name: glonass_satellite_frequency_channel_number
+df!(
+    id: df419,
+    dt: i8,
+    it: U8,
+    len: 4,
+    bias: -7,
+    inv: 15,
 );
 
 //DF420: Half-cycle ambiguity indicator

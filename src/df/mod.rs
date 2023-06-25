@@ -9,6 +9,7 @@ macro_rules! df {
         it: $it:ty,
         len: $len:literal,
         $(res: $res:expr,)?
+        $(bias: $bias:expr,)?
         $(round: $round:literal,)?
         $(cap: $cap:expr,$cap_name:ident,)?
         $(inv: $inv:literal,)?
@@ -42,6 +43,13 @@ macro_rules! df {
                 #[allow(unused_mut)]
                 let mut value = *value;
                 $(
+                    if value >= $bias {
+                        value -= $bias;
+                    } else {
+                        return Err(RtcmError::OutOfRange);
+                    }                    
+                )?
+                $(
                     value /= $res;
                 )?
                 $(
@@ -61,7 +69,11 @@ macro_rules! df {
             pub fn decode(par:&mut Parser) -> Result<DataType,RtcmError> {
                 
                 let value = par.parse::<$it>($len)?;
-                let dt_val = value as $dt $( * $res )?;
+                #[allow(unused_mut)]
+                let mut dt_val = value as $dt $( * $res )?;
+                $(
+                    dt_val += $bias;
+                )?
                 $(
                     if value == $inv {
                         return Ok(None);
