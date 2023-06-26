@@ -25,7 +25,7 @@ msg!(
     type_name: Msg1093T,
     fields: [
         (reference_station_id, df003),
-        (gps_epoch_time_ms, df004),
+        (gal_epoch_time_ms, df248),
         (msm_multiple_message_flag, df393),
         (issue_of_data_station, df409),
         (reserved_58_7, df001_7bits),
