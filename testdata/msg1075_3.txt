@@ -1,0 +1,142 @@
+Msg1075(
+    Msg1075T {
+        reference_station_id: 467,
+        gps_epoch_time_ms: 292153770,
+        msm_multiple_message_flag: 0,
+        issue_of_data_station: Some(
+            5,
+        ),
+        reserved_58_7: 79,
+        clock_steering_ind: 1,
+        external_clock_ind: 1,
+        gnss_smoothing_type_ind: 1,
+        gnss_smoothing_interval_bitval: 0,
+        data_segment: Msg1075Data {
+            sat_data: DataVec(
+                [
+                    Msm57Sat {
+                    sat_id: 32,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        234,
+                    ),
+                    reserved_8_4: 7,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1015625,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        7450,
+                    ),
+                },
+                    Msm57Sat {
+                    sat_id: 33,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        131,
+                    ),
+                    reserved_8_4: 14,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.509765625,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        -540,
+                    ),
+                },
+                    Msm57Sat {
+                    sat_id: 40,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        40,
+                    ),
+                    reserved_8_4: 4,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.3505859375,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        -4192,
+                    ),
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msg1075Sig {
+                    sat_id: 32,
+                    sig_id: SigId(
+                        2,
+                        'L',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.00028020143508911133,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.003185827285051346,
+                    ),
+                    gnss_phaserange_lock_time_ind: 3,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        53,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        0.8087000000000001,
+                    ),
+                },
+                    Msg1075Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        2,
+                        'S',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0008400678634643555,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0008967462927103043,
+                    ),
+                    gnss_phaserange_lock_time_ind: 13,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        30,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        0.3387,
+                    ),
+                },
+                    Msg1075Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        5,
+                        'I',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0005214810371398926,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0009818077087402344,
+                    ),
+                    gnss_phaserange_lock_time_ind: 2,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        62,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        -0.7226,
+                    ),
+                },
+                    Msg1075Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        5,
+                        'I',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0009143352508544922,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0006412100046873093,
+                    ),
+                    gnss_phaserange_lock_time_ind: 9,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        62,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        -1.0450000000000002,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

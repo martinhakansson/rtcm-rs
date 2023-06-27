@@ -1,0 +1,89 @@
+Msg1092(
+    Msg1092T {
+        reference_station_id: 3120,
+        gal_epoch_time_ms: 196159909,
+        msm_multiple_message_flag: 0,
+        issue_of_data_station: Some(
+            4,
+        ),
+        reserved_58_7: 43,
+        clock_steering_ind: 2,
+        external_clock_ind: 1,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 2,
+        data_segment: Msg1092Data {
+            sat_data: DataVec(
+                [
+                    Msm123Sat {
+                    sat_id: 29,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.537109375,
+                },
+                    Msm123Sat {
+                    sat_id: 35,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.4287109375,
+                },
+                    Msm123Sat {
+                    sat_id: 37,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.8271484375,
+                },
+                    Msm123Sat {
+                    sat_id: 41,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.2431640625,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msm1092Sig {
+                    sat_id: 29,
+                    sig_id: SigId(
+                        7,
+                        'Q',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0017350148409605026,
+                    ),
+                    gnss_phaserange_lock_time_ind: 4,
+                    half_cycle_ambiguity_ind: 0,
+                },
+                    Msm1092Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        7,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0016495827585458755,
+                    ),
+                    gnss_phaserange_lock_time_ind: 9,
+                    half_cycle_ambiguity_ind: 0,
+                },
+                    Msm1092Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        8,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.003901137039065361,
+                    ),
+                    gnss_phaserange_lock_time_ind: 13,
+                    half_cycle_ambiguity_ind: 0,
+                },
+                    Msm1092Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        7,
+                        'Q',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0034423526376485825,
+                    ),
+                    gnss_phaserange_lock_time_ind: 4,
+                    half_cycle_ambiguity_ind: 0,
+                },
+                ],
+            ),
+        },
+    },
+)

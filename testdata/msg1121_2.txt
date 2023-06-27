@@ -1,0 +1,39 @@
+Msg1121(
+    Msg1121T {
+        reference_station_id: 1416,
+        bds_epoch_time_ms: 1036104881,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            6,
+        ),
+        reserved_58_7: 114,
+        clock_steering_ind: 1,
+        external_clock_ind: 1,
+        gnss_smoothing_type_ind: 1,
+        gnss_smoothing_interval_bitval: 2,
+        data_segment: Msg1121Data {
+            sat_data: DataVec(
+                [
+                    Msm123Sat {
+                    sat_id: 5,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1591796875,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msm1121Sig {
+                    sat_id: 5,
+                    sig_id: SigId(
+                        2,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0008220672607421875,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

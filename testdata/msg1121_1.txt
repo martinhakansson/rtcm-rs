@@ -1,0 +1,599 @@
+Msg1121(
+    Msg1121T {
+        reference_station_id: 4095,
+        bds_epoch_time_ms: 1073741823,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: None,
+        reserved_58_7: 127,
+        clock_steering_ind: 3,
+        external_clock_ind: 3,
+        gnss_smoothing_type_ind: 1,
+        gnss_smoothing_interval_bitval: 7,
+        data_segment: Msg1121Data {
+            sat_data: DataVec(
+                [
+                    Msm123Sat {
+                    sat_id: 33,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 34,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 35,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 36,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 37,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 38,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 39,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 40,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 41,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 42,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 43,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 44,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 45,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 46,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 47,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 48,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msm1121Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 46,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 46,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 46,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 46,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 47,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 47,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 47,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 47,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 48,
+                    sig_id: SigId(
+                        5,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 48,
+                    sig_id: SigId(
+                        5,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 48,
+                    sig_id: SigId(
+                        7,
+                        'D',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                    Msm1121Sig {
+                    sat_id: 48,
+                    sig_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: None,
+                },
+                ],
+            ),
+        },
+    },
+)

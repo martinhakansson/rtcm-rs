@@ -1,0 +1,53 @@
+Msg1086(
+    Msg1086T {
+        reference_station_id: 563,
+        glo_day_of_week: Some(
+            6,
+        ),
+        glo_epoch_time_ms: 60127659,
+        msm_multiple_message_flag: 0,
+        issue_of_data_station: Some(
+            3,
+        ),
+        reserved_58_7: 44,
+        clock_steering_ind: 3,
+        external_clock_ind: 3,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 3,
+        data_segment: Msg1086Data {
+            sat_data: DataVec(
+                [
+                    Msm46Sat {
+                    sat_id: 1,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        193,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.67578125,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msg1086Sig {
+                    sat_id: 1,
+                    sig_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: Some(
+                        0.00032736174762248993,
+                    ),
+                    gnss_signal_fine_phaserange_ext_ms: Some(
+                        0.00015652598813176155,
+                    ),
+                    gnss_phaserange_lock_time_ext_ind: 418,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: Some(
+                        34.3125,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

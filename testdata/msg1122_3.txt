@@ -1,0 +1,83 @@
+Msg1122(
+    Msg1122T {
+        reference_station_id: 3612,
+        bds_epoch_time_ms: 43725187,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: None,
+        reserved_58_7: 114,
+        clock_steering_ind: 1,
+        external_clock_ind: 1,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 4,
+        data_segment: Msg1122Data {
+            sat_data: DataVec(
+                [
+                    Msm123Sat {
+                    sat_id: 8,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1435546875,
+                },
+                    Msm123Sat {
+                    sat_id: 12,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.564453125,
+                },
+                    Msm123Sat {
+                    sat_id: 62,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.2958984375,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msm1122Sig {
+                    sat_id: 8,
+                    sig_id: SigId(
+                        6,
+                        'Q',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0014477875083684921,
+                    ),
+                    gnss_phaserange_lock_time_ind: 10,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1122Sig {
+                    sat_id: 8,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.00139535591006279,
+                    ),
+                    gnss_phaserange_lock_time_ind: 12,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1122Sig {
+                    sat_id: 12,
+                    sig_id: SigId(
+                        6,
+                        'Q',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0018541663885116577,
+                    ),
+                    gnss_phaserange_lock_time_ind: 3,
+                    half_cycle_ambiguity_ind: 0,
+                },
+                    Msm1122Sig {
+                    sat_id: 62,
+                    sig_id: SigId(
+                        6,
+                        'Q',
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0021882858127355576,
+                    ),
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 0,
+                },
+                ],
+            ),
+        },
+    },
+)

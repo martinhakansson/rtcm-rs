@@ -1,0 +1,57 @@
+Msg1105(
+    Msg1105T {
+        reference_station_id: 1260,
+        gps_epoch_time_ms: 432261454,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            4,
+        ),
+        reserved_58_7: 49,
+        clock_steering_ind: 3,
+        external_clock_ind: 1,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_bitval: 2,
+        data_segment: Msg1105Data {
+            sat_data: DataVec(
+                [
+                    Msm57Sat {
+                    sat_id: 62,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        194,
+                    ),
+                    reserved_8_4: 2,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.19921875,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        -1952,
+                    ),
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msg1105Sig {
+                    sat_id: 62,
+                    sig_id: SigId(
+                        5,
+                        'I',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -6.443262100219727e-5,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0037966538220643997,
+                    ),
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        32,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        -1.5766,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

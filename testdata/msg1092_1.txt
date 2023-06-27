@@ -1,0 +1,727 @@
+Msg1092(
+    Msg1092T {
+        reference_station_id: 4095,
+        gal_epoch_time_ms: 1073741823,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: None,
+        reserved_58_7: 127,
+        clock_steering_ind: 3,
+        external_clock_ind: 3,
+        gnss_smoothing_type_ind: 1,
+        gnss_smoothing_interval_bitval: 7,
+        data_segment: Msg1092Data {
+            sat_data: DataVec(
+                [
+                    Msm123Sat {
+                    sat_id: 30,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 31,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 32,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 33,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 34,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 35,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 36,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 37,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 38,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 39,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 40,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 41,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 42,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 43,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 44,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                    Msm123Sat {
+                    sat_id: 45,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msm1092Sig {
+                    sat_id: 30,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 30,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 30,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 30,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 31,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 31,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 31,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 31,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 32,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 32,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 32,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 32,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 33,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 34,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 35,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 38,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 39,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 40,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 42,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 43,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 44,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        6,
+                        'B',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        6,
+                        'Z',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                    Msm1092Sig {
+                    sat_id: 45,
+                    sig_id: SigId(
+                        7,
+                        'I',
+                    ),
+                    gnss_signal_fine_phaserange_ms: None,
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 1,
+                },
+                ],
+            ),
+        },
+    },
+)

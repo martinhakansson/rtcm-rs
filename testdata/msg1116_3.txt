@@ -1,0 +1,118 @@
+Msg1116(
+    Msg1116T {
+        reference_station_id: 3884,
+        qzss_epoch_time_ms: 776551750,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            5,
+        ),
+        reserved_58_7: 119,
+        clock_steering_ind: 0,
+        external_clock_ind: 0,
+        gnss_smoothing_type_ind: 1,
+        gnss_smoothing_interval_bitval: 0,
+        data_segment: Msg1116Data {
+            sat_data: DataVec(
+                [
+                    Msm46Sat {
+                    sat_id: 36,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        39,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.7294921875,
+                },
+                    Msm46Sat {
+                    sat_id: 37,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        158,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.5654296875,
+                },
+                    Msm46Sat {
+                    sat_id: 41,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        141,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1455078125,
+                },
+                ],
+            ),
+            sig_data: DataVec(
+                [
+                    Msg1116Sig {
+                    sat_id: 36,
+                    sig_id: SigId(
+                        2,
+                        'L',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: Some(
+                        -0.0005172081291675568,
+                    ),
+                    gnss_signal_fine_phaserange_ext_ms: Some(
+                        -0.0026524392887949944,
+                    ),
+                    gnss_phaserange_lock_time_ext_ind: 496,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_ext_dbhz: Some(
+                        27.3125,
+                    ),
+                },
+                    Msg1116Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        6,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: Some(
+                        -9.254924952983856e-5,
+                    ),
+                    gnss_signal_fine_phaserange_ext_ms: Some(
+                        0.002468349412083626,
+                    ),
+                    gnss_phaserange_lock_time_ext_ind: 683,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_ext_dbhz: Some(
+                        15.0,
+                    ),
+                },
+                    Msg1116Sig {
+                    sat_id: 37,
+                    sig_id: SigId(
+                        2,
+                        'X',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: Some(
+                        -0.0007377117872238159,
+                    ),
+                    gnss_signal_fine_phaserange_ext_ms: Some(
+                        0.0030649793334305286,
+                    ),
+                    gnss_phaserange_lock_time_ext_ind: 105,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: Some(
+                        53.75,
+                    ),
+                },
+                    Msg1116Sig {
+                    sat_id: 41,
+                    sig_id: SigId(
+                        2,
+                        'S',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: Some(
+                        -0.0006183069199323654,
+                    ),
+                    gnss_signal_fine_phaserange_ext_ms: Some(
+                        0.0037948214448988438,
+                    ),
+                    gnss_phaserange_lock_time_ext_ind: 245,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: Some(
+                        62.5,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)
