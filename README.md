@@ -1,6 +1,8 @@
 # rtcm-rs
 
 [![Crates.io](https://img.shields.io/crates/v/rtcm-rs.svg)](https://crates.io/crates/rtcm-rs)
+[![MIT/Apache 2.0](https://img.shields.io/badge/license-MIT%2FApache-blue.svg)](https://github.com/martinhakansson/rtcm-rs#license)
+[![CI](https://github.com/martinhakansson/rtcm-rs/workflows/CI/badge.svg)](https://github.com/martinhakansson/rtcm-rs/actions)
 
 rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. As of now, it supports a subset of the messages in the standard, but work is being done to cover them all in the near future.
 
