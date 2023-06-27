@@ -144,6 +144,14 @@ fn main() {
 
 In this third example, we demonstrate how to encode an RTCM message. We start by initializing a new `MessageBuilder` instance and then use its `build_message` method to construct a new RTCM message. If the message is successfully built, the resulting byte array representing the message is printed. This example shows how to create and encode a complex RTCM message containing satellite information.
 
+## Supported messages
+
+| Version | Message Support Added | Notes |
+| --- | --- | --- |
+| 0.1.x | 1001 1005 1007 1008 1030 1071 1074 | |
+| 0.2.x | 1084 1094 1104 1114 1124 | MSM4 support |
+| 0.3.x | 1072 1073 1075 1076 1077 1081 1082 1083 1085 1086 1087 1091 1092 1093 1095 1096 1097 1101 1102 1103 1105 1106 1107 1111 1112 1113 1115 1116 1117 1121 1122 1123 1125 1126 1127 | Full MSM support |
+
 ## License
 
 MIT or Apache-2.0
