@@ -1,10 +1,12 @@
 # rtcm-rs
 
+[![Crates.io](https://img.shields.io/crates/v/rtcm-rs.svg)](https://crates.io/crates/rtcm-rs)
+
 rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. As of now, it supports a subset of the messages in the standard, but work is being done to cover them all in the near future.
 
 In the spirit of Rust's safety principles, this library is developed with #[forbid(unsafe_code)], ensuring that all operations are safe from undefined behavior, data races, and many common bugs. Thus, you can rely on rtcm-rs for not only its functionality but also its commitment to safety.
 
-This library provides robust support for Serde, a powerful serialization/deserialization framework, facilitating conversion of RTCM messages into other formats such as JSON, XML and more. For an example of this functionality, see the [rtcm-json](https://github.com/martinhakansson/rtcm-json) project.
+This library provides robust support for Serde, a powerful serialization/deserialization framework, facilitating conversion of RTCM messages into other formats such as JSON, XML and more. For an example of this functionality, see the [rtcm-json](https://github.com/martinhakansson/rtcm-json) crate.
 
 Moreover, the library is `no_std` compatible and doesn't rely on dynamic memory allocations, making it suitable for use in embedded environments. With feature flags for each message type, rtcm-rs can be tailored to your needs, reducing library size when necessary.
 
