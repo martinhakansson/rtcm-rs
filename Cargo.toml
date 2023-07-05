@@ -32,9 +32,12 @@ default = ["all_msgs"]
 all_msgs = [
     "msg1001",
     "msg1005",
+    "msg1006",
     "msg1007",
     "msg1008",
     "msg1030",
+    "msg1032",
+    "msg1033",
     "msg1071",
     "msg1072",
     "msg1073",
@@ -80,9 +83,12 @@ all_msgs = [
 ]
 msg1001 = []
 msg1005 = []
+msg1006 = []
 msg1007 = []
 msg1008 = []
 msg1030 = []
+msg1032 = []
+msg1033 = []
 msg1071 = []
 msg1072 = []
 msg1073 = []

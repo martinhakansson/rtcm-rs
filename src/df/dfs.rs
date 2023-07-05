@@ -65,7 +65,7 @@ df!(
 );
 
 //DF003: Reference Station ID
-//field_name: reference_station_id
+//field_name: reference_station_id or non_physical_reference_station_id
 df!(
     id: df003,
     dt: u16,
@@ -210,7 +210,7 @@ df!(
 );
 
 //DF025: Antenna Ref. Point ECEF-X
-//field_name: antenna_ref_point_ecef_x_m
+//field_name: antenna_ref_point_ecef_x_m or phys_ref_arp_ecef_x_m
 df!(
     id: df025,
     dt: f64,
@@ -222,7 +222,7 @@ df!(
 );
 
 //DF026: Antenna Ref. Point ECEF-Y
-//field_name: antenna_ref_point_ecef_y_m
+//field_name: antenna_ref_point_ecef_y_m or phys_ref_arp_ecef_y_m
 df!(
     id: df026,
     dt: f64,
@@ -234,7 +234,7 @@ df!(
 );
 
 //DF027: Antenna Ref. Point ECEF-Z
-//field_name: antenna_ref_point_ecef_z_m
+//field_name: antenna_ref_point_ecef_z_m or phys_ref_arp_ecef_z_m
 df!(
     id: df027,
     dt: f64,
@@ -245,8 +245,21 @@ df!(
     ord: 0,
 );
 
+//DF028: Antenna Height
+//field_name: antenna_height_m
+df!(
+    id: df028,
+    dt: f64,
+    it: U16,
+    len: 16,
+    res: 0.0001,
+    round: true,
+    ord: 0,
+);
+
 //DF029: Descriptor Counter
-//field_name: antenna_desc_char_len
+//field_name: antenna_desc_char_len (refactor as antenna_descriptor_len)
+//refactor as uses df_desc_str_len, se below
 df!(
     id: df029,
     dt: usize,
@@ -258,7 +271,10 @@ df!(
 
 //DF030: Antenna Descriptor
 //field_name: antenna_descriptor_str
+//refactor as uses df_desc_str, se below
 df_88591_string!(id: df030, cap_id: df029,);
+
+
 
 //DF031: Antenna Setup ID
 //field_name: antenna_setup_id
@@ -271,7 +287,8 @@ df!(
 );
 
 //DF032: Serial Number Counter
-//field_name: serial_number_len
+//field_name: serial_number_len (refactor as antenna_serial_number_len)
+//refactor as uses df_desc_str_len, se below
 df!(
     id: df032,
     dt: usize,
@@ -283,6 +300,7 @@ df!(
 
 //DF033: Antenna Serial Number
 //field_name: antenna_serial_number_str
+//refactor as uses df_desc_str, se below
 df_88591_string!(id: df033, cap_id: df032,);
 
 //DF034: GLONASS Epoch Time
@@ -394,6 +412,34 @@ df!(
     len: 20,
     ord: 0,
 );
+
+//DF226: Physical Reference Station ID
+//field_name: physical_reference_station_id
+//df003 used as it is identical
+
+//DF227: Receiver Type Descriptor Counter
+//field_name: receiver_type_descriptor_len
+//uses df_desc_str_len, se below
+
+//DF228: Receiver Type Descriptor
+//field_name: receiver_type_descriptor_str
+//uses df_desc_str, se below
+
+//DF229: Receiver Firmware Version Counter
+//field_name: receiver_firmware_version_len
+//uses df_desc_str_len, se below
+
+//DF230: Receiver Firmware Version
+//field_name: receiver_firmware_version_str
+//uses df_desc_str, se below
+
+//DF231: Receiver Serial Number Counter
+//field_name: receiver_serial_number_len
+//uses df_desc_str_len, se below
+
+//DF232: Receiver Serial Number
+//field_name: receiver_serial_number_str
+//uses df_desc_str, se below
 
 //DF248: Galileo Epoch Time
 //field_name: gal_epoch_time_ms
@@ -660,3 +706,18 @@ df!(
     len: 30,
     ord: 0,
 );
+
+//Reused data fields
+
+//Length of descriptor strings for data fields
+df!(
+    id: df_desc_str_len,
+    dt: usize,
+    it: U8,
+    len: 8,
+    cap: 31,DESC_STR_CAP,
+    ord: 0,
+);
+
+//Descriptor strings for data fields
+df_88591_string!(id: df_desc_str, cap_id: df_desc_str_len,);

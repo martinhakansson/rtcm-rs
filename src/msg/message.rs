@@ -195,9 +195,12 @@ macro_rules! message {
 message!(
     "msg1001": Msg1001(msg1001) = 1001,
     "msg1005": Msg1005(msg1005) = 1005,
+    "msg1006": Msg1006(msg1006) = 1006,
     "msg1007": Msg1007(msg1007) = 1007,
     "msg1008": Msg1008(msg1008) = 1008,
     "msg1030": Msg1030(msg1030) = 1030,
+    "msg1032": Msg1032(msg1032) = 1032,
+    "msg1033": Msg1033(msg1033) = 1033,
     "msg1071": Msg1071(msg1071) = 1071,
     "msg1072": Msg1072(msg1072) = 1072,
     "msg1073": Msg1073(msg1073) = 1073,

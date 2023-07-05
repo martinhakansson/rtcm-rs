@@ -823,9 +823,12 @@ macro_rules! include_msg {
 
 include_msg!(msg1001, "msg1001");
 include_msg!(msg1005, "msg1005");
+include_msg!(msg1006, "msg1006");
 include_msg!(msg1007, "msg1007");
 include_msg!(msg1008, "msg1008");
 include_msg!(msg1030, "msg1030");
+include_msg!(msg1032, "msg1032");
+include_msg!(msg1033, "msg1033");
 include_msg!(msg1071, "msg1071");
 include_msg!(msg1072, "msg1072");
 include_msg!(msg1073, "msg1073");

@@ -1,6 +1,6 @@
 msg!(
-    id: msg1005,
-    type_name: Msg1005T,
+    id: msg1006,
+    type_name: Msg1006T,
     fields: [
         (reference_station_id, df003),
         (reserved_24_6, df001_6bits),
@@ -13,6 +13,7 @@ msg!(
         (reserved_73_1, df001_1bit),
         (antenna_ref_point_ecef_y_m, df026),
         (quarter_cycle_ind, df364),
-        (antenna_ref_point_ecef_z_m, df027)
+        (antenna_ref_point_ecef_z_m, df027),
+        (antenna_height_m, df028)
     ],
 );
