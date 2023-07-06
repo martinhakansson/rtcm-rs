@@ -82,7 +82,7 @@ use crate::source_repr::SourceRepr;
 impl<T: Default + Clone + SourceRepr, const N: usize> SourceRepr for DataVec<T, N> {
     fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         f.write_char('{')?;
-        write!(f, "let mut vec = DataVec::<_,{}>::new();", N)?;
+        write!(f, "#[allow(unused_mut)] let mut vec = DataVec::<_,{}>::new();", N)?;
         for v in self.0.iter() {
             f.write_str("vec.push(")?;
             v.to_source(f)?;

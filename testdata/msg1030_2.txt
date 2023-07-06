@@ -1,8 +1,8 @@
 Msg1030(
     Msg1030T {
-        gps_resid_epoch_time_s: 494788,
-        reference_station_id: 545,
-        refs_n: 28,
+        gps_resid_epoch_time_s: 506857,
+        reference_station_id: 2748,
+        refs_n: 105,
         satellites_len: 0,
         satellites: DataVec(
             [

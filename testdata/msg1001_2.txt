@@ -1,11 +1,11 @@
 Msg1001(
     Msg1001T {
-        reference_station_id: 520,
-        gps_epoch_time_ms: 552569949,
-        synchronous_gnss_msg_flag: 1,
+        reference_station_id: 3650,
+        gps_epoch_time_ms: 213475782,
+        synchronous_gnss_msg_flag: 0,
         satellites_len: 0,
         gps_divergence_free_smoothing_flag: 0,
-        gps_smoothing_interval_bitval: 2,
+        gps_smoothing_interval_bitval: 5,
         satellites: DataVec(
             [
                 ,
