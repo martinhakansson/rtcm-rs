@@ -1,0 +1,1 @@
+Message::Msg1006(Msg1006T {reference_station_id:3597,reserved_24_6:9,gps_flag:1,glonass_flag:1,galileo_flag:1,reference_station_ind:1,antenna_ref_point_ecef_x_m:10864630.595,single_receiver_osc_ind:0,reserved_73_1:1,antenna_ref_point_ecef_y_m:358599.51410000003,quarter_cycle_ind:2,antenna_ref_point_ecef_z_m:3769213.5241,antenna_height_m:4.8323,})

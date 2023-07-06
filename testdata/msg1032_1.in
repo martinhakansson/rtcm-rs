@@ -1,0 +1,1 @@
+Message::Msg1032(Msg1032T {non_physical_reference_station_id:4095,physical_reference_station_id:4095,reserved_36_6:63,phys_ref_arp_ecef_x_m:-0.0001,phys_ref_arp_ecef_y_m:-0.0001,phys_ref_arp_ecef_z_m:-0.0001,})

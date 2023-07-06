@@ -1,0 +1,10 @@
+Msg1032(
+    Msg1032T {
+        non_physical_reference_station_id: 0,
+        physical_reference_station_id: 0,
+        reserved_36_6: 0,
+        phys_ref_arp_ecef_x_m: 0.0,
+        phys_ref_arp_ecef_y_m: 0.0,
+        phys_ref_arp_ecef_z_m: 0.0,
+    },
+)
