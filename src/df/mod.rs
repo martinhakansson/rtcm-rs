@@ -162,17 +162,18 @@ macro_rules! df {
 macro_rules! df_88591_string {
     (
         id: $id:ident,
-        cap_id: $cap_id:ident,
+        cap_name: $cap_name:ident,
     ) => {
         pub mod $id {
-            use super::*;
+            //use super::*;
             use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
             use $crate::util::Df88591String;
             use $crate::rtcm_error::RtcmError;
+            use $crate::msg::$cap_name;
 
             pub mod export_types {}
             #[allow(unused)]
-            pub type DataType = Df88591String<{ $cap_id::CAP }>;
+            pub type DataType = Df88591String< $cap_name >;
             #[allow(unused)]
             pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
                 for v in value.iter() {
@@ -185,7 +186,7 @@ macro_rules! df_88591_string {
             }
             #[allow(unused)]
             pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, RtcmError> {
-                if len > $cap_id::CAP {
+                if len > $cap_name {
                     return Err(RtcmError::CapacityExceeded);
                 }
                 let mut value = Df88591String::new();

@@ -260,21 +260,19 @@ df!(
 //DF029: Descriptor Counter
 //field_name: antenna_desc_char_len (refactor as antenna_descriptor_len)
 //refactor as uses df_desc_str_len, se below
-df!(
-    id: df029,
-    dt: usize,
-    it: U8,
-    len: 8,
-    cap: 31,DF029_CAP,
-    ord: 0,
-);
+// df!(
+//     id: df029,
+//     dt: usize,
+//     it: U8,
+//     len: 8,
+//     cap: 31,DF029_CAP,
+//     ord: 0,
+// );
 
 //DF030: Antenna Descriptor
 //field_name: antenna_descriptor_str
 //refactor as uses df_desc_str, se below
-df_88591_string!(id: df030, cap_id: df029,);
-
-
+//df_88591_string!(id: df030, cap_id: df029,);
 
 //DF031: Antenna Setup ID
 //field_name: antenna_setup_id
@@ -289,19 +287,19 @@ df!(
 //DF032: Serial Number Counter
 //field_name: serial_number_len (refactor as antenna_serial_number_len)
 //refactor as uses df_desc_str_len, se below
-df!(
-    id: df032,
-    dt: usize,
-    it: U8,
-    len: 8,
-    cap: 31,DF032_CAP,
-    ord: 0,
-);
+// df!(
+//     id: df032,
+//     dt: usize,
+//     it: U8,
+//     len: 8,
+//     cap: 31,DF032_CAP,
+//     ord: 0,
+// );
 
 //DF033: Antenna Serial Number
 //field_name: antenna_serial_number_str
 //refactor as uses df_desc_str, se below
-df_88591_string!(id: df033, cap_id: df032,);
+//df_88591_string!(id: df033, cap_id: df032,);
 
 //DF034: GLONASS Epoch Time
 //field_name: glo_epoch_time_ms
@@ -707,9 +705,9 @@ df!(
     ord: 0,
 );
 
-//Reused data fields
+//Reusable data fields
 
-//Length of descriptor strings for data fields
+//Length of descriptor strings for data fields: DF029, DF032, DF227, DF229, DF231
 df!(
     id: df_desc_str_len,
     dt: usize,
@@ -719,5 +717,5 @@ df!(
     ord: 0,
 );
 
-//Descriptor strings for data fields
-df_88591_string!(id: df_desc_str, cap_id: df_desc_str_len,);
+//Descriptor strings for data fields: DF030, DF033, DF228, DF230, DF232
+df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);

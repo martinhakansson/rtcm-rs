@@ -1,14 +1,14 @@
 Msg1008(
     Msg1008T {
-        reference_station_id: 2113,
-        antenna_desc_char_len: 0,
+        reference_station_id: 2592,
+        antenna_descriptor_len: 0,
         antenna_descriptor_str: Df88591String(
             [
                 ,
             ],
         ),
-        antenna_setup_id: 229,
-        serial_number_len: 0,
+        antenna_setup_id: 227,
+        antenna_serial_number_len: 0,
         antenna_serial_number_str: Df88591String(
             [
                 ,
