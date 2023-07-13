@@ -64,7 +64,7 @@ macro_rules! impl_bit_value {
             val_cast!();
             #[inline]
             fn sign_fix(val: Self::ValueType, len: usize) -> Self::ValueType {
-                if val & (1 << (len - 1)) == 0 {
+                if val & (1 << (len - 1)) == 0 || len == <$ptype>::BITS as usize {
                     val
                 } else {
                     val | (-1 << len)
