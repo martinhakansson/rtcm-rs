@@ -14,7 +14,10 @@ impl<'a> Parser<'a> {
     pub fn offset(&self) -> usize {
         self.offset
     }
-    pub fn parse<IT: BitValue>(&mut self, len: usize) -> Result<<IT as BitValue>::ValueType, RtcmError> {
+    pub fn parse<IT: BitValue>(
+        &mut self,
+        len: usize,
+    ) -> Result<<IT as BitValue>::ValueType, RtcmError> {
         if self.data.len() * 8 < self.offset + len {
             Err(RtcmError::BufferOverflow)
         } else {

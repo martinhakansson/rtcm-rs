@@ -47,7 +47,7 @@ macro_rules! df {
                         value -= $bias;
                     } else {
                         return Err(RtcmError::OutOfRange);
-                    }                    
+                    }
                 )?
                 $(
                     value /= $res;
@@ -67,7 +67,7 @@ macro_rules! df {
             }
             #[allow(unused)]
             pub fn decode(par:&mut Parser) -> Result<DataType,RtcmError> {
-                
+
                 let value = par.parse::<$it>($len)?;
                 #[allow(unused_mut)]
                 let mut dt_val = value as $dt $( * $res )?;
@@ -107,7 +107,7 @@ macro_rules! df {
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
             #[allow(unused)]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<DataType,RtcmError> 
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<DataType,RtcmError>
                 where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 /*
                 let it_val = {
@@ -167,13 +167,13 @@ macro_rules! df_88591_string {
         pub mod $id {
             //use super::*;
             use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
-            use $crate::util::Df88591String;
-            use $crate::rtcm_error::RtcmError;
             use $crate::msg::$cap_name;
+            use $crate::rtcm_error::RtcmError;
+            use $crate::util::Df88591String;
 
             pub mod export_types {}
             #[allow(unused)]
-            pub type DataType = Df88591String< $cap_name >;
+            pub type DataType = Df88591String<$cap_name>;
             #[allow(unused)]
             pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
                 for v in value.iter() {
@@ -205,12 +205,16 @@ macro_rules! df_88591_string {
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
             #[allow(unused)]
-            pub fn generate<FR,LR,RR>(
-                asm:&mut Assembler, 
-                val_gen:&mut ValGen<FR,LR,RR>,
+            pub fn generate<FR, LR, RR>(
+                asm: &mut Assembler,
+                val_gen: &mut ValGen<FR, LR, RR>,
                 len: usize,
             ) -> Result<(), RtcmError>
-            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
+            where
+                FR: rand::Rng,
+                LR: rand::Rng,
+                RR: rand::Rng,
+            {
                 let mut value: DataType = Df88591String::new();
                 for _ in 0..len {
                     let v = 48 + (val_gen.field_rng.gen::<u8>() % 42);

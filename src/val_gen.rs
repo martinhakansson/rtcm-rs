@@ -17,7 +17,7 @@ where
     LR: Rng,
     RR: Rng,
 {
-    pub fn new(field_rng:FR, len_rng:LR, rng_rng:RR) -> Self {
+    pub fn new(field_rng: FR, len_rng: LR, rng_rng: RR) -> Self {
         ValGen {
             field_rng,
             len_rng,

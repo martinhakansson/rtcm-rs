@@ -12,5 +12,5 @@ fn main() {
         for message_frame in &mut iterator {
             println!("Message {}", message_frame.message_number().unwrap());
         }
-    }    
+    }
 }
