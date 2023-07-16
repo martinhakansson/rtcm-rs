@@ -17,13 +17,13 @@ Moreover, the library is `no_std` compatible and doesn't rely on dynamic memory 
 - `serde`: For adding support for serialization and deserialization. To enable this, add the following to the rtcm-rs dependency in your Cargo.toml file:
 
 ```toml
-rtcm-rs = { version = "0.3.0", features=["serde"] }
+rtcm-rs = { version = "0.4.0", features=["serde"] }
 ```
 
 - Selective message support: To minimize the library size by supporting only certain RTCM messages. For instance, to only support messages 1004 and 1005, update your Cargo.toml as follows:
 
 ```toml
-rtcm-rs = { version = "0.3.0", default-features=false, features=["msg1004","msg1005"] }
+rtcm-rs = { version = "0.4.0", default-features=false, features=["msg1004","msg1005"] }
 ```
 
 - `test_gen`: This feature is used exclusively for generating tests during library development and is not necessary for library usage.
@@ -34,7 +34,7 @@ To add rtcm-rs to your project, add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-rtcm-rs = "0.3.0"
+rtcm-rs = "0.4.0"
 ```
 
 Remember that hyphenated crate names translate to underscored crate names in rust source code, i.e. `rtcm_rs` for this crate. For instance, add the following to import from the prelude:
@@ -151,6 +151,7 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
 | 0.1.x | 1001 1005 1007 1008 1030 1071 1074 | |
 | 0.2.x | 1084 1094 1104 1114 1124 | MSM4 support |
 | 0.3.x | 1072 1073 1075 1076 1077 1081 1082 1083 1085 1086 1087 1091 1092 1093 1095 1096 1097 1101 1102 1103 1105 1106 1107 1111 1112 1113 1115 1116 1117 1121 1122 1123 1125 1126 1127 | Full MSM support |
+| 0.4.x | 1006 1013 1029 1032 1033 1230 | Station meta data and some auxiliary info messages |
 
 ## License
 
