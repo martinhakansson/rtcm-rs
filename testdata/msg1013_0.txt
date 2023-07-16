@@ -1,0 +1,170 @@
+Msg1013(
+    Msg1013T {
+        reference_station_id: 0,
+        modified_julian_day_number: 0,
+        seconds_of_day_s: 0,
+        message_id_announcements_len: 31,
+        leap_seconds_gps_utc_s: Some(
+            0,
+        ),
+        message_id_announcements: DataVec(
+            [
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+                Msg1013MsgId {
+                message_id: 0,
+                message_sync_flag: 0,
+                message_transmission_interval_s: None,
+            },
+            ],
+        ),
+    },
+)

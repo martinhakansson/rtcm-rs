@@ -1,0 +1,8 @@
+Msg1029(
+    Msg1029T {
+        reference_station_id: 0,
+        modified_julian_day_number: 0,
+        seconds_of_day_s: 0,
+        text_str: ArrayString<255>("abcdefghijklmnopqrstuvwxyzƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂѣѤѥѦѧѨѩѪѫѬѭѮѯѰѱѲѳѴѵѶѷѸѹѺѻیۍێۏېۑےۓ۔ەۖۗۘۙۚۛۜ۝۞ۣ۟۠ۡۢۤ乥书乧乨乩乪乫乬乭乮乯买乱乲乳乴乵乶乷乸乹乺乻乼乽乾"),
+    },
+)

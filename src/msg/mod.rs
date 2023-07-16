@@ -10,8 +10,8 @@ pub use msm_mappings::bds::SigId as BdsSigId;
 pub use msm_mappings::gal::SigId as GalSigId;
 pub use msm_mappings::glo::SigId as GloSigId;
 pub use msm_mappings::gps::SigId as GpsSigId;
-pub use msm_mappings::sbas::SigId as SbasSigId;
 pub use msm_mappings::qzss::SigId as QzssSigId;
+pub use msm_mappings::sbas::SigId as SbasSigId;
 
 macro_rules! msg {
     (
@@ -115,8 +115,8 @@ macro_rules! frag_vec {
             //use $crate::df::dfs::*;
             use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::msg::*;
-            use $crate::util::DataVec;
             use $crate::rtcm_error::RtcmError;
+            use $crate::util::DataVec;
             //pub type DataType = ArrayVec<[$frag_id::DataType; $cap_id::CAP]>;
 
             pub mod export_types {
@@ -152,12 +152,16 @@ macro_rules! frag_vec {
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
-            pub fn generate<FR,LR,RR>(
-                asm:&mut Assembler, 
-                val_gen:&mut ValGen<FR,LR,RR>,
+            pub fn generate<FR, LR, RR>(
+                asm: &mut Assembler,
+                val_gen: &mut ValGen<FR, LR, RR>,
                 len: usize,
             ) -> Result<(), RtcmError>
-            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
+            where
+                FR: rand::Rng,
+                LR: rand::Rng,
+                RR: rand::Rng,
+            {
                 for _ in 0..len {
                     $frag_id::generate(asm, val_gen)?;
                     // if $frag_id::generate(asm, val_gen).is_err() {
@@ -182,10 +186,10 @@ macro_rules! msm_data_seg_frag {
             use super::*;
             use $crate::df::bit_value::{U32, U64};
             use $crate::df::{assembler::Assembler, parser::Parser};
-            use $crate::rtcm_error::RtcmError;
             use $crate::msg::{
                 cell_mask_id_vec, mask_len_u32, mask_len_u64, msm_mappings::$gnss::*,
             };
+            use $crate::rtcm_error::RtcmError;
             use $crate::tinyvec::ArrayVec;
             #[cfg(feature = "serde")]
             use $crate::{Deserialize, Serialize};
@@ -332,8 +336,15 @@ macro_rules! msm_data_seg_frag {
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(), RtcmError>
-            where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
+            pub fn generate<FR, LR, RR>(
+                asm: &mut Assembler,
+                val_gen: &mut ValGen<FR, LR, RR>,
+            ) -> Result<(), RtcmError>
+            where
+                FR: rand::Rng,
+                LR: rand::Rng,
+                RR: rand::Rng,
+            {
                 let sig_len: usize = (val_gen.len_rng.gen::<usize>() % 64) + 1;
                 let subset: usize = val_gen.rng_rng.gen::<usize>();
                 let mut cell_vec: ArrayVec<[(u8, u8); 64]> = ArrayVec::new();
@@ -362,9 +373,10 @@ macro_rules! msm_data_seg_frag {
                     }
                      */
                     //let (sat_id, sig_id) = (i as u8 +1, 2u8);
-                    
+
                     let (sat_id, sig_id) = loop {
-                        let sat_id: u8 = (((subset % 65) as u8 + (val_gen.rng_rng.gen::<u8>() % 16)) % 64) + 1;
+                        let sat_id: u8 =
+                            (((subset % 65) as u8 + (val_gen.rng_rng.gen::<u8>() % 16)) % 64) + 1;
                         let sig_id = random_id(&mut val_gen.rng_rng, subset);
                         /*let new_sat_num = if (sat_mask & (1 << (64 - sat_id))) == 0 {
                             sat_num + 1
@@ -377,7 +389,7 @@ macro_rules! msm_data_seg_frag {
                             sig_num
                         };*/
                         if !cell_vec.iter().any(|e| e.0 == sat_id && e.1 == sig_id)
-                            //&& new_sat_num * new_sig_num <= 64
+                        //&& new_sat_num * new_sig_num <= 64
                         {
                             break (sat_id, sig_id);
                         }
@@ -675,7 +687,7 @@ macro_rules! msm_sig_frag {
             #[cfg(feature = "test_gen")]
             use $crate::val_gen::ValGen;
             #[cfg(feature = "test_gen")]
-            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sig_len:usize) -> Result<(),RtcmError> 
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>, sig_len:usize) -> Result<(),RtcmError>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
                 $(
                     for _ in 0..sig_len {
@@ -753,7 +765,6 @@ fn cell_mask_id_vec(
     Some((sat_vec, cell_vec))
 }
 
-
 #[cfg(any(
     feature = "msg1071",
     feature = "msg1072",
@@ -780,7 +791,7 @@ mod msm123_sat;
     feature = "msg1074",
     feature = "msg1076",
     feature = "msg1084",
-    feature = "msg1086", 
+    feature = "msg1086",
     feature = "msg1094",
     feature = "msg1096",
     feature = "msg1104",
@@ -806,10 +817,7 @@ mod msm46_sat;
 ))]
 mod msm57_sat;
 
-#[cfg(any(
-    feature = "msg1085",
-    feature = "msg1087"
-))]
+#[cfg(any(feature = "msg1085", feature = "msg1087"))]
 mod msm57_glo_sat;
 
 macro_rules! include_msg {
@@ -826,6 +834,8 @@ include_msg!(msg1005, "msg1005");
 include_msg!(msg1006, "msg1006");
 include_msg!(msg1007, "msg1007");
 include_msg!(msg1008, "msg1008");
+include_msg!(msg1013, "msg1013");
+include_msg!(msg1029, "msg1029");
 include_msg!(msg1030, "msg1030");
 include_msg!(msg1032, "msg1032");
 include_msg!(msg1033, "msg1033");
@@ -871,3 +881,4 @@ include_msg!(msg1124, "msg1124");
 include_msg!(msg1125, "msg1125");
 include_msg!(msg1126, "msg1126");
 include_msg!(msg1127, "msg1127");
+include_msg!(msg1230, "msg1230");

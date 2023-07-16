@@ -1,0 +1,38 @@
+Msg1230(
+    Msg1230T {
+        reference_station_id: 0,
+        glonass_code_phase_bias_ind: 0,
+        glonass_code_phase_biases: DataVec(
+            [
+                Msg1230CodePhaseBias {
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: 0.0,
+            },
+                Msg1230CodePhaseBias {
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: 0.0,
+            },
+                Msg1230CodePhaseBias {
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: 0.0,
+            },
+                Msg1230CodePhaseBias {
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: 0.0,
+            },
+            ],
+        ),
+    },
+)

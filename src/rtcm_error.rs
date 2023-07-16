@@ -13,6 +13,7 @@ pub enum RtcmError {
     DuplicateSatelliteSignal,
     InvalidSatelliteSignalCount,
     OutOfRange,
+    InvalidUtf8String,
 }
 
 impl core::fmt::Display for RtcmError {
@@ -30,6 +31,7 @@ impl core::fmt::Display for RtcmError {
             RtcmError::DuplicateSatelliteSignal => write!(f, "The same satellite-signal combination appears twice in the vector"),
             RtcmError::InvalidSatelliteSignalCount => write!(f, "The product of total number of satellites and total number of signals exceeds 64 or equals 0"),
             RtcmError::OutOfRange => write!(f, "Value falls outside of range of valid values"),
+            RtcmError::InvalidUtf8String => write!(f, "String is not valid UTF-8"),
             //_ => unreachable!(),
         }
     }

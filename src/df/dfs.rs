@@ -311,6 +311,73 @@ df!(
     ord: 0,
 );
 
+//DF051: Modified Julian Day (MJD) Number
+//field_name: modified_julian_day_number
+df!(
+    id: df051,
+    dt: u16,
+    it: U16,
+    len: 16,
+    ord: 0,
+);
+
+//DF052: Seconds of Day (UTC)
+//field_name: seconds_of_day_s
+df!(
+    id: df052,
+    dt: u32,
+    it: U32,
+    len: 17,
+    ord: 0,
+);
+
+//DF053: Number of Message ID Announcements to Follow
+//field_name: message_id_announcements_len
+df!(
+    id: df053,
+    dt: usize,
+    it: U8,
+    len: 5,
+    cap: 31, DF053_CAP,
+    ord: 0,
+);
+
+//DF054: Leap Seconds GPS-UTC
+//field_name: leap_seconds_gps_utc_s
+df!(
+    id: df054,
+    dt: u8,
+    it: U8,
+    len: 8,
+    inv: 255,
+);
+
+//DF055: Message ID
+//field_name: message_id
+//df002 also used for DF055
+
+//DF056: Message Sync Flag
+//field_name: message_sync_flag
+df!(
+    id: df056,
+    dt: u8,
+    it: U8,
+    len: 1,
+    ord: 0,
+);
+
+//DF057: Message Transmission Interval
+//field_name: message_transmission_interval_s
+df!(
+    id: df057,
+    dt: f32,
+    it: U16,
+    len: 16,
+    res: 0.1,
+    round: true,
+    inv: 0,
+);
+
 //DF141: Reference-Station Indicator
 //field_name: reference_station_ind
 df!(
@@ -685,6 +752,16 @@ df!(
     ord: 0,
 );
 
+//DF421: GLONASS Code-Phase Bias Indicator
+//field_name: glonass_code_phase_bias_ind
+df!(
+    id: df421,
+    dt: u8,
+    it: U8,
+    len: 1,
+    ord: 0,
+);
+
 //DF427: BeiDou Epoch Time
 //field_name: bds_epoch_time_ms
 df!(
@@ -719,3 +796,8 @@ df!(
 
 //Descriptor strings for data fields: DF030, DF033, DF228, DF230, DF232
 df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);
+
+//Data fields specific to one message
+
+pub mod df_msg1029_utf8_str;
+pub mod df_msg1230_biases;

@@ -1,0 +1,16 @@
+Msg1013(
+    Msg1013T {
+        reference_station_id: 2058,
+        modified_julian_day_number: 35713,
+        seconds_of_day_s: 19301,
+        message_id_announcements_len: 0,
+        leap_seconds_gps_utc_s: Some(
+            44,
+        ),
+        message_id_announcements: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

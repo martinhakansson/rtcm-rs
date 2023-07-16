@@ -14,6 +14,10 @@ impl<'a> Parser<'a> {
     pub fn offset(&self) -> usize {
         self.offset
     }
+    #[allow(unused)]
+    pub fn data(&self) -> &[u8] {
+        &self.data[self.offset / 8..]
+    }
     pub fn parse<IT: BitValue>(
         &mut self,
         len: usize,
@@ -60,6 +64,10 @@ impl<'a> Parser<'a> {
             self.offset += len;
             Ok(<IT as BitValue>::sign_fix(val, len))
         }
+    }
+    #[allow(unused)]
+    pub fn consume_bits(&mut self, len: usize) {
+        self.offset += len;
     }
 }
 

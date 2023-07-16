@@ -1,0 +1,36 @@
+Msg1013(
+    Msg1013T {
+        reference_station_id: 782,
+        modified_julian_day_number: 17075,
+        seconds_of_day_s: 92694,
+        message_id_announcements_len: 3,
+        leap_seconds_gps_utc_s: Some(
+            63,
+        ),
+        message_id_announcements: DataVec(
+            [
+                Msg1013MsgId {
+                message_id: 3939,
+                message_sync_flag: 0,
+                message_transmission_interval_s: Some(
+                    1754.5,
+                ),
+            },
+                Msg1013MsgId {
+                message_id: 487,
+                message_sync_flag: 1,
+                message_transmission_interval_s: Some(
+                    6166.0,
+                ),
+            },
+                Msg1013MsgId {
+                message_id: 2850,
+                message_sync_flag: 1,
+                message_transmission_interval_s: Some(
+                    1991.1,
+                ),
+            },
+            ],
+        ),
+    },
+)

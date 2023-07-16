@@ -149,7 +149,7 @@ macro_rules! message {
 
                 Ok(&self.data[..data_len+6])
             }
-            
+
             #[cfg(feature = "test_gen")]
             pub fn build_generated_message<FR,LR,RR>(&mut self, val_gen:&mut ValGen<FR,LR,RR>, message_number:u16) -> Result<&[u8],RtcmError>
             where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
@@ -183,10 +183,10 @@ macro_rules! message {
 
                 Ok(&self.data[..data_len+6])
             }
-            fn clear_data(&mut self) {                
+            fn clear_data(&mut self) {
                 for d in self.data[1..].iter_mut() {
                     *d = 0;
-                }                
+                }
             }
         }
     };
@@ -198,6 +198,8 @@ message!(
     "msg1006": Msg1006(msg1006) = 1006,
     "msg1007": Msg1007(msg1007) = 1007,
     "msg1008": Msg1008(msg1008) = 1008,
+    "msg1013": Msg1013(msg1013) = 1013,
+    "msg1029": Msg1029(msg1029) = 1029,
     "msg1030": Msg1030(msg1030) = 1030,
     "msg1032": Msg1032(msg1032) = 1032,
     "msg1033": Msg1033(msg1033) = 1033,
@@ -242,5 +244,6 @@ message!(
     "msg1124": Msg1124(msg1124) = 1124,
     "msg1125": Msg1125(msg1125) = 1125,
     "msg1126": Msg1126(msg1126) = 1126,
-    "msg1127": Msg1127(msg1127) = 1127
+    "msg1127": Msg1127(msg1127) = 1127,
+    "msg1230": Msg1230(msg1230) = 1230
 );
