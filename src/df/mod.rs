@@ -137,7 +137,8 @@ macro_rules! df {
                     let it_val = val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap + 1);
                 )?
                 asm.put::<$it>(it_val, $len)?;
-                let dt_val = it_val as $dt $( * $res )?;
+                let shift = <$it as BitValue>::ValueType::BITS-$len;
+                let dt_val = ((it_val << shift) >> shift) as $dt $( * $res )?;
                     $(
                         if it_val == $inv {
                             return Ok(None);
