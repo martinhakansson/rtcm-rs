@@ -28,15 +28,11 @@ impl<'a> Parser<'a> {
             let mut val: <IT as BitValue>::ValueType =
                 <<IT as BitValue>::ValueType as Default>::default();
             let lh_st = self.offset % 8;
-            //let rh_st = (8 - lh_st) % 8;
             let lh_en = (self.offset + len) % 8;
             let rh_en = (8 - lh_en) % 8;
-            //println!("{}", rh_en);
             let sti = self.offset / 8;
             let dlen = (self.offset + len - 1) / 8 - sti + 1;
             let mut lenlft = len;
-            //println!("sti={}", sti);
-            //println!("dlen={}", dlen);
             for (i, d) in self.data.iter().skip(sti).take(dlen).enumerate() {
                 let mut b = *d;
                 let mut nbits: usize = 8;
@@ -50,16 +46,18 @@ impl<'a> Parser<'a> {
                     nbits -= rh_en;
                     bpos = rh_en;
                 }
-                //println!("b={}", b);
-                //println!("lenlft={}, nbits={}", lenlft, nbits);
                 lenlft -= nbits;
+
+                if bpos >= lenlft {
+                    b >>= bpos - lenlft;
+                }
                 let bval = <IT as BitValue>::u8_cast(b);
+
                 val |= if bpos >= lenlft {
-                    bval >> bpos - lenlft
+                    bval
                 } else {
                     bval << lenlft - bpos
                 };
-                //println!("val = {:?}", val);
             }
             self.offset += len;
             Ok(<IT as BitValue>::sign_fix(val, len))
@@ -83,6 +81,8 @@ mod test_parser {
             0b10101010,
             0b11110000,
             0b11001100,
+            0b11111110,
+            0b11000011
         ];
         // 1
         let mut parser = Parser::new(&data, 15);
@@ -108,11 +108,15 @@ mod test_parser {
         let mut parser = Parser::new(&data, 4);
         let ext = parser.parse::<U32>(32).unwrap();
         assert_eq!(0b00111001101011100011101010101111, ext);
-        // 6
+        // 7
         let mut parser = Parser::new(&data, 18);
         let ext = parser.parse::<I8>(5).unwrap();
         assert_eq!(0b11110001, ext as u8);
-        // 6
+        // 8
+        let mut parser = Parser::new(&data, 54);
+        let ext = parser.parse::<I8>(8).unwrap();
+        assert_eq!(0b10110000, ext as u8);        
+        // 9
         let mut parser = Parser::new(&data, 12);
         let ext = parser.parse::<SM16>(12).unwrap();
         assert_eq!(-0b1011100011, ext);
