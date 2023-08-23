@@ -1648,6 +1648,42 @@ df!(
 //field_name: satellite_reference_datum_ind
 //df: df_flag
 
+//DF376: Delta Clock C0
+//field_name: delta_clock_c0_m
+df!(
+    id: df376,
+    dt: f64,
+    it: I32,
+    len: 22,
+    res: 1.0e-4,
+    round: true,
+    ord: 0,
+);
+
+//DF377: Delta Clock C1
+//field_name: delta_clock_c1_m_s
+df!(
+    id: df377,
+    dt: f64,
+    it: I32,
+    len: 21,
+    res: 1.0e-6,
+    round: true,
+    ord: 0,
+);
+
+//DF378: Delta Clock C2
+//field_name: delta_clock_c2_m_s2
+df!(
+    id: df378,
+    dt: f64,
+    it: I32,
+    len: 27,
+    res: 2.0e-8,
+    round: true,
+    ord: 0,
+);
+
 //DF385: GPS Epoch Time (TOW) in s
 //field_name: gps_epoch_time_s
 df!(
