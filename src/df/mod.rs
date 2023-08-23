@@ -134,7 +134,12 @@ macro_rules! df {
                     val_gen.field_rng.gen::<<$it as BitValue>::ValueType>()
                 };
                 $(
-                    let it_val = val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap + 1);
+                    //let it_val = val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap + 1);
+                    let it_val = if val_gen.len_rng.gen::<u64>() == u64::MAX {
+                        $cap
+                    } else {
+                        val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap + 1)
+                    };
                 )?
                 asm.put::<$it>(it_val, $len)?;
                 let shift = <$it as BitValue>::ValueType::BITS-$len;
