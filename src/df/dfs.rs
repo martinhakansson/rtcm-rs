@@ -426,6 +426,10 @@ df!(
     inv: 0,
 );
 
+//DF068: GPS Satellite ID
+//field_name: gps_satellite_id (same name as df009)
+//df: df_u6
+
 //DF071: GPS IODE
 //field_name: iode
 df!(
@@ -1568,6 +1572,122 @@ df!(
     ord: 0,
 );
 
+//DF365: Delta Radial
+//field_name: delta_radial_m
+df!(
+    id: df365,
+    dt: f64,
+    it: I32,
+    len: 22,
+    res: 0.0001,
+    round: true,
+    ord: 0,
+);
+
+//DF366: Delta Along-Track
+//field_name: delta_along_track_m
+df!(
+    id: df366,
+    dt: f64,
+    it: I32,
+    len: 20,
+    res: 0.0004,
+    round: true,
+    ord: 0,
+);
+
+//DF367: Delta Cross-Track
+//field_name: delta_cross_track_m
+df!(
+    id: df367,
+    dt: f64,
+    it: I32,
+    len: 20,
+    res: 0.0004,
+    round: true,
+    ord: 0,
+);
+
+//DF368: Dot Delta Radial
+//field_name: dot_delta_radial_m_s
+df!(
+    id: df368,
+    dt: f64,
+    it: I32,
+    len: 21,
+    res: 1.0e-6,
+    round: true,
+    ord: 0,
+);
+
+//DF369: Dot Delta Along-Track
+//field_name: dot_delta_along_track_m_s
+df!(
+    id: df369,
+    dt: f64,
+    it: I32,
+    len: 19,
+    res: 4.0e-6,
+    round: true,
+    ord: 0,
+);
+
+//DF370: Dot Delta Cross-Track
+//field_name: dot_delta_cross_track_m_s
+df!(
+    id: df370,
+    dt: f64,
+    it: I32,
+    len: 19,
+    res: 4.0e-6,
+    round: true,
+    ord: 0,
+);
+
+//DF375: Satellite Reference Datum
+//field_name: satellite_reference_datum_ind
+//df: df_flag
+
+//DF385: GPS Epoch Time (TOW) in s
+//field_name: gps_epoch_time_s
+df!(
+    id: df385,
+    dt: u32,
+    it: U32,
+    len: 20,
+    ord: 0,
+);
+
+//DF387: No. of Satellites
+//field_name: satellites_len
+df!(
+    id: df387,
+    dt: usize,
+    it: U8,
+    len: 6,
+    cap: 63,DF387_CAP,
+    ord: 0,
+);
+
+//DF387: No. of Satellites
+//field_name: satellites_len
+df!(
+    id: df387_1057,
+    dt: usize,
+    it: U8,
+    len: 6,
+    cap: 60,DF387_1057_CAP,
+    ord: 0,
+); 
+
+//DF388: Multiple Message Indicator
+//field_name: multiple_message_flag
+//df: df_flag
+
+//DF391: SSR Update Interval
+//field_name: ssr_update_interval_index
+//df: df_u4
+
 //DF393: MSM multiple message bit
 //field_name: msm_multiple_message_flag
 df!(
@@ -1742,6 +1862,18 @@ df!(
     len: 2,
     ord: 0,
 );
+
+//DF413: IOD SSR
+//field_name: iod_ssr
+//df: df_u4
+
+//DF414: SSR Provider ID
+//field_name: ssr_provider_id
+//df: df_u16
+
+//DF415: SSR Solution ID
+//field_name: ssr_solution_id
+//df: df_u4
 
 //DF416: GLONASS Day Of Week
 //field_name: glo_day_of_week
@@ -2795,6 +2927,71 @@ df!(
     dt: u8,
     it: U8,
     len: 1,
+    ord: 0,
+);
+
+//unsigned integers
+df!(
+    id: df_u2,
+    dt: u8,
+    it: U8,
+    len: 2,
+    ord: 0,
+);
+
+df!(
+    id: df_u3,
+    dt: u8,
+    it: U8,
+    len: 3,
+    ord: 0,
+);
+
+df!(
+    id: df_u4,
+    dt: u8,
+    it: U8,
+    len: 4,
+    ord: 0,
+);
+
+df!(
+    id: df_u5,
+    dt: u8,
+    it: U8,
+    len: 5,
+    ord: 0,
+);
+
+df!(
+    id: df_u6,
+    dt: u8,
+    it: U8,
+    len: 6,
+    ord: 0,
+);
+
+df!(
+    id: df_u7,
+    dt: u8,
+    it: U8,
+    len: 7,
+    ord: 0,
+);
+
+df!(
+    id: df_u8,
+    dt: u8,
+    it: U8,
+    len: 8,
+    ord: 0,
+);
+
+df!(
+    id: df_u16,
+    dt: u16,
+    it: U16,
+    len: 16,
     ord: 0,
 );
 
