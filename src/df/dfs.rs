@@ -793,7 +793,7 @@ df!(
 df!(
     id: df107_s,
     dt: u8,
-    it: U8,    
+    it: U8,
     len: 1,
     res: 30,
     ord: 0,
@@ -812,7 +812,7 @@ df!(
 df!(
     id: df110,
     dt: u16,
-    it: U8,    
+    it: U8,
     len: 7,
     res: 15,
     ord: 0,
@@ -1714,7 +1714,7 @@ df!(
     len: 6,
     cap: 60,DF387_1057_CAP,
     ord: 0,
-); 
+);
 
 //DF388: Multiple Message Indicator
 //field_name: multiple_message_flag
@@ -2499,7 +2499,6 @@ df!(
     round: true,
     ord: 0,
 );
-
 
 //DF504: BDS sqrt A
 //field_name: sqrt_a_sqrt_m

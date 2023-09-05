@@ -82,7 +82,7 @@ mod test_parser {
             0b11110000,
             0b11001100,
             0b11111110,
-            0b11000011
+            0b11000011,
         ];
         // 1
         let mut parser = Parser::new(&data, 15);
@@ -115,7 +115,7 @@ mod test_parser {
         // 8
         let mut parser = Parser::new(&data, 54);
         let ext = parser.parse::<I8>(8).unwrap();
-        assert_eq!(0b10110000, ext as u8);        
+        assert_eq!(0b10110000, ext as u8);
         // 9
         let mut parser = Parser::new(&data, 12);
         let ext = parser.parse::<SM16>(12).unwrap();

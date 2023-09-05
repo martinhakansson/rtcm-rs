@@ -20,7 +20,11 @@ pub struct Msg1059CodeBias {
 impl SourceRepr for Msg1059CodeBias {
     fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         use core::fmt::Write;
-        write!(f, "Msg1059CodeBias {{ sat_id: {}, sig_id: gps::", self.sat_id)?;
+        write!(
+            f,
+            "Msg1059CodeBias {{ sat_id: {}, sig_id: gps::",
+            self.sat_id
+        )?;
         self.sig_id.to_source(f)?;
         write!(f, ", bias_m: ")?;
         self.bias_m.to_source(f)?;
@@ -74,9 +78,8 @@ sig_mappings![
 
 #[allow(unused)]
 pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
-
-    let mut sat_mask:u64 = 0;
-    let mut sat_num:u8 = 0;
+    let mut sat_mask: u64 = 0;
+    let mut sat_num: u8 = 0;
     for bias in value.iter() {
         if bias.sat_id <= 63 {
             let sat = 1 << bias.sat_id;
@@ -92,11 +95,14 @@ pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
     asm.put::<U8>(sat_num, 6)?;
 
     for s in 0..=63u8 {
-        if sat_mask & (1<<s) != 0 {
+        if sat_mask & (1 << s) != 0 {
             asm.put::<U8>(s, 6)?;
-            let num_biases:u8 = value.iter().filter(|b| b.sat_id == s && to_id(b.sig_id).is_some()).count() as u8;
+            let num_biases: u8 = value
+                .iter()
+                .filter(|b| b.sat_id == s && to_id(b.sig_id).is_some())
+                .count() as u8;
             asm.put::<U8>(num_biases, 5)?;
-            let mut bias_mask:u32 = 0;
+            let mut bias_mask: u32 = 0;
             for bias in value.iter().filter(|b| b.sat_id == s) {
                 if let Some(sig_id) = to_id(bias.sig_id) {
                     asm.put::<U8>(sig_id, 5)?;
@@ -121,10 +127,10 @@ pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
         for _ in 0..bias_num {
             if let Some(sig_id) = to_sig(par.parse::<U8>(5)?) {
                 let bias = par.parse::<I16>(14)? as f32;
-                value.push(Msg1059CodeBias { 
+                value.push(Msg1059CodeBias {
                     sat_id,
-                    sig_id, 
-                    bias_m: bias * 0.01, 
+                    sig_id,
+                    bias_m: bias * 0.01,
                 });
             }
         }
@@ -150,11 +156,7 @@ where
     asm.put::<U8>(sat_num, 6)?;
     for s in 1..=sat_num {
         asm.put::<U8>(s, 6)?;
-        let num_biases:u8 = if s == 63 {
-            18
-        } else {
-            6
-        };
+        let num_biases: u8 = if s == 63 { 18 } else { 6 };
         asm.put::<U8>(num_biases, 5)?;
         let mut sig_id = val_gen.rng_rng.gen::<u8>() % 16;
         for _ in 0..num_biases {

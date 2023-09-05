@@ -20,7 +20,6 @@ msg!(
     id: msg1001,
     type_name: Msg1001T,
     fields: [
-        //(message_number, df002),
         (reference_station_id, df003),
         (gps_epoch_time_ms, df004),
         (synchronous_gnss_msg_flag, df005),
