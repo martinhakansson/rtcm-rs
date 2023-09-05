@@ -3047,4 +3047,5 @@ df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);
 //Data fields specific to one message
 
 pub mod df_msg1029_utf8_str;
+pub mod df_msg1059_biases;
 pub mod df_msg1230_biases;
