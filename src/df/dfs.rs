@@ -1684,6 +1684,10 @@ df!(
     ord: 0,
 );
 
+//DF384: GLONASS Satellite ID
+//field_name: glo_satellite_id
+//df: df_u5
+
 //DF385: GPS Epoch Time (TOW) in s
 //field_name: gps_epoch_time_s
 df!(
@@ -1693,6 +1697,10 @@ df!(
     len: 20,
     ord: 0,
 );
+
+//DF386: 
+//field_name: glo_epoch_time_s
+//df: df_u17
 
 //DF387: No. of Satellites
 //handled in frag_vec_with_len macro
@@ -1709,9 +1717,25 @@ df!(
 //field_name: ssr_ura_value
 //df: df_u3
 
+//DF390: High-Rate Clock Correction
+//field_name: high_rate_clock_correction_m
+df!(
+    id: df390,
+    dt: f64,
+    it: I32,
+    len: 22,
+    res: 1.0e-4,
+    round: true,
+    ord: 0,
+);
+
 //DF391: SSR Update Interval
 //field_name: ssr_update_interval_index
 //df: df_u4
+
+//DF392: GLONASS Issue Of Data (IOD)
+//field_name: iod
+//df: df_u8
 
 //DF393: MSM multiple message bit
 //field_name: msm_multiple_message_flag
@@ -3016,6 +3040,14 @@ df!(
     dt: u16,
     it: U16,
     len: 16,
+    ord: 0,
+);
+
+df!(
+    id: df_u17,
+    dt: u32,
+    it: U32,
+    len: 17,
     ord: 0,
 );
 
