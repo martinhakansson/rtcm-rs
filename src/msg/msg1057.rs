@@ -13,10 +13,11 @@ msg! (
     ],
 );
 
-frag_vec!(
+frag_vec_with_len!(
     id: msg1057_sat_vec,
     frag_id: msg1057_sat,
-    cap_name: DF387_1057_CAP,
+    cap: SAT_CAP_1057, 60,
+    len_bits: 6,
 );
 
 msg!(
@@ -30,7 +31,6 @@ msg!(
         (iod_ssr, df_u4),
         (ssr_provider_id, df_u16),
         (ssr_solution_id, df_u4),
-        (satellites_len, df387_1057),
-        (satellites, msg1057_sat_vec, satellites_len)
+        (satellites, msg1057_sat_vec)
     ],
 );

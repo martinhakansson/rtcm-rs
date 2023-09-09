@@ -143,6 +143,79 @@ macro_rules! frag_vec {
         }
     };
 }
+
+#[allow(unused)]
+macro_rules! frag_vec_with_len {
+    (
+        id: $id:ident,
+        frag_id: $frag_id:ident,
+        cap: $cap_name:ident, $cap:literal,
+        len_bits: $len_bits:literal,
+    ) => {
+        pub mod $id {
+            use super::*;
+            use $crate::df::{assembler::Assembler, parser::Parser};
+            use $crate::df::bit_value::U16;
+            use $crate::rtcm_error::RtcmError;
+            use $crate::util::DataVec;
+
+            pub const $cap_name:usize = $cap;
+
+            pub mod export_types {
+                pub use super::$cap_name;
+                pub use super::$frag_id::export_types::*;
+            }
+
+            pub type DataType = DataVec<$frag_id::DataType, $cap_name>;
+            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
+                let len = value.len() as u16;
+                asm.put::<U16>(len, $len_bits)?;
+
+                for v in value.iter() {
+                    $frag_id::encode(asm, v)?;
+                }
+                Ok(())
+            }
+            pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
+                let len = par.parse::<U16>($len_bits)? as usize;
+                if len > $cap {
+                    return Err(RtcmError::CapacityExceeded);
+                }
+                let mut value = DataVec::new();
+                for _ in 0..len {
+                    let v = $frag_id::decode(par)?;
+                    value.push(v);
+                }
+                Ok(value)
+            }
+            #[cfg(feature = "test_gen")]
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR, LR, RR>(
+                asm: &mut Assembler,
+                val_gen: &mut ValGen<FR, LR, RR>,
+            ) -> Result<(), RtcmError>
+            where
+                FR: rand::Rng,
+                LR: rand::Rng,
+                RR: rand::Rng,
+            {
+                let len = if val_gen.len_rng.gen::<u64>() == u64::MAX {
+                    $cap
+                } else {
+                    val_gen.len_rng.gen::<u16>() % ($cap + 1)
+                };
+                asm.put::<U16>(len, $len_bits)?;
+                for _ in 0..len {
+                    $frag_id::generate(asm, val_gen)?;
+                }
+                Ok(())
+            }
+        }
+    };
+}
+
+
 #[allow(unused)]
 macro_rules! msm_data_seg_frag {
     (
