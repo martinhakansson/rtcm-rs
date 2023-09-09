@@ -1695,26 +1695,7 @@ df!(
 );
 
 //DF387: No. of Satellites
-//field_name: satellites_len
-df!(
-    id: df387,
-    dt: usize,
-    it: U8,
-    len: 6,
-    cap: 63,DF387_CAP,
-    ord: 0,
-);
-
-//DF387: No. of Satellites
-//field_name: satellites_len
-df!(
-    id: df387_1057,
-    dt: usize,
-    it: U8,
-    len: 6,
-    cap: 60,DF387_1057_CAP,
-    ord: 0,
-);
+//handled in frag_vec_with_len macro
 
 //DF388: Multiple Message Indicator
 //field_name: multiple_message_flag
