@@ -1701,6 +1701,14 @@ df!(
 //field_name: multiple_message_flag
 //df: df_flag
 
+//DF389 (Class): SSR URA Class
+//field_name: ssr_ura_class
+//df: df_u3
+
+//DF389 (Value): SSR URA Value
+//field_name: ssr_ura_value
+//df: df_u3
+
 //DF391: SSR Update Interval
 //field_name: ssr_update_interval_index
 //df: df_u4
