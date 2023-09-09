@@ -3068,4 +3068,5 @@ df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);
 
 pub mod df_msg1029_utf8_str;
 pub mod df_msg1059_biases;
+pub mod df_msg1065_biases;
 pub mod df_msg1230_biases;
