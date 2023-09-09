@@ -1698,7 +1698,7 @@ df!(
     ord: 0,
 );
 
-//DF386: 
+//DF386: GLONASS Epoch Time 1s
 //field_name: glo_epoch_time_s
 //df: df_u17
 
