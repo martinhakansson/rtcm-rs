@@ -75,7 +75,7 @@ pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
     for bias in value.iter() {
         if bias.sat_id <= 31 {
             let sat = 1 << bias.sat_id;
-            if sat_mask & sat != 0 {
+            if sat_mask & sat == 0 {
                 sat_mask |= 1 << bias.sat_id;
                 sat_num += 1;
             }
