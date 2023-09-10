@@ -1,0 +1,26 @@
+Msg1068(
+    Msg1068T {
+        glo_epoch_time_s: 1239,
+        ssr_update_interval_index: 15,
+        multiple_message_flag: 1,
+        iod_ssr: 7,
+        ssr_provider_id: 38714,
+        ssr_solution_id: 0,
+        satellites: DataVec(
+            [
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -158.96720000000002,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 16,
+                high_rate_clock_correction_m: 25.120700000000003,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 23,
+                high_rate_clock_correction_m: 196.41500000000002,
+            },
+            ],
+        ),
+    },
+)

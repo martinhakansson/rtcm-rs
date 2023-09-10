@@ -1,0 +1,1 @@
+Message::Msg1059(Msg1059T {gps_epoch_time_s:604862,ssr_update_interval_index:0,multiple_message_flag:0,iod_ssr:2,ssr_provider_id:52819,ssr_solution_id:13,biases:{#[allow(unused_mut)] let mut vec = DataVec::<_,390>::new();vec},})

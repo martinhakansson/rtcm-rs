@@ -1,0 +1,16 @@
+Msg1060(
+    Msg1060T {
+        gps_epoch_time_s: 608280,
+        ssr_update_interval_index: 14,
+        multiple_message_flag: 0,
+        satellite_reference_datum_ind: 1,
+        iod_ssr: 14,
+        ssr_provider_id: 9022,
+        ssr_solution_id: 14,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

@@ -1,0 +1,329 @@
+Msg1061(
+    Msg1061T {
+        gps_epoch_time_s: 1048575,
+        ssr_update_interval_index: 15,
+        multiple_message_flag: 1,
+        iod_ssr: 15,
+        ssr_provider_id: 65535,
+        ssr_solution_id: 15,
+        satellites: DataVec(
+            [
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1061Sat {
+                gps_satellite_id: 63,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+            ],
+        ),
+    },
+)

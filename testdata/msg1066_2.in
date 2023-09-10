@@ -1,0 +1,1 @@
+Message::Msg1066(Msg1066T {glo_epoch_time_s:12990,ssr_update_interval_index:6,multiple_message_flag:1,satellite_reference_datum_ind:1,iod_ssr:9,ssr_provider_id:952,ssr_solution_id:14,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,39>::new();vec},})

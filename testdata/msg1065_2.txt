@@ -1,0 +1,15 @@
+Msg1065(
+    Msg1065T {
+        glo_epoch_time_s: 73344,
+        ssr_update_interval_index: 4,
+        multiple_message_flag: 0,
+        iod_ssr: 3,
+        ssr_provider_id: 8966,
+        ssr_solution_id: 8,
+        biases: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

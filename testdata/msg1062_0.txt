@@ -1,0 +1,266 @@
+Msg1062(
+    Msg1062T {
+        gps_epoch_time_s: 0,
+        ssr_update_interval_index: 0,
+        multiple_message_flag: 0,
+        iod_ssr: 0,
+        ssr_provider_id: 0,
+        ssr_solution_id: 0,
+        satellites: DataVec(
+            [
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 0,
+                high_rate_clock_correction_m: 0.0,
+            },
+            ],
+        ),
+    },
+)

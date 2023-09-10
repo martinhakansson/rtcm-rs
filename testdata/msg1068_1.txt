@@ -1,0 +1,266 @@
+Msg1068(
+    Msg1068T {
+        glo_epoch_time_s: 131071,
+        ssr_update_interval_index: 15,
+        multiple_message_flag: 1,
+        iod_ssr: 15,
+        ssr_provider_id: 65535,
+        ssr_solution_id: 15,
+        satellites: DataVec(
+            [
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+                Msg1068Sat {
+                glo_satellite_id: 31,
+                high_rate_clock_correction_m: -0.0001,
+            },
+            ],
+        ),
+    },
+)

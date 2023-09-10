@@ -1,0 +1,16 @@
+Msg1063(
+    Msg1063T {
+        glo_epoch_time_s: 71670,
+        ssr_update_interval_index: 13,
+        multiple_message_flag: 1,
+        satellite_reference_datum_ind: 1,
+        iod_ssr: 5,
+        ssr_provider_id: 1627,
+        ssr_solution_id: 3,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

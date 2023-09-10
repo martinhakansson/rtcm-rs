@@ -1,0 +1,15 @@
+Msg1061(
+    Msg1061T {
+        gps_epoch_time_s: 706873,
+        ssr_update_interval_index: 4,
+        multiple_message_flag: 0,
+        iod_ssr: 2,
+        ssr_provider_id: 62204,
+        ssr_solution_id: 0,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

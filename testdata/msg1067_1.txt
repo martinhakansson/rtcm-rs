@@ -1,0 +1,329 @@
+Msg1067(
+    Msg1067T {
+        glo_epoch_time_s: 131071,
+        ssr_update_interval_index: 15,
+        multiple_message_flag: 1,
+        iod_ssr: 15,
+        ssr_provider_id: 65535,
+        ssr_solution_id: 15,
+        satellites: DataVec(
+            [
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+                Msg1067Sat {
+                glo_satellite_id: 31,
+                ssr_ura_class: 7,
+                ssr_ura_value: 7,
+            },
+            ],
+        ),
+    },
+)

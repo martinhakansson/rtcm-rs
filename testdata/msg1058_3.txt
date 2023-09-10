@@ -1,0 +1,32 @@
+Msg1058(
+    Msg1058T {
+        gps_epoch_time_s: 815966,
+        ssr_update_interval_index: 3,
+        multiple_message_flag: 0,
+        iod_ssr: 5,
+        ssr_provider_id: 38595,
+        ssr_solution_id: 13,
+        satellites: DataVec(
+            [
+                Msg1058Sat {
+                gps_satellite_id: 29,
+                delta_clock_c0_m: 198.1713,
+                delta_clock_c1_m_s: 0.909782,
+                delta_clock_c2_m_s2: -0.65901186,
+            },
+                Msg1058Sat {
+                gps_satellite_id: 45,
+                delta_clock_c0_m: 111.09280000000001,
+                delta_clock_c1_m_s: -0.627703,
+                delta_clock_c2_m_s2: -0.73651118,
+            },
+                Msg1058Sat {
+                gps_satellite_id: 7,
+                delta_clock_c0_m: 88.5481,
+                delta_clock_c1_m_s: 0.27648,
+                delta_clock_c2_m_s2: -0.16263714,
+            },
+            ],
+        ),
+    },
+)

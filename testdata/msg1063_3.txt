@@ -1,0 +1,45 @@
+Msg1063(
+    Msg1063T {
+        glo_epoch_time_s: 89511,
+        ssr_update_interval_index: 14,
+        multiple_message_flag: 0,
+        satellite_reference_datum_ind: 1,
+        iod_ssr: 4,
+        ssr_provider_id: 1008,
+        ssr_solution_id: 14,
+        satellites: DataVec(
+            [
+                Msg1063Sat {
+                glo_satellite_id: 31,
+                iod: 79,
+                delta_radial_m: 167.69650000000001,
+                delta_along_track_m: 20.459600000000002,
+                delta_cross_track_m: -95.81320000000001,
+                dot_delta_radial_m_s: 0.5115259999999999,
+                dot_delta_along_track_m_s: 0.964928,
+                dot_delta_cross_track_m_s: -0.050724,
+            },
+                Msg1063Sat {
+                glo_satellite_id: 27,
+                iod: 196,
+                delta_radial_m: -195.1799,
+                delta_along_track_m: 195.4728,
+                delta_cross_track_m: 79.7268,
+                dot_delta_radial_m_s: -0.621524,
+                dot_delta_along_track_m_s: 0.18658,
+                dot_delta_cross_track_m_s: -0.70644,
+            },
+                Msg1063Sat {
+                glo_satellite_id: 31,
+                iod: 196,
+                delta_radial_m: 83.34100000000001,
+                delta_along_track_m: -78.8668,
+                delta_cross_track_m: -203.48680000000002,
+                dot_delta_radial_m_s: 0.608843,
+                dot_delta_along_track_m_s: -0.824832,
+                dot_delta_cross_track_m_s: 0.032012,
+            },
+            ],
+        ),
+    },
+)

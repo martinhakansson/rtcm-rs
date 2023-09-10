@@ -1,0 +1,302 @@
+Msg1065(
+    Msg1065T {
+        glo_epoch_time_s: 108671,
+        ssr_update_interval_index: 7,
+        multiple_message_flag: 0,
+        iod_ssr: 0,
+        ssr_provider_id: 44098,
+        ssr_solution_id: 3,
+        biases: DataVec(
+            [
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: -19.8,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: -30.23,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: 46.539997,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: 20.119999,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: -0.38,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: 50.039997,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: 19.64,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: -10.33,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: -16.09,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: 21.74,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: -32.69,
+            },
+                Msg1065CodeBias {
+                sat_id: 1,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: -11.82,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: 4.67,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: -65.71,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: -22.949999,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: -75.77,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: 55.699997,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: 48.45,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: 3.3799999,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: -60.75,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: 63.26,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: 76.159996,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: -27.16,
+            },
+                Msg1065CodeBias {
+                sat_id: 2,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: -25.4,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: 50.829998,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: -30.679998,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: 20.02,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: 59.449997,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: 64.25,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: 51.5,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: -20.07,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: 28.89,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    1,
+                    'C',
+                ),
+                bias_m: -70.82,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    1,
+                    'P',
+                ),
+                bias_m: 75.28,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    2,
+                    'C',
+                ),
+                bias_m: -63.949997,
+            },
+                Msg1065CodeBias {
+                sat_id: 3,
+                sig_id: SigId(
+                    2,
+                    'P',
+                ),
+                bias_m: -9.11,
+            },
+            ],
+        ),
+    },
+)

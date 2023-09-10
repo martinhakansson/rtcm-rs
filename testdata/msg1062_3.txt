@@ -1,0 +1,26 @@
+Msg1062(
+    Msg1062T {
+        gps_epoch_time_s: 94419,
+        ssr_update_interval_index: 10,
+        multiple_message_flag: 0,
+        iod_ssr: 10,
+        ssr_provider_id: 43676,
+        ssr_solution_id: 14,
+        satellites: DataVec(
+            [
+                Msg1062Sat {
+                gps_satellite_id: 43,
+                high_rate_clock_correction_m: -102.3514,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 4,
+                high_rate_clock_correction_m: -80.089,
+            },
+                Msg1062Sat {
+                gps_satellite_id: 11,
+                high_rate_clock_correction_m: 107.07300000000001,
+            },
+            ],
+        ),
+    },
+)

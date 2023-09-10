@@ -1,0 +1,15 @@
+Msg1067(
+    Msg1067T {
+        glo_epoch_time_s: 126255,
+        ssr_update_interval_index: 7,
+        multiple_message_flag: 0,
+        iod_ssr: 15,
+        ssr_provider_id: 4944,
+        ssr_solution_id: 2,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)
