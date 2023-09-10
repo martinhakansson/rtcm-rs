@@ -790,6 +790,7 @@ include_msg!(msg1064, "msg1064");
 include_msg!(msg1065, "msg1065");
 include_msg!(msg1066, "msg1066");
 include_msg!(msg1067, "msg1067");
+include_msg!(msg1068, "msg1068");
 include_msg!(msg1071, "msg1071");
 include_msg!(msg1072, "msg1072");
 include_msg!(msg1073, "msg1073");
