@@ -9,6 +9,7 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/martinhakansson/rtcm-rs.git"
 edition = "2021"
+rust-version = "1.66.1"
 exclude = [
     "tests/*",
     "testdata/*",
