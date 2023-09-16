@@ -16,6 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: dtolnay/rust-toolchain@master
       with:
         # MSRV
         toolchain: 1.66.1
