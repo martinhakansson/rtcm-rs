@@ -3061,6 +3061,14 @@ df!(
     ord: 0,
 );
 
+//Descriptor strings for data fields: DF144, DF146
+//TODO replace for other data fields as well
+df_88591_string_with_len!(
+    id: df_desc_str_w_len,
+    cap: DESC_CAP, 31,
+    len_bits: 5,
+);
+
 //Descriptor strings for data fields: DF030, DF033, DF228, DF230, DF232
 df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);
 

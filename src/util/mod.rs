@@ -24,6 +24,9 @@ impl<const N: usize> Df88591String<N> {
     pub fn iter(&self) -> Iter<'_, u8> {
         self.0.iter()
     }
+    pub fn len(&self) -> usize {
+        self.0.len()
+    }
     pub fn push(&mut self, val: u8) {
         self.0.push(if val == 0 { 0xa4 } else { val });
     }

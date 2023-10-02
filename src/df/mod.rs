@@ -238,5 +238,78 @@ macro_rules! df_88591_string {
     };
 }
 
+macro_rules! df_88591_string_with_len {
+    (
+        id: $id:ident,
+        cap: $cap_name:ident, $cap:literal,
+        len_bits: $len_bits:literal,
+    ) => {
+        pub mod $id {
+            //use super::*;
+            use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
+            use $crate::rtcm_error::RtcmError;
+            use $crate::util::Df88591String;
+
+            pub const $cap_name: usize = $cap;
+
+            pub mod export_types {
+                pub use super::$cap_name;
+            }
+            #[allow(unused)]
+            pub type DataType = Df88591String<$cap_name>;
+            #[allow(unused)]
+            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
+                asm.put::<U8>(value.len() as u8, $len_bits)?;
+                for v in value.iter() {
+                    asm.put::<U8>(*v, 8)?;
+                }
+                Ok(())
+            }
+            #[allow(unused)]
+            pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
+                let len = par.parse::<U8>($len_bits)?;
+                if len as usize > $cap_name {
+                    return Err(RtcmError::CapacityExceeded);
+                }
+                let mut value = Df88591String::new();
+                for _ in 0..len {
+                    let v = par.parse::<U8>(8)?;
+                    value.push(v);
+                }
+                Ok(value)
+            }
+            #[cfg(feature = "test_gen")]
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            #[allow(unused)]
+            pub fn generate<FR, LR, RR>(
+                asm: &mut Assembler,
+                val_gen: &mut ValGen<FR, LR, RR>,
+            ) -> Result<(), RtcmError>
+            where
+                FR: rand::Rng,
+                LR: rand::Rng,
+                RR: rand::Rng,
+            {
+                let len = if val_gen.len_rng.gen::<u64>() == u64::MAX {
+                    $cap
+                } else {
+                    val_gen.len_rng.gen::<u8>() % ($cap + 1)
+                };
+                asm.put::<U8>(len, $len_bits)?;
+                let mut value: DataType = Df88591String::new();
+                for _ in 0..len {
+                    let v = 48 + (val_gen.field_rng.gen::<u8>() % 42);
+                    value.push(v);
+                }
+                for v in value.iter() {
+                    asm.put::<U8>(*v, 8)?;
+                }
+                Ok(())
+            }
+        }
+    };
+}
+
 pub mod dfs;
 pub use dfs::*;
