@@ -21,6 +21,7 @@
 //h - unit hour
 //min - unit minute
 //d - unit day
+//asec - arc second
 
 //DF001 (1 bit)
 //field_name: reserved_[start bit]_[bit length]
@@ -1087,6 +1088,192 @@ df!(
     len: 1,
     ord: 0,
 );
+
+//DF143: Source Name Counter
+//df: handle by df_desc_str_w_len
+
+//DF144: Source Name
+//field_name: source_name_str
+//df: handle by df_desc_str_w_len
+
+//DF145: Target-Name Counter
+//df: handle by df_desc_str_w_len
+
+//Df146: Target-Name
+//field_name: target_name_str
+//df: handle by df_desc_str_w_len
+
+//DF147: System Identification Number
+//field_name: system_id
+//df: df_u8
+
+//DF148: Utilized Transformation Message Indicator
+//field_name: utilized_trans_msg_ind
+//df: df_u10
+
+//DF149: Plate Number
+//field_name: plate_number
+//df: df_u5
+
+//DF150: Computation Indicator
+//field_name: computation_ind
+//df: df_u4
+
+//DF151: Height Indicator
+//field_name: height_ind
+//df: df_u2
+
+//DF152: Phi_v
+//field_name: phi_v_asec
+df!(
+    id: df152,
+    dt: f32,
+    it: I32,
+    len: 19,
+    res: 2.0,
+    round: true,
+    ord: 0,
+);
+
+//DF153: Lambda_v
+//field_name: lambda_v_asec
+df!(
+    id: df153,
+    dt: f32,
+    it: I32,
+    len: 20,
+    res: 2.0,
+    round: true,
+    ord: 0,
+);
+
+//DF154: Delta Phi_v
+//field_name: delta_phi_v_asec
+df!(
+    id: df154_5,
+    dt: f32,
+    it: U16,
+    len: 14,
+    res: 2.0,
+    round: true,
+    ord: 0,
+);
+
+//DF155: Delta Lambda_v
+//field_name: delta_lambda_v_asec
+//df: df154_5
+
+//DF156: dX
+//field_name: dx_m
+df!(
+    id: df156_7_8,
+    dt: f64,
+    it: I32,
+    len: 23,
+    res: 0.001,
+    round: true,
+    ord: 0,
+);
+
+//DF157: dY
+//field_name: dy_m
+//df: df156_7_8
+
+//DF158: dZ
+//field_name: dz_m
+//df: df156_7_8
+
+//DF159: R_1
+//field_name: r_1_asec
+df!(
+    id: df159_60_61,
+    dt: f64,
+    it: I32,
+    len: 32,
+    res: 2.0e-5,
+    round: true,
+    ord: 0,
+);
+
+//DF160: R_2
+//field_name: r_2_asec
+//df: df159_60_61
+
+//DF161: R_3
+//field_name: r_3_asec
+//df: df159_60_61
+
+//DF162: dS
+//field_name: ds_ppm
+df!(
+    id: df162,
+    dt: f64,
+    it: I32,
+    len: 25,
+    res: 1.0e-5,
+    round: true,
+    ord: 0,
+);
+
+//DF163: X_P
+//field_name: x_p_m
+df!(
+    id: df163_4_5,
+    dt: f64,
+    it: I64,
+    len: 35,
+    res: 0.001,
+    round: true,
+    ord: 0,
+);
+
+//DF164: Y_P
+//field_name: y_p_m
+//df: df163_4_5
+
+//DF165: Z_P
+//field_name: z_p_m
+//df: df163_4_5
+
+//DF166: add a_S
+//field_name: add_a_s_m
+df!(
+    id: df166_8,
+    dt: f64,
+    it: U32,
+    len: 24,
+    res: 0.001,
+    round: true,
+    inv: 0,
+);
+
+//DF167: add b_S
+//field_name: add_b_s_m
+df!(
+    id: df167_9,
+    dt: f64,
+    it: U32,
+    len: 25,
+    res: 0.001,
+    round: true,
+    inv: 0,
+);
+
+//DF168: add a_T
+//field_name: add_a_t_m
+//df: df166_8
+
+//DF169: add b_T
+//field_name: add_b_t_m
+//df: df167_9
+
+//DF214: Horizontal Helmert/Molodenski Quality Indicator
+//field_name: hori_hel_mol_quality_ind
+//df: df_u3
+
+//DF215: Vertical Helmert/Molodenski Quality Indicator
+//field_name: vert_hel_mol_quality_ind
+//df: df_u3
 
 //DF218: Constant term of non-dispersive standard deviation (s_oc) in mm
 //field_name: s_oc_mm
@@ -3032,6 +3219,14 @@ df!(
     dt: u8,
     it: U8,
     len: 8,
+    ord: 0,
+);
+
+df!(
+    id: df_u10,
+    dt: u16,
+    it: U16,
+    len: 10,
     ord: 0,
 );
 

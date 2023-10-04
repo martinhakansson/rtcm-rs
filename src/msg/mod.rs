@@ -154,12 +154,12 @@ macro_rules! frag_vec_with_len {
     ) => {
         pub mod $id {
             use super::*;
-            use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::df::bit_value::U16;
+            use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::rtcm_error::RtcmError;
             use $crate::util::DataVec;
 
-            pub const $cap_name:usize = $cap;
+            pub const $cap_name: usize = $cap;
 
             pub mod export_types {
                 pub use super::$cap_name;
@@ -214,7 +214,6 @@ macro_rules! frag_vec_with_len {
         }
     };
 }
-
 
 #[allow(unused)]
 macro_rules! msm_data_seg_frag {
@@ -359,13 +358,11 @@ macro_rules! msm_data_seg_frag {
                 let mut sat_num: usize = 0;
                 let mut sig_num: usize = 0;
                 for _ in 0..sig_len {
-
                     let (sat_id, sig_id) = loop {
                         let sat_id: u8 =
                             (((subset % 65) as u8 + (val_gen.rng_rng.gen::<u8>() % 16)) % 64) + 1;
                         let sig_id = random_id(&mut val_gen.rng_rng, subset);
-                        if !cell_vec.iter().any(|e| e.0 == sat_id && e.1 == sig_id)
-                        {
+                        if !cell_vec.iter().any(|e| e.0 == sat_id && e.1 == sig_id) {
                             break (sat_id, sig_id);
                         }
                     };
@@ -770,6 +767,7 @@ include_msg!(msg1008, "msg1008");
 include_msg!(msg1013, "msg1013");
 include_msg!(msg1019, "msg1019");
 include_msg!(msg1020, "msg1020");
+include_msg!(msg1021, "msg1021");
 include_msg!(msg1029, "msg1029");
 include_msg!(msg1030, "msg1030");
 include_msg!(msg1032, "msg1032");
