@@ -24,7 +24,7 @@ msg!(
         (add_b_s_m,df167_9),
         (add_a_t_m,df166_8),
         (add_b_t_m,df167_9),
-        (hori_hel_mol_quality_ind,df_u3),
-        (vert_hel_mol_quality_ind,df_u3)
+        (hor_hel_mol_quality_ind,df_u3),
+        (ver_hel_mol_quality_ind,df_u3)
     ],
 );
