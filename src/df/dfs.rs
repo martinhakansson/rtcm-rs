@@ -1267,13 +1267,19 @@ df!(
 //field_name: add_b_t_m
 //df: df167_9
 
+//DF190 - DF201
+
+//DF212 - DF213
+
 //DF214: Horizontal Helmert/Molodenski Quality Indicator
-//field_name: hori_hel_mol_quality_ind
+//field_name: hor_hel_mol_quality_ind
 //df: df_u3
 
 //DF215: Vertical Helmert/Molodenski Quality Indicator
-//field_name: vert_hel_mol_quality_ind
+//field_name: ver_hel_mol_quality_ind
 //df: df_u3
+
+//DF216 - DF217
 
 //DF218: Constant term of non-dispersive standard deviation (s_oc) in mm
 //field_name: s_oc_mm
