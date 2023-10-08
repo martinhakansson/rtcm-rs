@@ -2,6 +2,7 @@ use tinyvec::ArrayVec;
 
 mod array_string;
 mod data_vec;
+mod grid16p;
 
 #[cfg(feature = "serde")]
 use crate::{Deserialize, Serialize, Visitor};
@@ -9,6 +10,7 @@ use crate::{Deserialize, Serialize, Visitor};
 pub use array_string::ArrayString;
 use core::{fmt::Write, slice::Iter};
 pub use data_vec::DataVec;
+pub use grid16p::Grid16P;
 
 #[derive(Clone, PartialEq)]
 pub struct Df88591String<const N: usize>(ArrayVec<[u8; N]>);

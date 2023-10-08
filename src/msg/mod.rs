@@ -216,6 +216,61 @@ macro_rules! frag_vec_with_len {
 }
 
 #[allow(unused)]
+macro_rules! frag_grid16p {
+    (
+        id: $id:ident,
+        frag_id: $frag_id:ident,
+    ) => {
+        pub mod $id {
+            #[allow(unused)]
+            use super::*;
+            use $crate::df::dfs::*;
+            use $crate::df::{assembler::Assembler, parser::Parser};
+            #[allow(unused)]
+            use $crate::msg::*;
+            use $crate::rtcm_error::RtcmError;
+            use $crate::util::Grid16P;
+
+            pub mod export_types {
+                pub use super::$frag_id::export_types::*;
+            }
+
+            pub type DataType = Grid16P<$frag_id::DataType>;
+            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
+                for v in value.iter() {
+                    $frag_id::encode(asm, v)?;
+                }
+                Ok(())
+            }
+            pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
+                let mut value = Grid16P::new();
+                for v in value.iter_mut() {
+                    *v = $frag_id::decode(par)?;
+                }
+                Ok(value)
+            }
+            #[cfg(feature = "test_gen")]
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR, LR, RR>(
+                asm: &mut Assembler,
+                val_gen: &mut ValGen<FR, LR, RR>,
+            ) -> Result<(), RtcmError>
+            where
+                FR: rand::Rng,
+                LR: rand::Rng,
+                RR: rand::Rng,
+            {
+                for _ in 0..16 {
+                    $frag_id::generate(asm, val_gen)?;
+                }
+                Ok(())
+            }
+        }
+    };
+}
+
+#[allow(unused)]
 macro_rules! msm_data_seg_frag {
     (
         id: $id:ident,
@@ -769,6 +824,7 @@ include_msg!(msg1019, "msg1019");
 include_msg!(msg1020, "msg1020");
 include_msg!(msg1021, "msg1021");
 include_msg!(msg1022, "msg1022");
+include_msg!(msg1023, "msg1023");
 include_msg!(msg1029, "msg1029");
 include_msg!(msg1030, "msg1030");
 include_msg!(msg1032, "msg1032");

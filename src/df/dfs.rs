@@ -1267,9 +1267,117 @@ df!(
 //field_name: add_b_t_m
 //df: df167_9
 
-//DF190 - DF201
+//DF190: Horizontal Shift Indicator
+//field_name: hor_shift_flag
+//df: df_flag
 
-//DF212 - DF213
+//DF191: Vertical Shift Indicator
+//field_name: ver_shift_flag
+//df: df_flag
+
+//DF192: Phi_0
+//field_name: phi_0_asec
+df!(
+    id: df192,
+    dt: f64,
+    it: I32,
+    len: 21,
+    res: 0.5,
+    round: true,
+    ord: 0,
+);
+
+//DF193: Lambda_0
+//field_name: lambda_0_asec
+df!(
+    id: df193,
+    dt: f64,
+    it: I32,
+    len: 22,
+    res: 0.5,
+    round: true,
+    ord: 0,
+);
+
+//DF194: Delta phi
+//field_name: delta_phi_asec
+df!(
+    id: df194_5,
+    dt: f32,
+    it: U16,
+    len: 12,
+    res: 0.5,
+    round: true,
+    ord: 0,
+);
+
+//DF195: Delta lambda
+//field_name: delta_lambda_asec
+//df: df194_5
+
+//DF196: Mean Delta phi
+//field_name: mean_delta_phi_asec
+df!(
+    id: df196_7,
+    dt: f32,
+    it: I8,
+    len: 8,
+    res: 0.001,
+    round: true,
+    ord: 0,
+);
+
+//DF197: Mean Delta lambda
+//field_name: mean_delta_lambda_asec
+//df: df196_7
+
+//DF198: Mean Delta H
+//field_name: mean_delta_h_m
+df!(
+    id: df198,
+    dt: f32,
+    it: I16,
+    len: 15,
+    res: 0.01,
+    round: true,
+    ord: 0,
+);
+
+//DF199: delta phi i
+//field_name: grid_delta_phi_asec
+df!(
+    id: df199_200,
+    dt: f32,
+    it: I16,
+    len: 9,
+    res: 3.0e-5,
+    round: true,
+    ord: 0,
+);
+
+//DF200: delta lambda i
+//field_name: grid_delta_lambda_asec
+//df: df199_200
+
+//DF201: delta h i
+//field_name: grid_delta_h_m
+df!(
+    id: df201,
+    dt: f32,
+    it: I16,
+    len: 9,
+    res: 0.001,
+    round: true,
+    ord: 0,
+);
+
+//DF212: Horizontal Interpolation Method Indicator
+//field_name: hor_interp_ind
+//df: df_u2
+
+//DF213: Vertical Interpolation Method Indicator
+//field_name: ver_interp_ind
+//df: df_u2
 
 //DF214: Horizontal Helmert/Molodenski Quality Indicator
 //field_name: hor_hel_mol_quality_ind
@@ -1279,7 +1387,13 @@ df!(
 //field_name: ver_hel_mol_quality_ind
 //df: df_u3
 
-//DF216 - DF217
+//DF216: Horizontal Grid-Quality Indicator
+//field_name: hor_grid_quality_ind
+//df: df_u3
+
+//DF217: Vertical Grid-Quality Indicator
+//field_name: ver_grid_quality_ind
+//df: df_u3
 
 //DF218: Constant term of non-dispersive standard deviation (s_oc) in mm
 //field_name: s_oc_mm
