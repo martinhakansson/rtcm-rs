@@ -1156,7 +1156,7 @@ df!(
     len: 14,
     res: 2.0,
     round: true,
-    ord: 0,
+    inv: 0,
 );
 
 //DF155: Delta Lambda_v
@@ -1308,7 +1308,7 @@ df!(
     len: 12,
     res: 0.5,
     round: true,
-    ord: 0,
+    inv: 0,
 );
 
 //DF195: Delta lambda
@@ -1334,7 +1334,7 @@ df!(
 //DF198: Mean Delta H
 //field_name: mean_delta_h_m
 df!(
-    id: df198,
+    id: df198_208,
     dt: f32,
     it: I16,
     len: 15,
@@ -1362,7 +1362,7 @@ df!(
 //DF201: delta h i
 //field_name: grid_delta_h_m
 df!(
-    id: df201,
+    id: df201_209_10_11,
     dt: f32,
     it: I16,
     len: 9,
@@ -1370,6 +1370,78 @@ df!(
     round: true,
     ord: 0,
 );
+
+//DF202: N_0
+//field_name: n_0_m
+df!(
+    id: df202,
+    dt: f64,
+    it: I32,
+    len: 25,
+    res: 10.0,
+    round: true,
+    ord: 0,
+);
+
+//DF203: E_0
+//field_name: e_0_m
+df!(
+    id: df203,
+    dt: f64,
+    it: U32,
+    len: 26,
+    res: 10.0,
+    round: true,
+    ord: 0,
+);
+
+//DF204: Delta N
+//field_name: delta_n_m
+df!(
+    id: df204_5,
+    dt: f32,
+    it: U16,
+    len: 12,
+    res: 10.0,
+    round: true,
+    inv: 0,
+);
+
+//DF205: Delta E
+//field_name: delta_e_m
+//df: df204_5
+
+//DF206: Mean Delta N
+//field_name: mean_delta_n_m
+df!(
+    id: df206_7,
+    dt: f32,
+    it: I16,
+    len: 10,
+    res: 0.01,
+    round: true,
+    ord: 0,
+);
+
+//DF207: Mean Delta E
+//field_name: mean_delta_e_m
+//df: df206_7
+
+//DF208: Mean Delta h
+//field_name: mean_delta_h_m
+//df: df198_208
+
+//DF209: delta N_i
+//field_name: grid_delta_n_m
+//df: df201_209_10_11
+
+//DF210: delta E_i
+//field_name: grid_delta_e_m
+//df: df201_209_10_11
+
+//DF211: delta h_i
+//field_name: grid_delta_h_m
+//df: df201_209_10_11
 
 //DF212: Horizontal Interpolation Method Indicator
 //field_name: hor_interp_ind
