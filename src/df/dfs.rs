@@ -17,6 +17,7 @@
 //sc - unit semi-circles
 //sc_s - unit semi-circles/s
 //rad - unit radian
+//deg - unit degree
 //sqrt_m - unit sqrt(meter)
 //h - unit hour
 //min - unit minute
@@ -1235,37 +1236,104 @@ df!(
 //field_name: z_p_m
 //df: df163_4_5
 
-//DF166: add a_S
-//field_name: add_a_s_m
+//DF166: a_S
+//field_name: a_s_m
 df!(
     id: df166_8,
     dt: f64,
     it: U32,
     len: 24,
     res: 0.001,
+    bias: 6370000.0,
     round: true,
     inv: 0,
 );
 
-//DF167: add b_S
-//field_name: add_b_s_m
+//DF167: b_S
+//field_name: b_s_m
 df!(
     id: df167_9,
     dt: f64,
     it: U32,
     len: 25,
     res: 0.001,
+    bias: 6350000.0,
     round: true,
     inv: 0,
 );
 
-//DF168: add a_T
-//field_name: add_a_t_m
+//DF168: a_T
+//field_name: a_t_m
 //df: df166_8
 
-//DF169: add b_T
-//field_name: add_b_t_m
+//DF169: b_T
+//field_name: b_t_m
 //df: df167_9
+
+//DF170: Projection Type
+//field_name: projection_type_ind
+//df: df_u6
+
+//DF171: LaNO - Latitude of natural origin
+//field_name: la_no_deg
+df!(
+    id: df171,
+    dt: f64,
+    it: I64,
+    len: 34,
+    res: 1.1e-8,
+    round: true,
+    ord: 0,
+);
+
+//DF172: LoNO - Longitude of natural origin
+//field_name: lo_no_deg
+df!(
+    id: df172,
+    dt: f64,
+    it: I64,
+    len: 35,
+    res: 1.1e-8,
+    round: true,
+    ord: 0,
+);
+
+//DF173: SNO (SNO - Scale factor of natural origin)
+//field_name: sno_ppm
+df!(
+    id: df173,
+    dt: f64,
+    it: U32,
+    len: 30,
+    res: 1.0e-5,
+    bias: 993000.0,
+    round: true,
+    ord: 0,
+);
+
+//DF174: FE - False Easting
+//field_name: fe_m
+df!(
+    id: df174,
+    dt: f64,
+    it: U64,
+    len: 36,
+    res: 0.001,
+    round: true,
+    ord: 0,
+);
+
+//DF175: FN - False Northing
+//field_name: fn_m
+df!(
+    id: df175,
+    dt: f64,
+    it: I64,
+    len: 35,
+    res: 0.001,
+    round: true,
+    ord: 0,
+);
 
 //DF190: Horizontal Shift Indicator
 //field_name: hor_shift_flag
