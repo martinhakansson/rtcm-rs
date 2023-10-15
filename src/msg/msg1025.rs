@@ -7,7 +7,7 @@ msg!(
         (la_no_deg,df171),
         (lo_no_deg,df172),
         (sno_ppm,df173),
-        (fe_m,df174),
-        (fn_m,df175)
+        (fe_m,df174_80),
+        (fn_m,df175_81)
     ],
 );

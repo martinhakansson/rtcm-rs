@@ -1314,7 +1314,7 @@ df!(
 //DF174: FE - False Easting
 //field_name: fe_m
 df!(
-    id: df174,
+    id: df174_80,
     dt: f64,
     it: U64,
     len: 36,
@@ -1326,7 +1326,7 @@ df!(
 //DF175: FN - False Northing
 //field_name: fn_m
 df!(
-    id: df175,
+    id: df175_81,
     dt: f64,
     it: I64,
     len: 35,
@@ -1367,9 +1367,13 @@ df!(
 //field_name: la_sp2_deg
 //df: df176_8_9
 
-//DF180:
+//DF180: EFO - Easting of false origin
+//field_name: efo_m
+//df: df174_80
 
-//DF181:
+//DF181: NFO - Northing of false origin
+//field_name: nfo_m
+//df: df175_81
 
 //DF190: Horizontal Shift Indicator
 //field_name: hor_shift_flag
