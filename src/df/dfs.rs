@@ -1277,7 +1277,7 @@ df!(
 //DF171: LaNO - Latitude of natural origin
 //field_name: la_no_deg
 df!(
-    id: df171,
+    id: df171_6_8_9_83,
     dt: f64,
     it: I64,
     len: 34,
@@ -1289,7 +1289,7 @@ df!(
 //DF172: LoNO - Longitude of natural origin
 //field_name: lo_no_deg
 df!(
-    id: df172,
+    id: df172_7_84,
     dt: f64,
     it: I64,
     len: 35,
@@ -1314,7 +1314,7 @@ df!(
 //DF174: FE - False Easting
 //field_name: fe_m
 df!(
-    id: df174_80,
+    id: df174_80_88,
     dt: f64,
     it: U64,
     len: 36,
@@ -1326,7 +1326,7 @@ df!(
 //DF175: FN - False Northing
 //field_name: fn_m
 df!(
-    id: df175_81,
+    id: df175_81_89,
     dt: f64,
     it: I64,
     len: 35,
@@ -1337,43 +1337,84 @@ df!(
 
 //DF176: LaFO - Latitude of false origin
 //field_name: la_fo_deg
-df!(
-    id: df176_8_9,
-    dt: f64,
-    it: I64,
-    len: 34,
-    res: 1.1e-8,
-    round: true,
-    ord: 0,
-);
+//df: df171_6_8_9_83
 
 //DF177: LoFO - Longitude of false origin
 //field_name: lo_fo_deg
+//df: df172_7_84
+
+//DF178: LaSP1 - Latitude of first standard parallel
+//field_name: la_sp1_deg
+//df: df171_6_8_9_83
+
+//DF179: LaSP2 - Latitude of seceond standard parallel
+//field_name: la_sp2_deg
+//df: df171_6_8_9_83
+
+//DF180: EFO - Easting of false origin
+//field_name: efo_m
+//df: df174_80_88
+
+//DF181: NFO - Northing of false origin
+//field_name: nfo_m
+//df: df175_81_89
+
+//DF182: Rectification flag
+//field_name: rectification_flag
+//df: df_flag
+
+//DF183: LaPC - Latitude of projection center
+//field_name: la_pc_deg
+//df: df171_6_8_9_83
+
+//DF184: LoPC - Longitude of projection center
+//field_name: lo_pc_deg
+//df: df172_7_84
+
+//DF185: AzIL - Azimuth of initial line
+//field_name: az_il_deg
 df!(
-    id: df177,
+    id: df185,
     dt: f64,
-    it: I64,
+    it: U64,
     len: 35,
     res: 1.1e-8,
     round: true,
     ord: 0,
 );
 
-//DF178: LaSP1 - Latitude of first standard parallel
-//field_name: la_sp1_deg
-//df: df176_8_9
+//DF186: Diff ARSG
+//field_name: diff_arsg_deg
+df!(
+    id: df186,
+    dt: f64,
+    it: I32,
+    len: 26,
+    res: 1.1e-8,
+    round: true,
+    ord: 0,
+);
 
-//DF179: LaSP2 - Latitude of seceond standard parallel
-//field_name: la_sp2_deg
-//df: df176_8_9
+//DF187: SIL - Scale factor of initial line
+//field_name: sil_ppm
+df!(
+    id: df187,
+    dt: f64,
+    it: U32,
+    len: 30,
+    res: 1.0e-5,
+    bias: 993000.0,
+    round: true,
+    ord: 0,
+);
 
-//DF180: EFO - Easting of false origin
-//field_name: efo_m
-//df: df174_80
+//DF188: EPC - Easting at projection center
+//field_name: epc_m
+//df: df174_80_88
 
-//DF181: NFO - Northing of false origin
-//field_name: nfo_m
-//df: df175_81
+//DF189: NPC - Northing at projection center
+//field_name: npc_m
+//df: df175_81_89
 
 //DF190: Horizontal Shift Indicator
 //field_name: hor_shift_flag

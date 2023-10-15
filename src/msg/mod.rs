@@ -828,6 +828,7 @@ include_msg!(msg1023, "msg1023");
 include_msg!(msg1024, "msg1024");
 include_msg!(msg1025, "msg1025");
 include_msg!(msg1026, "msg1026");
+include_msg!(msg1027, "msg1027");
 include_msg!(msg1029, "msg1029");
 include_msg!(msg1030, "msg1030");
 include_msg!(msg1032, "msg1032");
