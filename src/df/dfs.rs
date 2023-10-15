@@ -1335,6 +1335,42 @@ df!(
     ord: 0,
 );
 
+//DF176: LaFO - Latitude of false origin
+//field_name: la_fo_deg
+df!(
+    id: df176_8_9,
+    dt: f64,
+    it: I64,
+    len: 34,
+    res: 1.1e-8,
+    round: true,
+    ord: 0,
+);
+
+//DF177: LoFO - Longitude of false origin
+//field_name: lo_fo_deg
+df!(
+    id: df177,
+    dt: f64,
+    it: I64,
+    len: 35,
+    res: 1.1e-8,
+    round: true,
+    ord: 0,
+);
+
+//DF178: LaSP1 - Latitude of first standard parallel
+//field_name: la_sp1_deg
+//df: df176_8_9
+
+//DF179: LaSP2 - Latitude of seceond standard parallel
+//field_name: la_sp2_deg
+//df: df176_8_9
+
+//DF180:
+
+//DF181:
+
 //DF190: Horizontal Shift Indicator
 //field_name: hor_shift_flag
 //df: df_flag
