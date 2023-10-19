@@ -1493,7 +1493,7 @@ df!(
 );
 
 //DF199: delta phi i
-//field_name: grid_delta_phi_asec
+//field_name: delta_phi_asec
 df!(
     id: df199_200,
     dt: f32,
@@ -1505,11 +1505,11 @@ df!(
 );
 
 //DF200: delta lambda i
-//field_name: grid_delta_lambda_asec
+//field_name: delta_lambda_asec
 //df: df199_200
 
 //DF201: delta h i
-//field_name: grid_delta_h_m
+//field_name: delta_h_m
 df!(
     id: df201_209_10_11,
     dt: f32,
@@ -1581,15 +1581,15 @@ df!(
 //df: df198_208
 
 //DF209: delta N_i
-//field_name: grid_delta_n_m
+//field_name: delta_n_m
 //df: df201_209_10_11
 
 //DF210: delta E_i
-//field_name: grid_delta_e_m
+//field_name: delta_e_m
 //df: df201_209_10_11
 
 //DF211: delta h_i
-//field_name: grid_delta_h_m
+//field_name: delta_h_m
 //df: df201_209_10_11
 
 //DF212: Horizontal Interpolation Method Indicator

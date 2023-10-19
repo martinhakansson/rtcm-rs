@@ -224,6 +224,7 @@ macro_rules! frag_grid16p {
         pub mod $id {
             #[allow(unused)]
             use super::*;
+            #[allow(unused)]
             use $crate::df::dfs::*;
             use $crate::df::{assembler::Assembler, parser::Parser};
             #[allow(unused)]

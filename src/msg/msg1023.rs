@@ -1,11 +1,16 @@
-frag_grid16p!(
-    id: grid199_200,
-    frag_id: df199_200,
+msg!(
+    id: msg1023_gp_ellips,
+    type_name: Msg1023GpEllips,
+    fields: [
+        (delta_phi_asec,df199_200),
+        (delta_lambda_asec,df199_200),
+        (delta_h_m,df201_209_10_11)
+    ],
 );
 
 frag_grid16p!(
-    id: grid201,
-    frag_id: df201_209_10_11,
+    id: grid_ellips,
+    frag_id: msg1023_gp_ellips,
 );
 
 msg!(
@@ -22,9 +27,7 @@ msg!(
         (mean_delta_phi_asec,df196_7),
         (mean_delta_lambda_asec,df196_7),
         (mean_delta_h_m,df198_208),
-        (grid_delta_phi_asec,grid199_200),
-        (grid_delta_lambda_asec,grid199_200),
-        (grid_delta_h_m,grid201),
+        (grid,grid_ellips),
         (hor_interp_ind,df_u2),
         (ver_interp_ind,df_u2),
         (hor_grid_quality_ind,df_u3),

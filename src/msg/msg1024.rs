@@ -1,6 +1,16 @@
+msg!(
+    id: msg1023_gp_plane,
+    type_name: Msg1023GpPlane,
+    fields: [
+        (delta_n_m,df201_209_10_11),
+        (delta_e_m,df201_209_10_11),
+        (delta_h_m,df201_209_10_11)
+    ],
+);
+
 frag_grid16p!(
-    id: grid209_10_11,
-    frag_id: df201_209_10_11,
+    id: grid_plane,
+    frag_id: msg1023_gp_plane,
 );
 
 msg!(
@@ -17,9 +27,7 @@ msg!(
         (mean_delta_n_m,df206_7),
         (mean_delta_e_m,df206_7),
         (mean_delta_h_m,df198_208),
-        (grid_delta_n_m,grid209_10_11),
-        (grid_delta_e_m,grid209_10_11),
-        (grid_delta_h_m,grid209_10_11),
+        (grid,grid_plane),
         (hor_interp_ind,df_u2),
         (ver_interp_ind,df_u2),
         (hor_grid_quality_ind,df_u3),
