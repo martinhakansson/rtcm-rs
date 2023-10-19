@@ -56,11 +56,15 @@ use crate::source_repr::SourceRepr;
 #[cfg(feature = "test_gen")]
 impl<T: Default + Clone + SourceRepr> SourceRepr for Grid16P<T> {
     fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        f.write_char('[')?;
+        write!(
+            f,
+            "{{let mut grid=Grid16P::new();let mut gp_iter=grid.iter_mut();"
+        )?;
         for v in self.0.iter() {
+            write!(f, "*gp_iter.next().unwrap()=")?;
             v.to_source(f)?;
-            f.write_str(",")?;
+            f.write_str(";")?;
         }
-        f.write_char(']')
+        write!(f, "grid}}")
     }
 }
