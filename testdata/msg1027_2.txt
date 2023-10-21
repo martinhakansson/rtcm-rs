@@ -1,0 +1,14 @@
+Msg1027(
+    Msg1027T {
+        system_id: 59,
+        projection_type_ind: 48,
+        rectification_flag: 1,
+        la_pc_deg: -94.151469533,
+        lo_pc_deg: 3.6635967829999996,
+        az_il_deg: 34.355499353999996,
+        diff_arsg_deg: -0.05474822099999999,
+        sil_ppm: 1002718.89448,
+        epc_m: 30581906.086,
+        npc_m: -9162602.655,
+    },
+)

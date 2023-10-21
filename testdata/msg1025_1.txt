@@ -1,0 +1,11 @@
+Msg1025(
+    Msg1025T {
+        system_id: 255,
+        projection_type_ind: 63,
+        la_no_deg: -1.1e-8,
+        lo_no_deg: -1.1e-8,
+        sno_ppm: 1003737.41823,
+        fe_m: 68719476.735,
+        fn_m: -0.001,
+    },
+)

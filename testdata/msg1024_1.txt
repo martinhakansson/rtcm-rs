@@ -1,0 +1,103 @@
+Msg1024(
+    Msg1024T {
+        system_id: 255,
+        hor_shift_flag: 1,
+        ver_shift_flag: 1,
+        n_0_m: -10.0,
+        e_0_m: 671088630.0,
+        delta_n_m: None,
+        delta_e_m: None,
+        mean_delta_n_m: -0.01,
+        mean_delta_e_m: -0.01,
+        mean_delta_h_m: -0.01,
+        grid: Grid16P(
+            [
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+                Msg1023GpPlane {
+                    delta_n_m: -0.001,
+                    delta_e_m: -0.001,
+                    delta_h_m: -0.001,
+                },
+            ],
+        ),
+        hor_interp_ind: 3,
+        ver_interp_ind: 3,
+        hor_grid_quality_ind: 7,
+        ver_grid_quality_ind: 7,
+        modified_julian_day_number: 65535,
+    },
+)

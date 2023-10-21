@@ -1,0 +1,12 @@
+Msg1026(
+    Msg1026T {
+        system_id: 117,
+        projection_type_ind: 57,
+        la_fo_deg: 77.267346816,
+        lo_fo_deg: 66.46207140099999,
+        la_sp1_deg: 79.655366549,
+        la_sp2_deg: 2.555930289,
+        efo_m: 16971299.468000002,
+        nfo_m: -12432704.789,
+    },
+)

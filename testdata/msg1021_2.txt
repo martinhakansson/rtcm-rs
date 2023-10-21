@@ -1,0 +1,48 @@
+Msg1021(
+    Msg1021T {
+        source_name_str: Df88591String(
+            [
+                ,
+            ],
+        ),
+        target_name_str: Df88591String(
+            [
+                ,
+            ],
+        ),
+        system_id: 184,
+        utilized_trans_msg_ind: 523,
+        plate_number: 22,
+        computation_ind: 6,
+        height_ind: 1,
+        phi_v_asec: 171974.0,
+        lambda_v_asec: -233616.0,
+        delta_phi_v_asec: Some(
+            31240.0,
+        ),
+        delta_lambda_v_asec: Some(
+            11926.0,
+        ),
+        dx_m: 482.31100000000004,
+        dy_m: -2048.817,
+        dz_m: 2584.246,
+        r_1_asec: -15182.894900000001,
+        r_2_asec: -16401.365820000003,
+        r_3_asec: -24510.26292,
+        ds_ppm: 63.614720000000005,
+        a_s_m: Some(
+            6386656.093,
+        ),
+        b_s_m: Some(
+            6351084.279,
+        ),
+        a_t_m: Some(
+            6373306.091,
+        ),
+        b_t_m: Some(
+            6378880.071,
+        ),
+        hor_hel_mol_quality_ind: 5,
+        ver_hel_mol_quality_ind: 5,
+    },
+)

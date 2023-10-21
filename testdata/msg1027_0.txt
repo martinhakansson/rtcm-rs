@@ -1,0 +1,14 @@
+Msg1027(
+    Msg1027T {
+        system_id: 0,
+        projection_type_ind: 0,
+        rectification_flag: 0,
+        la_pc_deg: 0.0,
+        lo_pc_deg: 0.0,
+        az_il_deg: 0.0,
+        diff_arsg_deg: 0.0,
+        sil_ppm: 993000.0,
+        epc_m: 0.0,
+        npc_m: 0.0,
+    },
+)
