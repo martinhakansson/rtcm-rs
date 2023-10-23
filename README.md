@@ -159,6 +159,23 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
 | 0.6.x | 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 | SSR messages |
 | 0.7.x | 1021 1022 1023 1024 1025 1026 1027 | Transformation and projection messages |
 
+## Roadmap to Version 1.0
+- [x] Full coverage of all RTCM version 3 messages
+  - [x] MSM Observable messages
+  - [x] Station meta data messages
+  - [x] Auxiliary info messages
+  - [x] Ephemeris messages
+  - [x] SSR messages
+  - [x] Transformation parameters messages
+  - [x] Projection parameters messages
+  - [ ] Network RTK corrections messages
+  - [ ] Legacy Observable messages
+- [ ] Stabilize API (may break some backward compatibility)
+  - [ ] Consistent message data types (and message field names)
+- [ ] Expand unit tests
+- [ ] Performance optimizations
+- [ ] Enhanced documentation
+
 ## License
 
 MIT or Apache-2.0
