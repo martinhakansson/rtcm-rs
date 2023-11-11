@@ -160,7 +160,7 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
 | 0.7.x | 1021 1022 1023 1024 1025 1026 1027 | Transformation and projection messages |
 
 ## Roadmap to Version 1.0
-- [x] Full coverage of all RTCM version 3 messages
+- [ ] Full coverage of all RTCM version 3 messages
   - [x] MSM Observable messages
   - [x] Station meta data messages
   - [x] Auxiliary info messages
