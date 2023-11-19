@@ -504,9 +504,9 @@ df!(
 //df: df_u6
 
 //DF069: GPS Ionospheric Carrier Phase Correction Difference
-//field_name: gps_iono_phase_diff_m
+//field_name: iono_phase_diff_m
 df!(
-    id: df069,
+    id: df069_70,
     dt: f32,
     it: I32,
     len: 17,
@@ -514,6 +514,10 @@ df!(
     round: true,
     ord: 0,
 );
+
+//DF070: GPS Geometric Carrier Phase Correction Difference
+//field_name: geom_phase_diff_m
+//df: df069_70
 
 //DF071: GPS IODE
 //field_name: iode
@@ -530,11 +534,11 @@ df!(
 //df: df_u4
 
 //DF074: GPS Ambiguity Status Flag
-//field_name: gps_amb_status_ind
+//field_name: amb_status_ind
 //df: df_u2
 
 //DF075: GPS Non-Sync Count
-//field_name: gps_non_sync_count
+//field_name: non_sync_count
 //df: df_u3
 
 //DF076: GPS Week number
