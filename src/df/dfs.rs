@@ -428,6 +428,58 @@ df!(
     inv: 0,
 );
 
+//DF058: Number of Auxiliary Stations Transmitted
+//field_name: aux_stations_n
+//df: df_u5
+
+//DF059: Network ID
+//field_name: network_id
+//df: df_u8
+
+//DF060: Master Reference Station ID
+//field_name: ma_reference_station_id
+//df: df_u12
+
+//DF061: Auxiliary Reference Station ID
+//field_name: aux_reference_station_id
+//df: df_u12
+
+//DF062: Aux-Master Delta Latitude
+//field_name: aux_ma_delta_latitude_deg
+df!(
+    id: df062,
+    dt: f64,
+    it: I32,
+    len: 20,
+    res: 2.5e-5,
+    round: true,
+    ord: 0,
+);
+
+//DF063: Aux-Master Delta Longitude
+//field_name: aux_ma_delta_longitude_deg
+df!(
+    id: df063,
+    dt: f64,
+    it: I32,
+    len: 21,
+    res: 2.5e-5,
+    round: true,
+    ord: 0,
+);
+
+//DF064: Aux-Master Delta Height
+//field_name: aux_ma_delta_heigth_m
+df!(
+    id: df064,
+    dt: f64,
+    it: I32,
+    len: 23,
+    res: 1.0e-3,
+    round: true,
+    ord: 0,
+);
+
 //DF068: GPS Satellite ID
 //field_name: gps_satellite_id (same name as df009)
 //df: df_u6
@@ -441,6 +493,10 @@ df!(
     len: 8,
     ord: 0,
 );
+
+//DF072: Subnetwork ID
+//field_name: subnetwork_id
+//df: df_u4
 
 //DF076: GPS Week number
 //field_name: gps_week_number
@@ -3568,6 +3624,14 @@ df!(
     dt: u16,
     it: U16,
     len: 10,
+    ord: 0,
+);
+
+df!(
+    id: df_u12,
+    dt: u16,
+    it: U16,
+    len: 12,
     ord: 0,
 );
 
