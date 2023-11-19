@@ -480,9 +480,40 @@ df!(
     ord: 0,
 );
 
+//DF065: GPS Epoch Time (GPS TOW)
+//field_name: gps_epoch_time_s
+df!(
+    id: df065,
+    dt: f64,
+    it: U32,
+    len: 23,
+    res: 0.1,
+    round: true,
+    ord: 0,
+);
+
+//DF066: Multiple Message Indicator
+//field_name: multiple_message_flag
+//df: df_flag
+
+//DF067: Number of GPS Satellites
+// Handled in message macro
+
 //DF068: GPS Satellite ID
 //field_name: gps_satellite_id (same name as df009)
 //df: df_u6
+
+//DF069: GPS Ionospheric Carrier Phase Correction Difference
+//field_name: gps_iono_phase_diff_m
+df!(
+    id: df069,
+    dt: f32,
+    it: I32,
+    len: 17,
+    res: 5.0e-4,
+    round: true,
+    ord: 0,
+);
 
 //DF071: GPS IODE
 //field_name: iode
@@ -497,6 +528,14 @@ df!(
 //DF072: Subnetwork ID
 //field_name: subnetwork_id
 //df: df_u4
+
+//DF074: GPS Ambiguity Status Flag
+//field_name: gps_amb_status_ind
+//df: df_u2
+
+//DF075: GPS Non-Sync Count
+//field_name: gps_non_sync_count
+//df: df_u3
 
 //DF076: GPS Week number
 //field_name: gps_week_number
