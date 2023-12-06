@@ -5,7 +5,7 @@ msg! (
         (gps_satellite_id, df_u6),
         (amb_status_ind,df_u2),
         (non_sync_count,df_u3),
-        (iono_phase_diff_m,df069_70)
+        (iono_phase_diff_m,df069_70_237_38)
     ],
 );
 

@@ -506,7 +506,7 @@ df!(
 //DF069: GPS Ionospheric Carrier Phase Correction Difference
 //field_name: iono_phase_diff_m
 df!(
-    id: df069_70,
+    id: df069_70_237_38,
     dt: f32,
     it: I32,
     len: 17,
@@ -1822,6 +1822,74 @@ df!(
 //DF232: Receiver Serial Number
 //field_name: receiver_serial_number_str
 //uses df_desc_str, se below
+
+//DF233: GLONASS NW Epoch Time
+//field_name: glo_epoch_time_s
+df!(
+    id: df233,
+    dt: f64,
+    it: U32,
+    len: 20,
+    res: 0.1,
+    round: true,
+    ord: 0,
+);
+
+//DF235: GLONASS Ambiguity Status Flag
+//field_name: amb_status_ind
+//df: df_u2
+
+//DF236: GLONASS Non-Sync Count
+//field_name: non_sync_count
+//df: df_u3
+
+//DF237: GLONASS Ionospheric Carrier Phase Correction Difference
+//field_name: iono_phase_diff_m
+//df: df069_70_237_38
+
+//DF238: GLONASS Geometric Carrier Phase Correction Difference
+//field_name: geom_phase_diff_m
+//df: df069_70_237_38
+
+//DF240: GPS FKP Epoch Time (TOW)
+//field_name: gps_fkp_epoch_time_s
+//df: df_u20
+
+//DF241: GLONASS FKP Epoch Time (TOW)
+//field_name: glo_fkp_epoch_time_s
+//df: df_17
+
+//DF242: N0: Geometric Gradient in North
+//field_name: geom_grad_north_ppm
+df!(
+    id: df242_3,
+    dt: f32,
+    it: I16,
+    len: 12,
+    res: 0.01,
+    round: true,
+    inv: 0x800,
+);
+
+//DF243: E0: Geometric Gradient in East
+//field_name: geom_grad_east_ppm
+//df: df242_3
+
+//DF244: NI: Ionospheric Gradient in North
+//field_name: iono_grad_north_ppm
+df!(
+    id: df244_5,
+    dt: f32,
+    it: I16,
+    len: 14,
+    res: 0.01,
+    round: true,
+    inv: 0x2000,
+);
+
+//DF245: EI: Ionospheric Gradient in East
+//field_name: iono_grad_east_ppm
+//df: df244_5
 
 //DF248: Galileo Epoch Time
 //field_name: gal_epoch_time_ms
@@ -3691,6 +3759,14 @@ df!(
     dt: u32,
     it: U32,
     len: 17,
+    ord: 0,
+);
+
+df!(
+    id: df_u20,
+    dt: u32,
+    it: U32,
+    len: 20,
     ord: 0,
 );
 
