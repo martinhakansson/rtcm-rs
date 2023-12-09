@@ -1851,6 +1851,10 @@ df!(
 //field_name: geom_phase_diff_m
 //df: df069_70_237_38
 
+//DF239: GLONASS IOD
+//field_name: iod
+//df: df_u8
+
 //DF240: GPS FKP Epoch Time (TOW)
 //field_name: gps_fkp_epoch_time_s
 //df: df_u20
