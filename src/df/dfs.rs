@@ -1795,6 +1795,10 @@ df!(
     ord: 0,
 );
 
+//DF225: GLONASS Residuals epoch time
+//field_name: glo_resid_epoch_time_s
+//df: df_u17
+
 //DF226: Physical Reference Station ID
 //field_name: physical_reference_station_id
 //df003 used as it is identical
