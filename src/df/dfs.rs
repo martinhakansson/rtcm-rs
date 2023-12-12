@@ -1876,7 +1876,7 @@ df!(
     len: 12,
     res: 0.01,
     round: true,
-    inv: 0x800,
+    inv: -0x800,
 );
 
 //DF243: E0: Geometric Gradient in East
@@ -1892,7 +1892,7 @@ df!(
     len: 14,
     res: 0.01,
     round: true,
-    inv: 0x2000,
+    inv: -0x2000,
 );
 
 //DF245: EI: Ionospheric Gradient in East
