@@ -20,13 +20,13 @@ Moreover, the library is `no_std` compatible and doesn't rely on dynamic memory 
 - `serde`: For adding support for serialization and deserialization. To enable this, add the following to the rtcm-rs dependency in your Cargo.toml file:
 
 ```toml
-rtcm-rs = { version = "0.7.0", features=["serde"] }
+rtcm-rs = { version = "0.8.0", features=["serde"] }
 ```
 
 - Selective message support: To minimize the library size by supporting only certain RTCM messages. For instance, to only support messages 1004 and 1005, update your Cargo.toml as follows:
 
 ```toml
-rtcm-rs = { version = "0.7.0", default-features=false, features=["msg1004","msg1005"] }
+rtcm-rs = { version = "0.8.0", default-features=false, features=["msg1001","msg1005"] }
 ```
 
 - `test_gen`: This feature is used exclusively for generating tests during library development and is not necessary for library usage.
@@ -37,7 +37,7 @@ To add rtcm-rs to your project, add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-rtcm-rs = "0.7.0"
+rtcm-rs = "0.8.0"
 ```
 
 Remember that hyphenated crate names translate to underscored crate names in rust source code, i.e. `rtcm_rs` for this crate. For instance, add the following to import from the prelude:
@@ -158,6 +158,7 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
 | 0.5.x | 1019 1020 1041 1042 1044 1045 1046 | Ephemeris messages |
 | 0.6.x | 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 | SSR messages |
 | 0.7.x | 1021 1022 1023 1024 1025 1026 1027 | Transformation and projection messages |
+| 0.8.x | 1014 1015 1016 1017 1031 1034 1035 1037 1038 1039 | Network RTK corrections messages |
 
 ## Roadmap to Version 1.0
 - [ ] Full coverage of all RTCM version 3 messages
@@ -168,7 +169,7 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
   - [x] SSR messages
   - [x] Transformation parameters messages
   - [x] Projection parameters messages
-  - [ ] Network RTK corrections messages
+  - [x] Network RTK corrections messages
   - [ ] Legacy Observable messages
 - [ ] Stabilize API (may break some backward compatibility)
   - [ ] Consistent message data types (and message field names)
