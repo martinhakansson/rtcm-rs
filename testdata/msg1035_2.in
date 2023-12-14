@@ -1,0 +1,1 @@
+Message::Msg1035(Msg1035T {reference_station_id:3253,glo_fkp_epoch_time_s:45424,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,31>::new();vec},})

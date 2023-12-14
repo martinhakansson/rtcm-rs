@@ -1,0 +1,35 @@
+Msg1038(
+    Msg1038T {
+        network_id: 128,
+        subnetwork_id: 7,
+        glo_epoch_time_s: 85773.70000000001,
+        multiple_message_flag: 0,
+        ma_reference_station_id: 869,
+        aux_reference_station_id: 1785,
+        satellites: DataVec(
+            [
+                Msg1038Sat {
+                glo_satellite_id: 25,
+                amb_status_ind: 0,
+                non_sync_count: 6,
+                geom_phase_diff_m: -3.6285002,
+                iod: 180,
+            },
+                Msg1038Sat {
+                glo_satellite_id: 50,
+                amb_status_ind: 1,
+                non_sync_count: 5,
+                geom_phase_diff_m: -13.392,
+                iod: 82,
+            },
+                Msg1038Sat {
+                glo_satellite_id: 13,
+                amb_status_ind: 0,
+                non_sync_count: 3,
+                geom_phase_diff_m: 2.7400002,
+                iod: 140,
+            },
+            ],
+        ),
+    },
+)

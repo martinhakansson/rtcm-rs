@@ -1,0 +1,1 @@
+Message::Msg1015(Msg1015T {network_id:173,subnetwork_id:11,gps_epoch_time_s:711980.6000000001,multiple_message_flag:1,ma_reference_station_id:886,aux_reference_station_id:1081,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,15>::new();vec},})

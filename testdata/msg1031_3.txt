@@ -1,0 +1,35 @@
+Msg1031(
+    Msg1031T {
+        glo_resid_epoch_time_s: 34924,
+        reference_station_id: 2547,
+        refs_n: 38,
+        satellites: DataVec(
+            [
+                Msg1031Sat {
+                glo_satellite_id: 63,
+                s_oc_mm: 12.0,
+                s_od_ppm: 3.0,
+                s_oh_ppm: 5.3,
+                s_ic_mm: 322.5,
+                s_id_ppm: 7.29,
+            },
+                Msg1031Sat {
+                glo_satellite_id: 61,
+                s_oc_mm: 21.0,
+                s_od_ppm: 3.73,
+                s_oh_ppm: 3.0,
+                s_ic_mm: 185.5,
+                s_id_ppm: 9.63,
+            },
+                Msg1031Sat {
+                glo_satellite_id: 15,
+                s_oc_mm: 89.0,
+                s_od_ppm: 3.97,
+                s_oh_ppm: 3.8,
+                s_ic_mm: 128.5,
+                s_id_ppm: 7.1099997,
+            },
+            ],
+        ),
+    },
+)

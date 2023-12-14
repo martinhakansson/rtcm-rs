@@ -1,0 +1,15 @@
+Msg1016(
+    Msg1016T {
+        network_id: 104,
+        subnetwork_id: 1,
+        gps_epoch_time_s: 813141.8,
+        multiple_message_flag: 1,
+        ma_reference_station_id: 955,
+        aux_reference_station_id: 3395,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

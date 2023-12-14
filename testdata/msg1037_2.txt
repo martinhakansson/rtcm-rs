@@ -1,0 +1,15 @@
+Msg1037(
+    Msg1037T {
+        network_id: 57,
+        subnetwork_id: 9,
+        glo_epoch_time_s: 97075.3,
+        multiple_message_flag: 0,
+        ma_reference_station_id: 2055,
+        aux_reference_station_id: 563,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

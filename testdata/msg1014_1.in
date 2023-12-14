@@ -1,0 +1,1 @@
+Message::Msg1014(Msg1014T {network_id:255,subnetwork_id:15,aux_stations_n:31,ma_reference_station_id:4095,aux_reference_station_id:4095,aux_ma_delta_latitude_deg:-2.5e-5,aux_ma_delta_longitude_deg:-2.5e-5,aux_ma_delta_heigth_m:-0.001,})

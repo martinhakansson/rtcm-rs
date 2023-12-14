@@ -1,0 +1,1 @@
+Message::Msg1034(Msg1034T {reference_station_id:261,gps_fkp_epoch_time_s:132168,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,31>::new();vec},})

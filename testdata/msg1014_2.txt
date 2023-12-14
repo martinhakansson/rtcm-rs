@@ -1,0 +1,12 @@
+Msg1014(
+    Msg1014T {
+        network_id: 124,
+        subnetwork_id: 13,
+        aux_stations_n: 9,
+        ma_reference_station_id: 1866,
+        aux_reference_station_id: 2649,
+        aux_ma_delta_latitude_deg: 12.648000000000001,
+        aux_ma_delta_longitude_deg: 8.554275,
+        aux_ma_delta_heigth_m: -3112.0840000000003,
+    },
+)

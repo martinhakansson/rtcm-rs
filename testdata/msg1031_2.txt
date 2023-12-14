@@ -1,0 +1,12 @@
+Msg1031(
+    Msg1031T {
+        glo_resid_epoch_time_s: 60981,
+        reference_station_id: 3191,
+        refs_n: 118,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

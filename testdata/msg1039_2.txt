@@ -1,0 +1,15 @@
+Msg1039(
+    Msg1039T {
+        network_id: 232,
+        subnetwork_id: 6,
+        glo_epoch_time_s: 63693.200000000004,
+        multiple_message_flag: 1,
+        ma_reference_station_id: 603,
+        aux_reference_station_id: 2543,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

@@ -1,0 +1,506 @@
+Msg1034(
+    Msg1034T {
+        reference_station_id: 0,
+        gps_fkp_epoch_time_s: 0,
+        satellites: DataVec(
+            [
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+                Msg1034Sat {
+                gps_satellite_id: 0,
+                iode: 0,
+                geom_grad_north_ppm: Some(
+                    0.0,
+                ),
+                geom_grad_east_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_north_ppm: Some(
+                    0.0,
+                ),
+                iono_grad_east_ppm: Some(
+                    0.0,
+                ),
+            },
+            ],
+        ),
+    },
+)
