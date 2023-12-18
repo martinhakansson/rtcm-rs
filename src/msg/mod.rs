@@ -87,6 +87,121 @@ macro_rules! msg {
     };
 }
 #[allow(unused)]
+macro_rules! msg_len_middle {
+    (
+        id: $id:ident,
+        type_name: $type_name:ident,
+        fields1: [ $( ( $field_name1:ident, $frag_id1:ident ) ),+ ],
+        len_field: $len_df_id:ident,
+        fields2: [ $( ( $field_name2:ident, $frag_id2:ident ) ),+ ],
+        vec_field: $vec_field_name:ident, $vec_frag_id:ident,
+    ) => {
+        pub mod $id {
+            use $crate::df::{assembler::Assembler, parser::Parser};
+            use $crate::df::dfs::*;
+            use $crate::rtcm_error::RtcmError;
+            #[cfg(feature = "serde")]
+            use $crate::{Serialize,Deserialize};
+            #[cfg(feature = "test_gen")]
+            use $crate::source_repr::SourceRepr;
+            #[allow(unused)]
+            use super::*; //Do not remove
+
+            pub mod export_types {
+                $(pub use super::$frag_id::export_types::*;)+
+
+                pub use super::$type_name;
+            }
+
+            #[derive(Default, Clone, Debug, PartialEq)]
+            #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
+            pub struct $type_name {
+                $(pub $field_name1:$frag_id1::DataType),+
+                $(pub $field_name2:$frag_id2::DataType),+
+                $vec_field_name:$vec_frag_id::DataType,
+            }
+            pub type DataType = $type_name;
+            pub fn encode(asm:&mut Assembler, value:&$type_name) -> Result<(),RtcmError> {
+                //encode fields1
+                $(
+                    $frag_id1::encode(asm, &value.$field_name1)?;
+                )+
+                //encode len field
+                $len_df_id::encode(asm, value.$vec_field_name.len())?;
+                //encode fields2
+                $(
+                    $frag_id2::encode(asm, &value.$field_name2)?;
+                )+
+                //encode vec field
+                $vec_frag_id::encode(asm, &value.$vec_field_name)?;
+
+                Ok(())
+            }
+            pub fn decode(par:&mut Parser) -> Result<$type_name,RtcmError> {
+                $(
+                    #[allow(unused)]
+                    let $field_name1 = $frag_id1::decode(par)?;
+                )+
+                let vec_len:usize = $len_df_id::decode(par)?;
+                $(
+                    #[allow(unused)]
+                    let $field_name2 = $frag_id2::decode(par)?;
+                )+
+                let $vec_field_name = $vec_frag_id::decode(par, vec_len)?;
+
+                Ok($type_name {
+                    $(
+                        $field_name1
+                    ),+
+                    $(
+                        $field_name2
+                    ),+
+                    $vec_field_name,
+                })
+            }
+            #[cfg(feature = "test_gen")]
+            use $crate::val_gen::ValGen;
+            #[cfg(feature = "test_gen")]
+            pub fn generate<FR,LR,RR>(asm:&mut Assembler, val_gen:&mut ValGen<FR,LR,RR>) -> Result<(),RtcmError>
+                where FR:rand::Rng, LR:rand::Rng, RR:rand::Rng {
+
+                $(
+                    #[allow(unused)]
+                    let _ = $frag_id1::generate(asm, val_gen)?;
+                )+
+                let vec_len = $len_df_id::generate(asm, val_gen)?;
+                $(
+                    #[allow(unused)]
+                    let _ = $frag_id2::generate(asm, val_gen)?;
+                )+
+                let _ = $vec_frag_id::generate(asm, val_gen, vec_len)?;
+                Ok(())
+            }
+            #[cfg(feature = "test_gen")]
+            impl SourceRepr for $type_name {
+                fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                    use core::fmt::Write;
+                    write!(f, "{} {{", stringify!($type_name))?;
+                    $(
+                        write!(f,"{}:", stringify!($field_name1))?;
+                        self.$field_name1.to_source(f)?;
+                        f.write_char(',')?;
+                    )+
+                    $(
+                        write!(f,"{}:", stringify!($field_name2))?;
+                        self.$field_name2.to_source(f)?;
+                        f.write_char(',')?;
+                    )+
+                    write!(f,"{}:", stringify!($vec_field_name))?;
+                    self.$vec_field_name.to_source(f)?;
+
+                    f.write_char('}')
+                }
+            }
+        }
+    };
+}
+#[allow(unused)]
 macro_rules! frag_vec {
     (
         id: $id:ident,
