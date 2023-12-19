@@ -123,6 +123,7 @@ df!(
     ord: 0,
 );
 
+//TODO: Replace with df_leg_sat_len
 //DF006: No. of GPS Satellite Signals Processed
 //field_name: satellites_len
 df!(
@@ -135,7 +136,7 @@ df!(
 );
 
 //DF007: GPS Divergence-free Smoothing Indicator
-//field_name: gps_divergence_free_smoothing_flag
+//field_name: gps_divergence_free_smoothing_flag TODO: change to divergence_free_smoothing_flag
 df!(
     id: df007,
     dt: u8,
@@ -145,7 +146,7 @@ df!(
 );
 
 //DF008: GPS Smoothing Interval
-//field_name: gps_smoothing_interval_bitval
+//field_name: gps_smoothing_interval_bitval TODO: change to smoothing_interval_index
 df!(
     id: df008,
     dt: u8,
@@ -175,7 +176,7 @@ df!(
 );
 
 //DF011: GPS L1 Pseudorange
-//field_name: gps_l1_pseudorange_m
+//field_name: gps_l1_pseudorange_m TODO: change to l1_pseudorange_m
 df!(
     id: df011,
     dt: f64,
@@ -187,7 +188,7 @@ df!(
 );
 
 //DF012: GPS L1 Phaserange - L1 Pseudorange
-//field_name: gps_l1_phase_pseudorange_diff_m
+//field_name: gps_l1_phase_pseudorange_diff_m TODO: change to l1_phase_pseudorange_diff_m
 df!(
     id: df012,
     dt: f64,
@@ -199,13 +200,37 @@ df!(
 );
 
 //DF013: GPS L1 Lock Time Indicator
-//field_name: gps_l1_lock_time_bitval
+//field_name: gps_l1_lock_time_bitval TODO: change to l1_lock_time_index
 df!(
     id: df013,
     dt: u8,
     it: U8,
     len: 7,
     ord: 0,
+);
+
+//DF014: GPS Integer L1 Pseudorange Modulus Ambiguity
+//field_name: l1_pseudorange_amb_m
+df!(
+    id: df014,
+    dt: f32,
+    it: U8,
+    len: 8,
+    res: 299792.458,
+    round: true,
+    ord: 0,
+);
+
+//DF015: GPS L1 CNR
+//field_name: l1_cnr_dbhz
+df!(
+    id: df015,
+    dt: f32,
+    it: U8,
+    len: 8,
+    res: 0.25,
+    round: true,
+    inv: 0,
 );
 
 //DF022: GPS Indicator
@@ -3775,6 +3800,16 @@ df!(
     dt: u32,
     it: U32,
     len: 20,
+    ord: 0,
+);
+
+//No. of Satellite Signals Processed (DF006 and DF035)
+df!(
+    id: df_leg_sat_len,
+    dt: usize,
+    it: U8,
+    len: 5,
+    cap: 31,SAT_CAP_LEGACY,
     ord: 0,
 );
 

@@ -108,7 +108,10 @@ macro_rules! msg_len_middle {
             use super::*; //Do not remove
 
             pub mod export_types {
-                $(pub use super::$frag_id::export_types::*;)+
+                $(pub use super::$frag_id1::export_types::*;)+
+                $(pub use super::$frag_id2::export_types::*;)+
+                pub use super::$len_df_id::export_types::*;
+                pub use super::$vec_frag_id::export_types::*;
 
                 pub use super::$type_name;
             }
@@ -116,8 +119,8 @@ macro_rules! msg_len_middle {
             #[derive(Default, Clone, Debug, PartialEq)]
             #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
             pub struct $type_name {
-                $(pub $field_name1:$frag_id1::DataType),+
-                $(pub $field_name2:$frag_id2::DataType),+
+                $(pub $field_name1:$frag_id1::DataType,)+
+                $(pub $field_name2:$frag_id2::DataType,)+
                 $vec_field_name:$vec_frag_id::DataType,
             }
             pub type DataType = $type_name;
@@ -127,7 +130,7 @@ macro_rules! msg_len_middle {
                     $frag_id1::encode(asm, &value.$field_name1)?;
                 )+
                 //encode len field
-                $len_df_id::encode(asm, value.$vec_field_name.len())?;
+                $len_df_id::encode(asm, &value.$vec_field_name.len())?;
                 //encode fields2
                 $(
                     $frag_id2::encode(asm, &value.$field_name2)?;
@@ -151,11 +154,11 @@ macro_rules! msg_len_middle {
 
                 Ok($type_name {
                     $(
-                        $field_name1
-                    ),+
+                        $field_name1,
+                    )+
                     $(
-                        $field_name2
-                    ),+
+                        $field_name2,
+                    )+
                     $vec_field_name,
                 })
             }
@@ -931,6 +934,7 @@ macro_rules! include_msg {
 }
 
 include_msg!(msg1001, "msg1001");
+include_msg!(msg1002, "msg1002");
 include_msg!(msg1005, "msg1005");
 include_msg!(msg1006, "msg1006");
 include_msg!(msg1007, "msg1007");
