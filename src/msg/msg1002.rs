@@ -8,7 +8,7 @@ msg! (
         (l1_phase_pseudorange_diff_m, df012_18),
         (l1_lock_time_index, df013),
         (l1_pseudorange_amb_m, df014),
-        (l1_cnr_dbhz, df015)
+        (l1_cnr_dbhz, df015_20)
     ],
 );
 

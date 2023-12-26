@@ -224,7 +224,7 @@ df!(
 //DF015: GPS L1 CNR
 //field_name: l1_cnr_dbhz
 df!(
-    id: df015,
+    id: df015_20,
     dt: f32,
     it: U8,
     len: 8,
@@ -251,8 +251,14 @@ df!(
 
 //DF018: GPS L2 Phaserange - L1 pseudorange
 //field_name: l2_phase_l1_pseudorange_diff_m
+//df: df012_18
 
-//DF019:
+//DF019: GPS L2 Lock-Time Indicator
+//field_name: l2_lock_time_index
+//df: df_u7
+
+//DF020: GPS L2 CNR
+//field_name: l2_cnr_dbhz
 
 //DF022: GPS Indicator
 //field_name: gps_flag
