@@ -31,6 +31,7 @@ default = ["all_msgs"]
 all_msgs = [
     "msg1001",
     "msg1002",
+    "msg1003",
     "msg1005",
     "msg1006",
     "msg1007",
@@ -122,6 +123,7 @@ all_msgs = [
 ]
 msg1001 = []
 msg1002 = []
+msg1003 = []
 msg1005 = []
 msg1006 = []
 msg1007 = []

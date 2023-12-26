@@ -259,6 +259,7 @@ df!(
 
 //DF020: GPS L2 CNR
 //field_name: l2_cnr_dbhz
+//df: df015_20
 
 //DF022: GPS Indicator
 //field_name: gps_flag
