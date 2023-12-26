@@ -5,7 +5,7 @@ msg! (
         (gps_satellite_id, df009),
         (gps_l1_code_ind, df010),
         (gps_l1_pseudorange_m, df011),
-        (gps_l1_phase_pseudorange_diff_m, df012),
+        (gps_l1_phase_pseudorange_diff_m, df012_18),
         (gps_l1_lock_time_bitval, df013)
     ],
 );

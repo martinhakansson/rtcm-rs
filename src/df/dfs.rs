@@ -190,7 +190,7 @@ df!(
 //DF012: GPS L1 Phaserange - L1 Pseudorange
 //field_name: gps_l1_phase_pseudorange_diff_m TODO: change to l1_phase_pseudorange_diff_m
 df!(
-    id: df012,
+    id: df012_18,
     dt: f64,
     it: I32,
     len: 20,
@@ -232,6 +232,27 @@ df!(
     round: true,
     inv: 0,
 );
+
+//DF016: GPS L2 Code Indicator
+//field_name: gps_l2_code_ind
+//df: df_u2
+
+//DF017: GPS L1-L2 Pseudorange Difference
+//field_name: l1_l2_pseudorange_diff_m
+df!(
+    id: df017,
+    dt: f32,
+    it: I16,
+    len: 14,
+    res: 0.02,
+    round: true,
+    inv: -0x2000,
+);
+
+//DF018: GPS L2 Phaserange - L1 pseudorange
+//field_name: l2_phase_l1_pseudorange_diff_m
+
+//DF019:
 
 //DF022: GPS Indicator
 //field_name: gps_flag
