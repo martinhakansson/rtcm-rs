@@ -936,6 +936,7 @@ macro_rules! include_msg {
 include_msg!(msg1001, "msg1001");
 include_msg!(msg1002, "msg1002");
 include_msg!(msg1003, "msg1003");
+include_msg!(msg1004, "msg1004");
 include_msg!(msg1005, "msg1005");
 include_msg!(msg1006, "msg1006");
 include_msg!(msg1007, "msg1007");

@@ -393,6 +393,10 @@ df!(
     ord: 0,
 );
 
+//DF036:
+
+//DF037:
+
 //DF038: GLONASS Satellite ID
 //field_name: glo_satellite_id
 df!(
@@ -402,6 +406,8 @@ df!(
     len: 6,
     ord: 0,
 );
+
+//DF039:
 
 //DF040: GLONASS Satellite Frequency Channel Number
 //field_name: glo_satellite_freq_chan_number
@@ -413,6 +419,8 @@ df!(
     bias: -7,
     ord: 0,
 );
+
+//DF041:
 
 //DF051: Modified Julian Day (MJD) Number
 //field_name: modified_julian_day_number
