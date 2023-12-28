@@ -237,8 +237,8 @@ df!(
 //field_name: gps_l2_code_ind
 //df: df_u2
 
-//DF017: GPS L1-L2 Pseudorange Difference
-//field_name: l1_l2_pseudorange_diff_m
+//DF017: GPS L2-L1 Pseudorange Difference
+//field_name: l2_l1_pseudorange_diff_m
 df!(
     id: df017,
     dt: f32,
@@ -421,6 +421,23 @@ df!(
 );
 
 //DF041:
+
+//DF042:
+//df: df012_18_42
+
+//DF043:
+//df: df_u7
+
+//DF044:
+
+//DF045:
+//df: df015_20_45_50
+
+//DF046:
+//df: df_u2
+
+//DF050:
+//df: df015_20_45_50
 
 //DF051: Modified Julian Day (MJD) Number
 //field_name: modified_julian_day_number

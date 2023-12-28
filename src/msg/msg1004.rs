@@ -10,7 +10,7 @@ msg! (
         (l1_pseudorange_amb_m, df014),
         (l1_cnr_dbhz, df015_20),
         (gps_l2_code_ind, df_u2),
-        (l1_l2_pseudorange_diff_m, df017),
+        (l2_l1_pseudorange_diff_m, df017),
         (l2_phase_l1_pseudorange_diff_m, df012_18),
         (l2_lock_time_index, df_u7),
         (l2_cnr_dbhz, df015_20)

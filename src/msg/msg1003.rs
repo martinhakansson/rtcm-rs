@@ -8,7 +8,7 @@ msg! (
         (l1_phase_pseudorange_diff_m, df012_18),
         (l1_lock_time_index, df013),
         (gps_l2_code_ind, df_u2),
-        (l1_l2_pseudorange_diff_m, df017),
+        (l2_l1_pseudorange_diff_m, df017),
         (l2_phase_l1_pseudorange_diff_m, df012_18),
         (l2_lock_time_index, df_u7)
     ],
