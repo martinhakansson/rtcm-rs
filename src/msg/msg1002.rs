@@ -5,10 +5,10 @@ msg! (
         (gps_satellite_id, df009),
         (gps_l1_code_ind, df010),
         (l1_pseudorange_m, df011),
-        (l1_phase_pseudorange_diff_m, df012_18),
+        (l1_phase_pseudorange_diff_m, df012_18_42_48),
         (l1_lock_time_index, df013),
         (l1_pseudorange_amb_m, df014),
-        (l1_cnr_dbhz, df015_20)
+        (l1_cnr_dbhz, df015_20_45_50)
     ],
 );
 

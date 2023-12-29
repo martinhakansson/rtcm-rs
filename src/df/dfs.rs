@@ -190,7 +190,7 @@ df!(
 //DF012: GPS L1 Phaserange - L1 Pseudorange
 //field_name: gps_l1_phase_pseudorange_diff_m TODO: change to l1_phase_pseudorange_diff_m
 df!(
-    id: df012_18,
+    id: df012_18_42_48,
     dt: f64,
     it: I32,
     len: 20,
@@ -224,7 +224,7 @@ df!(
 //DF015: GPS L1 CNR
 //field_name: l1_cnr_dbhz
 df!(
-    id: df015_20,
+    id: df015_20_45_50,
     dt: f32,
     it: U8,
     len: 8,
@@ -240,7 +240,7 @@ df!(
 //DF017: GPS L2-L1 Pseudorange Difference
 //field_name: l2_l1_pseudorange_diff_m
 df!(
-    id: df017,
+    id: df017_47,
     dt: f32,
     it: I16,
     len: 14,
@@ -251,7 +251,7 @@ df!(
 
 //DF018: GPS L2 Phaserange - L1 pseudorange
 //field_name: l2_phase_l1_pseudorange_diff_m
-//df: df012_18
+//df: df012_18_42_48
 
 //DF019: GPS L2 Lock-Time Indicator
 //field_name: l2_lock_time_index
@@ -259,7 +259,7 @@ df!(
 
 //DF020: GPS L2 CNR
 //field_name: l2_cnr_dbhz
-//df: df015_20
+//df: df015_20_45_50
 
 //DF022: GPS Indicator
 //field_name: gps_flag
@@ -385,6 +385,7 @@ df!(
 
 //DF034: GLONASS Epoch Time
 //field_name: glo_epoch_time_ms
+//df: df_u27 TODO: Remove df034
 df!(
     id: df034,
     dt: u32,
@@ -393,12 +394,17 @@ df!(
     ord: 0,
 );
 
-//DF036:
+//DF036: GLONASS Divergence-free smoothing Indicator
+//field_name: divergence_free_smoothing_flag
+//df: df_flag
 
-//DF037:
+//DF037: GLONASS Smoothing Interval
+//field_name: smoothing_interval_index
+//df: df_u3
 
 //DF038: GLONASS Satellite ID
 //field_name: glo_satellite_id
+//df: df_u6 TODO: Remove df038
 df!(
     id: df038,
     dt: u8,
@@ -407,7 +413,9 @@ df!(
     ord: 0,
 );
 
-//DF039:
+//DF039: GLONASS L1 Code Indicator
+//field_name: glo_l1_code_ind
+//df: df_flag
 
 //DF040: GLONASS Satellite Frequency Channel Number
 //field_name: glo_satellite_freq_chan_number
@@ -420,23 +428,60 @@ df!(
     ord: 0,
 );
 
-//DF041:
+//DF041: GLONASS L1 Pseudorange
+//field_name: l1_pseudorange_m
+df!(
+    id: df041,
+    dt: f64,
+    it: U32,
+    len: 25,
+    res: 0.02,
+    round: true,
+    inv: 0x1ffffff,
+);
 
-//DF042:
-//df: df012_18_42
+//DF042: GLONASS L1 Phaserange - L1 Pseudorange
+//field_name: l1_phase_pseudorange_diff_m
+//df: df012_18_42_48
 
-//DF043:
+//DF043: GLONASS L1 Lock-Time Indicator
+//field_name: l1_lock_time_index
 //df: df_u7
 
-//DF044:
+//DF044: GLONASS Integer L1 Pseudorange Modulus Ambiguity
+//field_name: l1_pseudorange_amb_m
+df!(
+    id: df044,
+    dt: f32,
+    it: U8,
+    len: 7,
+    res: 599584.916,
+    round: true,
+    ord: 0,
+);
 
-//DF045:
+//DF045: GLONASS L1 CNR
+//field_name: l1_cnr_dbhz
 //df: df015_20_45_50
 
-//DF046:
+//DF046: GLONASS L2 Code Indicator
+//field_name: glo_l2_code_ind
 //df: df_u2
 
-//DF050:
+//DF047: GLONASS L2-L1 Pseudorange Difference
+//field_name: l2_l1_pseudorange_diff_m
+//df: df017_47
+
+//DF048: GLONASS L2 Phaserange - L1 Pseudorange
+//field_name: l2_phase_l1_pseudorange_diff_m
+//df: df012_18_42_48
+
+//DF049: GLONASS L2 Lock-Time Indicator
+//field_name: l2_lock_time_index
+//df: df_u7
+
+//DF050: GLONASS L2 CNR
+//field_name: l2_cnr_dbhz
 //df: df015_20_45_50
 
 //DF051: Modified Julian Day (MJD) Number
@@ -3853,6 +3898,14 @@ df!(
     dt: u32,
     it: U32,
     len: 20,
+    ord: 0,
+);
+
+df!(
+    id: df_u27,
+    dt: u32,
+    it: U32,
+    len: 27,
     ord: 0,
 );
 
