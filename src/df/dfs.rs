@@ -213,7 +213,7 @@ df!(
 //field_name: l1_pseudorange_amb_m
 df!(
     id: df014,
-    dt: f32,
+    dt: f64,
     it: U8,
     len: 8,
     res: 299792.458,
@@ -452,7 +452,7 @@ df!(
 //field_name: l1_pseudorange_amb_m
 df!(
     id: df044,
-    dt: f32,
+    dt: f64,
     it: U8,
     len: 7,
     res: 599584.916,
