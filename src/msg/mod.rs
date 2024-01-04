@@ -121,7 +121,7 @@ macro_rules! msg_len_middle {
             pub struct $type_name {
                 $(pub $field_name1:$frag_id1::DataType,)+
                 $(pub $field_name2:$frag_id2::DataType,)+
-                $vec_field_name:$vec_frag_id::DataType,
+                pub $vec_field_name:$vec_frag_id::DataType,
             }
             pub type DataType = $type_name;
             pub fn encode(asm:&mut Assembler, value:&$type_name) -> Result<(),RtcmError> {
