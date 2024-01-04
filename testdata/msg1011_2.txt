@@ -1,0 +1,14 @@
+Msg1011(
+    Msg1011T {
+        reference_station_id: 1045,
+        glo_epoch_time_ms: 79588044,
+        synchronous_gnss_msg_flag: 1,
+        divergence_free_smoothing_flag: 1,
+        smoothing_interval_index: 7,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

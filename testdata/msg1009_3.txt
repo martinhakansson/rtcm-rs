@@ -1,0 +1,49 @@
+Msg1009(
+    Msg1009T {
+        reference_station_id: 1031,
+        glo_epoch_time_ms: 98691640,
+        synchronous_gnss_msg_flag: 0,
+        divergence_free_smoothing_flag: 0,
+        smoothing_interval_index: 7,
+        satellites: DataVec(
+            [
+                Msg1009Sat {
+                glo_satellite_id: 13,
+                glo_l1_code_ind: 0,
+                glo_satellite_freq_chan_number: 3,
+                l1_pseudorange_m: Some(
+                    493067.2,
+                ),
+                l1_phase_pseudorange_diff_m: Some(
+                    99.1695,
+                ),
+                l1_lock_time_index: 47,
+            },
+                Msg1009Sat {
+                glo_satellite_id: 48,
+                glo_l1_code_ind: 1,
+                glo_satellite_freq_chan_number: 23,
+                l1_pseudorange_m: Some(
+                    474692.64,
+                ),
+                l1_phase_pseudorange_diff_m: Some(
+                    -54.870000000000005,
+                ),
+                l1_lock_time_index: 34,
+            },
+                Msg1009Sat {
+                glo_satellite_id: 48,
+                glo_l1_code_ind: 1,
+                glo_satellite_freq_chan_number: 12,
+                l1_pseudorange_m: Some(
+                    290447.68,
+                ),
+                l1_phase_pseudorange_diff_m: Some(
+                    151.5915,
+                ),
+                l1_lock_time_index: 91,
+            },
+            ],
+        ),
+    },
+)

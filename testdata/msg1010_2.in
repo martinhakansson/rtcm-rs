@@ -1,0 +1,1 @@
+Message::Msg1010(Msg1010T {reference_station_id:2327,glo_epoch_time_ms:25031398,synchronous_gnss_msg_flag:1,divergence_free_smoothing_flag:1,smoothing_interval_index:5,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,31>::new();vec}})

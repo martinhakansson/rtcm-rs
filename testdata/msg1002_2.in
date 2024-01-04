@@ -1,0 +1,1 @@
+Message::Msg1002(Msg1002T {reference_station_id:3484,gps_epoch_time_ms:432653316,synchronous_gnss_msg_flag:1,divergence_free_smoothing_flag:1,smoothing_interval_index:2,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,31>::new();vec}})

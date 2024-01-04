@@ -1,0 +1,14 @@
+Msg1004(
+    Msg1004T {
+        reference_station_id: 2667,
+        gps_epoch_time_ms: 64064519,
+        synchronous_gnss_msg_flag: 0,
+        divergence_free_smoothing_flag: 0,
+        smoothing_interval_index: 3,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)
