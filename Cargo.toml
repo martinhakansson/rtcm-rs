@@ -1,6 +1,6 @@
 [package]
 name = "rtcm-rs"
-version = "0.8.0"
+version = "0.9.0"
 authors = ["Martin Håkansson <martinhakansson@yahoo.com>"]
 categories = ["encoding", "no-std"]
 description = "Encoding/decoding of RTCM v. 3"
