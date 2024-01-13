@@ -7,7 +7,7 @@
 
 ![Unsafe-Zero-Percent](https://img.shields.io/badge/Unsafety-0%25-brightgreen.svg)
 
-rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. As of now, it supports a subset of the messages in the standard, but work is being done to cover them all in the near future.
+rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. The library currently provides complete support for the latest version of the standard, RTCM v. 3.3 (10403.3). Support for future versions will be added upon their release.
 
 In the spirit of Rust's safety principles, this library is developed with #[forbid(unsafe_code)], ensuring that all operations are safe from undefined behavior, data races, and many common bugs. Thus, you can rely on rtcm-rs for not only its functionality but also its commitment to safety.
 
@@ -15,18 +15,20 @@ This library provides robust support for Serde, a powerful serialization/deseria
 
 Moreover, the library is `no_std` compatible and doesn't rely on dynamic memory allocations, making it suitable for use in embedded environments. With feature flags for each message type, rtcm-rs can be tailored to your needs, reducing library size when necessary.
 
+*It should be noted that some message types are under ongoing revision and will see further refinement in the upcoming version 1.0.*
+
 ## Features
 
 - `serde`: For adding support for serialization and deserialization. To enable this, add the following to the rtcm-rs dependency in your Cargo.toml file:
 
 ```toml
-rtcm-rs = { version = "0.8.0", features=["serde"] }
+rtcm-rs = { version = "0.9.0", features=["serde"] }
 ```
 
 - Selective message support: To minimize the library size by supporting only certain RTCM messages. For instance, to only support messages 1004 and 1005, update your Cargo.toml as follows:
 
 ```toml
-rtcm-rs = { version = "0.8.0", default-features=false, features=["msg1001","msg1005"] }
+rtcm-rs = { version = "0.9.0", default-features=false, features=["msg1001","msg1005"] }
 ```
 
 - `test_gen`: This feature is used exclusively for generating tests during library development and is not necessary for library usage.
@@ -37,7 +39,7 @@ To add rtcm-rs to your project, add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-rtcm-rs = "0.8.0"
+rtcm-rs = "0.9.0"
 ```
 
 Remember that hyphenated crate names translate to underscored crate names in rust source code, i.e. `rtcm_rs` for this crate. For instance, add the following to import from the prelude:
@@ -159,9 +161,10 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
 | 0.6.x | 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 | SSR messages |
 | 0.7.x | 1021 1022 1023 1024 1025 1026 1027 | Transformation and projection messages |
 | 0.8.x | 1014 1015 1016 1017 1031 1034 1035 1037 1038 1039 | Network RTK corrections messages |
+| 0.9.x | 1002 1003 1004 1009 1010 1011 1012 | Legacy Observable messages |
 
 ## Roadmap to Version 1.0
-- [ ] Full coverage of all RTCM version 3 messages
+- [x] Full coverage of all RTCM version 3 messages
   - [x] MSM Observable messages
   - [x] Station meta data messages
   - [x] Auxiliary info messages
@@ -170,7 +173,7 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
   - [x] Transformation parameters messages
   - [x] Projection parameters messages
   - [x] Network RTK corrections messages
-  - [ ] Legacy Observable messages
+  - [x] Legacy Observable messages
 - [ ] Stabilize API (may break some backward compatibility)
   - [ ] Consistent message data types (and message field names)
 - [ ] Expand unit tests
