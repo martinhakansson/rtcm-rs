@@ -3942,6 +3942,12 @@ df_88591_string_with_len!(
 //Descriptor strings for data fields: DF030, DF033, DF228, DF230, DF232
 df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);
 
+df_88591_string_with_len!(
+    id: df_desc_str_w_len_u8,
+    cap: DESC_CAP_U8, 31,
+    len_bits: 8,
+);
+
 //Data fields specific to one message
 
 pub mod df_msg1029_utf8_str;
