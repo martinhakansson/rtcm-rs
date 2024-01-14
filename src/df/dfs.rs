@@ -3902,14 +3902,14 @@ df!(
 );
 
 //Length of descriptor strings for data fields: DF029, DF032, DF227, DF229, DF231
-df!(
-    id: df_desc_str_len,
-    dt: usize,
-    it: U8,
-    len: 8,
-    cap: 31,DESC_STR_CAP,
-    ord: 0,
-);
+// df!(
+//     id: df_desc_str_len,
+//     dt: usize,
+//     it: U8,
+//     len: 8,
+//     cap: 31,DESC_STR_CAP,
+//     ord: 0,
+// );
 
 //Descriptor strings for data fields: DF144, DF146
 //TODO replace for other data fields as well
@@ -3920,7 +3920,7 @@ df_88591_string_with_len!(
 );
 
 //Descriptor strings for data fields: DF030, DF033, DF228, DF230, DF232
-df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);
+// df_88591_string!(id: df_desc_str, cap_name: DESC_STR_CAP,);
 
 df_88591_string_with_len!(
     id: df_desc_str_w_len_u8,

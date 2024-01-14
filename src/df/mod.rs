@@ -165,78 +165,78 @@ macro_rules! df {
     };
 }
 
-macro_rules! df_88591_string {
-    (
-        id: $id:ident,
-        cap_name: $cap_name:ident,
-    ) => {
-        pub mod $id {
-            //use super::*;
-            use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
-            use $crate::msg::$cap_name;
-            use $crate::rtcm_error::RtcmError;
-            use $crate::util::Df88591String;
+// macro_rules! df_88591_string {
+//     (
+//         id: $id:ident,
+//         cap_name: $cap_name:ident,
+//     ) => {
+//         pub mod $id {
+//             //use super::*;
+//             use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
+//             use $crate::msg::$cap_name;
+//             use $crate::rtcm_error::RtcmError;
+//             use $crate::util::Df88591String;
 
-            pub mod export_types {}
-            #[allow(unused)]
-            pub type DataType = Df88591String<$cap_name>;
-            #[allow(unused)]
-            pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
-                for v in value.iter() {
-                    asm.put::<U8>(*v, 8)?;
-                    // if asm.put::<U8>(*v, 8).is_err() {
-                    //     return Err(());
-                    // }
-                }
-                Ok(())
-            }
-            #[allow(unused)]
-            pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, RtcmError> {
-                if len > $cap_name {
-                    return Err(RtcmError::CapacityExceeded);
-                }
-                let mut value = Df88591String::new();
-                for _ in 0..len {
-                    let v = par.parse::<U8>(8)?;
-                    value.push(v);
-                    // if let Ok(v) = par.parse::<U8>(8) {
-                    //     value.push(v);
-                    // } else {
-                    //     return Err(());
-                    // }
-                }
-                Ok(value)
-            }
-            #[cfg(feature = "test_gen")]
-            use $crate::val_gen::ValGen;
-            #[cfg(feature = "test_gen")]
-            #[allow(unused)]
-            pub fn generate<FR, LR, RR>(
-                asm: &mut Assembler,
-                val_gen: &mut ValGen<FR, LR, RR>,
-                len: usize,
-            ) -> Result<(), RtcmError>
-            where
-                FR: rand::Rng,
-                LR: rand::Rng,
-                RR: rand::Rng,
-            {
-                let mut value: DataType = Df88591String::new();
-                for _ in 0..len {
-                    let v = 48 + (val_gen.field_rng.gen::<u8>() % 42);
-                    value.push(v);
-                }
-                for v in value.iter() {
-                    asm.put::<U8>(*v, 8)?;
-                    // if asm.put::<U8>(*v, 8).is_err() {
-                    //     return Err(());
-                    // }
-                }
-                Ok(())
-            }
-        }
-    };
-}
+//             pub mod export_types {}
+//             #[allow(unused)]
+//             pub type DataType = Df88591String<$cap_name>;
+//             #[allow(unused)]
+//             pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
+//                 for v in value.iter() {
+//                     asm.put::<U8>(*v, 8)?;
+//                     // if asm.put::<U8>(*v, 8).is_err() {
+//                     //     return Err(());
+//                     // }
+//                 }
+//                 Ok(())
+//             }
+//             #[allow(unused)]
+//             pub fn decode(par: &mut Parser, len: usize) -> Result<DataType, RtcmError> {
+//                 if len > $cap_name {
+//                     return Err(RtcmError::CapacityExceeded);
+//                 }
+//                 let mut value = Df88591String::new();
+//                 for _ in 0..len {
+//                     let v = par.parse::<U8>(8)?;
+//                     value.push(v);
+//                     // if let Ok(v) = par.parse::<U8>(8) {
+//                     //     value.push(v);
+//                     // } else {
+//                     //     return Err(());
+//                     // }
+//                 }
+//                 Ok(value)
+//             }
+//             #[cfg(feature = "test_gen")]
+//             use $crate::val_gen::ValGen;
+//             #[cfg(feature = "test_gen")]
+//             #[allow(unused)]
+//             pub fn generate<FR, LR, RR>(
+//                 asm: &mut Assembler,
+//                 val_gen: &mut ValGen<FR, LR, RR>,
+//                 len: usize,
+//             ) -> Result<(), RtcmError>
+//             where
+//                 FR: rand::Rng,
+//                 LR: rand::Rng,
+//                 RR: rand::Rng,
+//             {
+//                 let mut value: DataType = Df88591String::new();
+//                 for _ in 0..len {
+//                     let v = 48 + (val_gen.field_rng.gen::<u8>() % 42);
+//                     value.push(v);
+//                 }
+//                 for v in value.iter() {
+//                     asm.put::<U8>(*v, 8)?;
+//                     // if asm.put::<U8>(*v, 8).is_err() {
+//                     //     return Err(());
+//                     // }
+//                 }
+//                 Ok(())
+//             }
+//         }
+//     };
+// }
 
 macro_rules! df_88591_string_with_len {
     (
