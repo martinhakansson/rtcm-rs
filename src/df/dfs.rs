@@ -157,6 +157,7 @@ df!(
 
 //DF009: GPS Satellite ID
 //field_name: gps_satellite_id
+//df: df_u6 TODO: remove df009
 df!(
     id: df009,
     dt: u8,
@@ -1910,6 +1911,7 @@ df!(
 
 //DF224: GPS Residuals Epoch Time (s)
 //field_name: gps_resid_epoch_time_s
+//df: df_u20 TODO: remove df224
 df!(
     id: df224,
     dt: u32,
