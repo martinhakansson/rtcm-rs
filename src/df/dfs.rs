@@ -341,21 +341,11 @@ df!(
 );
 
 //DF029: Descriptor Counter
-//field_name: antenna_desc_char_len (refactor as antenna_descriptor_len)
-//refactor as uses df_desc_str_len, se below
-// df!(
-//     id: df029,
-//     dt: usize,
-//     it: U8,
-//     len: 8,
-//     cap: 31,DF029_CAP,
-//     ord: 0,
-// );
+//note: should not be used, length is handled by df_desc_str_w_len_u8
 
 //DF030: Antenna Descriptor
 //field_name: antenna_descriptor_str
-//refactor as uses df_desc_str, se below
-//df_88591_string!(id: df030, cap_id: df029,);
+//df: df_desc_str_w_len_u8 TODO: remove df_desc_str
 
 //DF031: Antenna Setup ID
 //field_name: antenna_setup_id
@@ -368,21 +358,11 @@ df!(
 );
 
 //DF032: Serial Number Counter
-//field_name: serial_number_len (refactor as antenna_serial_number_len)
-//refactor as uses df_desc_str_len, se below
-// df!(
-//     id: df032,
-//     dt: usize,
-//     it: U8,
-//     len: 8,
-//     cap: 31,DF032_CAP,
-//     ord: 0,
-// );
+//note: should not be used, length is handled by df_desc_str_w_len_u8
 
 //DF033: Antenna Serial Number
 //field_name: antenna_serial_number_str
-//refactor as uses df_desc_str, se below
-//df_88591_string!(id: df033, cap_id: df032,);
+//df: df_desc_str_w_len_u8
 
 //DF034: GLONASS Epoch Time
 //field_name: glo_epoch_time_ms
