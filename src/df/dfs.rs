@@ -136,7 +136,7 @@ df!(
 );
 
 //DF007: GPS Divergence-free Smoothing Indicator
-//field_name: gps_divergence_free_smoothing_flag TODO: change to divergence_free_smoothing_flag
+//field_name: change to divergence_free_smoothing_flag
 df!(
     id: df007,
     dt: u8,
@@ -146,7 +146,7 @@ df!(
 );
 
 //DF008: GPS Smoothing Interval
-//field_name: gps_smoothing_interval_bitval TODO: change to smoothing_interval_index
+//field_name: change to smoothing_interval_index
 df!(
     id: df008,
     dt: u8,
@@ -201,7 +201,7 @@ df!(
 );
 
 //DF013: GPS L1 Lock Time Indicator
-//field_name: gps_l1_lock_time_bitval TODO: change to l1_lock_time_index
+//field_name: change to l1_lock_time_index
 df!(
     id: df013,
     dt: u8,
@@ -2753,7 +2753,8 @@ df!(
 );
 
 //DF418: GNSS smoothing interval
-//field_name: gnss_smoothing_interval_bitval
+//field_name: gnss_smoothing_interval_bitval TODO: gnss_smoothing_interval_index
+//df: df_u3
 df!(
     id: df418,
     dt: u8,
