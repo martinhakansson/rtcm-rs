@@ -34,7 +34,7 @@ msg!(
         (clock_steering_ind, df411),
         (external_clock_ind, df412),
         (gnss_smoothing_type_ind, df417),
-        (gnss_smoothing_interval_bitval, df418),
+        (gnss_smoothing_interval_index, df_u3),
         (data_segment, msg1125_data)
     ],
 );

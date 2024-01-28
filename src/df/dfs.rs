@@ -2753,15 +2753,8 @@ df!(
 );
 
 //DF418: GNSS smoothing interval
-//field_name: gnss_smoothing_interval_bitval TODO: gnss_smoothing_interval_index
+//field_name: gnss_smoothing_interval_index
 //df: df_u3
-df!(
-    id: df418,
-    dt: u8,
-    it: U8,
-    len: 3,
-    ord: 0,
-);
 
 //DF419: GLONASS Satellite Frequency Channel Number
 //field_name: glonass_satellite_frequency_channel_number
