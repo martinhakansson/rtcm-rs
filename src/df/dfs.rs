@@ -2,14 +2,13 @@
 //id - ID
 //ms - unit millisecond
 //flag - flag, on or off for something
-//bitval - df bits cast as unsigned integer
+//index - df bits cast as unsigned integer
 //len - length, i.e. number of elements in message
 //ind - indicator, values with specific meaning
 //m - unit meter
 //mm - unit millimeter
 //ppm - parts per million
 //s - unit second
-//ms - unit millisecond
 //str - string
 //n - number of
 //dbhz - unit dBHz
