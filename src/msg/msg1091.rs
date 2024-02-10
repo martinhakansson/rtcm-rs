@@ -2,7 +2,7 @@ use super::msm123_sat::*;
 
 msm_sig_frag!(
     id: msg1091_sig,
-    type_name: Msm1091Sig,
+    type_name: Msg1091Sig,
     gnss: gal,
     fields: [(gnss_signal_fine_pseudorange_ms, df400)],
 );

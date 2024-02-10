@@ -2,7 +2,7 @@ use super::msm123_sat::*;
 
 msm_sig_frag!(
     id: msg1072_sig,
-    type_name: Msm1072Sig,
+    type_name: Msg1072Sig,
     gnss: gps,
     fields: [
         (gnss_signal_fine_phaserange_ms,df401),
