@@ -1,6 +1,7 @@
 use crate::df::bit_value::*;
 use crate::df::{assembler::Assembler, parser::Parser};
 use crate::msg::GloSigId;
+use crate::msg::SAT_CAP_1065;
 use crate::rtcm_error::RtcmError;
 #[cfg(feature = "test_gen")]
 use crate::source_repr::SourceRepr;
@@ -36,7 +37,7 @@ pub mod export_types {
     pub use super::Msg1065CodeBias;
 }
 
-pub type DataType = DataVec<Msg1065CodeBias, 390>;
+pub type DataType = DataVec<Msg1065CodeBias, SAT_CAP_1065>;
 
 macro_rules! sig_mappings {
     [
@@ -111,7 +112,7 @@ pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
 
 #[allow(unused)]
 pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
-    let mut value = DataVec::<Msg1065CodeBias, 390>::new();
+    let mut value = DataVec::<Msg1065CodeBias, SAT_CAP_1065>::new();
     let sat_num = par.parse::<U8>(6)?;
     for _ in 0..sat_num {
         let sat_id = par.parse::<U8>(5)?;

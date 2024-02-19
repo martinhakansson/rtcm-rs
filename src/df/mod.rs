@@ -11,7 +11,7 @@ macro_rules! df {
         $(res: $res:expr,)?
         $(bias: $bias:expr,)?
         $(round: $round:literal,)?
-        $(cap: $cap:expr,$cap_name:ident,)?
+        $(cap: $cap_name:ident,)?
         $(inv: $inv:literal,)?
         $(ord: $ord:literal,)?) => {
 
@@ -19,9 +19,11 @@ macro_rules! df {
             use $crate::df::bit_value::*;
             use $crate::df::{assembler::Assembler, parser::Parser};
             use $crate::rtcm_error::RtcmError;
+            #[allow(unused)]
+            use $crate::msg::*;
 
             pub mod export_types {
-                $(pub use super::$cap_name;)?
+                // $(pub use super::$cap_name;)?
             }
 
             $(
@@ -136,9 +138,9 @@ macro_rules! df {
                 $(
                     //let it_val = val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap + 1);
                     let it_val = if val_gen.len_rng.gen::<u64>() == u64::MAX {
-                        $cap
+                        $cap_name as <$it as BitValue>::ValueType
                     } else {
-                        val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap + 1)
+                        val_gen.len_rng.gen::<<$it as BitValue>::ValueType>() % ($cap_name as <$it as BitValue>::ValueType + 1)
                     };
                 )?
                 asm.put::<$it>(it_val, $len)?;
@@ -158,8 +160,8 @@ macro_rules! df {
             }
             $(
                 #[allow(unused)]
-                pub const $cap_name:usize = $cap;
-                pub use $cap_name as CAP;
+                // pub const $cap_name:usize = $cap;
+                pub const CAP:usize = $crate::msg::$cap_name;
             )?
         }
     };
@@ -241,19 +243,20 @@ macro_rules! df {
 macro_rules! df_88591_string_with_len {
     (
         id: $id:ident,
-        cap: $cap_name:ident, $cap:literal,
+        cap: $cap_name:ident,
         len_bits: $len_bits:literal,
     ) => {
         pub mod $id {
             //use super::*;
             use $crate::df::{assembler::Assembler, bit_value::U8, parser::Parser};
+            use $crate::msg::*;
             use $crate::rtcm_error::RtcmError;
             use $crate::util::Df88591String;
 
-            pub const $cap_name: usize = $cap;
+            // pub const $cap_name: usize = $cap;
 
             pub mod export_types {
-                pub use super::$cap_name;
+                // pub use super::$cap_name;
             }
             #[allow(unused)]
             pub type DataType = Df88591String<$cap_name>;
@@ -292,9 +295,9 @@ macro_rules! df_88591_string_with_len {
                 RR: rand::Rng,
             {
                 let len = if val_gen.len_rng.gen::<u64>() == u64::MAX {
-                    $cap
+                    $cap_name as u8
                 } else {
-                    val_gen.len_rng.gen::<u8>() % ($cap + 1)
+                    val_gen.len_rng.gen::<u8>() % ($cap_name as u8 + 1)
                 };
                 asm.put::<U8>(len, $len_bits)?;
                 let mut value: DataType = Df88591String::new();
@@ -312,4 +315,4 @@ macro_rules! df_88591_string_with_len {
 }
 
 pub mod dfs;
-pub use dfs::*;
+// pub use dfs::*;

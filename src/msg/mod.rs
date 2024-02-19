@@ -29,7 +29,10 @@ macro_rules! msg {
             use super::*; //Do not remove
 
             pub mod export_types {
-                $(pub use super::$frag_id::export_types::*;)+
+                $(
+                    #[allow(unused)]
+                    pub use super::$frag_id::export_types::*;
+                )+
 
                 pub use super::$type_name;
             }
@@ -108,8 +111,15 @@ macro_rules! msg_len_middle {
             use super::*; //Do not remove
 
             pub mod export_types {
-                $(pub use super::$frag_id1::export_types::*;)+
-                $(pub use super::$frag_id2::export_types::*;)+
+                $(
+                    #[allow(unused)]
+                    pub use super::$frag_id1::export_types::*;
+                )+
+                $(
+                    #[allow(unused)]
+                    pub use super::$frag_id2::export_types::*;
+                )+
+                #[allow(unused)]
                 pub use super::$len_df_id::export_types::*;
                 pub use super::$vec_frag_id::export_types::*;
 
@@ -219,6 +229,7 @@ macro_rules! frag_vec {
             use $crate::util::DataVec;
 
             pub mod export_types {
+                #[allow(unused)]
                 pub use super::$frag_id::export_types::*;
             }
 
@@ -267,20 +278,21 @@ macro_rules! frag_vec_with_len {
     (
         id: $id:ident,
         frag_id: $frag_id:ident,
-        cap: $cap_name:ident, $cap:literal,
+        cap: $cap_name:ident,
         len_bits: $len_bits:literal,
     ) => {
         pub mod $id {
             use super::*;
             use $crate::df::bit_value::U16;
             use $crate::df::{assembler::Assembler, parser::Parser};
+            use $crate::msg::*;
             use $crate::rtcm_error::RtcmError;
             use $crate::util::DataVec;
 
-            pub const $cap_name: usize = $cap;
+            // pub const $cap_name: usize = $cap;
 
             pub mod export_types {
-                pub use super::$cap_name;
+                // pub use super::$cap_name;
                 pub use super::$frag_id::export_types::*;
             }
 
@@ -296,7 +308,7 @@ macro_rules! frag_vec_with_len {
             }
             pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
                 let len = par.parse::<U16>($len_bits)? as usize;
-                if len > $cap {
+                if len > $cap_name {
                     return Err(RtcmError::CapacityExceeded);
                 }
                 let mut value = DataVec::new();
@@ -319,9 +331,9 @@ macro_rules! frag_vec_with_len {
                 RR: rand::Rng,
             {
                 let len = if val_gen.len_rng.gen::<u64>() == u64::MAX {
-                    $cap
+                    $cap_name
                 } else {
-                    val_gen.len_rng.gen::<u16>() % ($cap + 1)
+                    val_gen.len_rng.gen::<u16>() % ($cap_name + 1)
                 };
                 asm.put::<U16>(len, $len_bits)?;
                 for _ in 0..len {
@@ -411,6 +423,7 @@ macro_rules! msm_data_seg_frag {
             use $crate::{Deserialize, Serialize};
 
             pub mod export_types {
+                #[allow(unused)]
                 pub use super::$sat_id::export_types::*;
                 pub use super::$sig_id::export_types::*;
 
@@ -637,7 +650,10 @@ macro_rules! msm_sat_frag {
             use $crate::{Serialize,Deserialize};
 
             pub mod export_types {
-                $(pub use super::$frag_id::export_types::*;)+
+                $(
+                    #[allow(unused)]
+                    pub use super::$frag_id::export_types::*;
+                )+
 
                 pub use super::$type_name;
             }
@@ -739,7 +755,10 @@ macro_rules! msm_sig_frag {
             use $crate::{Serialize,Deserialize};
 
             pub mod export_types {
-                $(pub use super::$frag_id::export_types::*;)+
+                $(
+                    #[allow(unused)]
+                    pub use super::$frag_id::export_types::*;
+                )+
 
                 pub use super::$type_name;
             }
@@ -868,6 +887,26 @@ fn cell_mask_id_vec(
     }
     Some((sat_vec, cell_vec))
 }
+
+//Common constants
+pub const DESC_CAP: usize = 31;
+pub const SAT_CAP_LEGACY: usize = 31;
+pub const SAT_CAP_MAC: usize = 15;
+pub const SAT_CAP_FKP: usize = 31;
+pub const SAT_CAP_RES: usize = 31;
+pub const SAT_CAP_1013: usize = 31;
+pub const SAT_CAP_1057: usize = 60;
+pub const SAT_CAP_1058: usize = 63;
+pub const SAT_CAP_1059: usize = 390;
+pub const SAT_CAP_1060: usize = 39;
+pub const SAT_CAP_1061: usize = 63;
+pub const SAT_CAP_1062: usize = 63;
+pub const SAT_CAP_1063: usize = 60;
+pub const SAT_CAP_1064: usize = 63;
+pub const SAT_CAP_1065: usize = 390;
+pub const SAT_CAP_1066: usize = 39;
+pub const SAT_CAP_1067: usize = 63;
+pub const SAT_CAP_1068: usize = 63;
 
 #[cfg(any(
     feature = "msg1071",

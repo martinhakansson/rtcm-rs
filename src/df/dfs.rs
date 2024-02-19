@@ -125,14 +125,14 @@ df!(
 //TODO: Replace with df_leg_sat_len
 //DF006: No. of GPS Satellite Signals Processed
 //field_name: satellites_len
-df!(
-    id: df006,
-    dt: usize,
-    it: U8,
-    len: 5,
-    cap: 31,DF006_CAP,
-    ord: 0,
-);
+// df!(
+//     id: df006,
+//     dt: usize,
+//     it: U8,
+//     len: 5,
+//     cap: 31,DF006_CAP,
+//     ord: 0,
+// );
 
 //DF007: GPS Divergence-free Smoothing Indicator
 //field_name: change to divergence_free_smoothing_flag
@@ -491,7 +491,7 @@ df!(
     dt: usize,
     it: U8,
     len: 5,
-    cap: 31, DF053_CAP,
+    cap: SAT_CAP_1013,
     ord: 0,
 );
 
@@ -3890,7 +3890,7 @@ df!(
     dt: usize,
     it: U8,
     len: 5,
-    cap: 31,SAT_CAP_LEGACY,
+    cap: SAT_CAP_LEGACY,
     ord: 0,
 );
 
@@ -3908,7 +3908,7 @@ df!(
 //TODO replace for other data fields as well
 df_88591_string_with_len!(
     id: df_desc_str_w_len,
-    cap: DESC_CAP, 31,
+    cap: DESC_CAP,
     len_bits: 5,
 );
 
@@ -3917,7 +3917,7 @@ df_88591_string_with_len!(
 
 df_88591_string_with_len!(
     id: df_desc_str_w_len_u8,
-    cap: DESC_CAP_U8, 31,
+    cap: DESC_CAP,
     len_bits: 8,
 );
 

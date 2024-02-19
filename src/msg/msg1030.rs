@@ -14,7 +14,7 @@ msg! (
 frag_vec_with_len!(
     id: msg1030_sat_vec,
     frag_id: msg1030_sat,
-    cap: SAT_CAP_1030, 31,
+    cap: SAT_CAP_RES,
     len_bits: 5,
 );
 

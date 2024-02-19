@@ -1,4 +1,3 @@
-
 msg!(
     id: msg1013_msg_id,
     type_name: Msg1013MsgId,
@@ -12,7 +11,7 @@ msg!(
 frag_vec!(
     id: msg_1013_msg_id_vec,
     frag_id: msg1013_msg_id,
-    cap_name: DF053_CAP,
+    cap_name: SAT_CAP_1013,
 );
 
 msg!(
