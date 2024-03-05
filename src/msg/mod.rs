@@ -331,9 +331,9 @@ macro_rules! frag_vec_with_len {
                 RR: rand::Rng,
             {
                 let len = if val_gen.len_rng.gen::<u64>() == u64::MAX {
-                    $cap_name
+                    $cap_name as u16
                 } else {
-                    val_gen.len_rng.gen::<u16>() % ($cap_name + 1)
+                    val_gen.len_rng.gen::<u16>() % ($cap_name as u16 + 1)
                 };
                 asm.put::<U16>(len, $len_bits)?;
                 for _ in 0..len {
