@@ -12,8 +12,8 @@ use crate::{Deserialize, Serialize};
 #[derive(Default, Clone, Debug, PartialEq)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize), serde(crate = "sd"))]
 pub struct Msg1065CodeBias {
-    pub sat_id: u8,
-    pub sig_id: GloSigId,
+    pub satellite_id: u8,
+    pub signal_id: GloSigId,
     pub bias_m: f32,
 }
 
@@ -23,10 +23,10 @@ impl SourceRepr for Msg1065CodeBias {
         use core::fmt::Write;
         write!(
             f,
-            "Msg1065CodeBias {{ sat_id: {}, sig_id: glo::",
-            self.sat_id
+            "Msg1065CodeBias {{ satellite_id: {}, signal_id: glo::",
+            self.satellite_id
         )?;
-        self.sig_id.to_source(f)?;
+        self.signal_id.to_source(f)?;
         write!(f, ", bias_m: ")?;
         self.bias_m.to_source(f)?;
         f.write_char('}')
@@ -74,10 +74,10 @@ pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
     let mut sat_mask: u32 = 0;
     let mut sat_num: u8 = 0;
     for bias in value.iter() {
-        if bias.sat_id <= 31 {
-            let sat = 1 << bias.sat_id;
+        if bias.satellite_id <= 31 {
+            let sat = 1 << bias.satellite_id;
             if sat_mask & sat == 0 {
-                sat_mask |= 1 << bias.sat_id;
+                sat_mask |= 1 << bias.satellite_id;
                 sat_num += 1;
             }
         } else {
@@ -92,12 +92,12 @@ pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
             asm.put::<U8>(s, 5)?;
             let num_biases: u8 = value
                 .iter()
-                .filter(|b| b.sat_id == s && to_id(b.sig_id).is_some())
+                .filter(|b| b.satellite_id == s && to_id(b.signal_id).is_some())
                 .count() as u8;
             asm.put::<U8>(num_biases, 5)?;
             let mut bias_mask: u32 = 0;
-            for bias in value.iter().filter(|b| b.sat_id == s) {
-                if let Some(sig_id) = to_id(bias.sig_id) {
+            for bias in value.iter().filter(|b| b.satellite_id == s) {
+                if let Some(sig_id) = to_id(bias.signal_id) {
                     asm.put::<U8>(sig_id, 5)?;
                     let mut bias = bias.bias_m;
                     bias /= 0.01;
@@ -115,14 +115,14 @@ pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
     let mut value = DataVec::<Msg1065CodeBias, SAT_CAP_1065>::new();
     let sat_num = par.parse::<U8>(6)?;
     for _ in 0..sat_num {
-        let sat_id = par.parse::<U8>(5)?;
+        let satellite_id = par.parse::<U8>(5)?;
         let bias_num = par.parse::<U8>(5)?;
         for _ in 0..bias_num {
-            if let Some(sig_id) = to_sig(par.parse::<U8>(5)?) {
+            if let Some(signal_id) = to_sig(par.parse::<U8>(5)?) {
                 let bias = par.parse::<I16>(14)? as f32;
                 value.push(Msg1065CodeBias {
-                    sat_id,
-                    sig_id,
+                    satellite_id,
+                    signal_id,
                     bias_m: bias * 0.01,
                 });
             }
