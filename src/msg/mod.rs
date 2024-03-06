@@ -608,9 +608,9 @@ macro_rules! msm_data_seg_frag {
                     use core::fmt::Write;
 
                     write!(f, "{} {{", stringify!($type_name))?;
-                    f.write_str("sat_data: ")?;
+                    f.write_str("satellite_data: ")?;
                     self.satellite_data.to_source(f)?;
-                    f.write_str(", sig_data: ")?;
+                    f.write_str(", signal_data: ")?;
                     self.signal_data.to_source(f)?;
                     f.write_char('}')?;
 
@@ -722,7 +722,7 @@ macro_rules! msm_sat_frag {
                     use core::fmt::Write;
 
                     write!(f, "{} {{", stringify!($type_name))?;
-                    f.write_str("sat_id:")?;
+                    f.write_str("satellite_id:")?;
                     self.satellite_id.to_source(f)?;
                     f.write_char(',')?;
 
@@ -831,9 +831,9 @@ macro_rules! msm_sig_frag {
                     use core::fmt::Write;
 
                     write!(f, "{} {{", stringify!($type_name))?;
-                    f.write_str("sat_id: ")?;
+                    f.write_str("satellite_id: ")?;
                     self.satellite_id.to_source(f)?;
-                    write!(f, ", sig_id: {}::", stringify!($gnss))?;
+                    write!(f, ", signal_id: {}::", stringify!($gnss))?;
                     self.signal_id.to_source(f)?;
                     f.write_char(',')?;
 
