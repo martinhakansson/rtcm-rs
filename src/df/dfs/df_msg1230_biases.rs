@@ -11,7 +11,7 @@ use crate::{Deserialize, Serialize};
 #[derive(Default, Clone, Debug, PartialEq)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize), serde(crate = "sd"))]
 pub struct Msg1230CodePhaseBias {
-    pub sig_id: GloSigId,
+    pub signal_id: GloSigId,
     pub bias_m: f32,
 }
 
@@ -19,8 +19,8 @@ pub struct Msg1230CodePhaseBias {
 impl SourceRepr for Msg1230CodePhaseBias {
     fn to_source(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         use core::fmt::Write;
-        write!(f, "Msg1230CodePhaseBias {{ sig_id: glo::")?;
-        self.sig_id.to_source(f)?;
+        write!(f, "Msg1230CodePhaseBias {{ signal_id: glo::")?;
+        self.signal_id.to_source(f)?;
         write!(f, ", bias_m: ")?;
         self.bias_m.to_source(f)?;
         f.write_char('}')
@@ -38,9 +38,9 @@ pub fn encode(asm: &mut Assembler, value: &DataType) -> Result<(), RtcmError> {
     let mut sig_mask: u8 = 0;
     let mut value = value.clone();
     let slice = value.as_mut_slice();
-    slice.sort_unstable_by(|a, b| a.sig_id.cmp(&b.sig_id));
+    slice.sort_unstable_by(|a, b| a.signal_id.cmp(&b.signal_id));
     for v in slice.iter() {
-        let sig_id = v.sig_id;
+        let sig_id = v.signal_id;
         match (sig_id.band(), sig_id.attribute()) {
             (1, 'C') => {
                 sig_mask |= 1 << 3;
@@ -80,25 +80,25 @@ pub fn decode(par: &mut Parser) -> Result<DataType, RtcmError> {
             match i {
                 0 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(1, 'C'),
+                        signal_id: GloSigId::new(1, 'C'),
                         bias_m,
                     });
                 }
                 1 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(1, 'P'),
+                        signal_id: GloSigId::new(1, 'P'),
                         bias_m,
                     });
                 }
                 2 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(2, 'C'),
+                        signal_id: GloSigId::new(2, 'C'),
                         bias_m,
                     });
                 }
                 3 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(2, 'P'),
+                        signal_id: GloSigId::new(2, 'P'),
                         bias_m,
                     });
                 }
@@ -133,25 +133,25 @@ where
             match i {
                 0 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(1, 'C'),
+                        signal_id: GloSigId::new(1, 'C'),
                         bias_m,
                     });
                 }
                 1 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(1, 'P'),
+                        signal_id: GloSigId::new(1, 'P'),
                         bias_m,
                     });
                 }
                 2 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(2, 'C'),
+                        signal_id: GloSigId::new(2, 'C'),
                         bias_m,
                     });
                 }
                 3 => {
                     value.push(Msg1230CodePhaseBias {
-                        sig_id: GloSigId::new(2, 'P'),
+                        signal_id: GloSigId::new(2, 'P'),
                         bias_m,
                     });
                 }
