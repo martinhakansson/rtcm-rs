@@ -433,15 +433,15 @@ macro_rules! msm_data_seg_frag {
             #[derive(Default, Clone, Debug, PartialEq)]
             #[cfg_attr(feature = "serde", derive(Serialize, Deserialize), serde(crate = "sd"))]
             pub struct $type_name {
-                pub sat_data: $sat_id::DataType,
-                pub sig_data: $sig_id::DataType,
+                pub satellite_data: $sat_id::DataType,
+                pub signal_data: $sig_id::DataType,
             }
             pub type DataType = $type_name;
             pub fn encode(asm: &mut Assembler, value: &$type_name) -> Result<(), RtcmError> {
                 let mut sat_mask: u64 = 0;
-                for s in value.sat_data.iter() {
-                    if s.sat_id > 0 && s.sat_id <= 64 {
-                        let sat: u64 = 1 << (64 - s.sat_id);
+                for s in value.satellite_data.iter() {
+                    if s.satellite_id > 0 && s.satellite_id <= 64 {
+                        let sat: u64 = 1 << (64 - s.satellite_id);
                         if sat & sat_mask > 0 {
                             return Err(RtcmError::DuplicateSatellite);
                         }
@@ -453,14 +453,14 @@ macro_rules! msm_data_seg_frag {
                 let mut sig_mask: u32 = 0;
                 let mut sat_sig_mask: u64 = 0;
                 let mut cell_vec: ArrayVec<[(u8, u8); 64]> = ArrayVec::new();
-                for s in value.sig_data.iter() {
-                    let sat_id = if s.sat_id > 0 && s.sat_id <= 64 {
-                        s.sat_id
+                for s in value.signal_data.iter() {
+                    let sat_id = if s.satellite_id > 0 && s.satellite_id <= 64 {
+                        s.satellite_id
                     } else {
                         return Err(RtcmError::InvalidSatelliteId);
                     };
-                    let sig_id = if let Some(sig_id) = to_id(s.sig_id) {
-                        sig_id
+                    let sig_id = if let Some(signal_id) = to_id(s.signal_id) {
+                        signal_id
                     } else {
                         return Err(RtcmError::InvalidSignalId);
                     };
@@ -490,7 +490,7 @@ macro_rules! msm_data_seg_frag {
                     }
                 }
                 let sig_mask_len = mask_len_u32(sig_mask);
-                let cell_cont_len = sig_mask_len * value.sat_data.len();
+                let cell_cont_len = sig_mask_len * value.satellite_data.len();
                 let mut cell_mask: u64 = 0;
                 for (sat_id, sig_id) in cell_vec {
                     let cell_indx = sat_indx[sat_id as usize - 1] * sig_mask_len
@@ -505,8 +505,8 @@ macro_rules! msm_data_seg_frag {
                 asm.put::<U32>(sig_mask, 32)?;
                 asm.put::<U64>(cell_mask, cell_cont_len)?;
 
-                $sat_id::encode(asm, &value.sat_data)?;
-                $sig_id::encode(asm, &value.sig_data)?;
+                $sat_id::encode(asm, &value.satellite_data)?;
+                $sig_id::encode(asm, &value.signal_data)?;
                 Ok(())
             }
             pub fn decode(par: &mut Parser) -> Result<$type_name, RtcmError> {
@@ -518,9 +518,12 @@ macro_rules! msm_data_seg_frag {
 
                 let cell_mask = par.parse::<U64>(sat_len * sig_len)?;
                 if let Some((sat_vec, cell_vec)) = cell_mask_id_vec(sat_mask, sig_mask, cell_mask) {
-                    let sat_data = $sat_id::decode(par, &sat_vec)?;
-                    let sig_data = $sig_id::decode(par, &cell_vec)?;
-                    Ok($type_name { sat_data, sig_data })
+                    let satellite_data = $sat_id::decode(par, &sat_vec)?;
+                    let signal_data = $sig_id::decode(par, &cell_vec)?;
+                    Ok($type_name {
+                        satellite_data,
+                        signal_data,
+                    })
                 } else {
                     return Err(RtcmError::InvalidSatelliteSignalCount);
                 }
@@ -606,9 +609,9 @@ macro_rules! msm_data_seg_frag {
 
                     write!(f, "{} {{", stringify!($type_name))?;
                     f.write_str("sat_data: ")?;
-                    self.sat_data.to_source(f)?;
+                    self.satellite_data.to_source(f)?;
                     f.write_str(", sig_data: ")?;
-                    self.sig_data.to_source(f)?;
+                    self.signal_data.to_source(f)?;
                     f.write_char('}')?;
 
                     Ok(())
@@ -661,14 +664,14 @@ macro_rules! msm_sat_frag {
             #[derive(Default,Clone, Debug, PartialEq)]
             #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
             pub struct $type_name {
-                pub sat_id: u8,
+                pub satellite_id: u8,
                 $(pub $field_name:$frag_id::DataType),+
             }
             pub type DataType = DataVec<$type_name,64>;
             pub fn encode(asm:&mut Assembler, value:&DataType) -> Result<(),RtcmError> {
                 let mut value = value.clone();
                 let slice = value.as_mut_slice();
-                slice.sort_unstable_by(|a,b| a.sat_id.cmp(&b.sat_id));
+                slice.sort_unstable_by(|a,b| a.satellite_id.cmp(&b.satellite_id));
                 $(
                     for v in value.iter() {
                         $frag_id::encode(asm, &v.$field_name)?;
@@ -683,7 +686,7 @@ macro_rules! msm_sat_frag {
                     let mut iter = value.iter_mut();
                     for s in sat_vec {
                         let v = iter.next().unwrap();
-                        v.sat_id = *s;
+                        v.satellite_id = *s;
                     }
                 }
                 $(
@@ -720,7 +723,7 @@ macro_rules! msm_sat_frag {
 
                     write!(f, "{} {{", stringify!($type_name))?;
                     f.write_str("sat_id:")?;
-                    self.sat_id.to_source(f)?;
+                    self.satellite_id.to_source(f)?;
                     f.write_char(',')?;
 
                     $(
@@ -766,8 +769,8 @@ macro_rules! msm_sig_frag {
             #[derive(Default, Clone, Debug, PartialEq)]
             #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
             pub struct $type_name {
-                pub sat_id:u8,
-                pub sig_id:SigId,
+                pub satellite_id:u8,
+                pub signal_id:SigId,
                 $(pub $field_name:$frag_id::DataType),+
             }
             pub type DataType = DataVec<$type_name,64>;
@@ -775,9 +778,9 @@ macro_rules! msm_sig_frag {
                 let mut value = value.clone();
                 let slice = value.as_mut_slice();
                 slice.sort_unstable_by(|a,b| {
-                    match a.sat_id.cmp(&b.sat_id) {
+                    match a.satellite_id.cmp(&b.satellite_id) {
                         core::cmp::Ordering::Less => core::cmp::Ordering::Less,
-                        core::cmp::Ordering::Equal => a.sig_id.cmp(&b.sig_id),
+                        core::cmp::Ordering::Equal => a.signal_id.cmp(&b.signal_id),
                         core::cmp::Ordering::Greater => core::cmp::Ordering::Greater,
                     }
                 });
@@ -795,8 +798,8 @@ macro_rules! msm_sig_frag {
                     let mut iter = value.iter_mut();
                     for cv in cell_vec {
                         let v = iter.next().unwrap();
-                        v.sat_id = cv.0;
-                        v.sig_id = if let Some(v) = to_sig(cv.1) {
+                        v.satellite_id = cv.0;
+                        v.signal_id = if let Some(v) = to_sig(cv.1) {
                             v
                         } else {
                             return Err(RtcmError::InvalidSignalId);
@@ -829,9 +832,9 @@ macro_rules! msm_sig_frag {
 
                     write!(f, "{} {{", stringify!($type_name))?;
                     f.write_str("sat_id: ")?;
-                    self.sat_id.to_source(f)?;
+                    self.satellite_id.to_source(f)?;
                     write!(f, ", sig_id: {}::", stringify!($gnss))?;
-                    self.sig_id.to_source(f)?;
+                    self.signal_id.to_source(f)?;
                     f.write_char(',')?;
 
                     $(
