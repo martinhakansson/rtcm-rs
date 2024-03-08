@@ -10,21 +10,21 @@ Msg1113(
         clock_steering_ind: 2,
         external_clock_ind: 1,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 6,
+        gnss_smoothing_interval_index: 6,
         data_segment: Msg1113Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm123Sat {
-                    sat_id: 25,
+                    satellite_id: 25,
                     gnss_satellite_rough_range_mod1ms_ms: 0.7294921875,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
-                    Msm1113Sig {
-                    sat_id: 25,
-                    sig_id: SigId(
+                    Msg1113Sig {
+                    satellite_id: 25,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),

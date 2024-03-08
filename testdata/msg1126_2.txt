@@ -10,12 +10,12 @@ Msg1126(
         clock_steering_ind: 0,
         external_clock_ind: 1,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 5,
+        gnss_smoothing_interval_index: 5,
         data_segment: Msg1126Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 55,
+                    satellite_id: 55,
                     gnss_satellite_rough_range_integer_ms: Some(
                         24,
                     ),
@@ -23,11 +23,11 @@ Msg1126(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1126Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
+                    satellite_id: 55,
+                    signal_id: SigId(
                         6,
                         'I',
                     ),

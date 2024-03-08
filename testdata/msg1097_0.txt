@@ -8,12 +8,12 @@ Msg1097(
         clock_steering_ind: 0,
         external_clock_ind: 0,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 0,
+        gnss_smoothing_interval_index: 0,
         data_segment: Msg1097Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm57Sat {
-                    sat_id: 1,
+                    satellite_id: 1,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -24,7 +24,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 2,
+                    satellite_id: 2,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -35,7 +35,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 3,
+                    satellite_id: 3,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -46,7 +46,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 4,
+                    satellite_id: 4,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -57,7 +57,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 5,
+                    satellite_id: 5,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -68,7 +68,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 6,
+                    satellite_id: 6,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -79,7 +79,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 7,
+                    satellite_id: 7,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -90,7 +90,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 8,
+                    satellite_id: 8,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -101,7 +101,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 9,
+                    satellite_id: 9,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -112,7 +112,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 10,
+                    satellite_id: 10,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -123,7 +123,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 11,
+                    satellite_id: 11,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -134,7 +134,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 12,
+                    satellite_id: 12,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -145,7 +145,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 13,
+                    satellite_id: 13,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -156,7 +156,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 14,
+                    satellite_id: 14,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -167,7 +167,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 63,
+                    satellite_id: 63,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -178,7 +178,7 @@ Msg1097(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 64,
+                    satellite_id: 64,
                     gnss_satellite_rough_range_integer_ms: Some(
                         0,
                     ),
@@ -190,11 +190,11 @@ Msg1097(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1097Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -212,8 +212,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -231,8 +231,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -250,8 +250,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -269,8 +269,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 2,
-                    sig_id: SigId(
+                    satellite_id: 2,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -288,8 +288,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 2,
-                    sig_id: SigId(
+                    satellite_id: 2,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -307,8 +307,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 2,
-                    sig_id: SigId(
+                    satellite_id: 2,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -326,8 +326,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 2,
-                    sig_id: SigId(
+                    satellite_id: 2,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -345,8 +345,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 3,
-                    sig_id: SigId(
+                    satellite_id: 3,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -364,8 +364,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 3,
-                    sig_id: SigId(
+                    satellite_id: 3,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -383,8 +383,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 3,
-                    sig_id: SigId(
+                    satellite_id: 3,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -402,8 +402,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 3,
-                    sig_id: SigId(
+                    satellite_id: 3,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -421,8 +421,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 4,
-                    sig_id: SigId(
+                    satellite_id: 4,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -440,8 +440,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 4,
-                    sig_id: SigId(
+                    satellite_id: 4,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -459,8 +459,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 4,
-                    sig_id: SigId(
+                    satellite_id: 4,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -478,8 +478,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 4,
-                    sig_id: SigId(
+                    satellite_id: 4,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -497,8 +497,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 5,
-                    sig_id: SigId(
+                    satellite_id: 5,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -516,8 +516,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 5,
-                    sig_id: SigId(
+                    satellite_id: 5,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -535,8 +535,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 5,
-                    sig_id: SigId(
+                    satellite_id: 5,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -554,8 +554,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 5,
-                    sig_id: SigId(
+                    satellite_id: 5,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -573,8 +573,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -592,8 +592,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -611,8 +611,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -630,8 +630,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -649,8 +649,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -668,8 +668,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -687,8 +687,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -706,8 +706,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -725,8 +725,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -744,8 +744,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -763,8 +763,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -782,8 +782,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -801,8 +801,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -820,8 +820,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -839,8 +839,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -858,8 +858,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -877,8 +877,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -896,8 +896,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -915,8 +915,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -934,8 +934,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -953,8 +953,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -972,8 +972,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -991,8 +991,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -1010,8 +1010,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -1029,8 +1029,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -1048,8 +1048,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -1067,8 +1067,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -1086,8 +1086,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -1105,8 +1105,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -1124,8 +1124,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -1143,8 +1143,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -1162,8 +1162,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -1181,8 +1181,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -1200,8 +1200,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -1219,8 +1219,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -1238,8 +1238,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -1257,8 +1257,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -1276,8 +1276,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -1295,8 +1295,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -1314,8 +1314,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),
@@ -1333,8 +1333,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         1,
                         'A',
                     ),
@@ -1352,8 +1352,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         1,
                         'B',
                     ),
@@ -1371,8 +1371,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -1390,8 +1390,8 @@ Msg1097(
                     ),
                 },
                     Msg1097Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),

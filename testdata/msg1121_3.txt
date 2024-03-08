@@ -10,33 +10,33 @@ Msg1121(
         clock_steering_ind: 1,
         external_clock_ind: 1,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 4,
+        gnss_smoothing_interval_index: 4,
         data_segment: Msg1121Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm123Sat {
-                    sat_id: 35,
+                    satellite_id: 35,
                     gnss_satellite_rough_range_mod1ms_ms: 0.3486328125,
                 },
                     Msm123Sat {
-                    sat_id: 40,
+                    satellite_id: 40,
                     gnss_satellite_rough_range_mod1ms_ms: 0.2919921875,
                 },
                     Msm123Sat {
-                    sat_id: 42,
+                    satellite_id: 42,
                     gnss_satellite_rough_range_mod1ms_ms: 0.27734375,
                 },
                     Msm123Sat {
-                    sat_id: 44,
+                    satellite_id: 44,
                     gnss_satellite_rough_range_mod1ms_ms: 0.6181640625,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
-                    Msm1121Sig {
-                    sat_id: 35,
-                    sig_id: SigId(
+                    Msg1121Sig {
+                    satellite_id: 35,
+                    signal_id: SigId(
                         6,
                         'I',
                     ),
@@ -44,9 +44,9 @@ Msg1121(
                         0.0009069442749023438,
                     ),
                 },
-                    Msm1121Sig {
-                    sat_id: 40,
-                    sig_id: SigId(
+                    Msg1121Sig {
+                    satellite_id: 40,
+                    signal_id: SigId(
                         6,
                         'I',
                     ),
@@ -54,9 +54,9 @@ Msg1121(
                         0.0005284547805786133,
                     ),
                 },
-                    Msm1121Sig {
-                    sat_id: 42,
-                    sig_id: SigId(
+                    Msg1121Sig {
+                    satellite_id: 42,
+                    signal_id: SigId(
                         2,
                         'I',
                     ),
@@ -64,9 +64,9 @@ Msg1121(
                         0.0007724761962890625,
                     ),
                 },
-                    Msm1121Sig {
-                    sat_id: 44,
-                    sig_id: SigId(
+                    Msg1121Sig {
+                    satellite_id: 44,
+                    signal_id: SigId(
                         6,
                         'I',
                     ),

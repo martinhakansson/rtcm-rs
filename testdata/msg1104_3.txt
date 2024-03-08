@@ -10,26 +10,26 @@ Msg1104(
         clock_steering_ind: 0,
         external_clock_ind: 2,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 1,
+        gnss_smoothing_interval_index: 1,
         data_segment: Msg1104Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 3,
+                    satellite_id: 3,
                     gnss_satellite_rough_range_integer_ms: Some(
                         189,
                     ),
                     gnss_satellite_rough_range_mod1ms_ms: 0.9921875,
                 },
                     Msm46Sat {
-                    sat_id: 8,
+                    satellite_id: 8,
                     gnss_satellite_rough_range_integer_ms: Some(
                         103,
                     ),
                     gnss_satellite_rough_range_mod1ms_ms: 0.1083984375,
                 },
                     Msm46Sat {
-                    sat_id: 9,
+                    satellite_id: 9,
                     gnss_satellite_rough_range_integer_ms: Some(
                         198,
                     ),
@@ -37,11 +37,11 @@ Msg1104(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1104Sig {
-                    sat_id: 3,
-                    sig_id: SigId(
+                    satellite_id: 3,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -58,8 +58,8 @@ Msg1104(
                     ),
                 },
                     Msg1104Sig {
-                    sat_id: 3,
-                    sig_id: SigId(
+                    satellite_id: 3,
+                    signal_id: SigId(
                         5,
                         'I',
                     ),
@@ -76,8 +76,8 @@ Msg1104(
                     ),
                 },
                     Msg1104Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         5,
                         'Q',
                     ),
@@ -94,8 +94,8 @@ Msg1104(
                     ),
                 },
                     Msg1104Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),

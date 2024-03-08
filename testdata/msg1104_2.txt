@@ -10,12 +10,12 @@ Msg1104(
         clock_steering_ind: 3,
         external_clock_ind: 1,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 0,
+        gnss_smoothing_interval_index: 0,
         data_segment: Msg1104Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 48,
+                    satellite_id: 48,
                     gnss_satellite_rough_range_integer_ms: Some(
                         142,
                     ),
@@ -23,11 +23,11 @@ Msg1104(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1104Sig {
-                    sat_id: 48,
-                    sig_id: SigId(
+                    satellite_id: 48,
+                    signal_id: SigId(
                         5,
                         'X',
                     ),

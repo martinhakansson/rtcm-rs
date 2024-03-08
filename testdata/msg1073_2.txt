@@ -10,21 +10,21 @@ Msg1073(
         clock_steering_ind: 2,
         external_clock_ind: 1,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 0,
+        gnss_smoothing_interval_index: 0,
         data_segment: Msg1073Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm123Sat {
-                    sat_id: 62,
+                    satellite_id: 62,
                     gnss_satellite_rough_range_mod1ms_ms: 0.294921875,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
-                    Msm1073Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    Msg1073Sig {
+                    satellite_id: 62,
+                    signal_id: SigId(
                         5,
                         'X',
                     ),

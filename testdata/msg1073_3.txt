@@ -10,33 +10,33 @@ Msg1073(
         clock_steering_ind: 1,
         external_clock_ind: 3,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 5,
+        gnss_smoothing_interval_index: 5,
         data_segment: Msg1073Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm123Sat {
-                    sat_id: 4,
+                    satellite_id: 4,
                     gnss_satellite_rough_range_mod1ms_ms: 0.56640625,
                 },
                     Msm123Sat {
-                    sat_id: 6,
+                    satellite_id: 6,
                     gnss_satellite_rough_range_mod1ms_ms: 0.33203125,
                 },
                     Msm123Sat {
-                    sat_id: 7,
+                    satellite_id: 7,
                     gnss_satellite_rough_range_mod1ms_ms: 0.5146484375,
                 },
                     Msm123Sat {
-                    sat_id: 63,
+                    satellite_id: 63,
                     gnss_satellite_rough_range_mod1ms_ms: 0.4345703125,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
-                    Msm1073Sig {
-                    sat_id: 4,
-                    sig_id: SigId(
+                    Msg1073Sig {
+                    satellite_id: 4,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),
@@ -49,9 +49,9 @@ Msg1073(
                     gnss_phaserange_lock_time_ind: 10,
                     half_cycle_ambiguity_ind: 1,
                 },
-                    Msm1073Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    Msg1073Sig {
+                    satellite_id: 6,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),
@@ -64,9 +64,9 @@ Msg1073(
                     gnss_phaserange_lock_time_ind: 4,
                     half_cycle_ambiguity_ind: 1,
                 },
-                    Msm1073Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    Msg1073Sig {
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'W',
                     ),
@@ -79,9 +79,9 @@ Msg1073(
                     gnss_phaserange_lock_time_ind: 2,
                     half_cycle_ambiguity_ind: 1,
                 },
-                    Msm1073Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    Msg1073Sig {
+                    satellite_id: 63,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),

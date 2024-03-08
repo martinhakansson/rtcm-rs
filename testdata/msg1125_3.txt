@@ -10,12 +10,12 @@ Msg1125(
         clock_steering_ind: 2,
         external_clock_ind: 0,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 4,
+        gnss_smoothing_interval_index: 4,
         data_segment: Msg1125Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm57Sat {
-                    sat_id: 27,
+                    satellite_id: 27,
                     gnss_satellite_rough_range_integer_ms: Some(
                         211,
                     ),
@@ -26,7 +26,7 @@ Msg1125(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 31,
+                    satellite_id: 31,
                     gnss_satellite_rough_range_integer_ms: Some(
                         142,
                     ),
@@ -37,7 +37,7 @@ Msg1125(
                     ),
                 },
                     Msm57Sat {
-                    sat_id: 33,
+                    satellite_id: 33,
                     gnss_satellite_rough_range_integer_ms: Some(
                         242,
                     ),
@@ -49,11 +49,11 @@ Msg1125(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1125Sig {
-                    sat_id: 27,
-                    sig_id: SigId(
+                    satellite_id: 27,
+                    signal_id: SigId(
                         7,
                         'X',
                     ),
@@ -73,8 +73,8 @@ Msg1125(
                     ),
                 },
                     Msg1125Sig {
-                    sat_id: 27,
-                    sig_id: SigId(
+                    satellite_id: 27,
+                    signal_id: SigId(
                         5,
                         'D',
                     ),
@@ -94,8 +94,8 @@ Msg1125(
                     ),
                 },
                     Msg1125Sig {
-                    sat_id: 31,
-                    sig_id: SigId(
+                    satellite_id: 31,
+                    signal_id: SigId(
                         5,
                         'X',
                     ),
@@ -115,8 +115,8 @@ Msg1125(
                     ),
                 },
                     Msg1125Sig {
-                    sat_id: 33,
-                    sig_id: SigId(
+                    satellite_id: 33,
+                    signal_id: SigId(
                         7,
                         'X',
                     ),

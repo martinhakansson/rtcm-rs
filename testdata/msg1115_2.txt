@@ -10,12 +10,12 @@ Msg1115(
         clock_steering_ind: 3,
         external_clock_ind: 1,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 1,
+        gnss_smoothing_interval_index: 1,
         data_segment: Msg1115Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm57Sat {
-                    sat_id: 60,
+                    satellite_id: 60,
                     gnss_satellite_rough_range_integer_ms: Some(
                         245,
                     ),
@@ -27,11 +27,11 @@ Msg1115(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1115Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
+                    satellite_id: 60,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),

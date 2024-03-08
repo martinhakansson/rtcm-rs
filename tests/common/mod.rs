@@ -10,21 +10,27 @@ macro_rules! test_msg {
                 use rtcm_rs::util::*;
 
                 pub mod bds {
+                    #[allow(unused)]
                     pub use rtcm_rs::msg::BdsSigId as SigId;
                 }
                 pub mod gal {
+                    #[allow(unused)]
                     pub use rtcm_rs::msg::GalSigId as SigId;
                 }
                 pub mod glo {
+                    #[allow(unused)]
                     pub use rtcm_rs::msg::GloSigId as SigId;
                 }
                 pub mod gps {
+                    #[allow(unused)]
                     pub use rtcm_rs::msg::GpsSigId as SigId;
                 }
                 pub mod sbas {
+                    #[allow(unused)]
                     pub use rtcm_rs::msg::SbasSigId as SigId;
                 }
                 pub mod qzss {
+                    #[allow(unused)]
                     pub use rtcm_rs::msg::QzssSigId as SigId;
                 }
 

@@ -10,12 +10,12 @@ Msg1097(
         clock_steering_ind: 0,
         external_clock_ind: 0,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 2,
+        gnss_smoothing_interval_index: 2,
         data_segment: Msg1097Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm57Sat {
-                    sat_id: 14,
+                    satellite_id: 14,
                     gnss_satellite_rough_range_integer_ms: Some(
                         168,
                     ),
@@ -27,11 +27,11 @@ Msg1097(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1097Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'Z',
                     ),

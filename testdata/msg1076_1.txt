@@ -8,97 +8,97 @@ Msg1076(
         clock_steering_ind: 3,
         external_clock_ind: 3,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 7,
+        gnss_smoothing_interval_index: 7,
         data_segment: Msg1076Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 6,
+                    satellite_id: 6,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 7,
+                    satellite_id: 7,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 8,
+                    satellite_id: 8,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 9,
+                    satellite_id: 9,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 10,
+                    satellite_id: 10,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 11,
+                    satellite_id: 11,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 12,
+                    satellite_id: 12,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 13,
+                    satellite_id: 13,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 14,
+                    satellite_id: 14,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 15,
+                    satellite_id: 15,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 16,
+                    satellite_id: 16,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 17,
+                    satellite_id: 17,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 18,
+                    satellite_id: 18,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 19,
+                    satellite_id: 19,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 20,
+                    satellite_id: 20,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 21,
+                    satellite_id: 21,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1076Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -109,8 +109,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -121,8 +121,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -133,8 +133,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 6,
-                    sig_id: SigId(
+                    satellite_id: 6,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -145,8 +145,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -157,8 +157,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -169,8 +169,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -181,8 +181,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 7,
-                    sig_id: SigId(
+                    satellite_id: 7,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -193,8 +193,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -205,8 +205,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -217,8 +217,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -229,8 +229,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 8,
-                    sig_id: SigId(
+                    satellite_id: 8,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -241,8 +241,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -253,8 +253,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -265,8 +265,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -277,8 +277,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 9,
-                    sig_id: SigId(
+                    satellite_id: 9,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -289,8 +289,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -301,8 +301,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -313,8 +313,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -325,8 +325,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 10,
-                    sig_id: SigId(
+                    satellite_id: 10,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -337,8 +337,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -349,8 +349,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -361,8 +361,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -373,8 +373,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 11,
-                    sig_id: SigId(
+                    satellite_id: 11,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -385,8 +385,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -397,8 +397,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -409,8 +409,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -421,8 +421,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 12,
-                    sig_id: SigId(
+                    satellite_id: 12,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -433,8 +433,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -445,8 +445,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -457,8 +457,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -469,8 +469,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 13,
-                    sig_id: SigId(
+                    satellite_id: 13,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -481,8 +481,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -493,8 +493,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -505,8 +505,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -517,8 +517,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 14,
-                    sig_id: SigId(
+                    satellite_id: 14,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -529,8 +529,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 15,
-                    sig_id: SigId(
+                    satellite_id: 15,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -541,8 +541,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 15,
-                    sig_id: SigId(
+                    satellite_id: 15,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -553,8 +553,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 15,
-                    sig_id: SigId(
+                    satellite_id: 15,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -565,8 +565,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 15,
-                    sig_id: SigId(
+                    satellite_id: 15,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -577,8 +577,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 16,
-                    sig_id: SigId(
+                    satellite_id: 16,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -589,8 +589,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 16,
-                    sig_id: SigId(
+                    satellite_id: 16,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -601,8 +601,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 16,
-                    sig_id: SigId(
+                    satellite_id: 16,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -613,8 +613,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 16,
-                    sig_id: SigId(
+                    satellite_id: 16,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -625,8 +625,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 17,
-                    sig_id: SigId(
+                    satellite_id: 17,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -637,8 +637,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 17,
-                    sig_id: SigId(
+                    satellite_id: 17,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -649,8 +649,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 17,
-                    sig_id: SigId(
+                    satellite_id: 17,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -661,8 +661,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 17,
-                    sig_id: SigId(
+                    satellite_id: 17,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -673,8 +673,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 18,
-                    sig_id: SigId(
+                    satellite_id: 18,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -685,8 +685,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 18,
-                    sig_id: SigId(
+                    satellite_id: 18,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -697,8 +697,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 18,
-                    sig_id: SigId(
+                    satellite_id: 18,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -709,8 +709,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 18,
-                    sig_id: SigId(
+                    satellite_id: 18,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -721,8 +721,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 19,
-                    sig_id: SigId(
+                    satellite_id: 19,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -733,8 +733,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 19,
-                    sig_id: SigId(
+                    satellite_id: 19,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -745,8 +745,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 19,
-                    sig_id: SigId(
+                    satellite_id: 19,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -757,8 +757,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 19,
-                    sig_id: SigId(
+                    satellite_id: 19,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -769,8 +769,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 20,
-                    sig_id: SigId(
+                    satellite_id: 20,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -781,8 +781,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 20,
-                    sig_id: SigId(
+                    satellite_id: 20,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -793,8 +793,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 20,
-                    sig_id: SigId(
+                    satellite_id: 20,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -805,8 +805,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 20,
-                    sig_id: SigId(
+                    satellite_id: 20,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),
@@ -817,8 +817,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 21,
-                    sig_id: SigId(
+                    satellite_id: 21,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -829,8 +829,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 21,
-                    sig_id: SigId(
+                    satellite_id: 21,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -841,8 +841,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 21,
-                    sig_id: SigId(
+                    satellite_id: 21,
+                    signal_id: SigId(
                         1,
                         'L',
                     ),
@@ -853,8 +853,8 @@ Msg1076(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1076Sig {
-                    sat_id: 21,
-                    sig_id: SigId(
+                    satellite_id: 21,
+                    signal_id: SigId(
                         1,
                         'X',
                     ),

@@ -10,12 +10,12 @@ Msg1074(
         clock_steering_ind: 2,
         external_clock_ind: 1,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 7,
+        gnss_smoothing_interval_index: 7,
         data_segment: Msg1074Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 32,
+                    satellite_id: 32,
                     gnss_satellite_rough_range_integer_ms: Some(
                         189,
                     ),
@@ -23,11 +23,11 @@ Msg1074(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1074Sig {
-                    sat_id: 32,
-                    sig_id: SigId(
+                    satellite_id: 32,
+                    signal_id: SigId(
                         1,
                         'S',
                     ),

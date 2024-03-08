@@ -8,97 +8,97 @@ Msg1114(
         clock_steering_ind: 3,
         external_clock_ind: 3,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 7,
+        gnss_smoothing_interval_index: 7,
         data_segment: Msg1114Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 1,
+                    satellite_id: 1,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 50,
+                    satellite_id: 50,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 51,
+                    satellite_id: 51,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 52,
+                    satellite_id: 52,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 53,
+                    satellite_id: 53,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 54,
+                    satellite_id: 54,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 55,
+                    satellite_id: 55,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 56,
+                    satellite_id: 56,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 57,
+                    satellite_id: 57,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 58,
+                    satellite_id: 58,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 59,
+                    satellite_id: 59,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 60,
+                    satellite_id: 60,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 61,
+                    satellite_id: 61,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 62,
+                    satellite_id: 62,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 63,
+                    satellite_id: 63,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 64,
+                    satellite_id: 64,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1114Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -109,8 +109,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -121,8 +121,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -133,8 +133,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 1,
-                    sig_id: SigId(
+                    satellite_id: 1,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -145,8 +145,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -157,8 +157,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -169,8 +169,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -181,8 +181,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -193,8 +193,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -205,8 +205,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -217,8 +217,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -229,8 +229,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -241,8 +241,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -253,8 +253,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -265,8 +265,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -277,8 +277,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -289,8 +289,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
+                    satellite_id: 53,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -301,8 +301,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
+                    satellite_id: 53,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -313,8 +313,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
+                    satellite_id: 53,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -325,8 +325,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
+                    satellite_id: 53,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -337,8 +337,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
+                    satellite_id: 54,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -349,8 +349,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
+                    satellite_id: 54,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -361,8 +361,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
+                    satellite_id: 54,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -373,8 +373,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
+                    satellite_id: 54,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -385,8 +385,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
+                    satellite_id: 55,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -397,8 +397,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
+                    satellite_id: 55,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -409,8 +409,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
+                    satellite_id: 55,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -421,8 +421,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
+                    satellite_id: 55,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -433,8 +433,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
+                    satellite_id: 56,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -445,8 +445,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
+                    satellite_id: 56,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -457,8 +457,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
+                    satellite_id: 56,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -469,8 +469,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
+                    satellite_id: 56,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -481,8 +481,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
+                    satellite_id: 57,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -493,8 +493,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
+                    satellite_id: 57,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -505,8 +505,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
+                    satellite_id: 57,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -517,8 +517,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
+                    satellite_id: 57,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -529,8 +529,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
+                    satellite_id: 58,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -541,8 +541,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
+                    satellite_id: 58,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -553,8 +553,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
+                    satellite_id: 58,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -565,8 +565,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
+                    satellite_id: 58,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -577,8 +577,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
+                    satellite_id: 59,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -589,8 +589,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
+                    satellite_id: 59,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -601,8 +601,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
+                    satellite_id: 59,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -613,8 +613,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
+                    satellite_id: 59,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -625,8 +625,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
+                    satellite_id: 60,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -637,8 +637,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
+                    satellite_id: 60,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -649,8 +649,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
+                    satellite_id: 60,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -661,8 +661,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
+                    satellite_id: 60,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -673,8 +673,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
+                    satellite_id: 61,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -685,8 +685,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
+                    satellite_id: 61,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -697,8 +697,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
+                    satellite_id: 61,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -709,8 +709,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
+                    satellite_id: 61,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -721,8 +721,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 62,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -733,8 +733,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 62,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -745,8 +745,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 62,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -757,8 +757,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 62,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -769,8 +769,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -781,8 +781,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -793,8 +793,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -805,8 +805,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 63,
-                    sig_id: SigId(
+                    satellite_id: 63,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),
@@ -817,8 +817,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         6,
                         'S',
                     ),
@@ -829,8 +829,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         6,
                         'L',
                     ),
@@ -841,8 +841,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         6,
                         'X',
                     ),
@@ -853,8 +853,8 @@ Msg1114(
                     gnss_signal_cnr_dbhz: None,
                 },
                     Msg1114Sig {
-                    sat_id: 64,
-                    sig_id: SigId(
+                    satellite_id: 64,
+                    signal_id: SigId(
                         2,
                         'S',
                     ),

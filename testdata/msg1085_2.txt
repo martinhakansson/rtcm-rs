@@ -13,12 +13,12 @@ Msg1085(
         clock_steering_ind: 2,
         external_clock_ind: 3,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 0,
+        gnss_smoothing_interval_index: 0,
         data_segment: Msg1085Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm57GloSat {
-                    sat_id: 34,
+                    satellite_id: 34,
                     gnss_satellite_rough_range_integer_ms: Some(
                         45,
                     ),
@@ -32,11 +32,11 @@ Msg1085(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1085Sig {
-                    sat_id: 34,
-                    sig_id: SigId(
+                    satellite_id: 34,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),

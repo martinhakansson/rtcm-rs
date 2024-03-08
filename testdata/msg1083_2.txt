@@ -13,21 +13,21 @@ Msg1083(
         clock_steering_ind: 1,
         external_clock_ind: 2,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 4,
+        gnss_smoothing_interval_index: 4,
         data_segment: Msg1083Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm123Sat {
-                    sat_id: 3,
+                    satellite_id: 3,
                     gnss_satellite_rough_range_mod1ms_ms: 0.640625,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
-                    Msm1083Sig {
-                    sat_id: 3,
-                    sig_id: SigId(
+                    Msg1083Sig {
+                    satellite_id: 3,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),

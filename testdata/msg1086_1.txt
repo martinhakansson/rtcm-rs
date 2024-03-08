@@ -9,97 +9,97 @@ Msg1086(
         clock_steering_ind: 3,
         external_clock_ind: 3,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 7,
+        gnss_smoothing_interval_index: 7,
         data_segment: Msg1086Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 47,
+                    satellite_id: 47,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 48,
+                    satellite_id: 48,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 49,
+                    satellite_id: 49,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 50,
+                    satellite_id: 50,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 51,
+                    satellite_id: 51,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 52,
+                    satellite_id: 52,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 53,
+                    satellite_id: 53,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 54,
+                    satellite_id: 54,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 55,
+                    satellite_id: 55,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 56,
+                    satellite_id: 56,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 57,
+                    satellite_id: 57,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 58,
+                    satellite_id: 58,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 59,
+                    satellite_id: 59,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 60,
+                    satellite_id: 60,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 61,
+                    satellite_id: 61,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                     Msm46Sat {
-                    sat_id: 62,
+                    satellite_id: 62,
                     gnss_satellite_rough_range_integer_ms: None,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9990234375,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1086Sig {
-                    sat_id: 47,
-                    sig_id: SigId(
+                    satellite_id: 47,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -110,56 +110,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 47,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 47,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 47,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 48,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 48,
-                    sig_id: SigId(
+                    satellite_id: 47,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -170,8 +122,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 48,
-                    sig_id: SigId(
+                    satellite_id: 47,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),
@@ -182,56 +134,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 48,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 49,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 49,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 49,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 49,
-                    sig_id: SigId(
+                    satellite_id: 47,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),
@@ -242,8 +146,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
+                    satellite_id: 48,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -254,56 +158,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 50,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
+                    satellite_id: 48,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -314,8 +170,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
+                    satellite_id: 48,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),
@@ -326,56 +182,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 51,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 52,
-                    sig_id: SigId(
+                    satellite_id: 48,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),
@@ -386,8 +194,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
+                    satellite_id: 49,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -398,56 +206,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 53,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
+                    satellite_id: 49,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -458,8 +218,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
+                    satellite_id: 49,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),
@@ -470,56 +230,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 54,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 55,
-                    sig_id: SigId(
+                    satellite_id: 49,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),
@@ -530,8 +242,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -542,56 +254,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 56,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -602,8 +266,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),
@@ -614,56 +278,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 57,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 58,
-                    sig_id: SigId(
+                    satellite_id: 50,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),
@@ -674,8 +290,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -686,56 +302,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 59,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -746,8 +314,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),
@@ -758,56 +326,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 60,
-                    sig_id: SigId(
-                        2,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
-                        1,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
-                        1,
-                        'P',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
-                        2,
-                        'C',
-                    ),
-                    gnss_signal_fine_pseudorange_ext_ms: None,
-                    gnss_signal_fine_phaserange_ext_ms: None,
-                    gnss_phaserange_lock_time_ext_ind: 1023,
-                    half_cycle_ambiguity_ind: 1,
-                    gnss_signal_cnr_ext_dbhz: None,
-                },
-                    Msg1086Sig {
-                    sat_id: 61,
-                    sig_id: SigId(
+                    satellite_id: 51,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),
@@ -818,8 +338,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
                         1,
                         'C',
                     ),
@@ -830,8 +350,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
                         1,
                         'P',
                     ),
@@ -842,8 +362,8 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
                         2,
                         'C',
                     ),
@@ -854,8 +374,488 @@ Msg1086(
                     gnss_signal_cnr_ext_dbhz: None,
                 },
                     Msg1086Sig {
-                    sat_id: 62,
-                    sig_id: SigId(
+                    satellite_id: 52,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 53,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 53,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 53,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 53,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 54,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 54,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 54,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 54,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 55,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 55,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 55,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 55,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 56,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 56,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 56,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 56,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 57,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 57,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 57,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 57,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 58,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 58,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 58,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 58,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 59,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 59,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 59,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 59,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 60,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 60,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 60,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 60,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 61,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 61,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 61,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 61,
+                    signal_id: SigId(
+                        2,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 62,
+                    signal_id: SigId(
+                        1,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 62,
+                    signal_id: SigId(
+                        1,
+                        'P',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 62,
+                    signal_id: SigId(
+                        2,
+                        'C',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: None,
+                    gnss_signal_fine_phaserange_ext_ms: None,
+                    gnss_phaserange_lock_time_ext_ind: 1023,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: None,
+                },
+                    Msg1086Sig {
+                    satellite_id: 62,
+                    signal_id: SigId(
                         2,
                         'P',
                     ),

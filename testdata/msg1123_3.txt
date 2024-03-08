@@ -10,33 +10,33 @@ Msg1123(
         clock_steering_ind: 0,
         external_clock_ind: 2,
         gnss_smoothing_type_ind: 1,
-        gnss_smoothing_interval_bitval: 3,
+        gnss_smoothing_interval_index: 3,
         data_segment: Msg1123Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm123Sat {
-                    sat_id: 30,
+                    satellite_id: 30,
                     gnss_satellite_rough_range_mod1ms_ms: 0.9736328125,
                 },
                     Msm123Sat {
-                    sat_id: 34,
+                    satellite_id: 34,
                     gnss_satellite_rough_range_mod1ms_ms: 0.740234375,
                 },
                     Msm123Sat {
-                    sat_id: 35,
+                    satellite_id: 35,
                     gnss_satellite_rough_range_mod1ms_ms: 0.37890625,
                 },
                     Msm123Sat {
-                    sat_id: 42,
+                    satellite_id: 42,
                     gnss_satellite_rough_range_mod1ms_ms: 0.46875,
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
-                    Msm1123Sig {
-                    sat_id: 30,
-                    sig_id: SigId(
+                    Msg1123Sig {
+                    satellite_id: 30,
+                    signal_id: SigId(
                         5,
                         'P',
                     ),
@@ -49,9 +49,9 @@ Msg1123(
                     gnss_phaserange_lock_time_ind: 8,
                     half_cycle_ambiguity_ind: 0,
                 },
-                    Msm1123Sig {
-                    sat_id: 34,
-                    sig_id: SigId(
+                    Msg1123Sig {
+                    satellite_id: 34,
+                    signal_id: SigId(
                         7,
                         'X',
                     ),
@@ -64,9 +64,9 @@ Msg1123(
                     gnss_phaserange_lock_time_ind: 8,
                     half_cycle_ambiguity_ind: 1,
                 },
-                    Msm1123Sig {
-                    sat_id: 35,
-                    sig_id: SigId(
+                    Msg1123Sig {
+                    satellite_id: 35,
+                    signal_id: SigId(
                         7,
                         'X',
                     ),
@@ -79,9 +79,9 @@ Msg1123(
                     gnss_phaserange_lock_time_ind: 12,
                     half_cycle_ambiguity_ind: 0,
                 },
-                    Msm1123Sig {
-                    sat_id: 42,
-                    sig_id: SigId(
+                    Msg1123Sig {
+                    satellite_id: 42,
+                    signal_id: SigId(
                         7,
                         'Q',
                     ),

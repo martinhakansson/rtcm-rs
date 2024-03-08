@@ -10,19 +10,19 @@ Msg1096(
         clock_steering_ind: 1,
         external_clock_ind: 2,
         gnss_smoothing_type_ind: 0,
-        gnss_smoothing_interval_bitval: 6,
+        gnss_smoothing_interval_index: 6,
         data_segment: Msg1096Data {
-            sat_data: DataVec(
+            satellite_data: DataVec(
                 [
                     Msm46Sat {
-                    sat_id: 22,
+                    satellite_id: 22,
                     gnss_satellite_rough_range_integer_ms: Some(
                         104,
                     ),
                     gnss_satellite_rough_range_mod1ms_ms: 0.5341796875,
                 },
                     Msm46Sat {
-                    sat_id: 32,
+                    satellite_id: 32,
                     gnss_satellite_rough_range_integer_ms: Some(
                         199,
                     ),
@@ -30,11 +30,11 @@ Msg1096(
                 },
                 ],
             ),
-            sig_data: DataVec(
+            signal_data: DataVec(
                 [
                     Msg1096Sig {
-                    sat_id: 22,
-                    sig_id: SigId(
+                    satellite_id: 22,
+                    signal_id: SigId(
                         7,
                         'Q',
                     ),
@@ -51,8 +51,8 @@ Msg1096(
                     ),
                 },
                     Msg1096Sig {
-                    sat_id: 22,
-                    sig_id: SigId(
+                    satellite_id: 22,
+                    signal_id: SigId(
                         8,
                         'Q',
                     ),
@@ -69,8 +69,8 @@ Msg1096(
                     ),
                 },
                     Msg1096Sig {
-                    sat_id: 32,
-                    sig_id: SigId(
+                    satellite_id: 32,
+                    signal_id: SigId(
                         7,
                         'Q',
                     ),
@@ -87,8 +87,8 @@ Msg1096(
                     ),
                 },
                     Msg1096Sig {
-                    sat_id: 32,
-                    sig_id: SigId(
+                    satellite_id: 32,
+                    signal_id: SigId(
                         8,
                         'Q',
                     ),
