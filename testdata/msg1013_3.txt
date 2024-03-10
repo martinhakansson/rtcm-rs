@@ -3,7 +3,6 @@ Msg1013(
         reference_station_id: 782,
         modified_julian_day_number: 17075,
         seconds_of_day_s: 92694,
-        message_id_announcements_len: 3,
         leap_seconds_gps_utc_s: Some(
             63,
         ),

@@ -1,7 +1,6 @@
 Msg1033(
     Msg1033T {
         reference_station_id: 0,
-        antenna_descriptor_len: 31,
         antenna_descriptor_str: Df88591String(
             [
                 '0',
@@ -38,7 +37,6 @@ Msg1033(
             ],
         ),
         antenna_setup_id: 0,
-        antenna_serial_number_len: 31,
         antenna_serial_number_str: Df88591String(
             [
                 '0',
@@ -74,7 +72,6 @@ Msg1033(
                 '0',
             ],
         ),
-        receiver_type_descriptor_len: 31,
         receiver_type_descriptor_str: Df88591String(
             [
                 '0',
@@ -110,7 +107,6 @@ Msg1033(
                 '0',
             ],
         ),
-        receiver_firmware_version_len: 31,
         receiver_firmware_version_str: Df88591String(
             [
                 '0',
@@ -146,7 +142,6 @@ Msg1033(
                 '0',
             ],
         ),
-        receiver_serial_number_len: 31,
         receiver_serial_number_str: Df88591String(
             [
                 '0',

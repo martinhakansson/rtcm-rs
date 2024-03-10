@@ -1,1 +1,1 @@
-Message::Msg1007(Msg1007T {reference_station_id:3187,antenna_descriptor_len:3,antenna_descriptor_str:Df88591String::<31>::from("DY>"),antenna_setup_id:226,})
+Message::Msg1007(Msg1007T {reference_station_id:3187,antenna_descriptor_str:Df88591String::<31>::from("DY>"),antenna_setup_id:226,})

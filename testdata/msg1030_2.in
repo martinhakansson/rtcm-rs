@@ -1,1 +1,1 @@
-Message::Msg1030(Msg1030T {gps_resid_epoch_time_s:506857,reference_station_id:2748,refs_n:105,satellites_len:0,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,31>::new();vec},})
+Message::Msg1030(Msg1030T {gps_resid_epoch_time_s:506857,reference_station_id:2748,refs_n:105,satellites:{#[allow(unused_mut)] let mut vec = DataVec::<_,31>::new();vec},})

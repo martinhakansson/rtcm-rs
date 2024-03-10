@@ -1,7 +1,6 @@
 Msg1007(
     Msg1007T {
         reference_station_id: 1060,
-        antenna_descriptor_len: 0,
         antenna_descriptor_str: Df88591String(
             [
                 ,

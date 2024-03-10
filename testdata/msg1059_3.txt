@@ -9,144 +9,144 @@ Msg1059(
         biases: DataVec(
             [
                 Msg1059CodeBias {
-                sat_id: 1,
-                sig_id: SigId(
+                satellite_id: 1,
+                signal_id: SigId(
                     2,
                     'C',
                 ),
                 bias_m: -74.18,
             },
                 Msg1059CodeBias {
-                sat_id: 1,
-                sig_id: SigId(
+                satellite_id: 1,
+                signal_id: SigId(
                     2,
                     'D',
                 ),
                 bias_m: 21.57,
             },
                 Msg1059CodeBias {
-                sat_id: 1,
-                sig_id: SigId(
+                satellite_id: 1,
+                signal_id: SigId(
                     2,
                     'S',
                 ),
                 bias_m: -77.15,
             },
                 Msg1059CodeBias {
-                sat_id: 1,
-                sig_id: SigId(
+                satellite_id: 1,
+                signal_id: SigId(
                     2,
                     'L',
                 ),
                 bias_m: -15.2,
             },
                 Msg1059CodeBias {
-                sat_id: 1,
-                sig_id: SigId(
+                satellite_id: 1,
+                signal_id: SigId(
                     2,
                     'X',
                 ),
                 bias_m: -63.14,
             },
                 Msg1059CodeBias {
-                sat_id: 1,
-                sig_id: SigId(
+                satellite_id: 1,
+                signal_id: SigId(
                     2,
                     'P',
                 ),
                 bias_m: 15.339999,
             },
                 Msg1059CodeBias {
-                sat_id: 2,
-                sig_id: SigId(
+                satellite_id: 2,
+                signal_id: SigId(
                     2,
                     'X',
                 ),
                 bias_m: -70.22,
             },
                 Msg1059CodeBias {
-                sat_id: 2,
-                sig_id: SigId(
+                satellite_id: 2,
+                signal_id: SigId(
                     2,
                     'P',
                 ),
                 bias_m: -51.98,
             },
                 Msg1059CodeBias {
-                sat_id: 2,
-                sig_id: SigId(
+                satellite_id: 2,
+                signal_id: SigId(
                     2,
                     'W',
                 ),
                 bias_m: -64.09,
             },
                 Msg1059CodeBias {
-                sat_id: 2,
-                sig_id: SigId(
+                satellite_id: 2,
+                signal_id: SigId(
                     5,
                     'I',
                 ),
                 bias_m: 74.5,
             },
                 Msg1059CodeBias {
-                sat_id: 2,
-                sig_id: SigId(
+                satellite_id: 2,
+                signal_id: SigId(
                     5,
                     'Q',
                 ),
                 bias_m: 23.58,
             },
                 Msg1059CodeBias {
-                sat_id: 2,
-                sig_id: SigId(
+                satellite_id: 2,
+                signal_id: SigId(
                     1,
                     'C',
                 ),
                 bias_m: -75.409996,
             },
                 Msg1059CodeBias {
-                sat_id: 3,
-                sig_id: SigId(
+                satellite_id: 3,
+                signal_id: SigId(
                     2,
                     'C',
                 ),
                 bias_m: -9.61,
             },
                 Msg1059CodeBias {
-                sat_id: 3,
-                sig_id: SigId(
+                satellite_id: 3,
+                signal_id: SigId(
                     2,
                     'D',
                 ),
                 bias_m: -12.9,
             },
                 Msg1059CodeBias {
-                sat_id: 3,
-                sig_id: SigId(
+                satellite_id: 3,
+                signal_id: SigId(
                     2,
                     'S',
                 ),
                 bias_m: -68.439995,
             },
                 Msg1059CodeBias {
-                sat_id: 3,
-                sig_id: SigId(
+                satellite_id: 3,
+                signal_id: SigId(
                     2,
                     'L',
                 ),
                 bias_m: 76.07,
             },
                 Msg1059CodeBias {
-                sat_id: 3,
-                sig_id: SigId(
+                satellite_id: 3,
+                signal_id: SigId(
                     2,
                     'X',
                 ),
                 bias_m: 28.019999,
             },
                 Msg1059CodeBias {
-                sat_id: 3,
-                sig_id: SigId(
+                satellite_id: 3,
+                signal_id: SigId(
                     2,
                     'P',
                 ),

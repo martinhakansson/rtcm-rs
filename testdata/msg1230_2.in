@@ -1,1 +1,1 @@
-Message::Msg1230(Msg1230T {reference_station_id:766,glonass_code_phase_bias_ind:1,glonass_code_phase_biases:{#[allow(unused_mut)] let mut vec = DataVec::<_,4>::new();vec},})
+Message::Msg1230(Msg1230T {reference_station_id:766,glo_code_phase_bias_ind:1,glo_code_phase_biases:{#[allow(unused_mut)] let mut vec = DataVec::<_,4>::new();vec},})

@@ -3,7 +3,6 @@ Msg1030(
         gps_resid_epoch_time_s: 1048575,
         reference_station_id: 4095,
         refs_n: 127,
-        satellites_len: 31,
         satellites: DataVec(
             [
                 Msg1030Sat {

@@ -1,7 +1,6 @@
 Msg1008(
     Msg1008T {
         reference_station_id: 2676,
-        antenna_descriptor_len: 3,
         antenna_descriptor_str: Df88591String(
             [
                 'D',
@@ -10,7 +9,6 @@ Msg1008(
             ],
         ),
         antenna_setup_id: 234,
-        antenna_serial_number_len: 3,
         antenna_serial_number_str: Df88591String(
             [
                 'I',
