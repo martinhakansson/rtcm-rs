@@ -7,7 +7,7 @@
 
 ![Unsafe-Zero-Percent](https://img.shields.io/badge/Unsafety-0%25-brightgreen.svg)
 
-rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. The library currently provides complete support for the latest version of the standard, RTCM v. 3.3 (10403.3). Support for future versions will be added upon their release.
+rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. The library currently provides complete support up to and including version 3.3 (10403.3) of the standard. Support for future versions will be added upon their release.
 
 In the spirit of Rust's safety principles, this library is developed with #[forbid(unsafe_code)], ensuring that all operations are safe from undefined behavior, data races, and many common bugs. Thus, you can rely on rtcm-rs for not only its functionality but also its commitment to safety.
 
@@ -148,20 +148,10 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
 
 ## Supported messages
 
-| Version | Message Support Added | Notes |
-| --- | --- | --- |
-| 0.1.x | 1001 1005 1007 1008 1030 1071 1074 | |
-| 0.2.x | 1084 1094 1104 1114 1124 | MSM4 support |
-| 0.3.x | 1072 1073 1075 1076 1077 1081 1082 1083 1085 1086 1087 1091 1092 1093 1095 1096 1097 1101 1102 1103 1105 1106 1107 1111 1112 1113 1115 1116 1117 1121 1122 1123 1125 1126 1127 | Full MSM support |
-| 0.4.x | 1006 1013 1029 1032 1033 1230 | Station meta data and some auxiliary info messages |
-| 0.5.x | 1019 1020 1041 1042 1044 1045 1046 | Ephemeris messages |
-| 0.6.x | 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 | SSR messages |
-| 0.7.x | 1021 1022 1023 1024 1025 1026 1027 | Transformation and projection messages |
-| 0.8.x | 1014 1015 1016 1017 1031 1034 1035 1037 1038 1039 | Network RTK corrections messages |
-| 0.9.x | 1002 1003 1004 1009 1010 1011 1012 | Legacy Observable messages |
+All RTCM v. 3.3 (10403.3) messages supported.
 
 ## Roadmap to Version 1.0
-- [x] Full coverage of all RTCM version 3 messages
+- [ ] Full coverage of all RTCM version 3 messages
   - [x] MSM Observable messages
   - [x] Station meta data messages
   - [x] Auxiliary info messages
@@ -171,8 +161,9 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
   - [x] Projection parameters messages
   - [x] Network RTK corrections messages
   - [x] Legacy Observable messages
-- [ ] Stabilize API (may break some backward compatibility)
-  - [ ] Consistent message data types (and message field names)
+  - [ ] Version 3.4 messages
+- [x] Stabilize API (may break some backward compatibility)
+  - [x] Consistent message data types (and message field names)
 - [ ] Expand unit tests
 - [ ] Performance optimizations
 - [ ] Enhanced documentation
