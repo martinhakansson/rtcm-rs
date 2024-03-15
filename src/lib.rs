@@ -74,7 +74,8 @@
 //!
 //! For a full list of features and capabilities, see the [README](https://github.com/martinhakansson/rtcm-rs/blob/master/README.md).
 
-#![no_std]
+// #![no_std]
+#![cfg_attr(not(feature = "std"), no_std)]
 #![forbid(unsafe_code)]
 //use message::{Message, MessageBuilder};
 //use preamble::MessageFrame;

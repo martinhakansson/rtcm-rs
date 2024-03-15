@@ -31,6 +31,12 @@ rtcm-rs = { version = "0.9.0", features=["serde"] }
 rtcm-rs = { version = "0.9.0", default-features=false, features=["msg1001","msg1005"] }
 ```
 
+- `no_std`: To disable the standard library, make sure to set default-features to false. 
+*Disabling the standard library only has the effect of type RtcmError not implementing the Error trait. No dynamic memory allocations are made regardless of whether the standard library is enabled or not*
+```toml
+rtcm-rs = { version = "0.9.0", default-features=false }
+```
+
 - `test_gen`: This feature is used exclusively for generating tests during library development and is not necessary for library usage.
 
 ## Usage

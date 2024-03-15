@@ -36,4 +36,6 @@ impl core::fmt::Display for RtcmError {
         }
     }
 }
-//should Error implementation be hidden behind a std feature guard?
+
+#[cfg(feature = "std")]
+impl std::error::Error for RtcmError {}
