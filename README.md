@@ -15,8 +15,6 @@ This library provides robust support for Serde, a powerful serialization/deseria
 
 Moreover, the library is `no_std` compatible and doesn't rely on dynamic memory allocations, making it suitable for use in embedded environments. With feature flags for each message type, rtcm-rs can be tailored to your needs, reducing library size when necessary.
 
-*It should be noted that some message types are under ongoing revision and will see further refinement in the upcoming version 1.0.*
-
 ## Features
 
 - `serde`: For adding support for serialization and deserialization. To enable this, add the following to the rtcm-rs dependency in your Cargo.toml file:
@@ -31,8 +29,7 @@ rtcm-rs = { version = "0.9.0", features=["serde"] }
 rtcm-rs = { version = "0.9.0", default-features=false, features=["msg1001","msg1005"] }
 ```
 
-- `no_std`: To disable the standard library, make sure to set default-features to false. 
-*Disabling the standard library only has the effect of type RtcmError not implementing the Error trait. No dynamic memory allocations are made regardless of whether the standard library is enabled or not*
+- No standard library: Usage of the standard library is controlled by the feauture `std`, which is defined as a default feature for the library. So to disable the standard library, make sure to set default-features to false. 
 ```toml
 rtcm-rs = { version = "0.9.0", default-features=false }
 ```
@@ -173,6 +170,30 @@ All RTCM v. 3.3 (10403.3) messages supported.
 - [ ] Expand unit tests
 - [ ] Performance optimizations
 - [ ] Enhanced documentation
+
+## Changelog
+
+### Version 0.10.0
+This update includes changes to the API to make it more consistent. Unfortunately, this may also break backward compatibility with previous versions in some cases.
+
+Changes:
+- Revision of field names for some messages, and removal of redundant length fields for some messages with vectors or strings. Affected messages are:
+  - All MSM (1071-1127) 
+  - 1001
+  - 1007
+  - 1008
+  - 1013
+  - 1030
+  - 1033
+  - 1059
+  - 1065
+  - 1230
+- Removed and merged some vector/string capacity constants 
+- A new feature `std` was added which controls reliance on the standard library. The purpose is more convenient error handling as it allows the RtcmError type to implement the Error trait of the standard library. Feature `std` is defined as a default feature for the library, so to turn it off the `default-features` parameter needs to be set to false in Cargo.toml.
+
+### Version 0.9.0
+
+- Full RTCM v. 3.3 support
 
 ## License
 
