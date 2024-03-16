@@ -1,10 +1,10 @@
 [package]
 name = "rtcm-rs"
-version = "0.9.0"
+version = "0.10.0"
 authors = ["Martin Håkansson <martinhakansson@yahoo.com>"]
 categories = ["encoding", "no-std"]
 description = "Encoding/decoding of RTCM v. 3"
-keywords = ["rtcm","no_std","serde","serialization"]
+keywords = ["rtcm","no_std","serde","serialization","gnss"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/martinhakansson/rtcm-rs.git"

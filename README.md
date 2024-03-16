@@ -20,18 +20,18 @@ Moreover, the library is `no_std` compatible and doesn't rely on dynamic memory 
 - `serde`: For adding support for serialization and deserialization. To enable this, add the following to the rtcm-rs dependency in your Cargo.toml file:
 
 ```toml
-rtcm-rs = { version = "0.9.0", features=["serde"] }
+rtcm-rs = { version = "0.10.0", features=["serde"] }
 ```
 
 - Selective message support: To minimize the library size by supporting only certain RTCM messages. For instance, to only support messages 1004 and 1005, update your Cargo.toml as follows:
 
 ```toml
-rtcm-rs = { version = "0.9.0", default-features=false, features=["msg1001","msg1005"] }
+rtcm-rs = { version = "0.10.0", default-features=false, features=["msg1001","msg1005"] }
 ```
 
 - No standard library: Usage of the standard library is controlled by the feauture `std`, which is defined as a default feature for the library. So to disable the standard library, make sure to set default-features to false. 
 ```toml
-rtcm-rs = { version = "0.9.0", default-features=false }
+rtcm-rs = { version = "0.10.0", default-features=false }
 ```
 
 - `test_gen`: This feature is used exclusively for generating tests during library development and is not necessary for library usage.
@@ -42,7 +42,7 @@ To add rtcm-rs to your project, add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-rtcm-rs = "0.9.0"
+rtcm-rs = "0.10.0"
 ```
 
 Remember that hyphenated crate names translate to underscored crate names in rust source code, i.e. `rtcm_rs` for this crate. For instance, add the following to import from the prelude:
