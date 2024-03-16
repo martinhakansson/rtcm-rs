@@ -3923,7 +3923,11 @@ df_88591_string_with_len!(
 
 //Data fields specific to one message
 
+#[cfg(feature = "msg1029")]
 pub mod df_msg1029_utf8_str;
+#[cfg(feature = "msg1059")]
 pub mod df_msg1059_biases;
+#[cfg(feature = "msg1065")]
 pub mod df_msg1065_biases;
+#[cfg(feature = "msg1230")]
 pub mod df_msg1230_biases;
