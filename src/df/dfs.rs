@@ -22,6 +22,7 @@
 //min - unit minute
 //d - unit day
 //asec - arc second
+//year - year
 
 //DF001 (1 bit)
 //field_name: reserved_[start bit]_[bit length]
@@ -3766,6 +3767,18 @@ df!(
     it: U32,
     len: 30,
     ord: 0,
+);
+
+//DF564: Coordinate Epoch
+//field_name: coordinate_epoch_year
+df!(
+    id: df564,
+    dt: f32,
+    it: U16,
+    len: 16,
+    res: 0.01,
+    bias: 1900.0,
+    inv: 0,
 );
 
 //Reusable data fields
