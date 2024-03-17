@@ -8,6 +8,7 @@ pub use msm_mappings::bds::SigId as BdsSigId;
 pub use msm_mappings::gal::SigId as GalSigId;
 pub use msm_mappings::glo::SigId as GloSigId;
 pub use msm_mappings::gps::SigId as GpsSigId;
+pub use msm_mappings::navic::SigId as NavicSigId;
 pub use msm_mappings::qzss::SigId as QzssSigId;
 pub use msm_mappings::sbas::SigId as SbasSigId;
 
@@ -929,7 +930,10 @@ pub const SAT_CAP_1068: usize = 63;
     feature = "msg1113",
     feature = "msg1121",
     feature = "msg1122",
-    feature = "msg1123"
+    feature = "msg1123",
+    feature = "msg1131",
+    feature = "msg1132",
+    feature = "msg1133"
 ))]
 mod msm123_sat;
 
@@ -945,7 +949,9 @@ mod msm123_sat;
     feature = "msg1114",
     feature = "msg1116",
     feature = "msg1124",
-    feature = "msg1126"
+    feature = "msg1126",
+    feature = "msg1134",
+    feature = "msg1136"
 ))]
 mod msm46_sat;
 
@@ -959,7 +965,9 @@ mod msm46_sat;
     feature = "msg1115",
     feature = "msg1117",
     feature = "msg1125",
-    feature = "msg1127"
+    feature = "msg1127",
+    feature = "msg1135",
+    feature = "msg1137"
 ))]
 mod msm57_sat;
 
@@ -1070,4 +1078,11 @@ include_msg!(msg1124, "msg1124");
 include_msg!(msg1125, "msg1125");
 include_msg!(msg1126, "msg1126");
 include_msg!(msg1127, "msg1127");
+include_msg!(msg1131, "msg1131");
+include_msg!(msg1132, "msg1132");
+include_msg!(msg1133, "msg1133");
+include_msg!(msg1134, "msg1134");
+include_msg!(msg1135, "msg1135");
+include_msg!(msg1136, "msg1136");
+include_msg!(msg1137, "msg1137");
 include_msg!(msg1230, "msg1230");

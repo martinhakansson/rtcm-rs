@@ -236,6 +236,13 @@ msm_mappings!(
         32 => 1|'D'
     ]
 );
+msm_mappings!(
+    gnss: navic,
+    mappings: [
+        8 => 9|'A',
+        22 => 5|'A'
+    ]
+);
 
 /*
 pub mod gps {

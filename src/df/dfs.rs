@@ -3759,7 +3759,7 @@ df!(
 //field_name: spare_i0
 
 //DF546: NavIC/IRNSS Epoch Time (TOW)
-//field_name: navic_epoch_time_ms
+//field_name: navic_epoch_time_ms TODO: change to df_u30
 df!(
     id: df546,
     dt: u32,
@@ -3881,6 +3881,14 @@ df!(
     dt: u32,
     it: U32,
     len: 27,
+    ord: 0,
+);
+
+df!(
+    id: df_u30,
+    dt: u32,
+    it: U32,
+    len: 30,
     ord: 0,
 );
 
