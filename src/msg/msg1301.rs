@@ -1,0 +1,25 @@
+msg!(
+    id: msg1301,
+    type_name: Msg1301T,
+    fields: [
+        (source_name_str, df_desc_str_w_len),
+        (target_name_str, df_desc_str_w_len),
+        (system_id, df_u8),
+        (utilized_trans_msg_ind, df_u10),
+        (ref_epoch_t0_mjd, df547),
+        (dx0_m, df548_49_50),
+        (dy0_m, df548_49_50),
+        (dz0_m, df548_49_50),
+        (r0_1_asec, df551_2_3),
+        (r0_2_asec, df551_2_3),
+        (r0_3_asec, df551_2_3),
+        (ds0_ppm, df554),
+        (dot_dx_m_yr, df555_6_7),
+        (dot_dy_m_yr, df555_6_7),
+        (dot_dz_m_yr, df555_6_7),
+        (dot_r_1_asec_yr, df558_59_60),
+        (dot_r_2_asec_yr, df558_59_60),
+        (dot_r_3_asec_yr, df558_59_60),
+        (dot_ds_ppm_yr, df561)
+    ],
+);

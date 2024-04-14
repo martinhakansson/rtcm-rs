@@ -23,6 +23,10 @@
 //d - unit day
 //asec - arc second
 //year - year
+//mjd - modified julian day number
+//m_yr - meter/year
+//asec_yr - arc second / year
+//ppm_yr - ppm/year
 
 //DF001 (1 bit)
 //field_name: reserved_[start bit]_[bit length]
@@ -3766,6 +3770,121 @@ df!(
     dt: u32,
     it: U32,
     len: 30,
+    ord: 0,
+);
+
+//DF547: Reference Epoch t0
+//field_name: ref_epoch_t0_mjd
+df!(
+    id: df547,
+    dt: u32,
+    it: U16,
+    len: 16,
+    bias: 44244,
+    ord: 0,
+);
+
+//DF548: dX0
+//field_name: dx0_m
+df!(
+    id: df548_49_50,
+    dt: f64,
+    it: I32,
+    len: 23,
+    res: 0.001,
+    round: true,
+    ord: 0,
+);
+
+//DF549: dY0
+//field_name: dy0_m
+//df: df548_49_50
+
+//DF550: dZ0
+//field_name: dz0_m
+//df: df548_49_50
+
+//DF551: R0_1
+//field_name: r0_1_asec
+df!(
+    id: df551_2_3,
+    dt: f64,
+    it: I32,
+    len: 32,
+    res: 0.00002,
+    round: true,
+    ord: 0,
+);
+
+//DF552: R0_2
+//field_name: r0_2_asec
+//df: df551_2_3
+
+//DF553: R0_3
+//field_name: r0_3_asec
+//df: df551_2_3
+
+//DF554: dS0
+//field_name: ds0_ppm
+df!(
+    id: df554,
+    dt: f64,
+    it: I32,
+    len: 25,
+    res: 0.00001,
+    round: true,
+    ord: 0,
+);
+
+//DF555: dot dX
+//field_name: dot_dx_m_yr
+df!(
+    id: df555_6_7,
+    dt: f32,
+    it: I32,
+    len: 17,
+    res: 0.00002,
+    round: true,
+    ord: 0,
+);
+
+//DF556: dot dY
+//field_name: dot_dy_m_yr
+//df: df555_6_7
+
+//DF557: dot dZ
+//field_name: dot_dz_m_yr
+//df: df555_6_7
+
+//DF558: dot R_1
+//field_name: dot_r_1_asec_yr
+df!(
+    id: df558_59_60,
+    dt: f32,
+    it: I32,
+    len: 17,
+    res: 0.0000004,
+    round: true,
+    ord: 0,
+);
+
+//DF559: dot R_2
+//field_name: dot_r_2_asec_yr
+//df: df558_59_60
+
+//DF560: dot R_3
+//field_name: dot_r_3_asec_yr
+//df: df558_59_60
+
+//DF561: dot dS
+//field_name: dot_ds_ppm_yr
+df!(
+    id: df561,
+    dt: f32,
+    it: I16,
+    len: 14,
+    res: 0.0000002,
+    round: true,
     ord: 0,
 );
 
