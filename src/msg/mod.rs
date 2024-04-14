@@ -1090,3 +1090,5 @@ include_msg!(msg1230, "msg1230");
 include_msg!(msg1300, "msg1300");
 include_msg!(msg1301, "msg1301");
 include_msg!(msg1302, "msg1302");
+include_msg!(msg1303, "msg1303");
+include_msg!(msg1304, "msg1304");

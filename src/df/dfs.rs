@@ -2019,7 +2019,7 @@ df!(
 );
 
 //DF252: Galileo Satellite ID
-//field_name: gal_satellite_id
+//field_name: gal_satellite_id TODO replace with df_u6
 df!(
     id: df252,
     dt: u8,
@@ -3917,6 +3917,18 @@ df!(
 //DF570: Database-Link
 //field_name: database_link_str
 //df: df_desc_str_w_len
+
+//DF571: BDS Residual Epoch Time (TOW)
+//field_name: bds_resid_epoch_time_s
+//df: df_u20
+
+//DF572 Length handled by frag_vec_with_len macro
+
+//DF573: Galileo Residual Epoch Time (TOW)
+//field_name: gal_resid_epoch_time_s
+//df: df_u20
+
+//DF574 Length handled by frag_vec_with_len macro
 
 //Reusable data fields
 
