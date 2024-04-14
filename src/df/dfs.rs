@@ -3781,6 +3781,24 @@ df!(
     inv: 0,
 );
 
+//DF565 String length handled by df_desc_str_w_len
+
+//DF566: RTCM-CRS-Name
+//field_name: rtcm_crs_name_str
+//df: df_desc_str_w_len
+
+//DF567: Anchor
+//field_name: anchor_flag
+//df: df_flag
+
+//DF568 Length handled by frag_vec_with_len macro
+
+//DF569 String length handled by df_desc_str_w_len
+
+//DF570: Database-Link
+//field_name: database_link_str
+//df: df_desc_str_w_len
+
 //Reusable data fields
 
 //flag

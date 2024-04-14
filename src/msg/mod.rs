@@ -894,6 +894,7 @@ fn cell_mask_id_vec(
 
 //Common constants
 pub const DESC_CAP: usize = 31;
+pub const DB_LINK_CAP: usize = 7;
 pub const SAT_CAP_LEGACY: usize = 31;
 pub const SAT_CAP_MAC: usize = 15;
 pub const SAT_CAP_FKP: usize = 31;
@@ -1087,3 +1088,4 @@ include_msg!(msg1136, "msg1136");
 include_msg!(msg1137, "msg1137");
 include_msg!(msg1230, "msg1230");
 include_msg!(msg1300, "msg1300");
+include_msg!(msg1302, "msg1302");
