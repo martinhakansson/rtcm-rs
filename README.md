@@ -7,7 +7,7 @@
 
 ![Unsafe-Zero-Percent](https://img.shields.io/badge/Unsafety-0%25-brightgreen.svg)
 
-rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. The library currently provides complete support up to and including version 3.3 (10403.3) of the standard. Support for future versions will be added upon their release.
+rtcm-rs is a powerful Rust library for decoding and encoding RTCM version 3 messages as defined in the RTCM Standard 10403.x. The library currently provides complete support up to and including the latest version 3.4 (10403.4) of the standard. Support for future versions will be added upon their release.
 
 In the spirit of Rust's safety principles, this library is developed with #[forbid(unsafe_code)], ensuring that all operations are safe from undefined behavior, data races, and many common bugs. Thus, you can rely on rtcm-rs for not only its functionality but also its commitment to safety.
 
@@ -20,18 +20,18 @@ Moreover, the library is `no_std` compatible and doesn't rely on dynamic memory 
 - `serde`: For adding support for serialization and deserialization. To enable this, add the following to the rtcm-rs dependency in your Cargo.toml file:
 
 ```toml
-rtcm-rs = { version = "0.10.0", features=["serde"] }
+rtcm-rs = { version = "0.11.0", features=["serde"] }
 ```
 
 - Selective message support: To minimize the library size by supporting only certain RTCM messages. For instance, to only support messages 1004 and 1005, update your Cargo.toml as follows:
 
 ```toml
-rtcm-rs = { version = "0.10.0", default-features=false, features=["msg1001","msg1005"] }
+rtcm-rs = { version = "0.11.0", default-features=false, features=["msg1001","msg1005"] }
 ```
 
 - No standard library: Usage of the standard library is controlled by the feauture `std`, which is defined as a default feature for the library. So to disable the standard library, make sure to set default-features to false. 
 ```toml
-rtcm-rs = { version = "0.10.0", default-features=false }
+rtcm-rs = { version = "0.11.0", default-features=false }
 ```
 
 - `test_gen`: This feature is used exclusively for generating tests during library development and is not necessary for library usage.
@@ -42,7 +42,7 @@ To add rtcm-rs to your project, add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-rtcm-rs = "0.10.0"
+rtcm-rs = "0.11.0"
 ```
 
 Remember that hyphenated crate names translate to underscored crate names in rust source code, i.e. `rtcm_rs` for this crate. For instance, add the following to import from the prelude:
@@ -151,10 +151,10 @@ In this third example, we demonstrate how to encode an RTCM message. We start by
 
 ## Supported messages
 
-All RTCM v. 3.3 (10403.3) messages supported.
+All RTCM v. 3.4 (10403.4) messages supported.
 
 ## Roadmap to Version 1.0
-- [ ] Full coverage of all RTCM version 3 messages
+- [x] Full coverage of all RTCM version 3 messages
   - [x] MSM Observable messages
   - [x] Station meta data messages
   - [x] Auxiliary info messages
@@ -164,7 +164,7 @@ All RTCM v. 3.3 (10403.3) messages supported.
   - [x] Projection parameters messages
   - [x] Network RTK corrections messages
   - [x] Legacy Observable messages
-  - [ ] Version 3.4 messages
+  - [x] Version 3.4 messages
 - [x] Stabilize API (may break some backward compatibility)
   - [x] Consistent message data types (and message field names)
 - [ ] Expand unit tests
@@ -172,6 +172,15 @@ All RTCM v. 3.3 (10403.3) messages supported.
 - [ ] Enhanced documentation
 
 ## Changelog
+
+### Version 0.11.0
+This version adds support for the following new messages:
+- MSM messages for NavIC (1131-1137)
+- New RTCM 3.4 messages (1300-1304)
+
+Additionally, a few bugs have been fixed:
+- Error in signal mapping for BeiDou MSM
+- Possible rounding error for some messages containing fields of type f32 and f64.
 
 ### Version 0.10.0
 This update includes changes to the API to make it more consistent. Unfortunately, this may also break backward compatibility with previous versions in some cases.
