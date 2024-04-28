@@ -130,5 +130,13 @@ mod test_assembler {
         let mut parser = Parser::new(&data, 12);
         let ext = parser.parse::<SM16>(12).unwrap();
         assert_eq!(-1820, ext);
+        // 7
+        let mut data2 = [0u8, 0, 0, 0];
+        let mut assembler = Assembler::new(&mut data2, 9);
+        assembler.put::<U16>(27245, 16).unwrap();
+        let mut parser = Parser::new(&data2, 9);
+        let ext = parser.parse::<U16>(16).unwrap();
+        assert_eq!(27245, ext);
+        assert_eq!(&[0u8, 53, 54, 128], &data2);
     }
 }
