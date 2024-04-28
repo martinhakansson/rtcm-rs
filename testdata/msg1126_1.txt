@@ -136,7 +136,7 @@ Msg1126(
                     satellite_id: 42,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -184,7 +184,7 @@ Msg1126(
                     satellite_id: 43,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -232,7 +232,7 @@ Msg1126(
                     satellite_id: 44,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -280,7 +280,7 @@ Msg1126(
                     satellite_id: 45,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -328,7 +328,7 @@ Msg1126(
                     satellite_id: 46,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -376,7 +376,7 @@ Msg1126(
                     satellite_id: 47,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -424,7 +424,7 @@ Msg1126(
                     satellite_id: 48,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -472,7 +472,7 @@ Msg1126(
                     satellite_id: 49,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -520,7 +520,7 @@ Msg1126(
                     satellite_id: 50,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -568,7 +568,7 @@ Msg1126(
                     satellite_id: 51,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -616,7 +616,7 @@ Msg1126(
                     satellite_id: 52,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -664,7 +664,7 @@ Msg1126(
                     satellite_id: 53,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -712,7 +712,7 @@ Msg1126(
                     satellite_id: 54,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -760,7 +760,7 @@ Msg1126(
                     satellite_id: 55,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -808,7 +808,7 @@ Msg1126(
                     satellite_id: 56,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,
@@ -856,7 +856,7 @@ Msg1126(
                     satellite_id: 57,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: None,
                     gnss_signal_fine_phaserange_ext_ms: None,

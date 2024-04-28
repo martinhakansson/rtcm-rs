@@ -253,7 +253,7 @@ Msg1127(
                     satellite_id: 1,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -329,7 +329,7 @@ Msg1127(
                     satellite_id: 2,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -405,7 +405,7 @@ Msg1127(
                     satellite_id: 3,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -481,7 +481,7 @@ Msg1127(
                     satellite_id: 4,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -557,7 +557,7 @@ Msg1127(
                     satellite_id: 5,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -633,7 +633,7 @@ Msg1127(
                     satellite_id: 6,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -709,7 +709,7 @@ Msg1127(
                     satellite_id: 7,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -785,7 +785,7 @@ Msg1127(
                     satellite_id: 8,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -861,7 +861,7 @@ Msg1127(
                     satellite_id: 9,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -937,7 +937,7 @@ Msg1127(
                     satellite_id: 10,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -1013,7 +1013,7 @@ Msg1127(
                     satellite_id: 11,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -1089,7 +1089,7 @@ Msg1127(
                     satellite_id: 12,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -1165,7 +1165,7 @@ Msg1127(
                     satellite_id: 13,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -1241,7 +1241,7 @@ Msg1127(
                     satellite_id: 14,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -1317,7 +1317,7 @@ Msg1127(
                     satellite_id: 15,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,
@@ -1393,7 +1393,7 @@ Msg1127(
                     satellite_id: 16,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ext_ms: Some(
                         0.0,

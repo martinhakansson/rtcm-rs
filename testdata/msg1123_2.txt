@@ -24,7 +24,7 @@ Msg1123(
                     satellite_id: 21,
                     signal_id: SigId(
                         1,
-                        'D',
+                        'X',
                     ),
                     gnss_signal_fine_pseudorange_ms: Some(
                         0.0006307363510131836,
