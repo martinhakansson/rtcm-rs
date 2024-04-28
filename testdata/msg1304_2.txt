@@ -1,0 +1,12 @@
+Msg1304(
+    Msg1304T {
+        gal_resid_epoch_time_s: 7098,
+        reference_station_id: 3690,
+        refs_n: 106,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

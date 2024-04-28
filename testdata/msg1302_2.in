@@ -1,0 +1,1 @@
+Message::Msg1302(Msg1302T {rtcm_crs_name_str:Df88591String::<31>::from(""),anchor_flag:0,plate_number:22,db_links:{#[allow(unused_mut)] let mut vec = DataVec::<_,7>::new();vec},})

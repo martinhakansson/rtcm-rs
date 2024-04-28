@@ -1,0 +1,12 @@
+Msg1303(
+    Msg1303T {
+        bds_resid_epoch_time_s: 185441,
+        reference_station_id: 3478,
+        refs_n: 70,
+        satellites: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

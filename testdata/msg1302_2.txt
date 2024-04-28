@@ -1,0 +1,16 @@
+Msg1302(
+    Msg1302T {
+        rtcm_crs_name_str: Df88591String(
+            [
+                ,
+            ],
+        ),
+        anchor_flag: 0,
+        plate_number: 22,
+        db_links: DataVec(
+            [
+                ,
+            ],
+        ),
+    },
+)

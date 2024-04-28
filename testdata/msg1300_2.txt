@@ -1,0 +1,12 @@
+Msg1300(
+    Msg1300T {
+        service_crs_name_str: Df88591String(
+            [
+                ,
+            ],
+        ),
+        coordinate_epoch_year: Some(
+            2485.17,
+        ),
+    },
+)
