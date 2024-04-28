@@ -1,0 +1,81 @@
+Msg1131(
+    Msg1131T {
+        reference_station_id: 2655,
+        navic_epoch_time_ms: 802725674,
+        msm_multiple_message_flag: 0,
+        issue_of_data_station: Some(
+            5,
+        ),
+        reserved_58_7: 124,
+        clock_steering_ind: 3,
+        external_clock_ind: 0,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_index: 3,
+        data_segment: Msg1131Data {
+            satellite_data: DataVec(
+                [
+                    Msm123Sat {
+                    satellite_id: 48,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.1611328125,
+                },
+                    Msm123Sat {
+                    satellite_id: 49,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.6376953125,
+                },
+                    Msm123Sat {
+                    satellite_id: 54,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.5556640625,
+                },
+                    Msm123Sat {
+                    satellite_id: 63,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.9697265625,
+                },
+                ],
+            ),
+            signal_data: DataVec(
+                [
+                    Msg1131Sig {
+                    satellite_id: 48,
+                    signal_id: SigId(
+                        9,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0004928708076477051,
+                    ),
+                },
+                    Msg1131Sig {
+                    satellite_id: 49,
+                    signal_id: SigId(
+                        9,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.00043392181396484375,
+                    ),
+                },
+                    Msg1131Sig {
+                    satellite_id: 54,
+                    signal_id: SigId(
+                        5,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -9.196996688842773e-5,
+                    ),
+                },
+                    Msg1131Sig {
+                    satellite_id: 63,
+                    signal_id: SigId(
+                        5,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0007898807525634766,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

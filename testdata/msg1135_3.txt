@@ -1,0 +1,153 @@
+Msg1135(
+    Msg1135T {
+        reference_station_id: 2272,
+        navic_epoch_time_ms: 117405805,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: Some(
+            2,
+        ),
+        reserved_58_7: 51,
+        clock_steering_ind: 3,
+        external_clock_ind: 0,
+        gnss_smoothing_type_ind: 1,
+        gnss_smoothing_interval_index: 1,
+        data_segment: Msg1135Data {
+            satellite_data: DataVec(
+                [
+                    Msm57Sat {
+                    satellite_id: 11,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        167,
+                    ),
+                    reserved_8_4: 1,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.6669921875,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        -1052,
+                    ),
+                },
+                    Msm57Sat {
+                    satellite_id: 19,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        25,
+                    ),
+                    reserved_8_4: 0,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.8505859375,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        -7735,
+                    ),
+                },
+                    Msm57Sat {
+                    satellite_id: 22,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        152,
+                    ),
+                    reserved_8_4: 0,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.712890625,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        5885,
+                    ),
+                },
+                    Msm57Sat {
+                    satellite_id: 23,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        185,
+                    ),
+                    reserved_8_4: 2,
+                    gnss_satellite_rough_range_mod1ms_ms: 0.6845703125,
+                    gnss_satellite_rough_phaserange_rates_m_s: Some(
+                        4252,
+                    ),
+                },
+                ],
+            ),
+            signal_data: DataVec(
+                [
+                    Msg1135Sig {
+                    satellite_id: 11,
+                    signal_id: SigId(
+                        5,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -4.506111145019531e-5,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0030980557203292847,
+                    ),
+                    gnss_phaserange_lock_time_ind: 9,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_dbhz: Some(
+                        49,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        -0.0383,
+                    ),
+                },
+                    Msg1135Sig {
+                    satellite_id: 19,
+                    signal_id: SigId(
+                        9,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.0006797313690185547,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        0.0035900864750146866,
+                    ),
+                    gnss_phaserange_lock_time_ind: 8,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        7,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        0.9327000000000001,
+                    ),
+                },
+                    Msg1135Sig {
+                    satellite_id: 22,
+                    signal_id: SigId(
+                        5,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        -0.00017964839935302734,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0019008014351129532,
+                    ),
+                    gnss_phaserange_lock_time_ind: 12,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        36,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        0.7841,
+                    ),
+                },
+                    Msg1135Sig {
+                    satellite_id: 23,
+                    signal_id: SigId(
+                        5,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ms: Some(
+                        0.0002754330635070801,
+                    ),
+                    gnss_signal_fine_phaserange_ms: Some(
+                        -0.0027133654803037643,
+                    ),
+                    gnss_phaserange_lock_time_ind: 15,
+                    half_cycle_ambiguity_ind: 0,
+                    gnss_signal_cnr_dbhz: Some(
+                        50,
+                    ),
+                    gnss_signal_fine_phaserange_rate_m_s: Some(
+                        0.6347,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

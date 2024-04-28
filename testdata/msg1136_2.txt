@@ -1,0 +1,48 @@
+Msg1136(
+    Msg1136T {
+        reference_station_id: 2552,
+        navic_epoch_time_ms: 777785413,
+        msm_multiple_message_flag: 1,
+        issue_of_data_station: None,
+        reserved_58_7: 92,
+        clock_steering_ind: 0,
+        external_clock_ind: 1,
+        gnss_smoothing_type_ind: 0,
+        gnss_smoothing_interval_index: 4,
+        data_segment: Msg1136Data {
+            satellite_data: DataVec(
+                [
+                    Msm46Sat {
+                    satellite_id: 17,
+                    gnss_satellite_rough_range_integer_ms: Some(
+                        108,
+                    ),
+                    gnss_satellite_rough_range_mod1ms_ms: 0.53125,
+                },
+                ],
+            ),
+            signal_data: DataVec(
+                [
+                    Msg1136Sig {
+                    satellite_id: 17,
+                    signal_id: SigId(
+                        5,
+                        'A',
+                    ),
+                    gnss_signal_fine_pseudorange_ext_ms: Some(
+                        0.0003687683492898941,
+                    ),
+                    gnss_signal_fine_phaserange_ext_ms: Some(
+                        -0.0034187650308012962,
+                    ),
+                    gnss_phaserange_lock_time_ext_ind: 817,
+                    half_cycle_ambiguity_ind: 1,
+                    gnss_signal_cnr_ext_dbhz: Some(
+                        32.1875,
+                    ),
+                },
+                ],
+            ),
+        },
+    },
+)

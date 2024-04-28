@@ -550,8 +550,10 @@ macro_rules! msm_data_seg_frag {
                 let mut sig_num: usize = 0;
                 for _ in 0..sig_len {
                     let (sat_id, sig_id) = loop {
-                        let sat_id: u8 =
-                            (((subset % 65) as u8 + (val_gen.rng_rng.gen::<u8>() % 16)) % 64) + 1;
+                        let sat_id: u8 = (((subset % 65) as u8
+                            + (val_gen.rng_rng.gen::<u8>() % (64 / id_len_div64() as u8)))
+                            % 64)
+                            + 1;
                         let sig_id = random_id(&mut val_gen.rng_rng, subset);
                         if !cell_vec.iter().any(|e| e.0 == sat_id && e.1 == sig_id) {
                             break (sat_id, sig_id);

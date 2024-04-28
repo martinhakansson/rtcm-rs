@@ -33,6 +33,10 @@ macro_rules! test_msg {
                     #[allow(unused)]
                     pub use rtcm_rs::msg::QzssSigId as SigId;
                 }
+                pub mod navic {
+                    #[allow(unused)]
+                    pub use rtcm_rs::msg::NavicSigId as SigId;
+                }
 
                 #[test]
                 fn test_encode() {
