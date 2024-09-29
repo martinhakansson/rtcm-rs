@@ -17,7 +17,7 @@ macro_rules! message {
         #[non_exhaustive]
         #[repr(u16)]
         #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
-        #[derive(Debug,PartialEq)]
+        #[derive(Debug,PartialEq,Clone)]
         pub enum Message {
             Empty = 5000,
             Corrupt = 6000,
@@ -64,7 +64,7 @@ macro_rules! message {
             }
         }
         #[cfg_attr(feature="serde",derive(Serialize,Deserialize),serde(crate = "sd"))]
-        #[derive(Debug,PartialEq)]
+        #[derive(Debug,PartialEq,Clone)]
         pub struct MsgNotSupportedT {
             pub message_number:u16,
         }
