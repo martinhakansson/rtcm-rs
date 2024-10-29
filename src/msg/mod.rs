@@ -420,6 +420,7 @@ macro_rules! msm_data_seg_frag {
             };
             use $crate::rtcm_error::RtcmError;
             use $crate::tinyvec::ArrayVec;
+            use $crate::util::DataVec;
             #[cfg(feature = "serde")]
             use $crate::{Deserialize, Serialize};
 
@@ -439,6 +440,11 @@ macro_rules! msm_data_seg_frag {
             }
             pub type DataType = $type_name;
             pub fn encode(asm: &mut Assembler, value: &$type_name) -> Result<(), RtcmError> {
+                if value.satellite_data.len() == 0 && value.signal_data.len() == 0 {
+                    asm.put::<U64>(0, 64)?;
+                    asm.put::<U32>(0, 32)?;
+                    return Ok(());
+                }
                 let mut sat_mask: u64 = 0;
                 for s in value.satellite_data.iter() {
                     if s.satellite_id > 0 && s.satellite_id <= 64 {
@@ -513,6 +519,13 @@ macro_rules! msm_data_seg_frag {
             pub fn decode(par: &mut Parser) -> Result<$type_name, RtcmError> {
                 let sat_mask = par.parse::<U64>(64)?;
                 let sig_mask = par.parse::<U32>(32)?;
+
+                if sat_mask == 0 && sig_mask == 0 {
+                    return Ok($type_name {
+                        satellite_data: DataVec::new(),
+                        signal_data: DataVec::new(),
+                    });
+                }
 
                 let sat_len = mask_len_u64(sat_mask);
                 let sig_len = mask_len_u32(sig_mask);
